@@ -2,25 +2,22 @@
 # nick merrill
 # 2021
 #
-# create-tables.py - defines the Postgres tables.
-# this runs always.
+# create-tables.py - sets up database tables
+# run this once.
 
-# import schedule
-import psycopg2
+from funcy import partial
 import logging
 import coloredlogs
 import psycopg2
-from funcy import partial
 
-from src.w3techs.collect import collect as w3techs_collect
+from src.w3techs.types import create_tables as w3techs_create
 
 from config import config
-
 #
 # setup
 #
 logging.basicConfig()
-logger = logging.getLogger("taaraxtak:collect")
+logger = logging.getLogger("taaraxtak:create_tables")
 # logger.setLevel(logging.DEBUG)
 coloredlogs.install()
 coloredlogs.install(level='INFO')
@@ -30,12 +27,11 @@ coloredlogs.install(level='INFO')
 connection = psycopg2.connect(**config['postgres'])
 cursor = connection.cursor()
 
-# configure scrapers for the db
-w3techs = partial(w3techs_collect, cursor, connection)
+# configure create methods for the db
+w3techs = partial(w3techs_create, cursor, connection)
 
 #
 # run
 #
-
 w3techs()
-#TODO schedule.every(12).hours(w3techs)
+

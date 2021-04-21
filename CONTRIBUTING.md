@@ -6,6 +6,7 @@ Before you begin:
 - This project is powered by Python. TODO add resource for learning Python.
 - Have you read the [code of conduct](CODE_OF_CONDUCT.md)?
 - Check out the [existing issues](https://github.com/github/docs/issues).
+- Familiarize yourself with the project's [design patterns](/design-patterns.md).
 
 ### Don't see your issue? Open one
 

@@ -34,7 +34,8 @@ See [CONTRIBUTING.MD](CONTRIBUTING.md).
 
 # About the name
 
-taaraxtak (IPA: taːɾaxtak) means "the sky" in the [Chochenyo Ohlone](https://sogoreate-landtrust.org/lisjan-history-and-territory/) language.
+taaraxtak (IPA: taːɾaxtak) means "the sky" in the [Chochenyo
+Ohlone](https://sogoreate-landtrust.org/lisjan-history-and-territory/) language.
 
 Looking up at the sky, we see only what's above us. Similarly, the Internet is
 something we can only know partially. When we measure the Internet we are, in
