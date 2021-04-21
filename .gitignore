@@ -79,6 +79,10 @@ target/
 
 # IPython
 profile_default/
+# taaraxak-specific
+config.example.py
+
+# python
 ipython_config.py
 
 # pyenv
