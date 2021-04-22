@@ -91,6 +91,14 @@ w3techs_sources = {
 }
 
 
+# TODO  where are these documented?
+#   - copy in justifications from old report.
+included_markets = [
+    'web-hosting', 'ssl-certificate', 'proxy',  'data-centers',  'dns-server',
+    'server-location', 'top-level-domain',
+]
+
+
 def collect (cur: cursor, conn: connection):
     '''
     Collect W3Techs data and write them to the database.
@@ -105,7 +113,12 @@ def collect (cur: cursor, conn: connection):
                           market_name, pd.Timestamp(datetime.now()))
         marketshares = df.apply(extract, axis=1)
         # write all Marketshares to the cursor
-        [ marketshare.write_to_db(cur, conn, commit=False) for marketshare in marketshares ]
+        [ marketshare.write_to_db(cur, conn, commit=False)
+          for marketshare in marketshares ]
         # commit all writes to db
         conn.commit()
-        logging.info('done!')
+
+    for market in included_markets:
+        logging.info(f'Computing gini for {market}')
+        pop_weighted_gini = utils.population_weighted_gini(cur, market, pd.Timestamp(datetime.now()))
+        pop_weighted_gini.write_to_db(cur, conn)

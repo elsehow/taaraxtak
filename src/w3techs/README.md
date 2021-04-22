@@ -5,21 +5,113 @@ centralization of core Internet services among particular providers and
 jurisdictions. Our primary tool is the Gini coefficient. 
 
 [See this blogpost for
-context](https://nickmerrill.substack.com/p/measuring-internet-decentralization),
-though mind the particulars may have changed.
+context](https://nickmerrill.substack.com/p/measuring-internet-decentralization)
+on our motivation and the Gini coefficient.
 
+# Scraping W3Techs data
 
-## Method
+`collect.py` scrapes published data on technology usage from `w3techs.com`.
+These data are typically updated daily. We label the jurisdiction for each
+service provider using `analysis/providers_labeled.csv`. `types.py` defines the
+Postgres tables for these data.
 
-`collect.py` scrapes data on technology usage from `w3techs.com`. We combine
-these with some data with some external data sources (like the population of
-countries and the jurisdiction of providers), maintained more manually and kept
-in `analysis`.
+# Computing gini coefficients
 
-`types.py` defines the Postgres tables for these data.
+## Included markets
 
+The markets we include in our Gini metric are (listed here by their W3Techs names): 
+'data-centers', 
+'web-hosting', 
+'dns-server', 
+'proxy', 
+'ssl-certificate',
+'server-location', 
+'top-level-domain'.
 
-## Caveats
+Explanations of each, and rationale for including them, are as follows:
+
+### 1. Data centers
+ Data center providers supply hardware and software infrastructure to serve
+ websites on the internet.
+
+ If data centers were overly centralized, providers could effectively take down
+ content. If data centers were overly centralized in particular jurisdictions,
+ jurisdictions could take down that content by legal decree.
+
+### 2. Web hosts
+A web hosting service provides hardware and software infrastructure to enable
+webmasters to make their website accessible via the internet. Web hosts are
+distinct from data centers: for example, for WordPress sites, WP Engine is a
+hosting provider, because customers buy hosting services from them. However, WP
+Engine uses Google to run its physical servers. Therefore Google, is the data
+center provider and WP Engine is the web host.
+
+If web hosting were overly centralized, providers or jurisdictions could make
+content inaccessible.
+
+### 3. DNS servers
+DNS (domain name system) servers manage internet domain names and their
+associated records such as IP addresses.
+
+If DNS servers were overly centralized, providers or jurisdictions could make
+content inaccessible by severing users' path to that content.
+
+### 4. Reverse proxies
+A reverse proxy service is an intermediary for a website which handles requests
+from web clients on behalf of the website's server. Common uses for reverse
+proxies are content delivery networks (CDNs, typically located in different
+geographical regions) and DDoS (distributed denial of service) protection
+services.
+
+If reverse proxies were overly centralized, providers could make content
+inaccessible by refusing to serve key content.
+
+### 5. Certificate authorities
+SSL certificate authorities are institutions that issue SSL certificates.
+
+If certificate authorities were overly centralized, they could make content more
+difficult to access by revoking or denying TLS certificates.
+
+### 5. Server locations
+
+Servers must be positioned in the world. We assume countries have jurisdiction
+over the servers located in their countries (meaning those countires can
+"legitimately" (by Weber's definition) seize those servers or cut Internet
+access to them).
+
+If server locations were overly centralized, particular jurisdictions could make content impossible to access by seizing or blocking access to servers in their jurisdiction.
+
+### 5. Top-level domain
+
+The Domain Name System supports top-level domains (e.g., .com, .net, .ar). Those top-level domains are amdinistered by registrars with clear national jurisdiction.
+
+If top-level domains were overly centralized, particular jurisdictions could
+block access to content by compelling certificate authorities to drop or reroute
+DNS requests.
+
+## Collecting data for Gini
+
+A Gini is computed for each market. When computing a Gini coefficient, we pass
+in the current time `date`, and get everything between timestamp '{date}' -
+interval '12 hour' AND '{date}'.
+
+## Weighting Gini
+
+Finally, we weight each country's marketshare by its proportion of global
+Internet users (`marketshare / proportion of Internet users`). In other words,
+if everyone's proportion of core Internet services were equal to their
+proportion of the global population of Internet users, the Gini coefficient
+would be 1. (We get data on the proportion of world's Internet users from
+WorldBank data. We keep that data in `analysis/`.)
+
+An example of where this matters: Indonesia and Russia have a comprable share of
+the world's Internet users: 3.2% vs 3.1% (as of April 21, 2021). But Indonesia
+has jurisdiction over only 0.1% of the world's core Internet services, whereas
+Russia has 0.5%. So Indonesia's weighted value ends up being 0.030380 vs
+Russia's 1.643119, reflecting the population-weighted disparity in service
+provision.
+
+# Caveats
 
 W3Techs provides monthly data paying subscribers. Relative to the data we scrape
 from the webpage, that data lists slightly more providers, but does not change

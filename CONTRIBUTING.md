@@ -39,7 +39,7 @@ When you're done making changes and you'd like to propose them for review, open 
 ### Your PR is merged!
 Congratulations! :sparkles:
 
-Once your PR is merged, you will be proudly listed as a contributor in the contributor chart.
+Once your PR is merged, you will be listed as a contributor in the contributor chart.
 
 
 ## Attribution

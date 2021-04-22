@@ -1,8 +1,8 @@
 # taaraxtak
 
 taaraxtak is a platform for collecting, storing, and visualizing data about
-political dimensions of the Internet. See [this blog post for
-context on its motivation](https://nickmerrill.substack.com/p/the-story-so-far).
+political dimensions of the Internet. See [some context on its
+motivation](https://nickmerrill.substack.com/p/the-story-so-far).
 
 See a live version at XXX
 
@@ -37,12 +37,12 @@ See [CONTRIBUTING.MD](CONTRIBUTING.md).
 taaraxtak (IPA: taːɾaxtak) means "the sky" in the [Chochenyo
 Ohlone](https://sogoreate-landtrust.org/lisjan-history-and-territory/) language.
 
-Looking up at the sky, we see only what's above us. Similarly, the Internet is
-something we can only know partially. When we measure the Internet we are, in
+Looking up at the sky, I can only see what's above me. Similarly, the Internet
+is something I can only know partially; when we measure the Internet we are, in
 more senses than one, looking at the shape of clouds. This name is meant to
-remind us to look at what we /can/ see, acknowledging its partiality, and being
-thankful for whatever we can take from it. Everything we learned about the
-atmosphere started by looking up at the sky. The message is, all we need is a
+remind us to look at what we *can* see, acknowledging its partiality, and being
+thankful for whatever we can take from it. Remember, everything we learned about
+the atmosphere started by looking up at the sky. All we've ever needed is a
 partial perspective and an open system of thought.
 
 # License
