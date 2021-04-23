@@ -12,7 +12,8 @@ psycopg2==2.8.6
 python-dateutil==2.8.1
 pytz==2021.1
 requests==2.25.1
+schedule==1.1.0
 six==1.15.0
 soupsieve==2.2.1
--e git+git@github.com:elsehow/taaraxtak.git@192ac7a60cdc54e03857a28a09d7fd17452affd2#egg=taaraxtak
+-e git+git@github.com:elsehow/taaraxtak.git@f064d4ea4e37b61bda11640372f8c8a3fc60de1b#egg=taaraxtak
 urllib3==1.26.4

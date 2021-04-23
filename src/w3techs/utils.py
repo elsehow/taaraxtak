@@ -221,7 +221,7 @@ def fetch_by_jurisdiction (cur: cursor, market:str, date: pd.Timestamp) -> pd.Da
     '''
     rows = fetch_rows(cur, market, date)
     rows['marketshare'] = rows['marketshare'].astype(float)
-    # in case we have the same name and jurisidiction repeated, we take the median makretshare
+    # in case we have the same name and jurisidiction repeated, we take the median marketshare
     rows = rows.groupby(['name', 'jurisdiction_alpha2']).median()
     # then group by each jurisdiction and take the sum of its marketshare
     rows = rows.groupby('jurisdiction_alpha2').sum()

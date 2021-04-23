@@ -5,7 +5,8 @@
 # create-tables.py - defines the Postgres tables.
 # this runs always.
 
-# import schedule
+import time
+import schedule
 import psycopg2
 import logging
 import coloredlogs
@@ -29,6 +30,7 @@ coloredlogs.install(level='INFO')
 # connect to the db
 connection = psycopg2.connect(**config['postgres'])
 cursor = connection.cursor()
+logging.info('Connected to database.')
 
 # configure scrapers for the db
 w3techs = partial(w3techs_collect, cursor, connection)
@@ -37,5 +39,8 @@ w3techs = partial(w3techs_collect, cursor, connection)
 # run
 #
 
-w3techs()
-#TODO schedule.every(12).hours(w3techs)
+schedule.every(6).hours.do(w3techs)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)

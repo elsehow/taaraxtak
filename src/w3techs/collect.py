@@ -91,8 +91,8 @@ w3techs_sources = {
 }
 
 
-# TODO  where are these documented?
-#   - copy in justifications from old report.
+# These are the markets we include to compute our Gini coefficients.
+# Their meaning and rationale are documented in w3techs/README.md
 included_markets = [
     'web-hosting', 'ssl-certificate', 'proxy',  'data-centers',  'dns-server',
     'server-location', 'top-level-domain',

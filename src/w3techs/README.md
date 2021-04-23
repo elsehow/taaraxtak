@@ -20,13 +20,16 @@ Postgres tables for these data.
 ## Included markets
 
 The markets we include in our Gini metric are (listed here by their W3Techs names): 
+
+```
 'data-centers', 
 'web-hosting', 
 'dns-server', 
 'proxy', 
 'ssl-certificate',
 'server-location', 
-'top-level-domain'.
+'top-level-domain',
+```
 
 Explanations of each, and rationale for including them, are as follows:
 
