@@ -114,16 +114,18 @@ Russia has 0.5%. So Indonesia's weighted value ends up being 0.030380 vs
 Russia's 1.643119, reflecting the population-weighted disparity in service
 provision.
 
-# Caveats
+# Backfilling historical data
 
 W3Techs provides monthly data paying subscribers. Relative to the data we scrape
 from the webpage, that data lists slightly more providers, but does not change
-at the day-to-day level (it only shows data for the first of each month).
+at the day-to-day level (it only shows data for the first of each month). And,
+relative to the monthly data, the data we scrape does not describe specific
+marketshare numbers for providers with less than 0.1% of the marketshare, where
+monthly data does include those providers.
 
-Regarding inclusivity of providers, the data we scrape does not describe
-specific marketshare numbers for providers with less than 0.1% of the
-marketshare, where monthly data does include those providers.
-
-In our production database, we separately add those monthly values in. The
-effect is that certain providers with less than 0.1% marketshare are encoded
+In our production database, we separately add those monthly values in. 
+The effect is that certain providers with less than 0.1% marketshare are encoded
 more sparsely in the data.
+
+The code for adding in monthly data is in `historical-data.ipynb`. We may
+backfill monthly data in the future as it becomes available.
