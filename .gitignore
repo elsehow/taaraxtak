@@ -2,6 +2,7 @@
 debug.ipynb
 config.py
 csv-data
+grafana-backup.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
