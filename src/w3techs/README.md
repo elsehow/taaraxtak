@@ -104,8 +104,8 @@ Finally, we weight each country's marketshare by its proportion of global
 Internet users (`marketshare / proportion of Internet users`). In other words,
 if everyone's proportion of core Internet services were equal to their
 proportion of the global population of Internet users, the Gini coefficient
-would be 1. (We get data on the proportion of world's Internet users from
-WorldBank data. We keep that data in `analysis/`.)
+would be 1. 
+
 
 An example of where this matters: Indonesia and Russia have a comprable share of
 the world's Internet users: 3.2% vs 3.1% (as of April 21, 2021). But Indonesia
@@ -113,6 +113,10 @@ has jurisdiction over only 0.1% of the world's core Internet services, whereas
 Russia has 0.5%. So Indonesia's weighted value ends up being 0.030380 vs
 Russia's 1.643119, reflecting the population-weighted disparity in service
 provision.
+
+We generate data on the proportion of world's Internet users using WorldBank
+data. See `analysis/generate_proportion_net_users.py`. The generated file we use
+for weighting is `analysis/prop_net_users.csv`.
 
 # Backfilling historical data
 
@@ -129,3 +133,7 @@ more sparsely in the data.
 
 The code for adding in monthly data is in `historical-data.ipynb`. We may
 backfill monthly data in the future as it becomes available.
+
+*NOTE* - when backfilling data, beware of existing datapoints that have exactly
+the same time. It *could* be prudent not to write the tiemstamp as midnight
+exactly---or, to drop those data (carefully!) if overwriting them.

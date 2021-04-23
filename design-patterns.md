@@ -9,5 +9,3 @@ provide validation.
 
 In this project, we validate all data through types - custom Python classes.
 Each data source has a `types.py` file that define (and validate!) the type. If something passes this type validator, we assume it's trusted.
-
-Make [an API key](https://grafana.com/docs/grafana/latest/http_api/auth/)

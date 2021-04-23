@@ -7,6 +7,7 @@ from funcy import partial
 from datetime import datetime
 from bs4 import BeautifulSoup
 
+
 # types
 from psycopg2.extensions import cursor
 from psycopg2.extensions import connection
@@ -97,7 +98,6 @@ def scrape_w3techs_table (w3techs: dict) -> pd.DataFrame:
 # Data marshalling utilities
 #
 
-# TODO make relative path
 def relative_path_to(*args):
     dirname = path.dirname(__file__)
     return path.join(dirname, *args)
@@ -127,91 +127,20 @@ def extract_from_row (market: str, time: pd.Timestamp, df_row: pd.Series) -> Pro
     '''
     name, url, marketshare = df_row.values
     jurisdiction = get_country(name)
-    # NOTE - This type does validation. Data in this type should be trusted.
+    # NOTE - This type does ALL the validation.
+    # Once data is in this type, it *should* be trustworthy.
+    # See /design-notes.md for more detail on this pattern.
     return ProviderMarketshare(
         str(name), str(url), jurisdiction, market, float(marketshare), time
     )
 
 
 
-# TODO separate everything below into a different file?
 #
 # Population-weighted gini tools
+# TODO Break into a different file?
 #
-
-def process_worldbank (fn):
-    df = pd.read_csv(fn,
-                          skiprows=4
-                         )
-    # add a 2021 column
-    df['2021'] = np.nan
-    # remove unclassified data
-    df = df[df['Country Code'] !='INX']
-    return df
-
-
-# TODO not sure how i feel about all this stuff in global scope...
-
-
-# compute each country's share (%) of the world's Internet users.
-#
-# first, % Internet penetration in each country
-# TODO relative paths
-net_proportion = process_worldbank(
-    relative_path_to('analysis', 'API_IT.NET.USER.ZS_DS2_en_csv_v2_2055777.csv')
-)
-# then, get population counts in ech country,
-# assuming populations remain the same if we have no data
-populations = process_worldbank(
-    relative_path_to('analysis', 'API_SP.POP.TOTL_DS2_en_csv_v2_1976634.csv')
-).fillna(method='ffill', axis=1)
-# verify that the country codes of the two dataframes align
-assert( np.all(populations['Country Code'] ==
-               net_proportion['Country Code']) )
-# years in our dataset
-years = ['2015', '2016', '2017', '2018', '2019', '2020', '2021']
-# compute internet users in each country.
-internet_users = (net_proportion[years].astype(float) * populations[years].astype(float))/100
-# assume internet users remained the same before readings and after readings
-internet_users=\
-internet_users\
-    .fillna(method='ffill', axis=1)\
-    .fillna(method='bfill', axis=1)\
-    .astype(float)
-# align axes
-internet_users['Country Code'] = populations['Country Code']
-
-# country codes utils
-country_codes = pd.read_csv(
-    relative_path_to('analysis', 'countries_codes_and_coordinates.csv')
-)[['Alpha-2 code', 'Alpha-3 code']]
-strip_quotes =  lambda x: x.replace('"', '').strip()
-alpha2s = country_codes['Alpha-2 code'].apply(strip_quotes)
-alpha3s = country_codes['Alpha-3 code'].apply(strip_quotes)
-country_codes = dict(zip(alpha3s, alpha2s))
-
-def get_alpha2 (alpha3):
-    try:
-        return country_codes[alpha3]
-    except:
-        # TODO - when are we not getting the alpha2 back? is that bad?
-        return ''
-
-def proportions_of_internet_users (year: str) -> pd.DataFrame:
-    '''
-    Get each country's proportion (or share) of the world's total Internet users.
-    '''
-    this_year = internet_users[[year, 'Country Code']]
-    total_users = this_year[this_year['Country Code'] =='WLD'][year].values[0]
-    df = pd.DataFrame({
-        'alpha2': this_year['Country Code'].apply(get_alpha2),
-        'alpha3': this_year['Country Code'],
-        'population-share': this_year[year] / total_users,
-    })
-    # filter items for which we have no alpha2 code
-    # TODO filter using an alpha2 validation method in types?
-    df = df[df['alpha2'] != '']
-    return df
+prop_net_users = pd.read_csv(relative_path_to('analysis', 'prop_net_users.csv')).set_index('alpha2')
 
 def to_df (db_rows) -> pd.DataFrame:
     # TODO put this in TYPES somehow?
@@ -220,7 +149,7 @@ def to_df (db_rows) -> pd.DataFrame:
 
 def fetch_rows (cur: cursor, market: str, date: pd.Timestamp) -> pd.DataFrame:
     # TODO why the 12 hour window? too magic a number. does it relate to scrape
-    # interval perhaps?
+    # interval? can it be set dynamically if so?
     cur.execute(f'''
         SELECT * from provider_marketshare
         WHERE market = '{market}'
@@ -241,7 +170,7 @@ def fetch_by_jurisdiction (cur: cursor, market:str, date: pd.Timestamp) -> pd.Da
     rows = rows.groupby('jurisdiction_alpha2').sum()
     return rows
 
-def gini(array):
+def gini(array: np.array) -> float:
     """
     Calculate the Gini coefficient of a numpy array.
     from https://github.com/oliviaguest/gini/
@@ -266,20 +195,33 @@ def gini(array):
     # Gini coefficient:
     return ((np.sum((2 * index - n  - 1) * array)) / (n * np.sum(array)))
 
+
+def weighted_gini (marketshares: pd.Series, population_shares: pd.Series) -> float:
+    '''
+    Produce a gini in which marketshares are weighted by share of the population.
+    '''
+    weighted = marketshares / population_shares
+    vs = weighted.fillna(0).values
+    return gini(vs)
+
 def population_weighted_gini (cur: cursor, market: str, time: pd.Timestamp) -> Optional[PopWeightedGini]:
     by_juris = fetch_by_jurisdiction(cur, market, time)
     # if there are no values, None
     if len(by_juris)==0:
         return None
     # get current % of Internet using population
-    pop_share_df = proportions_of_internet_users(str(time.year))
+    relevant_year = str(time.year)
+    pop_share_df = prop_net_users[relevant_year]
     # weight marketshare
-    merged = pop_share_df.merge(by_juris,
-                                left_on='alpha2',
-                                right_on='jurisdiction_alpha2',
-                                how='left')
-    merged['weighted'] = merged['marketshare'] / merged['population-share']
-    merged = merged.fillna(0)
-    # compute gini on weighted marketshare
-    g = gini(merged['weighted'].values)
+    merged = pd.DataFrame(pop_share_df).merge(by_juris,
+                                              left_index=True,
+                                              right_on='jurisdiction_alpha2',
+                                              how='left')
+    # we include countries that do  NOT appear in our scraped data.
+    # the intention here is to get the gini among ALL countries,
+    # including those that provide no internet services.
+    g = weighted_gini(
+        merged['marketshare'],
+        merged[relevant_year],
+    )
     return PopWeightedGini(market, g, time)
