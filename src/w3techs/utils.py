@@ -2,6 +2,7 @@ import logging
 import requests
 import numpy as np
 import pandas as pd
+from os import path
 from funcy import partial
 from datetime import datetime
 from bs4 import BeautifulSoup
@@ -13,6 +14,7 @@ from typing import Optional
 
 from src.w3techs.types import ProviderMarketshare
 from src.w3techs.types import PopWeightedGini
+
 #
 # Scrape utilities
 #
@@ -96,7 +98,13 @@ def scrape_w3techs_table (w3techs: dict) -> pd.DataFrame:
 #
 
 # TODO make relative path
-provider_countries = pd.read_csv('src/w3techs/analysis/providers_labeled.csv').set_index('name').drop(['notes', 'url'], axis=1)
+def relative_path_to(*args):
+    dirname = path.dirname(__file__)
+    return path.join(dirname, *args)
+
+provider_countries = pd.read_csv(
+    relative_path_to('analysis', 'providers_labeled.csv')
+).set_index('name').drop(['notes', 'url'], axis=1)
 provider_countries = provider_countries['country (alpha2)'].to_dict()
 
 def get_country (provider_name: str) -> str:
@@ -121,7 +129,7 @@ def extract_from_row (market: str, time: pd.Timestamp, df_row: pd.Series) -> Pro
     jurisdiction = get_country(name)
     # NOTE - This type does validation. Data in this type should be trusted.
     return ProviderMarketshare(
-        str(name), str(url), jurisdiction, market, marketshare, time
+        str(name), str(url), jurisdiction, market, float(marketshare), time
     )
 
 
@@ -149,10 +157,14 @@ def process_worldbank (fn):
 #
 # first, % Internet penetration in each country
 # TODO relative paths
-net_proportion = process_worldbank('src/w3techs/analysis/API_IT.NET.USER.ZS_DS2_en_csv_v2_2055777.csv')
+net_proportion = process_worldbank(
+    relative_path_to('analysis', 'API_IT.NET.USER.ZS_DS2_en_csv_v2_2055777.csv')
+)
 # then, get population counts in ech country,
 # assuming populations remain the same if we have no data
-populations = process_worldbank('src/w3techs/analysis/API_SP.POP.TOTL_DS2_en_csv_v2_1976634.csv').fillna(method='ffill', axis=1)
+populations = process_worldbank(
+    relative_path_to('analysis', 'API_SP.POP.TOTL_DS2_en_csv_v2_1976634.csv')
+).fillna(method='ffill', axis=1)
 # verify that the country codes of the two dataframes align
 assert( np.all(populations['Country Code'] ==
                net_proportion['Country Code']) )
@@ -170,7 +182,9 @@ internet_users\
 internet_users['Country Code'] = populations['Country Code']
 
 # country codes utils
-country_codes = pd.read_csv('src/w3techs/analysis/countries_codes_and_coordinates.csv')[['Alpha-2 code', 'Alpha-3 code']]
+country_codes = pd.read_csv(
+    relative_path_to('analysis', 'countries_codes_and_coordinates.csv')
+)[['Alpha-2 code', 'Alpha-3 code']]
 strip_quotes =  lambda x: x.replace('"', '').strip()
 alpha2s = country_codes['Alpha-2 code'].apply(strip_quotes)
 alpha3s = country_codes['Alpha-3 code'].apply(strip_quotes)

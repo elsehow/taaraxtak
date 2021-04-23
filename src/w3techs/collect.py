@@ -94,8 +94,13 @@ w3techs_sources = {
 # These are the markets we include to compute our Gini coefficients.
 # Their meaning and rationale are documented in w3techs/README.md
 included_markets = [
-    'web-hosting', 'ssl-certificate', 'proxy',  'data-centers',  'dns-server',
-    'server-location', 'top-level-domain',
+    'web-hosting',
+    'ssl-certificate',
+    'proxy',
+    'data-centers',
+    'dns-server',
+    'server-location',
+    'top-level-domain',
 ]
 
 
@@ -104,6 +109,7 @@ def collect (cur: cursor, conn: connection):
     Collect W3Techs data and write them to the database.
     '''
 
+    # Scrape W3Techs data
     for market_name, dic in w3techs_sources.items():
         logging.info(f'Scraping {market_name}')
         # scrape table from W3techs
@@ -118,6 +124,7 @@ def collect (cur: cursor, conn: connection):
         # commit all writes to db
         conn.commit()
 
+    # Compute gini coefficients
     for market in included_markets:
         logging.info(f'Computing gini for {market}')
         pop_weighted_gini = utils.population_weighted_gini(cur, market, pd.Timestamp(datetime.now()))

@@ -34,8 +34,7 @@ class ProviderMarketshare ():
                   marketshare: float,
                   time: pd.Timestamp
     ):
-        assert(type(name) == str)
-        assert(len(name)>0)
+        assert(is_nonempty_str(name))
         self.name = name
 
         if url == None:

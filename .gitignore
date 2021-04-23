@@ -1,6 +1,7 @@
 # taaraxtak-specific
-*.ipynb
+debug.ipynb
 config.py
+csv-data
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
