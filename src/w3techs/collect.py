@@ -104,10 +104,12 @@ included_markets = [
 ]
 
 
-def collect (cur: cursor, conn: connection):
+def collect(cur: cursor, conn: connection):
     '''
     Collect W3Techs data and write them to the database.
     '''
+
+    logging.debug('Beginning W3Techs.')
 
     # Scrape W3Techs data
     for market_name, dic in w3techs_sources.items():
@@ -119,8 +121,8 @@ def collect (cur: cursor, conn: connection):
                           market_name, pd.Timestamp(datetime.now()))
         marketshares = df.apply(extract, axis=1)
         # write all Marketshares to the cursor
-        [ marketshare.write_to_db(cur, conn, commit=False)
-          for marketshare in marketshares ]
+        [marketshare.write_to_db(cur, conn, commit=False)
+         for marketshare in marketshares]
         # commit all writes to db
         conn.commit()
 
@@ -129,3 +131,5 @@ def collect (cur: cursor, conn: connection):
         logging.info(f'Computing gini for {market}')
         pop_weighted_gini = utils.population_weighted_gini(cur, market, pd.Timestamp(datetime.now()))
         pop_weighted_gini.write_to_db(cur, conn)
+
+    logging.debug('W3Techs complete.')

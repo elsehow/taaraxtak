@@ -1,10 +1,14 @@
 # taaraxtak
 
+![python-workflow](https://github.com/elsehow/taaraxtak/actions/workflows/python-workflow.yml/badge.svg)
+
+
 taaraxtak is a platform for collecting, storing, and visualizing data about
 political dimensions of the Internet. See [some context on its
 motivation](https://nickmerrill.substack.com/p/the-story-so-far).
 
 See a live version at XXX
+
 
 # Install
 

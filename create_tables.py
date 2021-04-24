@@ -33,5 +33,4 @@ w3techs = partial(w3techs_create, cursor, connection)
 #
 # run
 #
-w3techs()
-
+# w3techs()

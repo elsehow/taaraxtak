@@ -2,7 +2,7 @@
 
 ## Pre-requisites
 
-- Python 3.6 or higher
+- Python 3.5 or higher
 - Postgres 10 or higher
 - Grafana server 7.5.4 or higher
 - Rust 1.41.0 or higher
@@ -13,6 +13,7 @@
 
 A [Python virtual environment](https://docs.python.org/3/library/venv.html) is recommended.
 
+0. Upgrade pip with `python -m pip install --upgrade pip`.
 1. Install pre-requisites with `pip3 install -r requirements.txt`. 
 2. Make sure Postgres is running. Make a database and a user with write access.
 3. Copy `config.example.py` to `config.py` and enter your credentials. 

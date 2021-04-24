@@ -3,14 +3,11 @@ import requests
 import numpy as np
 import pandas as pd
 from os import path
-from funcy import partial
-from datetime import datetime
 from bs4 import BeautifulSoup
 
 
 # types
 from psycopg2.extensions import cursor
-from psycopg2.extensions import connection
 from typing import Optional
 
 from src.w3techs.types import ProviderMarketshare
@@ -20,12 +17,13 @@ from src.w3techs.types import PopWeightedGini
 # Scrape utilities
 #
 
-def get_table (url):
-    html = requests.get(url).text
+
+def get_table(html):
     soup = BeautifulSoup(html, 'html.parser')
     return soup.find("table", {"class": "bars"})
 
-def get_provider_name (row):
+
+def get_provider_name(row):
     provider = row.find('a', recursive=False, href=True)
     if provider:
         return {
@@ -33,7 +31,8 @@ def get_provider_name (row):
             'url': provider['href'],
         }
 
-def get_provider_names (rows):
+
+def get_provider_names(rows):
     provider_names = []
     for row in rows:
         n = get_provider_name(row)
@@ -41,21 +40,25 @@ def get_provider_names (rows):
             provider_names.append(n)
     return provider_names
 
-def p2f (percentage_str):
+
+def p2f(percentage_str):
     return float(percentage_str.strip('%'))/100
 
-def get_marketshares (rows):
+
+def get_marketshares(rows):
     provider_marketshares = []
     for row in rows:
         try:
             perc = row.contents[0]
             if perc.endswith('%'):
                 provider_marketshares.append(p2f(perc))
-        except:
+        except (TypeError): # TODO - what is this error protecting against?
+            logging.warning(f'Cannot extract marketshare from row.')
             pass
     return provider_marketshares
 
-def get_marketshares_ssl (table):
+
+def get_marketshares_ssl(table):
     marketshares = []
     marketshare_rows = table.find_all("div", {"class": "bar2"})
     for row in marketshare_rows:
@@ -63,16 +66,10 @@ def get_marketshares_ssl (table):
         marketshares.append(p2f(perc))
     return marketshares
 
-def scrape_w3techs_table (w3techs: dict) -> pd.DataFrame:
 
-    w3techs_url = w3techs['url']
-    try:
-        double_table = w3techs['double_table']
-    except:
-        double_table = False
-
+def extract_table(html: str, double_table: bool = False) -> pd.DataFrame:
     # get request to w3techs; parse html
-    table = get_table(w3techs_url)
+    table = get_table(html)
 
     #
     # get names of providers from parsed html
@@ -94,33 +91,53 @@ def scrape_w3techs_table (w3techs: dict) -> pd.DataFrame:
         providers['marketshare'] = get_marketshares(marketshare_rows)
     return providers
 
+
+def scrape_w3techs_table(w3techs: dict) -> pd.DataFrame:
+    # read our config
+    w3techs_url = w3techs['url']
+    try:
+        is_double_table = w3techs['double_table']
+    except (KeyError):
+        is_double_table = False
+    # fetch the HTML
+    html = requests.get(w3techs_url).text
+    # parse the HTML
+    return extract_table(html, double_table=is_double_table)
+
 #
 # Data marshalling utilities
 #
 
+
 def relative_path_to(*args):
     dirname = path.dirname(__file__)
     return path.join(dirname, *args)
+
 
 provider_countries = pd.read_csv(
     relative_path_to('analysis', 'providers_labeled.csv')
 ).set_index('name').drop(['notes', 'url'], axis=1)
 provider_countries = provider_countries['country (alpha2)'].to_dict()
 
-def get_country (provider_name: str) -> str:
+
+def get_country(provider_name: str) -> str:
     '''
     Returns alpha2 code (str of length 2).
     '''
     try:
         alpha2 = provider_countries[provider_name]
-        if len(alpha2)==2:
+        if len(alpha2) == 2:
             return alpha2
         return None
-    except:
+    except (TypeError):
+        logging.info(f'Country code for {provider_name} is not a string: {alpha2}')
+        return None
+    except (KeyError):
         logging.info(f'Cannot find country for {provider_name}')
         return None
 
-def extract_from_row (market: str, time: pd.Timestamp, df_row: pd.Series) -> ProviderMarketshare:
+
+def extract_from_row(market: str, time: pd.Timestamp, df_row: pd.Series) -> ProviderMarketshare:
     '''
     Takes a row of a scraped dataframe and returns ProviderMarketshare.
     `market` and `time` are the first parameters because we partially apply them.
@@ -135,30 +152,30 @@ def extract_from_row (market: str, time: pd.Timestamp, df_row: pd.Series) -> Pro
     )
 
 
-
 #
 # Population-weighted gini tools
 # TODO Break into a different file?
 #
 prop_net_users = pd.read_csv(relative_path_to('analysis', 'prop_net_users.csv')).set_index('alpha2')
 
-def to_df (db_rows) -> pd.DataFrame:
+
+def to_df(db_rows) -> pd.DataFrame:
     # TODO put this in TYPES somehow?
     db_rows = pd.DataFrame(db_rows, columns=['name', 'url', 'jurisdiction_alpha2', 'market', 'marketshare', 'time'])
     return db_rows
 
-def fetch_rows (cur: cursor, market: str, date: pd.Timestamp) -> pd.DataFrame:
-    # TODO why the 12 hour window? too magic a number. does it relate to scrape
-    # interval? can it be set dynamically if so?
+
+def fetch_rows(cur: cursor, market: str, date: pd.Timestamp) -> pd.DataFrame:
+    # TODO why this window? a magic number.
     cur.execute(f'''
         SELECT * from provider_marketshare
         WHERE market = '{market}'
-        AND time BETWEEN timestamp '{date}' - interval '12 hour' AND  '{date}'
+        AND time BETWEEN timestamp '{date}' - interval '24 hour' AND  '{date}'
     ''')
     return to_df(cur.fetchall())
 
 
-def fetch_by_jurisdiction (cur: cursor, market:str, date: pd.Timestamp) -> pd.DataFrame:
+def fetch_by_jurisdiction(cur: cursor, market: str, date: pd.Timestamp) -> pd.DataFrame:
     '''
     Get a DataFrame mapping alpha2 codes to (mean) marketshares on a given date.
     '''
@@ -169,6 +186,7 @@ def fetch_by_jurisdiction (cur: cursor, market:str, date: pd.Timestamp) -> pd.Da
     # then group by each jurisdiction and take the sum of its marketshare
     rows = rows.groupby('jurisdiction_alpha2').sum()
     return rows
+
 
 def gini(array: np.array) -> float:
     """
@@ -189,14 +207,14 @@ def gini(array: np.array) -> float:
     # Values must be sorted:
     array = np.sort(array)
     # Index per array element:
-    index = np.arange(1,array.shape[0]+1)
+    index = np.arange(1, array.shape[0]+1)
     # Number of array elements:
     n = array.shape[0]
     # Gini coefficient:
-    return ((np.sum((2 * index - n  - 1) * array)) / (n * np.sum(array)))
+    return ((np.sum((2 * index - n - 1) * array)) / (n * np.sum(array)))
 
 
-def weighted_gini (marketshares: pd.Series, population_shares: pd.Series) -> float:
+def weighted_gini(marketshares: pd.Series, population_shares: pd.Series) -> float:
     '''
     Produce a gini in which marketshares are weighted by share of the population.
     '''
@@ -204,11 +222,14 @@ def weighted_gini (marketshares: pd.Series, population_shares: pd.Series) -> flo
     vs = weighted.fillna(0).values
     return gini(vs)
 
-def population_weighted_gini (cur: cursor, market: str, time: pd.Timestamp) -> Optional[PopWeightedGini]:
+
+def population_weighted_gini(cur: cursor, market: str, time: pd.Timestamp) -> Optional[PopWeightedGini]:
     by_juris = fetch_by_jurisdiction(cur, market, time)
     # if there are no values, None
-    if len(by_juris)==0:
+    if len(by_juris) == 0:
         return None
+
+    # TODO break out JUST this and test it with some mock data?
     # get current % of Internet using population
     relevant_year = str(time.year)
     pop_share_df = prop_net_users[relevant_year]

@@ -12,13 +12,16 @@ from typing import Optional
 
 import pandas as pd
 
-def is_nonempty_str (my_str: str) -> bool:
-    return (type(my_str) == str) & (len(my_str)>0)
 
-def is_float_0_1 (my_float: float) -> bool:
-    return (type(my_float) == float) & (my_float>=0) & (my_float<=1)
+def is_nonempty_str(my_str: str) -> bool:
+    return (type(my_str) == str) & (len(my_str) > 0)
 
-class ProviderMarketshare ():
+
+def is_float_0_1(my_float: float) -> bool:
+    return (type(my_float) == float) & (my_float >= 0) & (my_float <= 1)
+
+
+class ProviderMarketshare():
     '''
     Class for the table `provider marketshare`.
 
@@ -26,28 +29,27 @@ class ProviderMarketshare ():
 
     TODO - Check for SQL injection attacks.
     '''
-    def __init__ (self,
-                  name: str,
-                  url: Optional[str],
-                  jurisdiction_alpha2: Optional[str],
-                  market: str,
-                  marketshare: float,
-                  time: pd.Timestamp
-    ):
+    def __init__(self,
+                 name: str,
+                 url: Optional[str],
+                 jurisdiction_alpha2: Optional[str],
+                 market: str,
+                 marketshare: float,
+                 time: pd.Timestamp):
         assert(is_nonempty_str(name))
         self.name = name
 
-        if url == None:
+        if url is None:
             self.url = None
         else:
             assert(is_nonempty_str(url))
             self.url = url
 
-        if jurisdiction_alpha2 == None:
+        if jurisdiction_alpha2 is None:
             self.jurisdiction_alpha2 = None
         else:
             assert(type(jurisdiction_alpha2) == str)
-            assert(len(jurisdiction_alpha2)==2)
+            assert(len(jurisdiction_alpha2) == 2)
             self.jurisdiction_alpha2 = jurisdiction_alpha2
 
         assert(is_nonempty_str(market))
@@ -59,12 +61,11 @@ class ProviderMarketshare ():
         assert(type(time) == pd.Timestamp)
         self.time = time
 
-    def create_table (
+    def create_table(
             self,
             cur: cursor,
-            conn: connection,
-    ):
-        cmd = f'''
+            conn: connection):
+        cmd = '''
         CREATE TABLE provider_marketshare (
         name                VARCHAR NOT NULL,
         url                 VARCHAR,
@@ -77,14 +78,14 @@ class ProviderMarketshare ():
         cur.execute(cmd)
         conn.commit()
 
-    def write_to_db (
+    def write_to_db(
             self,
             cur: cursor,
             conn: connection,
             commit=True,
     ):
         cur.execute(
-            f"""
+            """
             INSERT INTO provider_marketshare
             (name, url, jurisdiction_alpha2, market, marketshare, time)
             VALUES
@@ -99,11 +100,12 @@ class ProviderMarketshare ():
             return conn.commit()
         return
 
-    def __str__ (self):
+    def __str__(self):
         return f'{self.name} {self.url} {self.jurisdiction_alpha2}  {self.market} {self.marketshare} {self.time}'
 
-    def __repr__ (self):
+    def __repr__(self):
         return self.__str__()
+
 
 class PopWeightedGini ():
     '''
@@ -116,8 +118,7 @@ class PopWeightedGini ():
     def __init__(self,
                  market: str,
                  gini: float,
-                 time: pd.Timestamp,
-    ):
+                 time: pd.Timestamp):
         assert(is_nonempty_str(market))
         self.market = market
 
@@ -127,12 +128,11 @@ class PopWeightedGini ():
         assert(type(time) == pd.Timestamp)
         self.time = time
 
-    def create_table (
+    def create_table(
             self,
             cur: cursor,
-            conn: connection,
-    ):
-        cmd = f'''
+            conn: connection):
+        cmd = '''
         CREATE TABLE pop_weighted_gini (
         market              VARCHAR NOT NULL,
         gini                NUMERIC NOT NULL,
@@ -142,14 +142,14 @@ class PopWeightedGini ():
         cur.execute(cmd)
         conn.commit()
 
-    def write_to_db (
+    def write_to_db(
             self,
             cur: cursor,
             conn: connection,
             commit=True,
     ):
         cur.execute(
-            f"""
+            """
             INSERT INTO pop_weighted_gini
             (market, gini, time)
             VALUES
@@ -159,14 +159,14 @@ class PopWeightedGini ():
             return conn.commit()
         return
 
-    def __str__ (self):
+    def __str__(self):
         return f'{self.market} {self.gini} {self.time}'
 
-    def __repr__ (self):
+    def __repr__(self):
         return self.__str__()
 
 
-def create_tables (cur: cursor, conn: connection):
+def create_tables(cur: cursor, conn: connection):
     '''
     Create database tables for W3Techs data.
     '''
