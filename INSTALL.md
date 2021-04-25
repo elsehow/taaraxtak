@@ -27,6 +27,6 @@ A [Python virtual environment](https://docs.python.org/3/library/venv.html) is r
    That user should NOT have write access.)
 2. In Grafana, make [an API key with Admin privileges](https://grafana.com/docs/grafana/latest/http_api/auth/)
 3. Copy `grafana-backup.example.json` to `grafana-backup.json`. Fill in your API key.
-3. Restore the dashboards with `grafana-backup --config=grafana-backup.json restore grafana/<archive_file>`.
+3. `pip install grafana-backup`, then restore the dashboards with `grafana-backup --config=grafana-backup.json restore grafana/<archive_file>`.
 
 Note: `grafana-backup` is installed via `requirements.txt` above.

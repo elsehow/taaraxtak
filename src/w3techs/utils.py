@@ -9,6 +9,10 @@ from bs4 import BeautifulSoup
 # types
 from psycopg2.extensions import cursor
 from typing import Optional
+from typing import List
+from bs4.element import NavigableString
+from bs4.element import Tag
+from bs4.element import ResultSet
 
 from src.w3techs.types import ProviderMarketshare
 from src.w3techs.types import PopWeightedGini
@@ -18,7 +22,7 @@ from src.w3techs.types import PopWeightedGini
 #
 
 
-def get_table(html):
+def get_table(html: str) -> Tag:
     soup = BeautifulSoup(html, 'html.parser')
     return soup.find("table", {"class": "bars"})
 
@@ -32,7 +36,7 @@ def get_provider_name(row):
         }
 
 
-def get_provider_names(rows):
+def get_provider_names(rows: ResultSet) -> List[str]:
     provider_names = []
     for row in rows:
         n = get_provider_name(row)
@@ -41,29 +45,29 @@ def get_provider_names(rows):
     return provider_names
 
 
-def p2f(percentage_str):
+def p2f(percentage_str: str) -> float:
     return float(percentage_str.strip('%'))/100
 
 
-def get_marketshares(rows):
+def get_marketshares(marketshare_rows: Tag) -> List[float]:
     provider_marketshares = []
-    for row in rows:
-        try:
-            perc = row.contents[0]
-            if perc.endswith('%'):
-                provider_marketshares.append(p2f(perc))
-        except (TypeError): # TODO - what is this error protecting against?
-            logging.warning(f'Cannot extract marketshare from row.')
-            pass
+    for row in marketshare_rows:
+        content = row.contents[0]
+        # if the contents are a string that ends with %
+        if (type(content) == NavigableString) and (content.endswith('%')):
+            # it's a percentage; turn it into a float
+            percentage = p2f(content)
+            provider_marketshares.append(percentage)
     return provider_marketshares
 
 
-def get_marketshares_ssl(table):
+def get_marketshares_ssl(table: Tag) -> List[float]:
     marketshares = []
     marketshare_rows = table.find_all("div", {"class": "bar2"})
     for row in marketshare_rows:
         perc = row.find_parent('tr').findChildren('td')[1].contents[0]
-        marketshares.append(p2f(perc))
+        percentage = p2f(perc)
+        marketshares.append(percentage)
     return marketshares
 
 
@@ -86,9 +90,11 @@ def extract_table(html: str, double_table: bool = False) -> pd.DataFrame:
 
     # combine them into a dataframe
     if double_table:
-        providers['marketshare'] = get_marketshares_ssl(table)
+        marketshares = get_marketshares_ssl(table)
     else:
-        providers['marketshare'] = get_marketshares(marketshare_rows)
+        marketshares = get_marketshares(marketshare_rows)
+
+    providers['marketshare'] = marketshares
     return providers
 
 
@@ -120,7 +126,7 @@ provider_countries = pd.read_csv(
 provider_countries = provider_countries['country (alpha2)'].to_dict()
 
 
-def get_country(provider_name: str) -> str:
+def get_country(provider_name: str) -> Optional[str]:
     '''
     Returns alpha2 code (str of length 2).
     '''
