@@ -16,13 +16,15 @@ See [INSTALL.md](INSTALL.md)
 
 # Run
 
-Start the collection server with
+For local development, start the collection server with
 
 ```
 python3 collect.py
 ```
 
-And check out your Grafana instance (by default, https://localhost:3000).
+Then check out your Grafana instance (by default, https://localhost:3000).
+
+To deploy a production environment, see [DEPLOY.md](DEPLOY.md)
 
 # Contributing
 

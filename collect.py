@@ -38,9 +38,7 @@ w3techs = partial(w3techs_collect, cursor, connection)
 # run
 #
 
-w3techs()
-
-schedule.every(6).hours.do(w3techs)
+schedule.every().day.at('09:00').do(w3techs)
 
 while True:
     schedule.run_pending()
