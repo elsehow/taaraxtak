@@ -32,3 +32,15 @@ If something has gone wrong in the production database, here are the steps to co
 4. Database administrator will produce an after-action report.
     - What did we expect to happen?
     - What actually happened?
+
+## Backing up production environment
+
+Linode takes automatic backups of the entire disk. 
+
+For database-specific backups, I have a user for which I've disabled password on sudo. On that, I make a bash script, and set a cronjob to execute it:
+
+```
+sudo -u postgres pg_dump taaraxtak | gzip -9c | ssh user@remote 'cat > taaraxtak-backup/taaraxtak_$(date +%Y-%m-%d-%H.%M.%S).sql.tar.gz'
+```
+
+This will produce dated backups of the database on a remote server, gzipping it to maximum compression, without writing anything to the production server's disk (preferable to save space).
