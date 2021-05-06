@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Network interference</title>
+
+    <!-- JQuery is not necessary, it is used for AJAX in this demo -->
+
+    <script src="js/jquery.min.js"></script>
+
+    <!-- must include Three.js library before Gio.js-->
+
+    <script src="js/three.min.js"></script>
+
+    <!-- must include the Gio.js library-->
+
+    <script src="js/gio.min.js"></script>
+
+    <link rel="stylesheet" href="css/common.css">
+
+    <style>
+
+
+     .data-button {
+
+       position: absolute;
+       left: 100px;
+       width: 150px;
+       height: 40px;
+       color: #cbcbcb;
+       text-align: center;
+       line-height: 40px;
+       cursor: pointer;
+       user-select: none;
+       box-sizing: border-box;
+       transition: 1s;
+       border-radius: 5px;
+       background-color: rgba(110, 110, 110, 0.8);
+
+     }
+
+     .data-button:hover {
+       color: #fff;
+       background-color: #929292;
+     }
+
+     .stat {
+       padding: 5px;
+     }
+
+     .incoming {
+       background-color: #154492;
+     }
+
+     .outgoing{
+       background-color: #DD380C;
+     }
+
+     #confirmed {
+       top: 100px;
+     }
+
+     #all {
+       top: 160px;
+     }
+
+     #globalArea {
+
+       height: 100%;
+       width: 100%;
+       margin: 0;
+       padding: 0;
+
+     }
+
+    </style>
+
+  </head>
+  <body>
+
+    <header id="header">Network interference</header>
+
+    <div id="globalArea"></div>
+
+    <div class="data-button" id="confirmed">Confirmed events</div>
+    <div class="data-button" id="all">All (anomalies)</div>
+
+    <script>
+
+     // global var to hold dataset ref
+     let DATASET = null;
+     let ACTIVE_DATASET = null;
+     let MAGIC_CONSTANT= 100000; // the viz multiplies number of attacks by this number. we need it to recover the actual attack count.
+     var container = document.getElementById( "globalArea" );
+
+     var controller = new GIO.Controller( container );
+
+     controller = controller.configure({
+       brightness: {
+         related:0.9,
+         mentioned:0.3,
+       },
+     });
+
+     let startCountry = 'US'
+     controller.setInitCountry(startCountry);
+     controller.lightenMentioned(true);
+     // no clicking on stuff that isn't in the dataset
+     controller.disableUnmentioned(true);
+     controller.onCountryPicked(updateInflowOutflowView);
+
+     $.ajax( {
+       url: "data/attacks.json",
+       type: "GET",
+       contentType: "application/json; charset=utf-8",
+       async: true,
+       dataType: "json",
+       success: function ( inputData ) {
+         // add data and init two globe when receive the data
+         controller.addData( inputData );
+         controller.init();
+         DATASET = inputData
+         setConfirmed()
+         controller.switchCountry(startCountry)
+         updateInflowOutflowView({ISOCode: startCountry})
+       }
+     } );
+
+     function computeInflowsOutflows (selectedCountry) {
+       let sum = lst => lst.reduce((a, b) => a+b, 0)
+       let sumFromDataset = (filterFn) =>
+         sum(ACTIVE_DATASET.filter(filterFn).map(x => x.v))/MAGIC_CONSTANT
+       let myAlpha2 = selectedCountry.ISOCode
+       let inflows = sumFromDataset(v => v.i==myAlpha2)
+       let outflows = sumFromDataset(v => v.e==myAlpha2)
+       return [myAlpha2, inflows, outflows]
+     }
+
+     function updateInflowOutflowView (selectedCountry) {
+       let [alpha2, inflow, outflow] = computeInflowsOutflows(selectedCountry);
+       let str = `${alpha2} - <span class="stat incoming"> Incoming: ${inflow}</span> <span class="stat outgoing">Outgoing: ${outflow}</span>`
+       $('#header').html(str)
+     }
+
+     function setConfirmed() {
+		   controller.switchDataSet('confirmed');
+       ACTIVE_DATASET = DATASET['confirmed']
+       controller.switchCountry(startCountry)
+       updateInflowOutflowView({ISOCode: startCountry})
+     }
+
+     function setAll () {
+		   controller.switchDataSet('all');
+       ACTIVE_DATASET = DATASET['all']
+       controller.switchCountry(startCountry)
+       updateInflowOutflowView({ISOCode: startCountry})
+     }
+
+	   $("#confirmed").click(setConfirmed)
+	   $("#all").click(setAll)
+
+    </script>
+
+  </body>
+</html>

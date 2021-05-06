@@ -2,7 +2,7 @@
   "general": {
     "debug": true,
     "verify_ssl": true,
-    "backup_dir": "grafana"
+    "backup_dir": "visualizations/grafana"
   },
   "grafana": {
     "url": "http://localhost:3000",

@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from os import path
 from bs4 import BeautifulSoup
-
+import src.shared.utils as shared_utils
 
 # types
 from psycopg2.extensions import cursor
@@ -99,7 +99,7 @@ def extract_table(html: str, double_table: bool = False) -> pd.DataFrame:
 
 
 def scrape_w3techs_table(w3techs: dict) -> pd.DataFrame:
-    # read our config
+    # read w3techs object described in local config
     w3techs_url = w3techs['url']
     try:
         is_double_table = w3techs['double_table']
@@ -115,41 +115,13 @@ def scrape_w3techs_table(w3techs: dict) -> pd.DataFrame:
 #
 
 
-def relative_path_to(*args):
-    dirname = path.dirname(__file__)
-    return path.join(dirname, *args)
-
-
-provider_countries = pd.read_csv(
-    relative_path_to('analysis', 'providers_labeled.csv')
-).set_index('name').drop(['notes', 'url'], axis=1)
-provider_countries = provider_countries['country (alpha2)'].to_dict()
-
-
-def get_country(provider_name: str) -> Optional[str]:
-    '''
-    Returns alpha2 code (str of length 2).
-    '''
-    try:
-        alpha2 = provider_countries[provider_name]
-        if len(alpha2) == 2:
-            return alpha2
-        return None
-    except (TypeError):
-        logging.info(f'Country code for {provider_name} is not a string: {alpha2}')
-        return None
-    except (KeyError):
-        logging.info(f'Cannot find country for {provider_name}')
-        return None
-
-
 def extract_from_row(market: str, time: pd.Timestamp, df_row: pd.Series) -> ProviderMarketshare:
     '''
     Takes a row of a scraped dataframe and returns ProviderMarketshare.
     `market` and `time` are the first parameters because we partially apply them.
     '''
     name, url, marketshare = df_row.values
-    jurisdiction = get_country(name)
+    jurisdiction = shared_utils.get_country(name)
     # NOTE - This type does ALL the validation.
     # Once data is in this type, it *should* be trustworthy.
     # See /design-notes.md for more detail on this pattern.
@@ -160,9 +132,8 @@ def extract_from_row(market: str, time: pd.Timestamp, df_row: pd.Series) -> Prov
 
 #
 # Population-weighted gini tools
-# TODO Break into a different file?
 #
-prop_net_users = pd.read_csv(relative_path_to('analysis', 'prop_net_users.csv')).set_index('alpha2')
+prop_net_users = pd.read_csv(shared_utils.path_to('src', 'w3techs', 'analysis', 'prop_net_users.csv')).set_index('alpha2')
 
 
 def to_df(db_rows) -> pd.DataFrame:
