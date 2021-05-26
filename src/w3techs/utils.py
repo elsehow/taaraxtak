@@ -136,7 +136,7 @@ def get_country(provider_name: str) -> Optional[str]:
             return alpha2
         return None
     except (TypeError):
-        logging.info(f'Country code for {provider_name} is not a string: {alpha2}')
+        logging.debug(f'Country code for {provider_name} is not a string: {alpha2}')
         return None
     except (KeyError):
         logging.info(f'Cannot find country for {provider_name}')
