@@ -108,6 +108,7 @@
          controller.init();
          DATASET = inputData
          setConfirmed()
+         controller.switchCountry(startCountry)
          updateInflowOutflowView({ISOCode: startCountry})
        }
      } );
@@ -132,11 +133,15 @@
      function setConfirmed() {
 		   controller.switchDataSet('confirmed');
        ACTIVE_DATASET = DATASET['confirmed']
+       controller.switchCountry(startCountry)
+       updateInflowOutflowView({ISOCode: startCountry})
      }
 
      function setAll () {
 		   controller.switchDataSet('all');
        ACTIVE_DATASET = DATASET['all']
+       controller.switchCountry(startCountry)
+       updateInflowOutflowView({ISOCode: startCountry})
      }
 
 	   $("#confirmed").click(setConfirmed)
