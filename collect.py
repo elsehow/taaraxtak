@@ -13,6 +13,7 @@ import coloredlogs
 from funcy import partial
 
 from src.w3techs.collect import collect as w3techs_collect
+from src.ooni.collect import collect as ooni_collect
 
 from config import config
 
@@ -33,12 +34,14 @@ logging.info('Connected to database.')
 
 # configure scrapers for the db
 w3techs = partial(w3techs_collect, cursor, connection)
+ooni = partial(ooni_collect, cursor, connection)
 
 #
 # run
 #
 
 schedule.every().day.at('09:00').do(w3techs)
+schedule.every(1).minutes.do(ooni)
 
 while True:
     schedule.run_pending()

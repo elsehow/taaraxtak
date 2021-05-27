@@ -17,6 +17,7 @@ import psycopg2
 from multiprocessing import Pool
 from typing import List
 
+from config import config
 from src.w3techs import utils as w3techs_utils
 
 # types
@@ -235,7 +236,7 @@ def ingest_api_measurement (measurement: dict) -> ooni_types.OONIWebConnectivity
     connection = psycopg2.connect(**config['postgres'])
     cursor = connection.cursor()
     blocking_type = get_blocking_type(measurement)
-    probe_alpha2 = Alpha2(measurement['probe_cc'])
+    probe_alpha2 = ooni_types.Alpha2(measurement['probe_cc'])
     input_url = measurement['input']
     anomaly = measurement['anomaly']
     confirmed = measurement['confirmed']
