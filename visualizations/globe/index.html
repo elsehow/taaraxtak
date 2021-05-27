@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Hello World (Simplest Usage) / Gio.js</title>
+    <title>Network interference</title>
 
     <!-- JQuery is not necessary, it is used for AJAX in this demo -->
 
@@ -66,7 +66,7 @@
   </head>
   <body>
 
-    <header>Network interference</header>
+    <header id="header">Network interference</header>
 
     <div id="globalArea"></div>
 
@@ -75,6 +75,9 @@
 
     <script>
 
+     // global var to hold dataset ref
+     let DATASET = null;
+     let ACTIVE_DATASET = null;
      var container = document.getElementById( "globalArea" );
 
      var controller = new GIO.Controller( container );
@@ -85,25 +88,70 @@
          mentioned:0.3,
        },
      });
-     controller.setInitCountry('US');
+
+     let startCountry = 'US'
+     controller.setInitCountry(startCountry);
      controller.lightenMentioned(true);
      // no clicking on stuff that isn't in the dataset
      controller.disableUnmentioned(true);
+     controller.onCountryPicked(updateInflowOutflowView);
 
-     var url = "data/attacks.json";
-     controller.addDataAsync( url, () => {
-       controller.init();
-       controller.switchDataSet('confirmed');
-     });
+     $.ajax( {
+       url: "data/attacks.json",
+       type: "GET",
+       contentType: "application/json; charset=utf-8",
+       async: true,
+       dataType: "json",
+       success: function ( inputData ) {
+         // add data and init two globe when receive the data
+         controller.addData( inputData );
+         controller.init();
+         DATASET = inputData
+         setConfirmed()
+         updateInflowOutflowView({ISOCode: startCountry})
+       }
+     } );
 
-	     $( "#confirmed" ).click( function () {
-		     controller.switchDataSet('confirmed');
-	     } );
+     /* var url = "data/attacks.json";
+      * controller.addDataAsync( url, () => {
+      *   controller.init();
+      *   controller.switchDataSet('confirmed');
+      *   // TODO may need to do an ajax call to set this var
+        myDataSet =
+     *   // TODO then do some simple filter/sum ops to get ins and outs
+     *   // TODO then put it in a div and we're done! header is good.
+     * }); */
 
-	     $( "#all" ).click( function () {
-		     controller.switchDataSet('all');
+     function computeInflowsOutflows (selectedCountry) {
+       let multConst = 100000; // magic number we mult our weights by for viz reasons
+       let sum = lst => lst.reduce((a, b) => a+b, 0)
+       let sumFromDataset = (filterFn) =>
+         sum(ACTIVE_DATASET.filter(filterFn).map(x => x.v))/multConst
+       let myAlpha2 = selectedCountry.ISOCode
+       let inflows = sumFromDataset(v => v.i==myAlpha2)
+       let outflows = sumFromDataset(v => v.e==myAlpha2)
+       return [myAlpha2, inflows, outflows]
+     }
 
-	   } );
+     function updateInflowOutflowView (selectedCountry) {
+       let [alpha2, inflow, outflow] = computeInflowsOutflows(selectedCountry);
+       let str = `${alpha2} - Incoming: ${inflow} Outgoing: ${outflow}`
+       $('#header').html(str)
+     }
+
+     function setConfirmed() {
+		   controller.switchDataSet('confirmed');
+       ACTIVE_DATASET = DATASET['confirmed']
+     }
+
+     function setAll () {
+		   controller.switchDataSet('all');
+       ACTIVE_DATASET = DATASET['all']
+     }
+
+	   $( "#confirmed" ).click(setConfirmed)
+
+	   $( "#all" ).click(setConfirmed)
 
     </script>
 
