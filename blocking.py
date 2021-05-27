@@ -18,7 +18,7 @@ import pandas as pd
 
 
 logging.basicConfig()
-# logger = logging.getLogger("poll-ooni")
+logger = logging.getLogger("poll-ooni")
 # logger.setLevel(logging.DEBUG)
 coloredlogs.install()
 coloredlogs.install(level='DEBUG')
@@ -37,7 +37,7 @@ import psycopg2
 # connect to the db
 my_connection = psycopg2.connect(**config['postgres'])
 my_cursor = my_connection.cursor()
-logging.info('Connected to database.')
+logger.info('Connected to database.')
 
 
 # In[71]:
@@ -102,7 +102,7 @@ def api_query (query: str, results=[], queries=1, max_queries=None) -> list:
         return results
     except Exception as inst:
         # if we have an error,
-        logging.warning("Error querying API: {!s}".format(inst))
+        logger.warning("Error querying API: {!s}".format(inst))
         # just return what we've collected
         # (at worst, `results` will be `[]`)
         return results
@@ -468,7 +468,7 @@ class OONIWebConnectivityTest():
             assert(type(measurement_start_time) == pd.Timestamp)
             # if the timestamp is in the future...
             if is_in_future(measurement_start_time):
-                logging.debug(f'Time is in future: {measurement_start_time}. Setting time to now.')
+                logger.debug(f'Time is in future: {measurement_start_time}. Setting time to now.')
                 # set the time to now.
                 self.measurement_start_time = now()
             # otherwise
@@ -623,7 +623,7 @@ def get_latest_reading_time (cur: cursor) -> Optional[datetime]:
         cur.execute('SELECT measurement_start_time from ooni_web_connectivity_test ORDER BY measurement_start_time DESC')
         return cur.fetchone()[0]
     except TypeError:
-        logging.info('No recent measurement found!')
+        logger.info('No recent measurement found!')
         return None
     
 most_recent_reading = get_latest_reading_time(my_cursor)
@@ -680,16 +680,16 @@ ms = query_recent_measurements()
 def scrape (cur: cursor, conn: connection) -> None:
     maybe_t = get_latest_reading_time(cur)
     if maybe_t is None:
-        logging.info('Querying recent measurements.')
+        logger.info('Querying recent measurements.')
         ms = query_recent_measurements()
     else:
-        logging.debug(f'Querying results after {maybe_t}.')
+        logger.debug(f'Querying results after {maybe_t}.')
         ms = query_measurements_after(maybe_t)
-    logging.debug(f'Retrieved {len(ms)} results.')
+    logger.debug(f'Retrieved {len(ms)} results.')
     ingested = ingest_api_measurements(ms)
-    logging.debug(f'Ingested {len(ingested)} results.')
+    logger.debug(f'Ingested {len(ingested)} results.')
     write_to_db(cur, conn, ingested)
-    logging.info(f'Wrote {len(ingested)} results to database.')
+    logger.info(f'Wrote {len(ingested)} results to database.')
 
 
 # In[88]:
