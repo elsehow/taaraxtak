@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World (Simplest Usage) / Gio.js</title>
+
+    <!-- JQuery is not necessary, it is used for AJAX in this demo -->
+
+    <script src="js/jquery.min.js"></script>
+
+    <!-- must include Three.js library before Gio.js-->
+
+    <script src="js/three.min.js"></script>
+
+    <!-- must include the Gio.js library-->
+
+    <script src="../build/gio.min.js"></script>
+
+    <link rel="stylesheet" href="css/common.css">
+
+    <style>
+
+
+     .data-button {
+
+       position: absolute;
+       left: 100px;
+       width: 150px;
+       height: 40px;
+       color: #cbcbcb;
+       text-align: center;
+       line-height: 40px;
+       cursor: pointer;
+       user-select: none;
+       box-sizing: border-box;
+       transition: 1s;
+       border-radius: 5px;
+       background-color: rgba(110, 110, 110, 0.8);
+
+     }
+
+     .data-button:hover {
+       color: #fff;
+       background-color: #929292;
+     }
+
+     #confirmed {
+       top: 100px;
+     }
+
+     #all {
+       top: 160px;
+     }
+
+     #globalArea {
+
+       height: 100%;
+       width: 100%;
+       margin: 0;
+       padding: 0;
+
+     }
+
+    </style>
+
+  </head>
+  <body>
+
+    <header>Network interference</header>
+
+    <div id="globalArea"></div>
+
+    <div class="data-button" id="confirmed">Confirmed events</div>
+    <div class="data-button" id="all">All (anomalies)</div>
+
+    <script>
+
+     var container = document.getElementById( "globalArea" );
+
+     var controller = new GIO.Controller( container );
+
+     controller = controller.configure({
+       brightness: {
+         related:0.9,
+         mentioned:0.3,
+       },
+     });
+     controller.setInitCountry('US');
+     controller.lightenMentioned(true);
+     // no clicking on stuff that isn't in the dataset
+     controller.disableUnmentioned(true);
+
+     var url = "data/attacks.json";
+     controller.addDataAsync( url, () => {
+       controller.init();
+       controller.switchDataSet('confirmed');
+     });
+
+	     $( "#confirmed" ).click( function () {
+		     controller.switchDataSet('confirmed');
+	     } );
+
+	     $( "#all" ).click( function () {
+		     controller.switchDataSet('all');
+
+	   } );
+
+    </script>
+
+  </body>
+</html>
