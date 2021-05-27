@@ -112,16 +112,6 @@
        }
      } );
 
-     /* var url = "data/attacks.json";
-      * controller.addDataAsync( url, () => {
-      *   controller.init();
-      *   controller.switchDataSet('confirmed');
-      *   // TODO may need to do an ajax call to set this var
-        myDataSet =
-     *   // TODO then do some simple filter/sum ops to get ins and outs
-     *   // TODO then put it in a div and we're done! header is good.
-     * }); */
-
      function computeInflowsOutflows (selectedCountry) {
        let multConst = 100000; // magic number we mult our weights by for viz reasons
        let sum = lst => lst.reduce((a, b) => a+b, 0)
@@ -149,9 +139,8 @@
        ACTIVE_DATASET = DATASET['all']
      }
 
-	   $( "#confirmed" ).click(setConfirmed)
-
-	   $( "#all" ).click(setConfirmed)
+	   $("#confirmed").click(setConfirmed)
+	   $("#all").click(setAll)
 
     </script>
 
