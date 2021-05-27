@@ -10,7 +10,16 @@ import geoip2.database
 import pandas as pd
 from typing import Tuple
 from datetime import timedelta
+from tldextract import extract
+import idna
+import pytz
+import psycopg2
+from multiprocessing import Pool
+from typing import List
 
+from src.w3techs import utils as w3techs_utils
+
+# types
 from psycopg2.extensions import cursor
 from psycopg2.extensions import connection
 
@@ -71,15 +80,29 @@ def api_query (query: str, results=[], queries=1, max_queries=None) -> list:
         return results
     except Exception as inst:
         # if we have an error,
-        logging.warning("Error querying API: {!s}".format(inst))
+        logger.warning("Error querying API: {!s}".format(inst))
         # just return what we've collected
         # (at worst, `results` will be `[]`)
         return results
 
+BASE_QUERY = 'measurements?test_name=web_connectivity&anomaly=true&order_by=test_start_time&limit=1000'
+
 def query_recent_measurements (max_queries=5) -> list:
     '''Queries all recent measurements, up to specified maximum number of queries.'''
-    base_query = 'measurements?test_name=web_connectivity&anomaly=true&order_by=test_start_time&limit=1000'
-    return api_query(base_query, max_queries=max_queries)
+    return api_query(BASE_QUERY, max_queries=max_queries)
+
+def query_measurements_after (time: datetime, **kwargs) -> list:
+    '''Queries all measurements after time.'''
+
+    def fmt_dt (t: datetime):
+        return t.strftime("%Y-%m-%dT%H:%M:%S")
+    # format timezone-aware date into UTC fo querying
+    utc_dt = to_utc(time)
+    # format it into the query url
+    dt_str = fmt_dt(utc_dt)
+    query_str = BASE_QUERY + f'&since={dt_str}'
+    # issue the query
+    return api_query(query_str, **kwargs)
 
 def get_blocking_type (measurement) -> str:
     '''Get blocking type, if available.'''
@@ -119,6 +142,7 @@ def ip_to_alpha2 (ip: str) -> Optional[ooni_types.Alpha2]:
 #
 # Cacheing IP to hostname mappings
 #
+
 def retrieve_ip (cur: cursor, hostname: str) -> Optional[Tuple[datetime, str]]:
     cur.execute('''
     SELECT time, ip from ip_hostname_mapping
@@ -158,3 +182,85 @@ def url_to_alpha2 (cur: cursor, conn: connection, url: str) -> Optional[ooni_typ
     if maybe_ip is None:
         return None
     return ip_to_alpha2(maybe_ip)
+
+#
+# Get TLD jurisdiction
+#
+def get_tld_jurisdiction (url: str) -> Optional[ooni_types.Alpha2]:
+    '''
+    Takes a URL and gets an Alpha 2
+    representing the jurisdiction of the URL's top-level domain.
+    '''
+    hostname = get_hostname(url)
+    try:
+        # sometimes, the hostname is just an IP
+        # we can't get any TLD from that of course,
+        IP(hostname) # so we'll just return None
+        return None
+    except:
+        pass
+    # decode IDNA (internationalized) hostnames
+    # e.g. http://xn--80aaifmgl1achx.xn--p1ai/
+    decoded_hostname = idna.decode(hostname)
+    tld = extract(decoded_hostname)
+    # get last item in url
+    # e.g., '.com.br' should be '.br'
+    tld = tld.suffix
+    cc_tld = tld.split('.')[-1]
+    # put it
+    cc_tld_str = f'.{cc_tld}'
+    cc =  w3techs_utils.get_country(cc_tld_str)
+    if cc is not None:
+        return ooni_types.Alpha2(cc)
+    logger.warning(f'No TLD jurisidiction found for {url}')
+    return None
+
+#
+# Querying and ingesting measurements
+#
+def get_latest_reading_time (cur: cursor) -> Optional[datetime]:
+    '''Get time of most recent measurement in database'''
+    try:
+        cur.execute('SELECT measurement_start_time from ooni_web_connectivity_test ORDER BY measurement_start_time DESC')
+        return cur.fetchone()[0]
+    except TypeError:
+        logger.info('No recent measurement found!')
+        return None
+
+def ingest_api_measurement (measurement: dict) -> ooni_types.OONIWebConnectivityTest:
+    '''
+    Marshall from API format to our type.
+    '''
+    # make a connection and cursor (for this thread)
+    connection = psycopg2.connect(**config['postgres'])
+    cursor = connection.cursor()
+    blocking_type = get_blocking_type(measurement)
+    probe_alpha2 = Alpha2(measurement['probe_cc'])
+    input_url = measurement['input']
+    anomaly = measurement['anomaly']
+    confirmed = measurement['confirmed']
+    report_id = measurement['report_id']
+    input_ip_alpha2 = url_to_alpha2(cursor, connection, input_url) 
+    tld_jurisdiction_alpha2 = get_tld_jurisdiction(input_url)
+    measurement_start_time = pd.Timestamp(measurement['measurement_start_time'])
+    return ooni_types.OONIWebConnectivityTest(
+        blocking_type,
+        probe_alpha2,
+        input_url,
+        anomaly,
+        confirmed,
+        report_id,
+        input_ip_alpha2,
+        tld_jurisdiction_alpha2,
+        measurement_start_time
+    )
+
+def ingest_api_measurements (measurements: List[dict]) -> List[ooni_types.OONIWebConnectivityTest]:
+    with Pool() as p:
+        return p.map(ingest_api_measurement, measurements)
+
+def write_to_db (cur: cursor, conn: connection, connectivity_tests: List[ooni_types.OONIWebConnectivityTest]) -> None:
+    for t in connectivity_tests:
+        t.write_to_db(cur, conn, commit=False)
+    conn.commit()
+

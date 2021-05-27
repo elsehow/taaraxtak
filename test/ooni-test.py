@@ -2,6 +2,7 @@ import psycopg2
 import testing.postgresql
 import pytest
 from IPy import IP
+import pandas as pd
 
 from datetime import datetime
 from datetime import timedelta
@@ -53,11 +54,12 @@ def test_alpha2_codes ():
     with pytest.raises(Exception):
         not_ok = ooni_types.Alpha2(5)
 
-# def test_query_ooni ():
-#     ms = ooni_utils.query_recent_measurements(max_queries=1)
-#     assert(len(ms) > 1)
-#     # should not error
-#     ooni_utils.get_blocking_type(ms[0])
+def test_query_ooni ():
+    ms = ooni_utils.query_recent_measurements(max_queries=1)
+    assert(len(ms) > 1)
+    # should not error
+    ooni_utils.get_blocking_type(ms[0])
+    ms = ooni_utils.query_measurements_after(datetime.now(), max_queries=1)
 
 def test_get_hostname ():
     assert(ooni_utils.get_hostname('http://daylight.berkeley.edu/cool-article')=='daylight.berkeley.edu')
@@ -110,3 +112,36 @@ def test_url_to_alpha2 (postgresdb):
     # look it up
     alpha2 = ooni_utils.url_to_alpha2(cur, conn, 'https://wikipedia.org/')
     assert(str(alpha2) == 'US')
+
+def test_tld_juris ():
+    juris = ooni_utils.get_tld_jurisdiction('http://mycool.com.br')
+    assert(str(juris) == 'BR')
+    juris = ooni_utils.get_tld_jurisdiction('https://1.1.1.1/dns-query?dns=q80BAAABAAAAAAAAA3d3dwdleGFtcGxlA2NvbQAAAQAB')
+    assert(juris == None)
+    # tricky one! internationalized URL
+    juris = ooni_utils.get_tld_jurisdiction('http://xn--80aaifmgl1achx.xn--p1ai/')
+    assert(str(juris) == 'RU')
+
+def test_is_in_future ():
+    future = ooni_utils.now() + timedelta(days=5)
+    assert(ooni_utils.is_in_future(future) == True)
+    past = ooni_utils.now() - timedelta(days=5)
+    assert(ooni_utils.is_in_future(past) == False)
+
+def test_get_latest_reading_time (postgresdb):
+    cur, conn = postgresdb
+    my_time = pd.Timestamp('2000-01-01 21:41:37+00:00')
+    dummy = ooni_types.OONIWebConnectivityTest(
+        'example',
+        ooni_types.Alpha2('US'),
+        'example',
+        False,
+        False,
+        'example',
+        ooni_types.Alpha2('US'),
+        ooni_types.Alpha2('US'),
+        my_time
+    )
+    dummy.write_to_db(cur, conn)
+    most_recent_reading = ooni_utils.get_latest_reading_time(cur)
+    assert(most_recent_reading == my_time)
