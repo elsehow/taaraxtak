@@ -47,7 +47,9 @@ def test_alpha2_codes ():
     assert(str(ok) == 'US')
     with pytest.raises(Exception):
         not_ok = ooni_types.Alpha2('blah')
+    with pytest.raises(Exception):
         not_ok = ooni_types.Alpha2()
+    with pytest.raises(Exception):
         not_ok = ooni_types.Alpha2(5)
 
 # def test_query_ooni ():
@@ -57,7 +59,7 @@ def test_alpha2_codes ():
 #     ooni_utils.get_blocking_type(ms[0])
 
 def test_get_hostname ():
-    assert(ooni_utils.get_hostname('http://www.wikipedia.org')=='wikipedia.org')
+    assert(ooni_utils.get_hostname('http://www.wikipedia.org/cool-article')=='www.wikipedia.org')
 
 def test_fetch_ip ():
     hn = ooni_utils.get_hostname('http://www.wikipedia.org')
@@ -65,4 +67,6 @@ def test_fetch_ip ():
     # should not error
     IP(maybe_ip)
 
-
+def test_ip_to_alpha2 ():
+    alpha2 = ooni_utils.ip_to_alpha2('135.180.160.100')
+    assert(alpha == 'US')

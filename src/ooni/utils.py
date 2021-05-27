@@ -7,6 +7,9 @@ import pytz
 import pandas as pd
 import socket
 import urllib.parse
+import geoip2
+
+import src.ooni.types as ooni_types
 
 from typing import Optional
 from psycopg2.extensions import cursor
@@ -76,4 +79,17 @@ def fetch_ip_from_hostname (hostname: str) ->  str:
         return socket.gethostbyname(hostname)
     except Exception as inst:
             logger.warning(f"Error looking up IP of hostname {hostname}: {inst}")
+            return None
+
+#
+# Get location from IP
+#
+def ip_to_alpha2 (ip: str) -> Optional[ooni_types.Alpha2]:
+    with geoip2.database.Reader('dbip-country-lite-2021-05.mmdb') as reader:
+        try:
+            response = reader.country(ip)
+            return ooni_types.Alpha2(response.country.iso_code)
+        except Exception as inst:
+            # if we have an error,
+            logger.warning(f"Error looking up country code of IP {ip}: {inst}")
             return None
