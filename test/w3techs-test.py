@@ -11,6 +11,7 @@ import pytest
 
 @pytest.fixture(scope='function')
 def postgresdb(request):
+    '''Postgres testing mock'''
     postgresql = testing.postgresql.Postgresql()
     conn = psycopg2.connect(**postgresql.dsn())
     cur = conn.cursor()
