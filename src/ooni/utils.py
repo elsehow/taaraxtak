@@ -4,16 +4,37 @@ import requests
 from time import sleep
 from datetime import datetime
 import pytz
-import pandas as pd
 import socket
 import urllib.parse
-import geoip2
+import geoip2.database
+import pandas as pd
+from typing import Tuple
+from datetime import timedelta
+
+from psycopg2.extensions import cursor
+from psycopg2.extensions import connection
 
 import src.ooni.types as ooni_types
 
 from typing import Optional
-from psycopg2.extensions import cursor
-from psycopg2.extensions import connection
+
+
+logging.basicConfig()
+logger = logging.getLogger("src.ooni.utils")
+# logger.setLevel(logging.DEBUG)
+coloredlogs.install()
+coloredlogs.install(level='DEBUG')
+# coloredlogs.install(level='INFO')
+
+#
+# utils
+#
+
+def now () -> pd.Timestamp:
+    return pd.Timestamp.utcnow()
+
+def is_in_future (timestamp: pd.Timestamp) -> bool:
+    return timestamp > now()
 
 def to_utc (t: datetime) -> datetime:
     return t.astimezone(pytz.utc)
@@ -84,8 +105,9 @@ def fetch_ip_from_hostname (hostname: str) ->  str:
 #
 # Get location from IP
 #
+
 def ip_to_alpha2 (ip: str) -> Optional[ooni_types.Alpha2]:
-    with geoip2.database.Reader('dbip-country-lite-2021-05.mmdb') as reader:
+    with geoip2.database.Reader('src/ooni/analysis/dbip-country-lite-2021-05.mmdb') as reader:
         try:
             response = reader.country(ip)
             return ooni_types.Alpha2(response.country.iso_code)
@@ -93,3 +115,46 @@ def ip_to_alpha2 (ip: str) -> Optional[ooni_types.Alpha2]:
             # if we have an error,
             logger.warning(f"Error looking up country code of IP {ip}: {inst}")
             return None
+
+#
+# Cacheing IP to hostname mappings
+#
+def retrieve_ip (cur: cursor, hostname: str) -> Optional[Tuple[datetime, str]]:
+    cur.execute('''
+    SELECT time, ip from ip_hostname_mapping
+    WHERE hostname=hostname
+    ORDER BY time DESC
+    ''')
+    return cur.fetchone()
+
+
+def lookup_ip (cur: cursor, conn: connection, hostname: str,
+               cache_expiry: timedelta = timedelta(days=1)) -> str:
+    '''
+    Looks up an IP address from a hostname in the cache.
+    If the IP address was recorded more than `cache_expiry` ago, it'll fetch a new IP
+    '''
+    # if we have a result in our DB
+    time_ip_tuple = retrieve_ip(cur, hostname)
+    if time_ip_tuple:
+        time, ip = time_ip_tuple
+        # and that result is fresh enough
+        is_expired = (now() - cache_expiry) > to_utc(time)
+        if not is_expired:
+            # return it
+            return ip
+    # otherwise
+    # fetch IP with a query
+    ip = fetch_ip_from_hostname(hostname)
+    # write that mapping to the DB for the future
+    mapping = ooni_types.IPHostnameMapping(ip, hostname, now())
+    mapping.write_to_db(cur, conn)
+    # return the IP
+    return ip
+
+def url_to_alpha2 (cur: cursor, conn: connection, url: str) -> Optional[ooni_types.Alpha2]:
+    hostname = get_hostname(url)
+    maybe_ip = lookup_ip(cur, conn, hostname)
+    if maybe_ip is None:
+        return None
+    return ip_to_alpha2(maybe_ip)

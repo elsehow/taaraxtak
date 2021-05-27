@@ -12,7 +12,6 @@ from typing import Optional
 
 import pandas as pd
 
-
 def is_nonempty_str(my_str: str) -> bool:
     return (type(my_str) == str) & (len(my_str) > 0)
 
