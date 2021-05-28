@@ -24,8 +24,8 @@ logging.basicConfig()
 logger = logging.getLogger("taaraxtak:collect")
 # logger.setLevel(logging.DEBUG)
 coloredlogs.install()
-# coloredlogs.install(level='INFO')
-coloredlogs.install(level='DEBUG')
+coloredlogs.install(level='INFO')
+# coloredlogs.install(level='DEBUG')
 
 # connect to the db
 connection = psycopg2.connect(**config['postgres'])
