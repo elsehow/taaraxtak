@@ -7,9 +7,6 @@
 # (see file by the same name in repository's root).
 
 import logging
-import pandas as pd
-from funcy import partial
-from datetime import datetime
 
 from psycopg2.extensions import cursor
 from psycopg2.extensions import connection

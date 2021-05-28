@@ -1,5 +1,4 @@
 import logging
-import coloredlogs
 import pandas as pd
 from IPy import IP
 
@@ -8,6 +7,7 @@ import src.ooni.utils
 from psycopg2.extensions import cursor
 from psycopg2.extensions import connection
 
+
 class Alpha2 ():
     '''
     Represents an ISO alpha-2 country code.
@@ -15,7 +15,7 @@ class Alpha2 ():
     def __init__(self,
                  country_code: str):
         assert(src.ooni.utils.is_nonempty_str(country_code))
-        assert(len(country_code)==2)
+        assert(len(country_code) == 2)
         self.country_code = country_code
 
     def __str__(self):
@@ -24,11 +24,12 @@ class Alpha2 ():
     def __repr__(self):
         return self.__str__()
 
+
 #
 # Cacheing IP
 #
 class IPHostnameMapping:
-    def __init__ (
+    def __init__(
         self,
         ip: str,
         hostname: str,
@@ -73,8 +74,7 @@ class IPHostnameMapping:
             (%s, %s, %s)
             """, (self.hostname,
                   self.ip,
-                  self.time
-                 ))
+                  self.time))
         if commit:
             return conn.commit()
         return
@@ -92,61 +92,63 @@ class OONIWebConnectivityTest():
     This is where validation happens.
     TODO - Check for SQL injection attacks.
     '''
-    def __init__(self,
-                  blocking_type: str,
-                  probe_alpha2: Alpha2,
-                  input_url: str,
-                  anomaly: bool,
-                  confirmed: bool,
-                  report_id: str,
-                  input_ip_alpha2: Alpha2,
-                  tld_jurisdiction_alpha2: Alpha2,
-                  measurement_start_time: pd.Timestamp):
-            # we only want stuff where blocking actually happened
-            assert(blocking_type != False)
-            self.blocking_type = blocking_type
+    def __init__(
+           self,
+           blocking_type: str,
+           probe_alpha2: Alpha2,
+           input_url: str,
+           anomaly: bool,
+           confirmed: bool,
+           report_id: str,
+           input_ip_alpha2: Alpha2,
+           tld_jurisdiction_alpha2: Alpha2,
+           measurement_start_time: pd.Timestamp
+    ):
+        # we only want stuff where blocking actually happened
+        assert(blocking_type is not False)
+        self.blocking_type = blocking_type
 
-            assert(type(probe_alpha2) == Alpha2)
-            self.probe_alpha2 = str(probe_alpha2)
+        assert(type(probe_alpha2) == Alpha2)
+        self.probe_alpha2 = str(probe_alpha2)
 
-            assert(src.ooni.utils.is_nonempty_str(input_url))
-            self.input_url = input_url
+        assert(src.ooni.utils.is_nonempty_str(input_url))
+        self.input_url = input_url
 
-            assert(type(anomaly) == bool)
-            self.anomaly = anomaly
+        assert(type(anomaly) == bool)
+        self.anomaly = anomaly
 
-            assert(type(confirmed) == bool)
-            self.confirmed = confirmed
+        assert(type(confirmed) == bool)
+        self.confirmed = confirmed
 
-            assert(src.ooni.utils.is_nonempty_str(report_id))
-            self.report_id = report_id
+        assert(src.ooni.utils.is_nonempty_str(report_id))
+        self.report_id = report_id
 
-            # type is optional
-            assert((type(input_ip_alpha2) == Alpha2) or
-                   (input_ip_alpha2 == None))
-            if input_ip_alpha2 == None:
-                self.input_ip_alpha2 = None
-            else:
-                self.input_ip_alpha2 = str(input_ip_alpha2)
+        # type is optional
+        assert((type(input_ip_alpha2) == Alpha2) or
+               (input_ip_alpha2 is None))
+        if input_ip_alpha2 is None:
+            self.input_ip_alpha2 = None
+        else:
+            self.input_ip_alpha2 = str(input_ip_alpha2)
 
-            # type is optional
-            assert((type(tld_jurisdiction_alpha2) == Alpha2) or
-                   (tld_jurisdiction_alpha2 == None))
-            if tld_jurisdiction_alpha2 == None:
-                self.tld_jurisdiction_alpha2 = None
-            else:
-                self.tld_jurisdiction_alpha2 = str(tld_jurisdiction_alpha2)
+        # type is optional
+        assert((type(tld_jurisdiction_alpha2) == Alpha2) or
+               (tld_jurisdiction_alpha2 is None))
+        if tld_jurisdiction_alpha2 is None:
+            self.tld_jurisdiction_alpha2 = None
+        else:
+            self.tld_jurisdiction_alpha2 = str(tld_jurisdiction_alpha2)
 
-            assert(type(measurement_start_time) == pd.Timestamp)
-            # if the timestamp is in the future...
-            if src.ooni.utils.is_in_future(measurement_start_time):
-                logging.debug(f'Time is in future: {measurement_start_time}. Setting time to now.')
-                # set the time to now.
-                self.measurement_start_time = src.ooni.utils.now()
-            # otherwise
-            else:
-                # set it to whenever it was reported
-                self.measurement_start_time = measurement_start_time
+        assert(type(measurement_start_time) == pd.Timestamp)
+        # if the timestamp is in the future...
+        if src.ooni.utils.is_in_future(measurement_start_time):
+            logging.debug(f'Time is in future: {measurement_start_time}. Setting time to now.')
+            # set the time to now.
+            self.measurement_start_time = src.ooni.utils.now()
+        # otherwise
+        else:
+            # set it to whenever it was reported
+            self.measurement_start_time = measurement_start_time
 
     def create_table(
             self,
@@ -197,13 +199,14 @@ class OONIWebConnectivityTest():
     def __str__(self):
         # TODO make DRY with write_to_db?
         # TODO do this in general?
-        return f'{self.measurement_start_time} - {self.probe_alpha2} -> {self.input_ip_alpha2}, {self.tld_jurisdiction_alpha2} ({self.blocking_type} {self.input_url})'
+        return f'{self.measurement_start_time} - {self.probe_alpha2} ->' +\
+            ' {self.input_ip_alpha2}, {self.tld_jurisdiction_alpha2} ({self.blocking_type} {self.input_url})'
 
     def __repr__(self):
         return self.__str__()
 
 
-def create_tables (cur: cursor, conn: connection):
+def create_tables(cur: cursor, conn: connection):
     IPHostnameMapping('198.35.26.96', 'wikipedia.org', src.ooni.utils.now()).create_table(cur, conn)
     # dummy data
     OONIWebConnectivityTest(
