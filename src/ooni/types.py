@@ -1,6 +1,9 @@
-import src.ooni.utils
+import logging
+import coloredlogs
 import pandas as pd
 from IPy import IP
+
+import src.ooni.utils
 
 from psycopg2.extensions import cursor
 from psycopg2.extensions import connection
@@ -34,11 +37,11 @@ class IPHostnameMapping:
         assert(src.ooni.utils.is_nonempty_str(hostname))
         self.hostname = hostname
         # this will throw if `ip` isn't valid
-        ip = IP(ip)
+        parsed_ip = IP(ip)
         # check that it's a public IP!
-        assert(ip.iptype() == 'PUBLIC')
+        assert(parsed_ip.iptype() == 'PUBLIC')
         # we'll just save the IP as a string for simplicity's sake
-        self.ip = ip.strNormal()
+        self.ip = parsed_ip.strNormal()
         assert(type(time) == pd.Timestamp)
         self.time = time
 
@@ -139,7 +142,7 @@ class OONIWebConnectivityTest():
             if src.ooni.utils.is_in_future(measurement_start_time):
                 logging.debug(f'Time is in future: {measurement_start_time}. Setting time to now.')
                 # set the time to now.
-                self.measurement_start_time = now()
+                self.measurement_start_time = src.ooni.utils.now()
             # otherwise
             else:
                 # set it to whenever it was reported

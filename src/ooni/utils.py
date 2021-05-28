@@ -16,6 +16,7 @@ import pytz
 import psycopg2
 from multiprocessing import Pool
 from typing import List
+from IPy import IP
 
 from config import config
 from src.w3techs import utils as w3techs_utils
@@ -27,6 +28,7 @@ from psycopg2.extensions import connection
 import src.ooni.types as ooni_types
 
 from typing import Optional
+from typing import Dict
 
 
 logging.basicConfig()
@@ -74,7 +76,8 @@ def api_query (query: str, results=[], queries=1, max_queries=None) -> list:
             return results
         if next_url:
             # sleep so as to not overwhelm the endpoint
-            sleep(config['sleep-times']['ooni-paginate'])
+            sleep_time: int = config['sleep-ooni-paginate']
+            sleep(sleep_time)
             # remove base url to perfrom the query
             next_url = next_url.split('api/v1/')[1]
             return api_query(next_url, results, queries+1, max_queries)
@@ -105,7 +108,7 @@ def query_measurements_after (time: datetime, **kwargs) -> list:
     # issue the query
     return api_query(query_str, **kwargs)
 
-def get_blocking_type (measurement) -> str:
+def get_blocking_type (measurement) -> Optional[str]:
     '''Get blocking type, if available.'''
     try:
         return measurement['scores']['analysis']['blocking_type']
@@ -116,15 +119,15 @@ def get_blocking_type (measurement) -> str:
 # Get IP from URL
 #
 
-def get_hostname (url):
+def get_hostname (url: str) -> str:
     return urllib.parse.urlparse(url).netloc
 
-def fetch_ip_from_hostname (hostname: str) ->  str:
+def fetch_ip_from_hostname (hostname: str) ->  Optional[str]:
     try:
         return socket.gethostbyname(hostname)
     except Exception as inst:
-            logger.warning(f"Error looking up IP of hostname {hostname}: {inst}")
-            return None
+        logger.warning(f"Error looking up IP of hostname {hostname}: {inst}")
+        return None
 
 #
 # Get location from IP
@@ -154,7 +157,7 @@ def retrieve_ip (cur: cursor, hostname: str) -> Optional[Tuple[datetime, str]]:
 
 
 def lookup_ip (cur: cursor, conn: connection, hostname: str,
-               cache_expiry: timedelta = timedelta(days=1)) -> str:
+               cache_expiry: timedelta = timedelta(days=1)) -> Optional[str]:
     '''
     Looks up an IP address from a hostname in the cache.
     If the IP address was recorded more than `cache_expiry` ago, it'll fetch a new IP
@@ -170,12 +173,12 @@ def lookup_ip (cur: cursor, conn: connection, hostname: str,
             return ip
     # otherwise
     # fetch IP with a query
-    ip = fetch_ip_from_hostname(hostname)
+    maybe_ip: Optional[str] = fetch_ip_from_hostname(hostname)
     # write that mapping to the DB for the future
-    mapping = ooni_types.IPHostnameMapping(ip, hostname, now())
+    mapping = ooni_types.IPHostnameMapping(maybe_ip, hostname, now())
     mapping.write_to_db(cur, conn)
     # return the IP
-    return ip
+    return maybe_ip
 
 def url_to_alpha2 (cur: cursor, conn: connection, url: str) -> Optional[ooni_types.Alpha2]:
     hostname = get_hostname(url)
