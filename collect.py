@@ -41,7 +41,7 @@ ooni = partial(ooni_collect, cursor, connection)
 #
 
 schedule.every().day.at('09:00').do(w3techs)
-schedule.every(1).minutes.do(ooni)
+schedule.every(5).minutes.do(ooni)
 
 while True:
     schedule.run_pending()
