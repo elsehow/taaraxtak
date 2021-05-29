@@ -29,6 +29,7 @@ import src.ooni.types as ooni_types
 
 from typing import Optional
 
+
 # how many seconds to wait between paginating
 # (so as not to overwhelm the OONI API endpoint)
 OONI_SLEEP_PAGINATE = 0.25
@@ -41,6 +42,8 @@ coloredlogs.install()
 coloredlogs.install(level='DEBUG')
 # coloredlogs.install(level='INFO')
 
+# disable noisy logging by filelock (called by TLDExtract to deal with its cache)
+logging.getLogger("filelock").setLevel(logging.ERROR)
 
 #
 # utils
