@@ -78,6 +78,7 @@
      // global var to hold dataset ref
      let DATASET = null;
      let ACTIVE_DATASET = null;
+     let MAGIC_CONSTANT= 100000; // the viz multiplies number of attacks by this number. we need it to recover the actual attack count. 
      var container = document.getElementById( "globalArea" );
 
      var controller = new GIO.Controller( container );
@@ -114,10 +115,9 @@
      } );
 
      function computeInflowsOutflows (selectedCountry) {
-       let multConst = 100000; // magic number we mult our weights by for viz reasons
        let sum = lst => lst.reduce((a, b) => a+b, 0)
        let sumFromDataset = (filterFn) =>
-         sum(ACTIVE_DATASET.filter(filterFn).map(x => x.v))/multConst
+         sum(ACTIVE_DATASET.filter(filterFn).map(x => x.v))/MAGIC_CONSTANT
        let myAlpha2 = selectedCountry.ISOCode
        let inflows = sumFromDataset(v => v.i==myAlpha2)
        let outflows = sumFromDataset(v => v.e==myAlpha2)
