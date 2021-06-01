@@ -6,10 +6,12 @@
 # collect.py - collects data and saves it in the db.
 # (see file by the same name in repository's root).
 
+import psycopg2
 import logging
 import pandas as pd
 from funcy import partial
 from datetime import datetime
+
 
 import src.w3techs.utils as utils
 
@@ -109,7 +111,7 @@ def collect(postgres_config: dict):
     logging.debug('Beginning W3Techs.')
 
     conn = psycopg2.connect(**postgres_config)
-    cur = connection.cursor()
+    cur = conn.cursor()
     logging.debug('Connected to database.')
 
     # Scrape W3Techs data

@@ -16,6 +16,7 @@ import psycopg2
 from multiprocessing import Pool
 from typing import List
 from IPy import IP
+from funcy import partial
 
 
 import src.shared.utils as shared_utils
@@ -23,6 +24,7 @@ import src.shared.utils as shared_utils
 # types
 from psycopg2.extensions import cursor
 from psycopg2.extensions import connection
+from multithreading.Pool import IMapIterator
 
 import src.ooni.types as ooni_types
 import src.shared.types as shared_types
@@ -258,7 +260,7 @@ def get_latest_reading_time(cur: cursor) -> Optional[datetime]:
         return None
 
 
-def ingest_api_measurement(measurement: dict, postgres_config: dict) -> ooni_types.OONIWebConnectivityTest:
+def ingest_api_measurement(postgres_config: dict, measurement: dict) -> ooni_types.OONIWebConnectivityTest:
     '''
     Marshall from API format to our type.
     '''
@@ -288,9 +290,10 @@ def ingest_api_measurement(measurement: dict, postgres_config: dict) -> ooni_typ
     )
 
 
-def ingest_api_measurements(measurements: List[dict]) -> List[ooni_types.OONIWebConnectivityTest]:
+def ingest_api_measurements(measurements: List[dict], postgres_config: dict) -> IMapIterator[ooni_types.OONIWebConnectivityTest]:
+    my_ingest = partial(ingest_api_measurement, postgres_config)
     with Pool() as p:
-        return p.map(ingest_api_measurement, measurements)
+        return p.imap(my_ingest, measurements)
 
 
 def write_to_db(cur: cursor, conn: connection, connectivity_tests: List[ooni_types.OONIWebConnectivityTest]) -> None:

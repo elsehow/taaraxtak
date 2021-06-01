@@ -7,6 +7,7 @@
 # (see file by the same name in repository's root).
 
 import logging
+import psycopg2
 
 import src.ooni.utils as utils
 
@@ -18,7 +19,7 @@ def collect(postgres_config: dict):
     logging.debug('Beginning OONI.')
 
     conn = psycopg2.connect(**postgres_config)
-    cur = connection.cursor()
+    cur = conn.cursor()
     logging.debug('Connected to database.')
 
     # get most recent time represented in the DB
