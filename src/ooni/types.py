@@ -2,27 +2,12 @@ import logging
 import pandas as pd
 from IPy import IP
 
+import src.shared.utils as shared_utils
+import src.shared.types as shared_types
 import src.ooni.utils
 
 from psycopg2.extensions import cursor
 from psycopg2.extensions import connection
-
-
-class Alpha2 ():
-    '''
-    Represents an ISO alpha-2 country code.
-    '''
-    def __init__(self,
-                 country_code: str):
-        assert(src.ooni.utils.is_nonempty_str(country_code))
-        assert(len(country_code) == 2)
-        self.country_code = country_code
-
-    def __str__(self):
-        return f'{self.country_code}'
-
-    def __repr__(self):
-        return self.__str__()
 
 
 #
@@ -35,7 +20,7 @@ class IPHostnameMapping:
         hostname: str,
         time: pd.Timestamp,
     ):
-        assert(src.ooni.utils.is_nonempty_str(hostname))
+        assert(shared_utils.is_nonempty_str(hostname))
         self.hostname = hostname
         # this will throw if `ip` isn't valid
         parsed_ip = IP(ip)
@@ -95,23 +80,23 @@ class OONIWebConnectivityTest():
     def __init__(
            self,
            blocking_type: str,
-           probe_alpha2: Alpha2,
+           probe_alpha2: shared_types.Alpha2,
            input_url: str,
            anomaly: bool,
            confirmed: bool,
            report_id: str,
-           input_ip_alpha2: Alpha2,
-           tld_jurisdiction_alpha2: Alpha2,
+           input_ip_alpha2: shared_types.Alpha2,
+           tld_jurisdiction_alpha2: shared_types.Alpha2,
            measurement_start_time: pd.Timestamp
     ):
         # we only want stuff where blocking actually happened
         assert(blocking_type is not False)
         self.blocking_type = blocking_type
 
-        assert(type(probe_alpha2) == Alpha2)
+        assert(type(probe_alpha2) == shared_types.Alpha2)
         self.probe_alpha2 = str(probe_alpha2)
 
-        assert(src.ooni.utils.is_nonempty_str(input_url))
+        assert(shared_utils.is_nonempty_str(input_url))
         self.input_url = input_url
 
         assert(type(anomaly) == bool)
@@ -120,11 +105,11 @@ class OONIWebConnectivityTest():
         assert(type(confirmed) == bool)
         self.confirmed = confirmed
 
-        assert(src.ooni.utils.is_nonempty_str(report_id))
+        assert(shared_utils.is_nonempty_str(report_id))
         self.report_id = report_id
 
         # type is optional
-        assert((type(input_ip_alpha2) == Alpha2) or
+        assert((type(input_ip_alpha2) == shared_types.Alpha2) or
                (input_ip_alpha2 is None))
         if input_ip_alpha2 is None:
             self.input_ip_alpha2 = None
@@ -132,7 +117,7 @@ class OONIWebConnectivityTest():
             self.input_ip_alpha2 = str(input_ip_alpha2)
 
         # type is optional
-        assert((type(tld_jurisdiction_alpha2) == Alpha2) or
+        assert((type(tld_jurisdiction_alpha2) == shared_types.Alpha2) or
                (tld_jurisdiction_alpha2 is None))
         if tld_jurisdiction_alpha2 is None:
             self.tld_jurisdiction_alpha2 = None
@@ -211,12 +196,12 @@ def create_tables(cur: cursor, conn: connection):
     # dummy data
     OONIWebConnectivityTest(
         'example',
-        Alpha2('US'),
+        shared_types.Alpha2('US'),
         'example',
         False,
         False,
         'example',
-        Alpha2('US'),
-        Alpha2('US'),
+        shared_types.Alpha2('US'),
+        shared_types.Alpha2('US'),
         pd.Timestamp('2000-01-01 21:41:37+00:00')
     ).create_table(cur, conn)

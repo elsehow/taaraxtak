@@ -1,5 +1,7 @@
 import src.w3techs.utils as utils
 import src.w3techs.types as types
+import src.shared.types as shared_types
+
 import pandas as pd
 import numpy as np
 
@@ -66,7 +68,7 @@ def test_provider_marketshare_type(postgresdb):
     cur, conn = postgresdb
 
     ex_ms = types.ProviderMarketshare(
-        'Foo', None, 'NL', 'ssl-certificate', 0.5, pd.Timestamp('2021-04-20')
+        'Foo', None, shared_types.Alpha2('NL'), 'ssl-certificate', 0.5, pd.Timestamp('2021-04-20')
     )
     ex_ms.write_to_db(cur, conn)
 
@@ -134,12 +136,12 @@ def test_compute_pop_weighted_gini(postgresdb):
     # add a provider marketshare
     # tiny netherlands has 50% of the world's market
     types.ProviderMarketshare(
-        'Foo', None, 'NL', 'ssl-certificate',
+        'Foo', None, shared_types.Alpha2('NL'), 'ssl-certificate',
         0.5, pd.Timestamp('2021-04-20')
     ).write_to_db(cur, conn)
     # US has the rest
     types.ProviderMarketshare(
-        'Foo', None, 'US', 'ssl-certificate',
+        'Foo', None, shared_types.Alpha2('US'), 'ssl-certificate',
         0.5, pd.Timestamp('2021-04-20')
     ).write_to_db(cur, conn)
 

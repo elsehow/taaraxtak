@@ -19,13 +19,14 @@ from IPy import IP
 
 
 from config import config
-from src.w3techs import utils as w3techs_utils
+import src.shared.utils as shared_utils
 
 # types
 from psycopg2.extensions import cursor
 from psycopg2.extensions import connection
 
 import src.ooni.types as ooni_types
+import src.shared.types as shared_types
 
 from typing import Optional
 
@@ -49,6 +50,7 @@ logging.getLogger("filelock").setLevel(logging.ERROR)
 # utils
 #
 
+
 def now() -> pd.Timestamp:
     return pd.Timestamp.utcnow()
 
@@ -60,13 +62,6 @@ def is_in_future(timestamp: pd.Timestamp) -> bool:
 def to_utc(t: datetime) -> datetime:
     return t.astimezone(pytz.utc)
 
-
-# TODO make this dry! it's shared with w3techs rn
-def is_nonempty_str(my_str: str) -> bool:
-    is_str = type(my_str) == str
-    if is_str:
-        return len(my_str) > 0
-    return False
 
 #
 # OONI querying
@@ -141,7 +136,6 @@ def get_hostname(url: str) -> str:
     return netloc
 
 
-
 def fetch_ip_from_hostname(hostname: str) -> Optional[str]:
     try:
         return socket.gethostbyname(hostname)
@@ -154,11 +148,11 @@ def fetch_ip_from_hostname(hostname: str) -> Optional[str]:
 #
 
 
-def ip_to_alpha2(ip: str) -> Optional[ooni_types.Alpha2]:
+def ip_to_alpha2(ip: str) -> Optional[shared_types.Alpha2]:
     with geoip2.database.Reader('src/ooni/analysis/dbip-country-lite-2021-05.mmdb') as reader:
         try:
             response = reader.country(ip)
-            return ooni_types.Alpha2(response.country.iso_code)
+            return shared_types.Alpha2(response.country.iso_code)
         except Exception as inst:
             # if we have an error,
             logger.warning(f"Error looking up country code of IP {ip}: {inst}")
@@ -203,7 +197,7 @@ def lookup_ip(cur: cursor, conn: connection, hostname: str,
     return maybe_ip
 
 
-def url_to_alpha2(cur: cursor, conn: connection, url: str) -> Optional[ooni_types.Alpha2]:
+def url_to_alpha2(cur: cursor, conn: connection, url: str) -> Optional[shared_types.Alpha2]:
     hostname = get_hostname(url)
     maybe_ip = lookup_ip(cur, conn, hostname)
     if maybe_ip is None:
@@ -222,7 +216,7 @@ extract_tld = tldextract.TLDExtract(cache_dir='my-tld-cache')
 # extract_tld = tldextract.TLDExtract()
 
 
-def get_tld_jurisdiction(url: str) -> Optional[ooni_types.Alpha2]:
+def get_tld_jurisdiction(url: str) -> Optional[shared_types.Alpha2]:
     '''
     Takes a URL and gets an Alpha 2
     representing the jurisdiction of the URL's top-level domain.
@@ -245,9 +239,9 @@ def get_tld_jurisdiction(url: str) -> Optional[ooni_types.Alpha2]:
     cc_tld = tld.split('.')[-1]
     # put it
     cc_tld_str = f'.{cc_tld}'
-    cc = w3techs_utils.get_country(cc_tld_str)
+    cc = shared_utils.get_country(cc_tld_str)
     if cc is not None:
-        return ooni_types.Alpha2(cc)
+        return shared_types.Alpha2(cc)
     logger.warning(f'No TLD jurisidiction found for {url}')
     return None
 
@@ -273,7 +267,7 @@ def ingest_api_measurement(measurement: dict) -> ooni_types.OONIWebConnectivityT
     connection = psycopg2.connect(**config['postgres'])
     cursor = connection.cursor()
     blocking_type = get_blocking_type(measurement)
-    probe_alpha2 = ooni_types.Alpha2(measurement['probe_cc'])
+    probe_alpha2 = shared_types.Alpha2(measurement['probe_cc'])
     input_url = measurement['input']
     anomaly = measurement['anomaly']
     confirmed = measurement['confirmed']

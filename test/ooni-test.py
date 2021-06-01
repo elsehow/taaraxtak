@@ -4,16 +4,19 @@ import pytest
 from IPy import IP
 import pandas as pd
 
+
 from datetime import datetime
 from datetime import timedelta
 
+
 import src.ooni.utils as ooni_utils
 import src.ooni.types as ooni_types
+import src.shared.types as shared_types
 
 
 # TODO make DRY with other test - test utils?
 @pytest.fixture(scope='function')
-def postgresdb (request):
+def postgresdb(request):
     '''Postgres testing mock'''
     postgresql = testing.postgresql.Postgresql()
     conn = psycopg2.connect(**postgresql.dsn())
@@ -31,50 +34,37 @@ def postgresdb (request):
 # def my_db_enabled_test (postgresdb):
 #     return
 
-def test_to_utc ():
+def test_to_utc():
     t = datetime(2021, 5, 27, 21, 40, 17, 486566)
     t_utc = ooni_utils.to_utc(t)
     assert(t_utc.hour == 4)
 
-def test_is_nonempty_str ():
-    ok = ooni_utils.is_nonempty_str('hi')
-    assert(ok == True)
-    not_ok = ooni_utils.is_nonempty_str('')
-    assert(not_ok == False)
-    not_ok = ooni_utils.is_nonempty_str(5)
-    assert(not_ok == False)
 
-def test_alpha2_codes ():
-    ok = ooni_types.Alpha2('US')
-    assert(str(ok) == 'US')
-    with pytest.raises(Exception):
-        not_ok = ooni_types.Alpha2('blah')
-    with pytest.raises(Exception):
-        not_ok = ooni_types.Alpha2()
-    with pytest.raises(Exception):
-        not_ok = ooni_types.Alpha2(5)
-
-def test_query_ooni ():
+def test_query_ooni():
     ms = ooni_utils.query_recent_measurements(max_queries=1)
     assert(len(ms) > 1)
     # should not error
     ooni_utils.get_blocking_type(ms[0])
     ms = ooni_utils.query_measurements_after(datetime.now(), max_queries=1)
 
-def test_get_hostname ():
-    assert(ooni_utils.get_hostname('http://daylight.berkeley.edu/cool-article')=='daylight.berkeley.edu')
 
-def test_fetch_ip ():
+def test_get_hostname():
+    assert(ooni_utils.get_hostname('http://daylight.berkeley.edu/cool-article') == 'daylight.berkeley.edu')
+
+
+def test_fetch_ip():
     hn = ooni_utils.get_hostname('https://berkeley.edu')
     maybe_ip = ooni_utils.fetch_ip_from_hostname(hn)
     # should not error
     IP(maybe_ip)
 
-def test_ip_to_alpha2 ():
+
+def test_ip_to_alpha2():
     alpha2 = ooni_utils.ip_to_alpha2('35.163.72.93')
     assert(str(alpha2) == 'US')
 
-def test_IPHostnameMapping (postgresdb):
+
+def test_IPHostnameMapping(postgresdb):
     cur, conn = postgresdb
     my_ip = '198.35.26.96'
     t = ooni_utils.now()
@@ -90,7 +80,8 @@ def test_IPHostnameMapping (postgresdb):
     ip = ooni_utils.lookup_ip(cur, conn, 'wikipedia.org')
     assert(ip == my_ip)
 
-def test_cache_expiry (postgresdb):
+
+def test_cache_expiry(postgresdb):
     # lookup ip when cache IS NOT VALID
     cur, conn = postgresdb
     my_ip = '162.00.00.01'
@@ -101,7 +92,8 @@ def test_cache_expiry (postgresdb):
     # should fetch the real address and deliver me something other than my fake one.
     assert(ip != my_ip)
 
-def test_url_to_alpha2 (postgresdb):
+
+def test_url_to_alpha2(postgresdb):
     # lookup ip when cache IS NOT VALID
     cur, conn = postgresdb
     # make a DB reading
@@ -113,35 +105,38 @@ def test_url_to_alpha2 (postgresdb):
     alpha2 = ooni_utils.url_to_alpha2(cur, conn, 'https://wikipedia.org/')
     assert(str(alpha2) == 'US')
 
-def test_tld_juris ():
+
+def test_tld_juris():
     juris = ooni_utils.get_tld_jurisdiction('http://mycool.com.br')
     assert(str(juris) == 'BR')
     juris = ooni_utils.get_tld_jurisdiction('https://1.1.1.1/dns-query?dns=q80BAAABAAAAAAAAA3d3dwdleGFtcGxlA2NvbQAAAQAB')
-    assert(juris == None)
+    assert(juris is None)
     # tricky one! internationalized URL
     juris = ooni_utils.get_tld_jurisdiction('http://xn--80aaifmgl1achx.xn--p1ai/')
     assert(str(juris) == 'RU')
     juris = ooni_utils.get_tld_jurisdiction('http://www.sansat.net:25461')
     assert(str(juris) == 'US')
 
-def test_is_in_future ():
-    future = ooni_utils.now() + timedelta(days=5)
-    assert(ooni_utils.is_in_future(future) == True)
-    past = ooni_utils.now() - timedelta(days=5)
-    assert(ooni_utils.is_in_future(past) == False)
 
-def test_get_latest_reading_time (postgresdb):
+def test_is_in_future():
+    future = ooni_utils.now() + timedelta(days=5)
+    assert(ooni_utils.is_in_future(future) is True)
+    past = ooni_utils.now() - timedelta(days=5)
+    assert(ooni_utils.is_in_future(past) is False)
+
+
+def test_get_latest_reading_time(postgresdb):
     cur, conn = postgresdb
     my_time = pd.Timestamp('2000-01-01 21:41:37+00:00')
     dummy = ooni_types.OONIWebConnectivityTest(
         'example',
-        ooni_types.Alpha2('US'),
+        shared_types.Alpha2('US'),
         'example',
         False,
         False,
         'example',
-        ooni_types.Alpha2('US'),
-        ooni_types.Alpha2('US'),
+        shared_types.Alpha2('US'),
+        shared_types.Alpha2('US'),
         my_time
     )
     dummy.write_to_db(cur, conn)
