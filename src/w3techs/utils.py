@@ -99,7 +99,7 @@ def extract_table(html: str, double_table: bool = False) -> pd.DataFrame:
 
 
 def scrape_w3techs_table(w3techs: dict) -> pd.DataFrame:
-    # read our config
+    # read w3techs object described in local config
     w3techs_url = w3techs['url']
     try:
         is_double_table = w3techs['double_table']
