@@ -8,17 +8,18 @@
 
 import logging
 
-from psycopg2.extensions import cursor
-from psycopg2.extensions import connection
-
 import src.ooni.utils as utils
 
 
-def collect(cur: cursor, conn: connection):
+def collect(postgres_config: dict):
     '''
     Collect OONI data and write them to the database.
     '''
     logging.debug('Beginning OONI.')
+
+    conn = psycopg2.connect(**postgres_config)
+    cur = connection.cursor()
+    logging.debug('Connected to database.')
 
     # get most recent time represented in the DB
     maybe_t = utils.get_latest_reading_time(cur)
@@ -34,7 +35,7 @@ def collect(cur: cursor, conn: connection):
         ms = utils.query_measurements_after(maybe_t)
     # marshall them into our format (validating htem in the process)
     logging.debug(f'Retrieved {len(ms)} results.')
-    ingested = utils.ingest_api_measurements(ms)
+    ingested = utils.ingest_api_measurements(ms, postgres_config)
     logging.debug(f'Ingested {len(ingested)} results.')
     # and write them to the database
     utils.write_to_db(cur, conn, ingested)

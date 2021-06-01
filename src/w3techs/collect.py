@@ -11,9 +11,6 @@ import pandas as pd
 from funcy import partial
 from datetime import datetime
 
-from psycopg2.extensions import cursor
-from psycopg2.extensions import connection
-
 import src.w3techs.utils as utils
 
 # sources we're scraping from
@@ -104,12 +101,16 @@ included_markets = [
 ]
 
 
-def collect(cur: cursor, conn: connection):
+def collect(postgres_config: dict):
     '''
     Collect W3Techs data and write them to the database.
     '''
 
     logging.debug('Beginning W3Techs.')
+
+    conn = psycopg2.connect(**postgres_config)
+    cur = connection.cursor()
+    logging.debug('Connected to database.')
 
     # Scrape W3Techs data
     for market_name, dic in w3techs_sources.items():

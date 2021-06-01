@@ -28,13 +28,11 @@ coloredlogs.install(level='INFO')
 # coloredlogs.install(level='DEBUG')
 
 # connect to the db
-connection = psycopg2.connect(**config['postgres'])
-cursor = connection.cursor()
-logging.info('Connected to database.')
+postgres_config = config['postgres']
 
 # configure scrapers for the db
-w3techs = partial(w3techs_collect, cursor, connection)
-ooni = partial(ooni_collect, cursor, connection)
+w3techs = partial(postgres_config)
+ooni = partial(postgres_config)
 
 #
 # run

@@ -13,7 +13,6 @@ def is_nonempty_str(my_str: str) -> bool:
         return len(my_str) > 0
     return False
 
-
 #
 # File I/O
 #

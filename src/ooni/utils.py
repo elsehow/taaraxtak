@@ -18,7 +18,6 @@ from typing import List
 from IPy import IP
 
 
-from config import config
 import src.shared.utils as shared_utils
 
 # types
@@ -259,12 +258,13 @@ def get_latest_reading_time(cur: cursor) -> Optional[datetime]:
         return None
 
 
-def ingest_api_measurement(measurement: dict) -> ooni_types.OONIWebConnectivityTest:
+def ingest_api_measurement(measurement: dict, postgres_config: dict) -> ooni_types.OONIWebConnectivityTest:
     '''
     Marshall from API format to our type.
     '''
     # make a connection and cursor (for this thread)
-    connection = psycopg2.connect(**config['postgres'])
+    # connection = psycopg2.connect(**config['postgres'])
+    connection = psycopg2.connect(**postgres_config)
     cursor = connection.cursor()
     blocking_type = get_blocking_type(measurement)
     probe_alpha2 = shared_types.Alpha2(measurement['probe_cc'])
