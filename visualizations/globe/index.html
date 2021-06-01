@@ -44,6 +44,18 @@
        background-color: #929292;
      }
 
+     .stat {
+       padding: 5px;
+     }
+
+     .incoming {
+       background-color: #154492;
+     }
+
+     .outgoing{
+       background-color: #DD380C;
+     }
+
      #confirmed {
        top: 100px;
      }
@@ -126,7 +138,7 @@
 
      function updateInflowOutflowView (selectedCountry) {
        let [alpha2, inflow, outflow] = computeInflowsOutflows(selectedCountry);
-       let str = `${alpha2} - Incoming: ${inflow} Outgoing: ${outflow}`
+       let str = `${alpha2} - <span class="stat incoming"> Incoming: ${inflow}</span> <span class="stat outgoing">Outgoing: ${outflow}</span>`
        $('#header').html(str)
      }
 

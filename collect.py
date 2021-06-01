@@ -31,8 +31,8 @@ coloredlogs.install(level='INFO')
 postgres_config = config['postgres']
 
 # configure scrapers for the db
-w3techs = partial(postgres_config)
-ooni = partial(postgres_config)
+w3techs = partial(w3techs_collect, postgres_config)
+ooni = partial(ooni_collect, postgres_config)
 
 #
 # run

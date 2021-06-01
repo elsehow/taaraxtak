@@ -291,13 +291,10 @@ def ingest_api_measurement(postgres_config: dict, measurement: dict) -> ooni_typ
     )
 
 
-def ingest_api_measurements(measurements: List[dict], postgres_config: dict) -> IMapIterator:
-    '''
-    Returns IMapIterator[ooni_types.OONIWebConnectivityTest]:
-    '''
+def ingest_api_measurements(measurements: List[dict], postgres_config: dict) -> List[ooni_types.OONIWebConnectivityTest]:
     my_ingest = partial(ingest_api_measurement, postgres_config)
     with Pool() as p:
-        return p.imap(my_ingest, measurements)
+        return p.map(my_ingest, measurements)
 
 
 def write_to_db(cur: cursor, conn: connection, connectivity_tests: List[ooni_types.OONIWebConnectivityTest]) -> None:
