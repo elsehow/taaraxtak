@@ -3,6 +3,7 @@ import testing.postgresql
 import pytest
 from IPy import IP
 import pandas as pd
+import pytz
 
 
 from datetime import datetime
@@ -35,7 +36,8 @@ def postgresdb(request):
 #     return
 
 def test_to_utc():
-    t = datetime(2021, 5, 27, 21, 40, 17, 486566)
+    tz = pytz.timezone("US/Pacific")
+    t = tz.localize(datetime(2021, 5, 27, 21, 40, 17, 486566))
     t_utc = ooni_utils.to_utc(t)
     assert(t_utc.hour == 4)
 
