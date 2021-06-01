@@ -14,6 +14,7 @@ import tldextract
 import idna
 import psycopg2
 from multiprocessing import Pool
+
 from typing import List
 from IPy import IP
 from funcy import partial
@@ -24,7 +25,7 @@ import src.shared.utils as shared_utils
 # types
 from psycopg2.extensions import cursor
 from psycopg2.extensions import connection
-from multiprocessing.Pool import IMapIterator
+from multiprocessing.pool import IMapIterator
 
 import src.ooni.types as ooni_types
 import src.shared.types as shared_types
@@ -290,7 +291,10 @@ def ingest_api_measurement(postgres_config: dict, measurement: dict) -> ooni_typ
     )
 
 
-def ingest_api_measurements(measurements: List[dict], postgres_config: dict) -> IMapIterator[ooni_types.OONIWebConnectivityTest]:
+def ingest_api_measurements(measurements: List[dict], postgres_config: dict) -> IMapIterator:
+    '''
+    Returns IMapIterator[ooni_types.OONIWebConnectivityTest]:
+    '''
     my_ingest = partial(ingest_api_measurement, postgres_config)
     with Pool() as p:
         return p.imap(my_ingest, measurements)
