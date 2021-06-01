@@ -24,7 +24,7 @@ import src.shared.utils as shared_utils
 # types
 from psycopg2.extensions import cursor
 from psycopg2.extensions import connection
-from multithreading.Pool import IMapIterator
+from multiprocessing.Pool import IMapIterator
 
 import src.ooni.types as ooni_types
 import src.shared.types as shared_types
