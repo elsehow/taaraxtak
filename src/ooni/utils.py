@@ -134,7 +134,12 @@ def get_blocking_type(measurement) -> Optional[str]:
 
 
 def get_hostname(url: str) -> str:
-    return urllib.parse.urlparse(url).netloc
+    parsed = urllib.parse.urlparse(url)
+    netloc = parsed.netloc
+    if parsed.port:
+        return netloc.split(':')[0]
+    return netloc
+
 
 
 def fetch_ip_from_hostname(hostname: str) -> Optional[str]:
@@ -214,6 +219,7 @@ def url_to_alpha2(cur: cursor, conn: connection, url: str) -> Optional[ooni_type
 # this should make an HTTP request on first call, then refer to cache.
 # TODO - update this cache occasionally.
 extract_tld = tldextract.TLDExtract(cache_dir='my-tld-cache')
+# extract_tld = tldextract.TLDExtract()
 
 
 def get_tld_jurisdiction(url: str) -> Optional[ooni_types.Alpha2]:

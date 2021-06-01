@@ -121,6 +121,8 @@ def test_tld_juris ():
     # tricky one! internationalized URL
     juris = ooni_utils.get_tld_jurisdiction('http://xn--80aaifmgl1achx.xn--p1ai/')
     assert(str(juris) == 'RU')
+    juris = ooni_utils.get_tld_jurisdiction('http://www.sansat.net:25461')
+    assert(str(juris) == 'US')
 
 def test_is_in_future ():
     future = ooni_utils.now() + timedelta(days=5)
