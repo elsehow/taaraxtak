@@ -1,8 +1,27 @@
 from os import path
 import pandas as pd
 import logging
+from os.path import join
+import pytz
+from datetime import datetime
 
 from typing import Optional
+
+
+#
+# Time
+#
+def now() -> pd.Timestamp:
+    return pd.Timestamp.utcnow()
+
+
+def is_in_future(timestamp: pd.Timestamp) -> bool:
+    return timestamp > now()
+
+
+def to_utc(t: datetime) -> datetime:
+    return t.astimezone(pytz.utc)
+
 
 #
 # Type validation
@@ -13,22 +32,13 @@ def is_nonempty_str(my_str: str) -> bool:
         return len(my_str) > 0
     return False
 
-#
-# File I/O
-#
-def path_to (*args, relative=False) -> str:
-    if relative:
-        dirname = path.dirname(__file__)
-        return path.join(dirname, *args)
-    return path.join(*args)
-
 
 #
 # Jurisdictions of providers
 #
-provider_countries = pd.read_csv(
-    path_to('analysis', 'providers_labeled.csv', relative=True)
-).set_index('name').drop(['notes', 'url'], axis=1)
+dirname = path.dirname(__file__)
+pth = join(dirname, 'analysis', 'providers_labeled.csv')
+provider_countries = pd.read_csv(pth).set_index('name').drop(['notes', 'url'], axis=1)
 provider_countries = provider_countries['country (alpha2)'].to_dict()
 
 
@@ -47,4 +57,3 @@ def get_country(provider_name: str) -> Optional[str]:
     except (KeyError):
         logging.info(f'Cannot find country for {provider_name}')
         return None
-

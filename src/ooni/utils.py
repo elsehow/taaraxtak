@@ -3,7 +3,6 @@ import coloredlogs
 import requests
 from time import sleep
 from datetime import datetime
-import pytz
 import socket
 import urllib.parse
 import geoip2.database
@@ -25,7 +24,6 @@ import src.shared.utils as shared_utils
 # types
 from psycopg2.extensions import cursor
 from psycopg2.extensions import connection
-from multiprocessing.pool import IMapIterator
 
 import src.ooni.types as ooni_types
 import src.shared.types as shared_types
@@ -47,22 +45,6 @@ coloredlogs.install(level='DEBUG')
 
 # disable noisy logging by filelock (called by TLDExtract to deal with its cache)
 logging.getLogger("filelock").setLevel(logging.ERROR)
-
-#
-# utils
-#
-
-
-def now() -> pd.Timestamp:
-    return pd.Timestamp.utcnow()
-
-
-def is_in_future(timestamp: pd.Timestamp) -> bool:
-    return timestamp > now()
-
-
-def to_utc(t: datetime) -> datetime:
-    return t.astimezone(pytz.utc)
 
 
 #
@@ -110,7 +92,7 @@ def query_measurements_after(time: datetime, **kwargs) -> list:
     def fmt_dt(t: datetime):
         return t.strftime("%Y-%m-%dT%H:%M:%S")
     # format timezone-aware date into UTC fo querying
-    utc_dt = to_utc(time)
+    utc_dt = shared_utils.to_utc(time)
     # format it into the query url
     dt_str = fmt_dt(utc_dt)
     query_str = BASE_QUERY + f'&since={dt_str}'
@@ -179,18 +161,20 @@ def retrieve_ip(cur: cursor, hostname: str) -> Optional[Tuple[datetime, str]]:
     ''')
     return cur.fetchone()
 
-def retrieve_cached_ip (cur: cursor, hostname: str,
-                     cache_expiry: timedelta = timedelta(days=1)):
+
+def retrieve_cached_ip(cur: cursor, hostname: str,
+                       cache_expiry: timedelta = timedelta(days=1)):
     # if we have a result in our DB
     time_ip_tuple = retrieve_ip(cur, hostname)
     if time_ip_tuple:
         time, ip = time_ip_tuple
         # and that result is fresh enough
-        is_expired = (now() - cache_expiry) > to_utc(time)
+        is_expired = (shared_utils.now() - cache_expiry) > shared_utils.to_utc(time)
         if not is_expired:
             # return it
             return ip
     return None
+
 
 def lookup_ip(cur: cursor, conn: connection, hostname: str) -> Optional[str]:
     '''
@@ -203,10 +187,9 @@ def lookup_ip(cur: cursor, conn: connection, hostname: str) -> Optional[str]:
     # otherwise
     # fetch IP with a query
     maybe_ip = fetch_ip_from_hostname(hostname)
-    print(maybe_ip)
     if maybe_ip:
         # write that mapping to the DB for the future
-        mapping = ooni_types.IPHostnameMapping(maybe_ip, hostname, now())
+        mapping = ooni_types.IPHostnameMapping(maybe_ip, hostname, shared_utils.now())
         mapping.write_to_db(cur, conn)
         # return the IP
         return maybe_ip

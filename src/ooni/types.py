@@ -1,10 +1,17 @@
+# taaraxtak
+# nick merrill
+# 2021
+#
+# ooni
+# create-tables.py - defines the Postgres tables.
+# (see file by the same name in repository's root).
+
 import logging
 import pandas as pd
 from IPy import IP
 
 import src.shared.utils as shared_utils
 import src.shared.types as shared_types
-import src.ooni.utils
 
 from psycopg2.extensions import cursor
 from psycopg2.extensions import connection
@@ -126,10 +133,10 @@ class OONIWebConnectivityTest():
 
         assert(type(measurement_start_time) == pd.Timestamp)
         # if the timestamp is in the future...
-        if src.ooni.utils.is_in_future(measurement_start_time):
+        if shared_utils.is_in_future(measurement_start_time):
             logging.debug(f'Time is in future: {measurement_start_time}. Setting time to now.')
             # set the time to now.
-            self.measurement_start_time = src.ooni.utils.now()
+            self.measurement_start_time = shared_utils.now()
         # otherwise
         else:
             # set it to whenever it was reported
@@ -192,7 +199,7 @@ class OONIWebConnectivityTest():
 
 
 def create_tables(cur: cursor, conn: connection):
-    IPHostnameMapping('198.35.26.96', 'wikipedia.org', src.ooni.utils.now()).create_table(cur, conn)
+    IPHostnameMapping('198.35.26.96', 'wikipedia.org', shared_utils.now()).create_table(cur, conn)
     # dummy data
     OONIWebConnectivityTest(
         'example',

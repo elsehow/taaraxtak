@@ -1,4 +1,3 @@
-import logging
 import requests
 import numpy as np
 import pandas as pd
@@ -133,7 +132,9 @@ def extract_from_row(market: str, time: pd.Timestamp, df_row: pd.Series) -> Prov
 #
 # Population-weighted gini tools
 #
-prop_net_users = pd.read_csv(shared_utils.path_to('src', 'w3techs', 'analysis', 'prop_net_users.csv')).set_index('alpha2')
+dirname = path.dirname(__file__)
+pth = path.join(dirname, 'analysis', 'prop_net_users.csv')
+prop_net_users = pd.read_csv(pth).set_index('alpha2')
 
 
 def to_df(db_rows) -> pd.DataFrame:

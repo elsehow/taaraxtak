@@ -11,6 +11,7 @@ import coloredlogs
 import psycopg2
 
 from src.w3techs.types import create_tables as w3techs_create
+from src.ooni.types import create_tables as ooni_create
 
 from config import config
 #
@@ -29,8 +30,10 @@ cursor = connection.cursor()
 
 # configure create methods for the db
 w3techs = partial(w3techs_create, cursor, connection)
+ooni = partial(ooni_create, cursor, connection)
 
 #
 # run
 #
 # w3techs()
+# ooni()

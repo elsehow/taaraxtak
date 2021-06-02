@@ -1,18 +1,14 @@
 import psycopg2
 import testing.postgresql
 import pytest
-from IPy import IP
 import pandas as pd
-import pytz
-
-
-from datetime import datetime
 from datetime import timedelta
 
 
 import src.ooni.utils as ooni_utils
 import src.ooni.types as ooni_types
 import src.shared.types as shared_types
+import src.shared.utils as shared_utils
 
 
 # TODO make DRY with other test - test utils?
@@ -34,12 +30,6 @@ def postgresdb(request):
 
 # def my_db_enabled_test (postgresdb):
 #     return
-
-def test_to_utc():
-    tz = pytz.timezone("US/Pacific")
-    t = tz.localize(datetime(2021, 5, 27, 21, 40, 17, 486566))
-    t_utc = ooni_utils.to_utc(t)
-    assert(t_utc.hour == 4)
 
 
 # def test_query_ooni():
@@ -72,10 +62,13 @@ def test_ip_to_alpha2():
 
 def test_IPHostnameMapping():
     my_ip = '198.35.26.96'
-    t = ooni_utils.now()
-    mapping = ooni_types.IPHostnameMapping(my_ip, 'wikipedia.org', t)
+    t = shared_utils.now()
+    # no error here
+    ooni_types.IPHostnameMapping(my_ip, 'wikipedia.org', t)
     with pytest.raises(Exception):
-        mapping = ooni_types.IPHostnameMapping('xxx.xxx.xxx', 'wikipedia.org', t)
+        # error here
+        ooni_types.IPHostnameMapping('xxx.xxx.xxx', 'wikipedia.org', t)
+
 
 def test_retrieve_ip(postgresdb):
     '''
@@ -84,7 +77,7 @@ def test_retrieve_ip(postgresdb):
     cur, conn = postgresdb
     US_ip = '35.163.72.93'
     NL_ip = '212.78.221.95'
-    t = ooni_utils.now()
+    t = shared_utils.now()
     ooni_types.IPHostnameMapping(NL_ip, 'website.nl', t).write_to_db(cur, conn)
     ooni_types.IPHostnameMapping(US_ip, 'website.us', t).write_to_db(cur, conn)
     ip = ooni_utils.retrieve_ip(cur, 'website.nl')[1]
@@ -97,7 +90,7 @@ def test_cache_expiry(postgresdb):
     # lookup ip when cache IS NOT VALID
     cur, conn = postgresdb
     my_ip = '162.00.00.01'
-    t = ooni_utils.now() - timedelta(days=3)
+    t = shared_utils.now() - timedelta(days=3)
     mapping = ooni_types.IPHostnameMapping(my_ip, 'wikipedia.org', t)
     mapping.write_to_db(cur, conn)
     ip = ooni_utils.retrieve_cached_ip(cur, 'wikipedia.org')
@@ -110,7 +103,7 @@ def test_url_to_alpha2(postgresdb):
     cur, conn = postgresdb
     # make a DB reading
     US_ip = '198.35.26.96'
-    t = ooni_utils.now()
+    t = shared_utils.now()
     mapping = ooni_types.IPHostnameMapping(US_ip, 'wikipedia.org', t)
     mapping.write_to_db(cur, conn)
     NL_ip = '212.78.221.95'
@@ -136,10 +129,10 @@ def test_tld_juris():
 
 
 def test_is_in_future():
-    future = ooni_utils.now() + timedelta(days=5)
-    assert(ooni_utils.is_in_future(future) is True)
-    past = ooni_utils.now() - timedelta(days=5)
-    assert(ooni_utils.is_in_future(past) is False)
+    future = shared_utils.now() + timedelta(days=5)
+    assert(shared_utils.is_in_future(future) is True)
+    past = shared_utils.now() - timedelta(days=5)
+    assert(shared_utils.is_in_future(past) is False)
 
 
 def test_get_latest_reading_time(postgresdb):

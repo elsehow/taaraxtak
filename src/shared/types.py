@@ -1,5 +1,6 @@
 import src.shared.utils as shared_utils
 
+
 class Alpha2 ():
     '''
     Represents an ISO alpha-2 country code.
