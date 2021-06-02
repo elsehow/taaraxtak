@@ -197,7 +197,7 @@ def lookup_ip(cur: cursor, conn: connection, hostname: str) -> Optional[str]:
         return maybe_ip
     # otherwise
     # fetch IP with a query
-    maybe_ip: Optional[str] = fetch_ip_from_hostname(hostname)
+    maybe_ip = fetch_ip_from_hostname(hostname)
     if maybe_ip:
         # write that mapping to the DB for the future
         mapping = ooni_types.IPHostnameMapping(maybe_ip, hostname, now())
