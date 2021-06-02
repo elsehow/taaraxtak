@@ -13,6 +13,7 @@ import coloredlogs
 from funcy import partial
 
 from src.w3techs.collect import collect as w3techs_collect
+from src.ooni.collect import collect as ooni_collect
 
 from config import config
 
@@ -23,22 +24,22 @@ logging.basicConfig()
 logger = logging.getLogger("taaraxtak:collect")
 # logger.setLevel(logging.DEBUG)
 coloredlogs.install()
-# coloredlogs.install(level='INFO')
-coloredlogs.install(level='DEBUG')
+coloredlogs.install(level='INFO')
+# coloredlogs.install(level='DEBUG')
 
 # connect to the db
-connection = psycopg2.connect(**config['postgres'])
-cursor = connection.cursor()
-logging.info('Connected to database.')
+postgres_config = config['postgres']
 
 # configure scrapers for the db
-w3techs = partial(w3techs_collect, cursor, connection)
+w3techs = partial(w3techs_collect, postgres_config)
+ooni = partial(ooni_collect, postgres_config)
 
 #
 # run
 #
 
 schedule.every().day.at('09:00').do(w3techs)
+schedule.every(2).minutes.do(ooni)
 
 while True:
     schedule.run_pending()

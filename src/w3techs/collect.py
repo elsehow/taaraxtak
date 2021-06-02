@@ -6,13 +6,12 @@
 # collect.py - collects data and saves it in the db.
 # (see file by the same name in repository's root).
 
+import psycopg2
 import logging
 import pandas as pd
 from funcy import partial
 from datetime import datetime
 
-from psycopg2.extensions import cursor
-from psycopg2.extensions import connection
 
 import src.w3techs.utils as utils
 
@@ -104,12 +103,16 @@ included_markets = [
 ]
 
 
-def collect(cur: cursor, conn: connection):
+def collect(postgres_config: dict):
     '''
     Collect W3Techs data and write them to the database.
     '''
 
     logging.debug('Beginning W3Techs.')
+
+    conn = psycopg2.connect(**postgres_config)
+    cur = conn.cursor()
+    logging.debug('Connected to database.')
 
     # Scrape W3Techs data
     for market_name, dic in w3techs_sources.items():

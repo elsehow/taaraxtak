@@ -9,12 +9,10 @@
 from psycopg2.extensions import cursor
 from psycopg2.extensions import connection
 from typing import Optional
+import src.shared.utils as shared_utils
+import src.shared.types as shared_types
 
 import pandas as pd
-
-
-def is_nonempty_str(my_str: str) -> bool:
-    return (type(my_str) == str) & (len(my_str) > 0)
 
 
 def is_float_0_1(my_float: float) -> bool:
@@ -32,27 +30,26 @@ class ProviderMarketshare():
     def __init__(self,
                  name: str,
                  url: Optional[str],
-                 jurisdiction_alpha2: Optional[str],
+                 jurisdiction_alpha2: Optional[shared_types.Alpha2],
                  market: str,
                  marketshare: float,
                  time: pd.Timestamp):
-        assert(is_nonempty_str(name))
+        assert(shared_utils.is_nonempty_str(name))
         self.name = name
 
         if url is None:
             self.url = None
         else:
-            assert(is_nonempty_str(url))
+            assert(shared_utils.is_nonempty_str(url))
             self.url = url
 
         if jurisdiction_alpha2 is None:
             self.jurisdiction_alpha2 = None
         else:
-            assert(type(jurisdiction_alpha2) == str)
-            assert(len(jurisdiction_alpha2) == 2)
+            assert(type(jurisdiction_alpha2) == shared_types.Alpha2)
             self.jurisdiction_alpha2 = jurisdiction_alpha2
 
-        assert(is_nonempty_str(market))
+        assert(shared_utils.is_nonempty_str(market))
         self.market = market
 
         assert(is_float_0_1(marketshare))
@@ -92,7 +89,7 @@ class ProviderMarketshare():
             (%s, %s, %s, %s, %s, %s)
             """, (self.name,
                   self.url,
-                  self.jurisdiction_alpha2,
+                  str(self.jurisdiction_alpha2),
                   self.market,
                   self.marketshare,
                   self.time))
@@ -119,7 +116,7 @@ class PopWeightedGini ():
                  market: str,
                  gini: float,
                  time: pd.Timestamp):
-        assert(is_nonempty_str(market))
+        assert(shared_utils.is_nonempty_str(market))
         self.market = market
 
         assert(is_float_0_1(float(gini)))
@@ -173,7 +170,7 @@ def create_tables(cur: cursor, conn: connection):
 
     # dummy data - just a demo
     ProviderMarketshare(
-        'name', None, 'CA', 'ssl-certificate', 0.5, pd.Timestamp('2021-04-20')
+        'name', None, shared_types.Alpha2('CA'), 'ssl-certificate', 0.5, pd.Timestamp('2021-04-20')
     ).create_table(cur, conn)
 
     # dummy data - just a demo
