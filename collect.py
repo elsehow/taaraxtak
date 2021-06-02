@@ -39,7 +39,7 @@ ooni = partial(ooni_collect, postgres_config)
 #
 
 schedule.every().day.at('09:00').do(w3techs)
-schedule.every(5).minutes.do(ooni)
+schedule.every(2).minutes.do(ooni)
 
 while True:
     schedule.run_pending()

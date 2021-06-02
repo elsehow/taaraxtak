@@ -157,8 +157,7 @@ def fetch_ip_from_hostname(hostname: str) -> Optional[str]:
 
 
 def ip_to_alpha2(ip: str) -> Optional[shared_types.Alpha2]:
-    # with geoip2.database.Reader('src/ooni/analysis/dbip-country-lite-2021-05.mmdb') as reader:
-    with geoip2.database.Reader('analysis/dbip-country-lite-2021-05.mmdb') as reader:
+    with geoip2.database.Reader('src/ooni/analysis/dbip-country-lite-2021-05.mmdb') as reader:
         try:
             response = reader.country(ip)
             return shared_types.Alpha2(response.country.iso_code)
@@ -229,8 +228,8 @@ def url_to_alpha2(cur: cursor, conn: connection, url: str) -> Optional[shared_ty
 # keep a cache of TLDs in this directory
 # this should make an HTTP request on first call, then refer to cache.
 # TODO - update this cache occasionally.
-# extract_tld = tldextract.TLDExtract(cache_dir='my-tld-cache')
-extract_tld = tldextract.TLDExtract()
+extract_tld = tldextract.TLDExtract(cache_dir='my-tld-cache')
+# extract_tld = tldextract.TLDExtract()
 
 
 def get_tld_jurisdiction(url: str) -> Optional[shared_types.Alpha2]:
