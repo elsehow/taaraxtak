@@ -140,7 +140,13 @@ def get_hostname(url: str) -> str:
 
 def fetch_ip_from_hostname(hostname: str) -> Optional[str]:
     try:
-        return socket.gethostbyname(hostname)
+        ip = socket.gethostbyname(hostname)
+        # make sure it's an IP
+        parsed_ip = IP(ip)
+        # make sure that IP is a public one
+        assert(parsed_ip.iptype() == 'PUBLIC')
+        # if all good, return it
+        return ip
     except Exception as inst:
         logger.warning(f"Error looking up IP of hostname {hostname}: {inst}")
         return None
@@ -151,7 +157,8 @@ def fetch_ip_from_hostname(hostname: str) -> Optional[str]:
 
 
 def ip_to_alpha2(ip: str) -> Optional[shared_types.Alpha2]:
-    with geoip2.database.Reader('src/ooni/analysis/dbip-country-lite-2021-05.mmdb') as reader:
+    # with geoip2.database.Reader('src/ooni/analysis/dbip-country-lite-2021-05.mmdb') as reader:
+    with geoip2.database.Reader('analysis/dbip-country-lite-2021-05.mmdb') as reader:
         try:
             response = reader.country(ip)
             return shared_types.Alpha2(response.country.iso_code)
@@ -180,12 +187,11 @@ def retrieve_cached_ip (cur: cursor, hostname: str,
     if time_ip_tuple:
         time, ip = time_ip_tuple
         # and that result is fresh enough
-        print(cache_expiry, to_utc(time))
         is_expired = (now() - cache_expiry) > to_utc(time)
         if not is_expired:
             # return it
             return ip
-        return None
+    return None
 
 def lookup_ip(cur: cursor, conn: connection, hostname: str) -> Optional[str]:
     '''
@@ -198,6 +204,7 @@ def lookup_ip(cur: cursor, conn: connection, hostname: str) -> Optional[str]:
     # otherwise
     # fetch IP with a query
     maybe_ip = fetch_ip_from_hostname(hostname)
+    print(maybe_ip)
     if maybe_ip:
         # write that mapping to the DB for the future
         mapping = ooni_types.IPHostnameMapping(maybe_ip, hostname, now())
@@ -222,8 +229,8 @@ def url_to_alpha2(cur: cursor, conn: connection, url: str) -> Optional[shared_ty
 # keep a cache of TLDs in this directory
 # this should make an HTTP request on first call, then refer to cache.
 # TODO - update this cache occasionally.
-extract_tld = tldextract.TLDExtract(cache_dir='my-tld-cache')
-# extract_tld = tldextract.TLDExtract()
+# extract_tld = tldextract.TLDExtract(cache_dir='my-tld-cache')
+extract_tld = tldextract.TLDExtract()
 
 
 def get_tld_jurisdiction(url: str) -> Optional[shared_types.Alpha2]:
