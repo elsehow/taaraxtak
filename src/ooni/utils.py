@@ -19,6 +19,7 @@ from typing import List
 from IPy import IP
 from funcy import partial
 
+from config import config
 
 import src.shared.utils as shared_utils
 
@@ -214,7 +215,7 @@ def url_to_alpha2(cur: cursor, conn: connection, url: str) -> Optional[shared_ty
 # keep a cache of TLDs in this directory
 # this should make an HTTP request on first call, then refer to cache.
 # TODO - update this cache occasionally.
-extract_tld = tldextract.TLDExtract(cache_dir='my-tld-cache')
+extract_tld = tldextract.TLDExtract(cache_dir=config['tld_cache_dir'])
 # extract_tld = tldextract.TLDExtract()
 
 
