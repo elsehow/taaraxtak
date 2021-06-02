@@ -13,6 +13,7 @@ import tldextract
 import idna
 import psycopg2
 from multiprocessing import Pool
+from os import path
 
 from typing import List
 from IPy import IP
@@ -139,7 +140,9 @@ def fetch_ip_from_hostname(hostname: str) -> Optional[str]:
 
 
 def ip_to_alpha2(ip: str) -> Optional[shared_types.Alpha2]:
-    with geoip2.database.Reader('src/ooni/analysis/dbip-country-lite-2021-05.mmdb') as reader:
+    dirname = path.dirname(__file__)
+    pth = path.join(dirname, 'analysis', 'dbip-country-lite-2021-05.mmdb' )
+    with geoip2.database.Reader(pth) as reader:
         try:
             response = reader.country(ip)
             return shared_types.Alpha2(response.country.iso_code)
