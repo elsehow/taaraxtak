@@ -42,45 +42,55 @@ def test_to_utc():
     assert(t_utc.hour == 4)
 
 
-def test_query_ooni():
-    ms = ooni_utils.query_recent_measurements(max_queries=1)
-    assert(len(ms) > 1)
-    # should not error
-    ooni_utils.get_blocking_type(ms[0])
-    ms = ooni_utils.query_measurements_after(datetime.now(), max_queries=1)
+# def test_query_ooni():
+#     ms = ooni_utils.query_recent_measurements(max_queries=1)
+#     assert(len(ms) > 1)
+#     # should not error
+#     ooni_utils.get_blocking_type(ms[0])
+#     ms = ooni_utils.query_measurements_after(datetime.now(), max_queries=1)
 
 
 def test_get_hostname():
     assert(ooni_utils.get_hostname('http://daylight.berkeley.edu/cool-article') == 'daylight.berkeley.edu')
 
 
-def test_fetch_ip():
-    hn = ooni_utils.get_hostname('https://berkeley.edu')
-    maybe_ip = ooni_utils.fetch_ip_from_hostname(hn)
-    # should not error
-    IP(maybe_ip)
+# def test_fetch_ip():
+#     hn = ooni_utils.get_hostname('https://berkeley.edu')
+#     maybe_ip = ooni_utils.fetch_ip_from_hostname(hn)
+#     # should not error
+#     IP(maybe_ip)
 
 
 def test_ip_to_alpha2():
-    alpha2 = ooni_utils.ip_to_alpha2('35.163.72.93')
+    US_ip = '35.163.72.93'
+    NL_ip = '212.78.221.95'
+    alpha2 = ooni_utils.ip_to_alpha2(US_ip)
     assert(str(alpha2) == 'US')
+    alpha2 = ooni_utils.ip_to_alpha2(NL_ip)
+    assert(str(alpha2) == 'NL')
 
 
-def test_IPHostnameMapping(postgresdb):
-    cur, conn = postgresdb
+def test_IPHostnameMapping():
     my_ip = '198.35.26.96'
     t = ooni_utils.now()
     mapping = ooni_types.IPHostnameMapping(my_ip, 'wikipedia.org', t)
     with pytest.raises(Exception):
         mapping = ooni_types.IPHostnameMapping('xxx.xxx.xxx', 'wikipedia.org', t)
-    mapping.write_to_db(cur, conn)
-    # while we're here, test retrieve_ip and lookup_ip
-    time_ip = ooni_utils.retrieve_ip(cur, 'wikipedia.org')[1]
-    print(time_ip)
-    assert(time_ip == my_ip)
-    # lookup ip when cache IS VALID
-    ip = ooni_utils.lookup_ip(cur, conn, 'wikipedia.org')
-    assert(ip == my_ip)
+
+def test_retrieve_ip(postgresdb):
+    '''
+    lookup_ip when we know the result is n the cache.
+    '''
+    cur, conn = postgresdb
+    US_ip = '35.163.72.93'
+    NL_ip = '212.78.221.95'
+    t = ooni_utils.now()
+    ooni_types.IPHostnameMapping(NL_ip, 'website.nl', t).write_to_db(cur, conn)
+    ooni_types.IPHostnameMapping(US_ip, 'website.us', t).write_to_db(cur, conn)
+    ip = ooni_utils.retrieve_ip(cur, 'website.nl')[1]
+    assert(ip == NL_ip)
+    ip = ooni_utils.retrieve_ip(cur, 'website.us')[1]
+    assert(ip == US_ip)
 
 
 def test_cache_expiry(postgresdb):
@@ -90,22 +100,27 @@ def test_cache_expiry(postgresdb):
     t = ooni_utils.now() - timedelta(days=3)
     mapping = ooni_types.IPHostnameMapping(my_ip, 'wikipedia.org', t)
     mapping.write_to_db(cur, conn)
-    ip = ooni_utils.lookup_ip(cur, conn, 'wikipedia.org')
+    ip = ooni_utils.retrieve_cached_ip(cur, 'wikipedia.org')
     # should fetch the real address and deliver me something other than my fake one.
-    assert(ip != my_ip)
+    assert(ip is None)
 
 
 def test_url_to_alpha2(postgresdb):
     # lookup ip when cache IS NOT VALID
     cur, conn = postgresdb
     # make a DB reading
-    my_ip = '198.35.26.96'
+    US_ip = '198.35.26.96'
     t = ooni_utils.now()
-    mapping = ooni_types.IPHostnameMapping(my_ip, 'wikipedia.org', t)
+    mapping = ooni_types.IPHostnameMapping(US_ip, 'wikipedia.org', t)
+    mapping.write_to_db(cur, conn)
+    NL_ip = '212.78.221.95'
+    mapping = ooni_types.IPHostnameMapping(NL_ip, 'government.nl', t)
     mapping.write_to_db(cur, conn)
     # look it up
     alpha2 = ooni_utils.url_to_alpha2(cur, conn, 'https://wikipedia.org/')
     assert(str(alpha2) == 'US')
+    alpha2 = ooni_utils.url_to_alpha2(cur, conn, 'https://government.nl/')
+    assert(str(alpha2) == 'NL')
 
 
 def test_tld_juris():

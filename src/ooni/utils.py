@@ -166,37 +166,45 @@ def ip_to_alpha2(ip: str) -> Optional[shared_types.Alpha2]:
 #
 
 def retrieve_ip(cur: cursor, hostname: str) -> Optional[Tuple[datetime, str]]:
-    cur.execute('''
+    cur.execute(f'''
     SELECT time, ip from ip_hostname_mapping
-    WHERE hostname=hostname
+    WHERE hostname='{hostname}'
     ORDER BY time DESC
     ''')
     return cur.fetchone()
 
-
-def lookup_ip(cur: cursor, conn: connection, hostname: str,
-              cache_expiry: timedelta = timedelta(days=1)) -> Optional[str]:
-    '''
-    Looks up an IP address from a hostname in the cache.
-    If the IP address was recorded more than `cache_expiry` ago, it'll fetch a new IP
-    '''
+def retrieve_cached_ip (cur: cursor, hostname: str,
+                     cache_expiry: timedelta = timedelta(days=1)):
     # if we have a result in our DB
     time_ip_tuple = retrieve_ip(cur, hostname)
     if time_ip_tuple:
         time, ip = time_ip_tuple
         # and that result is fresh enough
+        print(cache_expiry, to_utc(time))
         is_expired = (now() - cache_expiry) > to_utc(time)
         if not is_expired:
             # return it
             return ip
+        return None
+
+def lookup_ip(cur: cursor, conn: connection, hostname: str) -> Optional[str]:
+    '''
+    Looks up an IP address from a hostname in the cache.
+    If the IP address was recorded more than `cache_expiry` ago, it'll fetch a new IP
+    '''
+    maybe_ip: Optional[str] = retrieve_cached_ip(cur, hostname)
+    if maybe_ip:
+        return maybe_ip
     # otherwise
     # fetch IP with a query
     maybe_ip: Optional[str] = fetch_ip_from_hostname(hostname)
-    # write that mapping to the DB for the future
-    mapping = ooni_types.IPHostnameMapping(maybe_ip, hostname, now())
-    mapping.write_to_db(cur, conn)
-    # return the IP
-    return maybe_ip
+    if maybe_ip:
+        # write that mapping to the DB for the future
+        mapping = ooni_types.IPHostnameMapping(maybe_ip, hostname, now())
+        mapping.write_to_db(cur, conn)
+        # return the IP
+        return maybe_ip
+    return None
 
 
 def url_to_alpha2(cur: cursor, conn: connection, url: str) -> Optional[shared_types.Alpha2]:
