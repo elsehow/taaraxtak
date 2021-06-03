@@ -47,7 +47,8 @@ class ProviderMarketshare():
             self.jurisdiction_alpha2 = None
         else:
             assert(type(jurisdiction_alpha2) == shared_types.Alpha2)
-            self.jurisdiction_alpha2 = jurisdiction_alpha2
+            # we'll just store the str version
+            self.jurisdiction_alpha2 = str(jurisdiction_alpha2)
 
         assert(shared_utils.is_nonempty_str(market))
         self.market = market
@@ -89,7 +90,7 @@ class ProviderMarketshare():
             (%s, %s, %s, %s, %s, %s)
             """, (self.name,
                   self.url,
-                  str(self.jurisdiction_alpha2),
+                  self.jurisdiction_alpha2,
                   self.market,
                   self.marketshare,
                   self.time))

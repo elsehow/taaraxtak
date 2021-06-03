@@ -4,6 +4,7 @@ import pandas as pd
 from os import path
 from bs4 import BeautifulSoup
 import src.shared.utils as shared_utils
+import src.shared.types as shared_types
 
 # types
 from psycopg2.extensions import cursor
@@ -120,12 +121,16 @@ def extract_from_row(market: str, time: pd.Timestamp, df_row: pd.Series) -> Prov
     `market` and `time` are the first parameters because we partially apply them.
     '''
     name, url, marketshare = df_row.values
-    jurisdiction = shared_utils.get_country(name)
+    maybe_jurisdiction = shared_utils.get_country(name)
+    if maybe_jurisdiction is None:
+        juris = None
+    else:
+        juris = shared_types.Alpha2(maybe_jurisdiction)
     # NOTE - This type does ALL the validation.
     # Once data is in this type, it *should* be trustworthy.
     # See /design-notes.md for more detail on this pattern.
     return ProviderMarketshare(
-        str(name), str(url), jurisdiction, market, float(marketshare), time
+        str(name), str(url), juris, market, float(marketshare), time
     )
 
 

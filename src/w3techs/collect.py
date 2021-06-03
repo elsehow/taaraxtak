@@ -124,8 +124,8 @@ def collect(postgres_config: dict):
                           market_name, pd.Timestamp(datetime.now()))
         marketshares = df.apply(extract, axis=1)
         # write all Marketshares to the cursor
-        [marketshare.write_to_db(cur, conn, commit=False)
-         for marketshare in marketshares]
+        for marketshare in marketshares:
+            marketshare.write_to_db(cur, conn, commit=False)
         # commit all writes to db
         conn.commit()
 
