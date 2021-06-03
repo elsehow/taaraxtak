@@ -7,15 +7,24 @@
 
 import time
 import schedule
+import threading
 import psycopg2
 import logging
 import coloredlogs
 from funcy import partial
 
+
+
 from src.w3techs.collect import collect as w3techs_collect
 from src.ooni.collect import collect as ooni_collect
 
 from config import config
+
+
+def run_threaded(job_func):
+    job_thread = threading.Thread(target=job_func)
+    job_thread.start()
+
 
 #
 # setup
@@ -33,14 +42,13 @@ postgres_config = config['postgres']
 # configure scrapers for the db
 w3techs = partial(w3techs_collect, postgres_config)
 ooni = partial(ooni_collect, postgres_config)
-
 #
 # run
 #
 
-schedule.every().day.at('09:00').do(w3techs)
-schedule.every(5).minutes.do(ooni)
+schedule.every().day.at('09:00').do(run_threaded, w3techs)
+schedule.every(10).minutes.do(run_threaded, ooni)
 
-while True:
+while 1:
     schedule.run_pending()
     time.sleep(1)
