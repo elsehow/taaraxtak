@@ -36,9 +36,9 @@ taaraxtak (IPA: taːɾaxtak) means "the sky" in the [Chochenyo
 Ohlone](https://sogoreate-landtrust.org/lisjan-history-and-territory/) language.
 
 Looking up at the sky, I can only see what's above me. Similarly, the Internet
-is something I can only know partially; This name is meant to remind us to look
-at what we *can* see, acknowledging its partiality, and being thankful for
-whatever we can take from it. (When we measure the Internet we are, in more
+is something I can only know partially. The name is meant to remind us to look
+at what we *can* see, knowing it's only part of the whole.
+(When we measure the Internet we are, in more
 senses than one, looking at the shape of clouds). Remember, everything we
 learned about the atmosphere started by looking up at the sky. All we ever
 need is a partial perspective and an open system of thought.
