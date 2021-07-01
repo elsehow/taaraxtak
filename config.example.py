@@ -6,7 +6,5 @@ config = {
         "port": "5432",
         "database": "my-database",
     },
-    "cache": {
-        "tld_cache_dir": "/home/my-user/"
-    }
+    "tld_cache_dir": "/home/my-user/"
 }
