@@ -1,0 +1,159 @@
+Rank,DNS Server Providers,Percentage Top 10,000 Sites
+1,Cloudflare,25.73%
+2,Amazon,24.05%
+3,Akamai,5.48%
+4,Google,2.83%
+5,NS1,2.75%
+6,Alibaba Group,2.55%
+6.1,    Alibaba,1.49%
+6.2,    HiChina,1.07%
+7,Tencent,2.52%
+8,Neustar UltraDNS,2.08%
+9,DNS Made Easy,1.51%
+10,Oracle Dyn,1.50%
+11,GoDaddy Group,1.47%
+11.1,    GoDaddy,1.41%
+11.2,    Host Europe,0.05%
+11.3,    Media Temple,0.01%
+12,RBC Group,0.95%
+12.1,    RU-Center,0.87%
+12.2,    R01,0.06%
+12.3,    RosBusinessConsulting,0.02%
+13,Microsoft,0.70%
+14,CSC,0.61%
+15,ClouDNS,0.54%
+16,Namecheap,0.50%
+17,ArvanCloud,0.45%
+18,OVH,0.37%
+19,Automattic,0.37%
+20,Newfold Digital,0.35%
+20.1,    Network Solutions,0.12%
+20.2,    Register.com,0.10%
+20.3,    ResellerClub,0.03%
+20.4,    Bluehost,0.02%
+20.5,    BigRock,0.02%
+20.6,    HostNine,0.02%
+20.7,    PublicDomainRegistry,0.01%
+20.8,    Endurance,0.01%
+21,United Internet,0.35%
+21.1,    1&1 IONOS,0.21%
+21.2,    InterNetX,0.06%
+21.3,    Strato,0.02%
+21.4,    home.pl,0.02%
+21.5,    Fasthosts,0.01%
+21.6,    Arsys,0.01%
+21.7,    World4You,0.01%
+22,DigitalOcean,0.32%
+23,Verizon Group,0.31%
+23.1,    Verizon,0.25%
+23.2,    Yahoo,0.06%
+24,DNSimple,0.29%
+25,Internet Initiative Japan,0.29%
+26,Hetzner,0.28%
+27,Linode,0.25%
+28,Asiatech,0.24%
+29,Gandi,0.23%
+30,Rackspace,0.23%
+31,team.blue,0.22%
+31.1,    Register.it,0.14%
+31.2,    Natro,0.03%
+31.3,    TransIP,0.02%
+31.4,    Names.co.uk,0.01%
+31.5,    SuperHosting.BG,0.01%
+32,GMO Internet Group,0.21%
+32.1,    Onamae,0.09%
+32.2,    GMO Internet,0.06%
+32.3,    GMO Pepabo,0.05%
+32.4,    Lolipop,0.01%
+32.5,    Color Me Shop,0.01%
+33,Yandex,0.21%
+34,easyDNS Group,0.18%
+34.1,    easyDNS,0.14%
+34.2,    ZoneEdit,0.05%
+35,REG.RU,0.17%
+36,Sakura,0.17%
+37,DNS.com,0.16%
+38,IBM,0.16%
+39,Aruba Group,0.15%
+39.1,    Aruba,0.15%
+40,AT&T,0.15%
+41,Chunghwa Telecom,0.14%
+42,Tucows Group,0.13%
+42.1,    eNom,0.10%
+42.2,    Tucows,0.02%
+43,XServer,0.12%
+44,Name.com,0.12%
+45,XinNet,0.10%
+46,MarkMonitor,0.10%
+47,Ezoic,0.09%
+48,VNPT,0.09%
+49,SiteGround,0.08%
+50,DreamHost,0.08%
+51,PA Vietnam,0.08%
+52,Internet.BS,0.08%
+53,InMotion,0.07%
+54,Selectel,0.07%
+55,Choopa,0.06%
+56,Enartia Group,0.06%
+56.1,    Papaki,0.05%
+56.2,    Top.Host,0.01%
+57,FastVPS,0.06%
+58,Total Uptime,0.06%
+59,Hostinger,0.05%
+60,A2 Hosting,0.05%
+61,MiroHost,0.05%
+62,Liquid Web,0.05%
+63,Hivelocity,0.05%
+64,Gabia,0.05%
+65,DDoS-Guard,0.05%
+66,Netafraz,0.03%
+67,Prom.ua,0.03%
+68,Contabo,0.03%
+69,NameSilo,0.03%
+70,XBT Holding,0.03%
+70.1,    Webzilla,0.03%
+71,Sucuri,0.03%
+72,Cisco,0.03%
+73,Mihan,0.02%
+74,Hoster.by,0.02%
+75,Cafe24,0.02%
+76,Visma Group,0.02%
+76.1,    Active 24,0.02%
+77,Scaleway,0.02%
+78,Infomaniak,0.02%
+79,WPX Hosting,0.02%
+80,Pair Networks,0.02%
+81,cdmon,0.02%
+82,SiteSell,0.02%
+83,StackPath,0.02%
+84,Mail.Ru,0.02%
+85,Liberty Global Group,0.02%
+85.1,    Telenet,0.01%
+85.2,    Virgin Media,0.01%
+86,ironDNS,0.02%
+87,NetEase,0.02%
+88,TimeWeb,0.01%
+89,Hosting Ukraine,0.01%
+90,Squarespace,0.01%
+91,One.com,0.01%
+92,Masterhost,0.01%
+93,FirstVDS,0.01%
+94,Mizbanfa,0.01%
+95,Internet Hosting Center,0.01%
+96,BanaHosting,0.01%
+97,Webempresa,0.01%
+98,Dinahosting,0.01%
+99,Hostiran,0.01%
+100,Locaweb,0.01%
+101,Hostpoint,0.01%
+102,Interneto Vizija,0.01%
+103,Registro.br,0.01%
+104,Zone Media,0.01%
+105,CSL,0.01%
+106,No-IP,0.01%
+107,Internet Thailand,0.01%
+108,Comodo,0.01%
+109,VSHosting,0.01%
+110,CtrlS,0.01%
+111,1984 Hosting,0.01%
+112,Deninet,0.01%

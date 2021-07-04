@@ -43,6 +43,7 @@ python3 -m venv venv
 source venv/bin/activate
 # install pre-reqs
 pip3 install -r requirements.txt
+pip3 install -e .
 ```
 
 3. Copy `config.example.py` to `config.py` and enter your Postgres credentials. 

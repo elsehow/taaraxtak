@@ -1,0 +1,56 @@
+Rank,DNS Server Providers,Percentage Top 1,000 Sites
+1,Amazon,26.8%
+2,Cloudflare,14.5%
+3,Akamai,9.7%
+4,NS1,7.3%
+5,Google,6.6%
+6,Neustar UltraDNS,4.8%
+7,Oracle Dyn,3.9%
+8,Alibaba Group,3.7%
+8.1,    Alibaba,2.7%
+8.2,    HiChina,1.0%
+9,Tencent,3.4%
+10,DNS Made Easy,1.3%
+11,RBC Group,0.9%
+11.1,    RU-Center,0.8%
+11.2,    RosBusinessConsulting,0.1%
+12,Microsoft,0.8%
+13,ClouDNS,0.8%
+14,Verizon Group,0.8%
+14.1,    Verizon,0.6%
+14.2,    Yahoo,0.2%
+15,GoDaddy Group,0.7%
+15.1,    GoDaddy,0.7%
+16,CSC,0.7%
+17,Automattic,0.6%
+18,United Internet,0.4%
+18.1,    1&1 IONOS,0.3%
+18.2,    home.pl,0.1%
+19,Internet Initiative Japan,0.4%
+20,ArvanCloud,0.3%
+21,Chunghwa Telecom,0.3%
+22,AT&T,0.3%
+23,Newfold Digital,0.2%
+23.1,    ResellerClub,0.1%
+23.2,    Register.com,0.1%
+24,Yandex,0.2%
+25,DNSimple,0.2%
+26,Cisco,0.2%
+27,Tucows Group,0.1%
+27.1,    eNom,0.1%
+28,Squarespace,0.1%
+29,Gandi,0.1%
+30,Aruba Group,0.1%
+30.1,    Aruba,0.1%
+31,Rackspace,0.1%
+32,Choopa,0.1%
+33,DNS.com,0.1%
+34,Masterhost,0.1%
+35,IBM,0.1%
+36,VNPT,0.1%
+37,Selectel,0.1%
+38,Gabia,0.1%
+39,Asiatech,0.1%
+40,StackPath,0.1%
+41,Mail.Ru,0.1%
+42,Total Uptime,0.1%

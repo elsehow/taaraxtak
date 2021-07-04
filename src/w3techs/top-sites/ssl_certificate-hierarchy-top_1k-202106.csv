@@ -1,0 +1,20 @@
+Rank,SSL Certificate Authorities,Percentage Top 1,000 Sites
+1,DigiCert Group,52.4%
+1.1,    DigiCert,51.1%
+1.2,    Verisign,1.3%
+2,IdenTrust,17.3%
+3,GlobalSign,16.3%
+4,GoDaddy Group,12.0%
+4.1,    Starfield,9.0%
+4.2,    GoDaddy,3.1%
+5,Sectigo,11.4%
+6,Entrust,2.5%
+7,Certum,1.3%
+8,Secom Trust,1.1%
+9,Let’s Encrypt,0.4%
+10,WISeKey Group,0.2%
+10.1,    QuoVadis,0.2%
+11,Deutsche Telekom,0.2%
+12,TWCA,0.2%
+13,Actalis,0.1%
+14,Trustwave,0.1%
