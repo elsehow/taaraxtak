@@ -9,7 +9,6 @@ import time
 import schedule
 import threading
 import logging
-import coloredlogs
 from funcy import partial
 from src.shared.utils import configure_logging
 

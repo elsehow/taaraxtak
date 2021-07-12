@@ -65,8 +65,10 @@ def configure_logging():
     logging_config = config['logging']
     log_level = logging_config['level']
     if logging_config['handler'] == 'file':
-        logging.basicConfig(level=log_level, filename=logging_config['file'])
+        logging.basicConfig(level=log_level, filename=logging_config['file'], format=logging_config['format'])
     else:
         logging.basicConfig(level=log_level)
         coloredlogs.install()
         coloredlogs.install(level=log_level)
+    # Schedule lib logs out params (including db creds) by default so set this to WARNING and above
+    logging.getLogger("schedule").setLevel(logging.WARNING)

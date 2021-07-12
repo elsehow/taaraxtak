@@ -12,5 +12,7 @@ config = {
     "logging": {
         "level": logging.DEBUG,
         "handler": "terminal",
+        "format": "%(asctime)s [%(process)d:%(thread)d] %(levelname)-8s %(name)-30.30s %(message)s",
+        "file": "/path/to/log/file"
     }
 }
