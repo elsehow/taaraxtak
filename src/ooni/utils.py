@@ -38,7 +38,7 @@ from typing import Optional
 OONI_SLEEP_PAGINATE = 0.25
 
 
-logging.basicConfig()
+shared_utils.configure_logging()
 logger = logging.getLogger("src.ooni.utils")
 # logger.setLevel(logging.DEBUG)
 coloredlogs.install()
