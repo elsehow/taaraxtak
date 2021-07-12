@@ -64,7 +64,7 @@ def get_country(provider_name: str) -> Optional[str]:
 def configure_logging():
     logging_config = config['logging']
     log_level = logging_config['level']
-    if logging_config['file']:
+    if logging_config['handler'] == 'file':
         logging.basicConfig(level=log_level, filename=logging_config['file'])
     else:
         logging.basicConfig(level=log_level)

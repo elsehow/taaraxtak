@@ -11,6 +11,6 @@ config = {
     "tld_cache_dir": "/home/my-user/",
     "logging": {
         "level": logging.DEBUG,
-        "file": False,
+        "handler": "terminal",
     }
 }
