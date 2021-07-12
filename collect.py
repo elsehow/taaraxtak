@@ -8,10 +8,10 @@
 import time
 import schedule
 import threading
-import psycopg2
 import logging
 import coloredlogs
 from funcy import partial
+from src.shared.utils import configure_logging
 
 
 
@@ -29,12 +29,8 @@ def run_threaded(job_func):
 #
 # setup
 #
-logging.basicConfig()
+configure_logging()
 logger = logging.getLogger("taaraxtak:collect")
-# logger.setLevel(logging.DEBUG)
-coloredlogs.install()
-coloredlogs.install(level='INFO')
-# coloredlogs.install(level='DEBUG')
 
 # connect to the db
 postgres_config = config['postgres']
