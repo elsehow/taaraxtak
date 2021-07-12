@@ -72,3 +72,5 @@ def configure_logging():
         coloredlogs.install(level=log_level)
     # Schedule lib logs out params (including db creds) by default so set this to WARNING and above
     logging.getLogger("schedule").setLevel(logging.WARNING)
+    # disable noisy logging by filelock (called by TLDExtract to deal with its cache)
+    logging.getLogger("filelock").setLevel(logging.ERROR)

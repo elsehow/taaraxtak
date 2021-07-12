@@ -1,5 +1,4 @@
 import logging
-import coloredlogs
 import requests
 from time import sleep
 from datetime import datetime
@@ -38,15 +37,7 @@ from typing import Optional
 OONI_SLEEP_PAGINATE = 0.25
 
 
-shared_utils.configure_logging()
 logger = logging.getLogger("src.ooni.utils")
-# logger.setLevel(logging.DEBUG)
-coloredlogs.install()
-coloredlogs.install(level='DEBUG')
-# coloredlogs.install(level='INFO')
-
-# disable noisy logging by filelock (called by TLDExtract to deal with its cache)
-logging.getLogger("filelock").setLevel(logging.ERROR)
 
 
 #
