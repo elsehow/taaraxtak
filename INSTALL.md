@@ -45,10 +45,29 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
-3. Copy `config.example.py` to `config.py` and enter your Postgres credentials. 
+3. Copy `config.example.py` to `config.py` and enter your Postgres credentials. See Config section below for info on
+   logging options.
 4. Run `python3 create_tables.py` to set up the database. (Alternatively, restore the database from a recent DB dump).
 
 Now you can run `python3 collect.py` to start collecting data.
+
+
+### Config
+
+The example config file is set up for logging to the terminal (using the `coloredlogs` package for pretty formatting).
+If you want to log to a file instead, you can set the `handler` to `file` and configure the path to the log file and
+the format you want to use. An example is below:
+```
+    "logging": {
+        "level": logging.DEBUG,
+        "handler": "file",
+        "format": "%(asctime)s [%(process)d:%(thread)d] %(levelname)-8s %(name)-30.30s %(message)s",
+        "file": "/path/to/log/file"
+    }
+```
+[See the Python module docs](https://docs.python.org/3/library/logging.html#logrecord-attributes) for more info on
+specifying the log format.
+
 
 ## Visualization frontend
 
