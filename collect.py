@@ -7,12 +7,9 @@
 
 import time
 import schedule
-import threading
 import logging
 from funcy import partial
-from src.shared.utils import configure_logging
-
-
+from src.shared.utils import configure_logging, run_threaded
 
 from src.w3techs.collect import collect as w3techs_collect
 from src.ooni.collect import collect as ooni_collect
@@ -20,9 +17,6 @@ from src.ooni.collect import collect as ooni_collect
 from config import config
 
 
-def run_threaded(job_func):
-    job_thread = threading.Thread(target=job_func)
-    job_thread.start()
 
 
 #

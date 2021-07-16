@@ -4,6 +4,7 @@ import logging
 from os.path import join
 import pytz
 from datetime import datetime
+import threading
 
 from typing import Optional
 
@@ -74,3 +75,8 @@ def configure_logging():
     logging.getLogger("schedule").setLevel(logging.WARNING)
     # disable noisy logging by filelock (called by TLDExtract to deal with its cache)
     logging.getLogger("filelock").setLevel(logging.ERROR)
+
+
+def run_threaded(job_func):
+    job_thread = threading.Thread(target=job_func)
+    job_thread.start()
