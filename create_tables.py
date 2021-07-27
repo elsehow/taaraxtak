@@ -7,22 +7,18 @@
 
 from funcy import partial
 import logging
-import coloredlogs
 import psycopg2
 
 from src.w3techs.types import create_tables as w3techs_create
 from src.ooni.types import create_tables as ooni_create
 
 from config import config
+from src.shared.utils import configure_logging
 #
 # setup
 #
-logging.basicConfig()
+configure_logging()
 logger = logging.getLogger("taaraxtak:create_tables")
-# logger.setLevel(logging.DEBUG)
-coloredlogs.install()
-coloredlogs.install(level='INFO')
-# coloredlogs.install(level='DEBUG')
 
 # connect to the db
 connection = psycopg2.connect(**config['postgres'])

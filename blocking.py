@@ -5,7 +5,6 @@
 
 
 import logging
-import coloredlogs
 import requests
 from time import sleep
 
@@ -13,16 +12,13 @@ from psycopg2.extensions import cursor
 from psycopg2.extensions import connection
 import pandas as pd
 
+from src.shared.utils import configure_logging
 
 # In[2]:
 
 
-logging.basicConfig()
+configure_logging()
 logger = logging.getLogger("poll-ooni")
-# logger.setLevel(logging.DEBUG)
-coloredlogs.install()
-coloredlogs.install(level='DEBUG')
-# coloredlogs.install(level='INFO')
 
 
 # In[40]:
