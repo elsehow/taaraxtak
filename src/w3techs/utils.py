@@ -151,7 +151,7 @@ def to_df(db_rows) -> pd.DataFrame:
 def fetch_rows(cur: cursor, measurement_scope: str, market: str,  date: pd.Timestamp) -> pd.DataFrame:
     # TODO why this window? a magic number.
     cur.execute(f'''
-        SELECT * from provider_marketshare
+        SELECT name, url, jurisdiction_alpha2, measurement_scope, market, marketshare, time from provider_marketshare
         WHERE measurement_scope = '{measurement_scope}'
         AND market = '{market}'
         AND time BETWEEN timestamp '{date}' - interval '24 hour' AND  '{date}'

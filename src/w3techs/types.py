@@ -18,6 +18,12 @@ import pandas as pd
 def is_float_0_1(my_float: float) -> bool:
     return (type(my_float) == float) & (my_float >= 0) & (my_float <= 1)
 
+def validate_measurement_scope (s: str) -> bool:
+    return (
+        (s == 'all') or
+        (s == 'top_10k') or
+        (s == 'top_1k')
+    )
 
 class ProviderMarketshare():
     '''
@@ -51,11 +57,7 @@ class ProviderMarketshare():
             # we'll just store the str version
             self.jurisdiction_alpha2 = str(jurisdiction_alpha2)
 
-        assert(
-            (measurement_scope == 'all') or
-            (measurement_scope == '10k') or
-            (measurement_scope == '1k')
-        )
+        assert(validate_measurement_scope(measurement_scope))
         self.measurement_scope = measurement_scope
 
         assert(shared_utils.is_nonempty_str(market))
@@ -131,11 +133,8 @@ class PopWeightedGini ():
         assert(shared_utils.is_nonempty_str(market))
         self.market = market
 
-        assert(
-            (measurement_scope == 'all') or
-            (measurement_scope == '10k') or
-            (measurement_scope == '1k')
-        )
+
+        assert(validate_measurement_scope(measurement_scope))
         self.measurement_scope = measurement_scope
 
         assert(is_float_0_1(float(gini)))

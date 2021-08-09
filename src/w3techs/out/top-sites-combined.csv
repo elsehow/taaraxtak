@@ -1,926 +1,926 @@
-,name,marketshare,jurisdiction_alpha2,market,top_n,date
-0,Cloudflare,0.25730000000000003,US,dns_servers,top_10k,2021-01-01 00:06:00
-1,Amazon,0.24050000000000002,US,dns_servers,top_10k,2021-01-01 00:06:00
-2,Akamai,0.0548,US,dns_servers,top_10k,2021-01-01 00:06:00
-3,Google,0.028300000000000002,US,dns_servers,top_10k,2021-01-01 00:06:00
-4,NS1,0.0275,US,dns_servers,top_10k,2021-01-01 00:06:00
-5,Alibaba Group,0.0255,CN,dns_servers,top_10k,2021-01-01 00:06:00
-8,Tencent,0.0252,CN,dns_servers,top_10k,2021-01-01 00:06:00
-9,Neustar UltraDNS,0.0208,US,dns_servers,top_10k,2021-01-01 00:06:00
-10,DNS Made Easy,0.0151,US,dns_servers,top_10k,2021-01-01 00:06:00
-11,Oracle Dyn,0.015,US,dns_servers,top_10k,2021-01-01 00:06:00
-12,GoDaddy Group,0.0147,US,dns_servers,top_10k,2021-01-01 00:06:00
-16,RBC Group,0.0095,RU,dns_servers,top_10k,2021-01-01 00:06:00
-20,Microsoft,0.006999999999999999,US,dns_servers,top_10k,2021-01-01 00:06:00
-21,CSC,0.0060999999999999995,US,dns_servers,top_10k,2021-01-01 00:06:00
-22,ClouDNS,0.0054,BG,dns_servers,top_10k,2021-01-01 00:06:00
-23,Namecheap,0.005,US,dns_servers,top_10k,2021-01-01 00:06:00
-24,ArvanCloud,0.0045000000000000005,DE,dns_servers,top_10k,2021-01-01 00:06:00
-25,OVH,0.0037,FR,dns_servers,top_10k,2021-01-01 00:06:00
-26,Automattic,0.0037,US,dns_servers,top_10k,2021-01-01 00:06:00
-27,Newfold Digital,0.0034999999999999996,US,dns_servers,top_10k,2021-01-01 00:06:00
-36,United Internet,0.0034999999999999996,DE,dns_servers,top_10k,2021-01-01 00:06:00
-44,DigitalOcean,0.0032,US,dns_servers,top_10k,2021-01-01 00:06:00
-45,Verizon Group,0.0031,US,dns_servers,top_10k,2021-01-01 00:06:00
-48,DNSimple,0.0029,US,dns_servers,top_10k,2021-01-01 00:06:00
-49,Internet Initiative Japan,0.0029,,dns_servers,top_10k,2021-01-01 00:06:00
-50,Hetzner,0.0028000000000000004,DE,dns_servers,top_10k,2021-01-01 00:06:00
-51,Linode,0.0025,US,dns_servers,top_10k,2021-01-01 00:06:00
-52,Asiatech,0.0024,IN,dns_servers,top_10k,2021-01-01 00:06:00
-53,Gandi,0.0023,FR,dns_servers,top_10k,2021-01-01 00:06:00
-54,Rackspace,0.0023,US,dns_servers,top_10k,2021-01-01 00:06:00
-55,team.blue,0.0022,DK,dns_servers,top_10k,2021-01-01 00:06:00
-61,GMO Internet Group,0.0021,JP,dns_servers,top_10k,2021-01-01 00:06:00
-67,Yandex,0.0021,RU,dns_servers,top_10k,2021-01-01 00:06:00
-68,easyDNS Group,0.0018,CA,dns_servers,top_10k,2021-01-01 00:06:00
-71,REG.RU,0.0017000000000000001,RU,dns_servers,top_10k,2021-01-01 00:06:00
-72,Sakura,0.0017000000000000001,JP,dns_servers,top_10k,2021-01-01 00:06:00
-73,DNS.com,0.0016,US,dns_servers,top_10k,2021-01-01 00:06:00
-74,IBM,0.0016,US,dns_servers,top_10k,2021-01-01 00:06:00
-75,Aruba Group,0.0015,IT,dns_servers,top_10k,2021-01-01 00:06:00
-77,AT&T,0.0015,US,dns_servers,top_10k,2021-01-01 00:06:00
-78,Chunghwa Telecom,0.0014000000000000002,TW,dns_servers,top_10k,2021-01-01 00:06:00
-79,Tucows Group,0.0013,US,dns_servers,top_10k,2021-01-01 00:06:00
-82,XServer,0.0012,JP,dns_servers,top_10k,2021-01-01 00:06:00
-83,Name.com,0.0012,US,dns_servers,top_10k,2021-01-01 00:06:00
-84,XinNet,0.001,CN,dns_servers,top_10k,2021-01-01 00:06:00
-85,MarkMonitor,0.001,US,dns_servers,top_10k,2021-01-01 00:06:00
-86,Ezoic,0.0009,US,dns_servers,top_10k,2021-01-01 00:06:00
-87,VNPT,0.0009,VN,dns_servers,top_10k,2021-01-01 00:06:00
-88,SiteGround,0.0008,BG,dns_servers,top_10k,2021-01-01 00:06:00
-89,DreamHost,0.0008,US,dns_servers,top_10k,2021-01-01 00:06:00
-90,PA Vietnam,0.0008,VN,dns_servers,top_10k,2021-01-01 00:06:00
-91,Internet.BS,0.0008,BS,dns_servers,top_10k,2021-01-01 00:06:00
-92,InMotion,0.0007000000000000001,US,dns_servers,top_10k,2021-01-01 00:06:00
-93,Selectel,0.0007000000000000001,RU,dns_servers,top_10k,2021-01-01 00:06:00
-94,Choopa,0.0006,US,dns_servers,top_10k,2021-01-01 00:06:00
-95,Enartia Group,0.0006,CY,dns_servers,top_10k,2021-01-01 00:06:00
-98,FastVPS,0.0006,EE,dns_servers,top_10k,2021-01-01 00:06:00
-99,Total Uptime,0.0006,,dns_servers,top_10k,2021-01-01 00:06:00
-100,Hostinger,0.0005,CY,dns_servers,top_10k,2021-01-01 00:06:00
-101,A2 Hosting,0.0005,US,dns_servers,top_10k,2021-01-01 00:06:00
-102,MiroHost,0.0005,UA,dns_servers,top_10k,2021-01-01 00:06:00
-103,Liquid Web,0.0005,US,dns_servers,top_10k,2021-01-01 00:06:00
-104,Hivelocity,0.0005,US,dns_servers,top_10k,2021-01-01 00:06:00
-105,Gabia,0.0005,KR,dns_servers,top_10k,2021-01-01 00:06:00
-106,DDoS-Guard,0.0005,RU,dns_servers,top_10k,2021-01-01 00:06:00
-107,Netafraz,0.0003,IR,dns_servers,top_10k,2021-01-01 00:06:00
-108,Prom.ua,0.0003,UA,dns_servers,top_10k,2021-01-01 00:06:00
-109,Contabo,0.0003,DE,dns_servers,top_10k,2021-01-01 00:06:00
-110,NameSilo,0.0003,US,dns_servers,top_10k,2021-01-01 00:06:00
-111,XBT Holding,0.0003,US,dns_servers,top_10k,2021-01-01 00:06:00
-113,Sucuri,0.0003,US,dns_servers,top_10k,2021-01-01 00:06:00
-114,Cisco,0.0003,,dns_servers,top_10k,2021-01-01 00:06:00
-115,Mihan,0.0002,IN,dns_servers,top_10k,2021-01-01 00:06:00
-116,Hoster.by,0.0002,BY,dns_servers,top_10k,2021-01-01 00:06:00
-117,Cafe24,0.0002,JP,dns_servers,top_10k,2021-01-01 00:06:00
-118,Visma Group,0.0002,NO,dns_servers,top_10k,2021-01-01 00:06:00
-120,Scaleway,0.0002,FR,dns_servers,top_10k,2021-01-01 00:06:00
-121,Infomaniak,0.0002,CH,dns_servers,top_10k,2021-01-01 00:06:00
-122,WPX Hosting,0.0002,BG,dns_servers,top_10k,2021-01-01 00:06:00
-123,Pair Networks,0.0002,US,dns_servers,top_10k,2021-01-01 00:06:00
-124,cdmon,0.0002,ES,dns_servers,top_10k,2021-01-01 00:06:00
-125,SiteSell,0.0002,,dns_servers,top_10k,2021-01-01 00:06:00
-126,StackPath,0.0002,US,dns_servers,top_10k,2021-01-01 00:06:00
-127,Mail.Ru,0.0002,RU,dns_servers,top_10k,2021-01-01 00:06:00
-128,Liberty Global Group,0.0002,,dns_servers,top_10k,2021-01-01 00:06:00
-131,ironDNS,0.0002,,dns_servers,top_10k,2021-01-01 00:06:00
-132,NetEase,0.0002,,dns_servers,top_10k,2021-01-01 00:06:00
-133,TimeWeb,0.0001,RU,dns_servers,top_10k,2021-01-01 00:06:00
-134,Hosting Ukraine,0.0001,UA,dns_servers,top_10k,2021-01-01 00:06:00
-135,Squarespace,0.0001,US,dns_servers,top_10k,2021-01-01 00:06:00
-136,One.com,0.0001,DK,dns_servers,top_10k,2021-01-01 00:06:00
-137,Masterhost,0.0001,RU,dns_servers,top_10k,2021-01-01 00:06:00
-138,FirstVDS,0.0001,RU,dns_servers,top_10k,2021-01-01 00:06:00
-139,Mizbanfa,0.0001,IR,dns_servers,top_10k,2021-01-01 00:06:00
-140,Internet Hosting Center,0.0001,RU,dns_servers,top_10k,2021-01-01 00:06:00
-141,BanaHosting,0.0001,US,dns_servers,top_10k,2021-01-01 00:06:00
-142,Webempresa,0.0001,ES,dns_servers,top_10k,2021-01-01 00:06:00
-143,Dinahosting,0.0001,ES,dns_servers,top_10k,2021-01-01 00:06:00
-144,Hostiran,0.0001,IR,dns_servers,top_10k,2021-01-01 00:06:00
-145,Locaweb,0.0001,BR,dns_servers,top_10k,2021-01-01 00:06:00
-146,Hostpoint,0.0001,,dns_servers,top_10k,2021-01-01 00:06:00
-147,Interneto Vizija,0.0001,LT,dns_servers,top_10k,2021-01-01 00:06:00
-148,Registro.br,0.0001,BR,dns_servers,top_10k,2021-01-01 00:06:00
-149,Zone Media,0.0001,,dns_servers,top_10k,2021-01-01 00:06:00
-150,CSL,0.0001,,dns_servers,top_10k,2021-01-01 00:06:00
-151,No-IP,0.0001,US,dns_servers,top_10k,2021-01-01 00:06:00
-152,Internet Thailand,0.0001,TH,dns_servers,top_10k,2021-01-01 00:06:00
-153,Comodo,0.0001,,dns_servers,top_10k,2021-01-01 00:06:00
-154,VSHosting,0.0001,CZ,dns_servers,top_10k,2021-01-01 00:06:00
-155,CtrlS,0.0001,IN,dns_servers,top_10k,2021-01-01 00:06:00
-156,1984 Hosting,0.0001,IS,dns_servers,top_10k,2021-01-01 00:06:00
-157,Deninet,0.0001,,dns_servers,top_10k,2021-01-01 00:06:00
-0,United States,0.43229999999999996,US,server_locations,top_10k,2021-01-01 00:06:00
-2,Germany,0.18989999999999999,DE,server_locations,top_10k,2021-01-01 00:06:00
-3,France,0.1329,FR,server_locations,top_10k,2021-01-01 00:06:00
-5,China,0.11470000000000001,CN,server_locations,top_10k,2021-01-01 00:06:00
-9,Japan,0.0576,JP,server_locations,top_10k,2021-01-01 00:06:00
-10,Russian Federation,0.054900000000000004,RU,server_locations,top_10k,2021-01-01 00:06:00
-11,Netherlands,0.0481,NL,server_locations,top_10k,2021-01-01 00:06:00
-13,Italy,0.0436,IT,server_locations,top_10k,2021-01-01 00:06:00
-14,United Kingdom,0.0417,GB,server_locations,top_10k,2021-01-01 00:06:00
-17,India,0.030600000000000002,IN,server_locations,top_10k,2021-01-01 00:06:00
-18,South Korea,0.030600000000000002,KR,server_locations,top_10k,2021-01-01 00:06:00
-19,Ireland,0.0297,IE,server_locations,top_10k,2021-01-01 00:06:00
-20,Singapore,0.0286,SG,server_locations,top_10k,2021-01-01 00:06:00
-21,Iran,0.024900000000000002,IR,server_locations,top_10k,2021-01-01 00:06:00
-22,Austria,0.018799999999999997,AT,server_locations,top_10k,2021-01-01 00:06:00
-23,Canada,0.0175,CA,server_locations,top_10k,2021-01-01 00:06:00
-24,Spain,0.015300000000000001,ES,server_locations,top_10k,2021-01-01 00:06:00
-25,Turkey,0.0129,TR,server_locations,top_10k,2021-01-01 00:06:00
-26,Sweden,0.0106,SE,server_locations,top_10k,2021-01-01 00:06:00
-27,Switzerland,0.0101,CH,server_locations,top_10k,2021-01-01 00:06:00
-28,Hungary,0.0096,HU,server_locations,top_10k,2021-01-01 00:06:00
-29,Taiwan,0.0084,TW,server_locations,top_10k,2021-01-01 00:06:00
-30,Poland,0.0070999999999999995,PL,server_locations,top_10k,2021-01-01 00:06:00
-31,Brazil,0.0068000000000000005,BR,server_locations,top_10k,2021-01-01 00:06:00
-32,Czech Republic,0.0066,CZ,server_locations,top_10k,2021-01-01 00:06:00
-33,Finland,0.0058,FI,server_locations,top_10k,2021-01-01 00:06:00
-35,Viet Nam,0.0055000000000000005,VN,server_locations,top_10k,2021-01-01 00:06:00
-36,Indonesia,0.0055000000000000005,ID,server_locations,top_10k,2021-01-01 00:06:00
-37,Australia,0.0052,AU,server_locations,top_10k,2021-01-01 00:06:00
-38,Belgium,0.0051,BE,server_locations,top_10k,2021-01-01 00:06:00
-39,United Arab Emirates,0.0044,AE,server_locations,top_10k,2021-01-01 00:06:00
-40,Ukraine,0.0034999999999999996,UA,server_locations,top_10k,2021-01-01 00:06:00
-41,Saudi Arabia,0.0028000000000000004,SA,server_locations,top_10k,2021-01-01 00:06:00
-42,Mexico,0.0027,MX,server_locations,top_10k,2021-01-01 00:06:00
-43,Greece,0.0025,GR,server_locations,top_10k,2021-01-01 00:06:00
-44,Azerbaijan,0.0025,AZ,server_locations,top_10k,2021-01-01 00:06:00
-45,Argentina,0.0022,AR,server_locations,top_10k,2021-01-01 00:06:00
-46,South Africa,0.0021,ZA,server_locations,top_10k,2021-01-01 00:06:00
-47,Romania,0.0019,RO,server_locations,top_10k,2021-01-01 00:06:00
-48,Kazakhstan,0.0016,KZ,server_locations,top_10k,2021-01-01 00:06:00
-49,Slovakia,0.0016,SK,server_locations,top_10k,2021-01-01 00:06:00
-50,Norway,0.0016,NO,server_locations,top_10k,2021-01-01 00:06:00
-51,Luxembourg,0.0016,LU,server_locations,top_10k,2021-01-01 00:06:00
-52,Thailand,0.0014000000000000002,TH,server_locations,top_10k,2021-01-01 00:06:00
-53,Israel,0.0014000000000000002,IL,server_locations,top_10k,2021-01-01 00:06:00
-54,Bulgaria,0.0014000000000000002,BG,server_locations,top_10k,2021-01-01 00:06:00
-55,Latvia,0.0014000000000000002,LV,server_locations,top_10k,2021-01-01 00:06:00
-56,Malaysia,0.0011,MY,server_locations,top_10k,2021-01-01 00:06:00
-57,Chile,0.0011,CL,server_locations,top_10k,2021-01-01 00:06:00
-58,Estonia,0.0009,EE,server_locations,top_10k,2021-01-01 00:06:00
-59,Portugal,0.0009,PT,server_locations,top_10k,2021-01-01 00:06:00
-60,Pakistan,0.0009,PK,server_locations,top_10k,2021-01-01 00:06:00
-61,Venezuela,0.0009,VE,server_locations,top_10k,2021-01-01 00:06:00
-62,Croatia,0.0008,HR,server_locations,top_10k,2021-01-01 00:06:00
-63,Moldova,0.0008,,server_locations,top_10k,2021-01-01 00:06:00
-64,Egypt,0.0008,EG,server_locations,top_10k,2021-01-01 00:06:00
-65,Qatar,0.0008,QA,server_locations,top_10k,2021-01-01 00:06:00
-66,Angola,0.0008,AO,server_locations,top_10k,2021-01-01 00:06:00
-67,Belarus,0.0006,BY,server_locations,top_10k,2021-01-01 00:06:00
-68,Uzbekistan,0.0006,UZ,server_locations,top_10k,2021-01-01 00:06:00
-69,Denmark,0.0005,DK,server_locations,top_10k,2021-01-01 00:06:00
-71,Lithuania,0.0005,LT,server_locations,top_10k,2021-01-01 00:06:00
-72,Serbia,0.0005,RS,server_locations,top_10k,2021-01-01 00:06:00
-73,Seychelles,0.0005,SC,server_locations,top_10k,2021-01-01 00:06:00
-74,Bangladesh,0.0003,BD,server_locations,top_10k,2021-01-01 00:06:00
-75,Mongolia,0.0003,MN,server_locations,top_10k,2021-01-01 00:06:00
-76,Bosnia and Herzegovina,0.0003,BA,server_locations,top_10k,2021-01-01 00:06:00
-77,North Macedonia,0.0003,,server_locations,top_10k,2021-01-01 00:06:00
-78,Ecuador,0.0003,EC,server_locations,top_10k,2021-01-01 00:06:00
-79,Cuba,0.0003,CU,server_locations,top_10k,2021-01-01 00:06:00
-80,Turkmenistan,0.0003,TM,server_locations,top_10k,2021-01-01 00:06:00
-81,Slovenia,0.0002,SI,server_locations,top_10k,2021-01-01 00:06:00
-82,Nepal,0.0002,NP,server_locations,top_10k,2021-01-01 00:06:00
-83,Colombia,0.0002,CO,server_locations,top_10k,2021-01-01 00:06:00
-84,Peru,0.0002,PE,server_locations,top_10k,2021-01-01 00:06:00
-85,Iceland,0.0002,IS,server_locations,top_10k,2021-01-01 00:06:00
-86,Kyrgyzstan,0.0002,KG,server_locations,top_10k,2021-01-01 00:06:00
-87,Algeria,0.0002,DZ,server_locations,top_10k,2021-01-01 00:06:00
-88,Armenia,0.0002,AM,server_locations,top_10k,2021-01-01 00:06:00
-89,Panama,0.0002,PA,server_locations,top_10k,2021-01-01 00:06:00
-90,Kuwait,0.0002,KW,server_locations,top_10k,2021-01-01 00:06:00
-91,Cambodia,0.0002,KH,server_locations,top_10k,2021-01-01 00:06:00
-92,Cote d'Ivoire,0.0002,,server_locations,top_10k,2021-01-01 00:06:00
-0,DigiCert Group,0.47740000000000005,US,ssl_certificate,top_10k,2021-01-01 00:06:00
-3,IdenTrust,0.22760000000000002,US,ssl_certificate,top_10k,2021-01-01 00:06:00
-4,GoDaddy Group,0.1452,US,ssl_certificate,top_10k,2021-01-01 00:06:00
-7,Sectigo,0.1341,US,ssl_certificate,top_10k,2021-01-01 00:06:00
-8,GlobalSign,0.092,JP,ssl_certificate,top_10k,2021-01-01 00:06:00
-9,Entrust,0.0183,US,ssl_certificate,top_10k,2021-01-01 00:06:00
-10,Certum,0.0154,GB,ssl_certificate,top_10k,2021-01-01 00:06:00
-11,Secom Trust,0.0098,RO,ssl_certificate,top_10k,2021-01-01 00:06:00
-12,Let’s Encrypt,0.0051,US,ssl_certificate,top_10k,2021-01-01 00:06:00
-13,WISeKey Group,0.0032,CH,ssl_certificate,top_10k,2021-01-01 00:06:00
-15,TWCA,0.0016,,ssl_certificate,top_10k,2021-01-01 00:06:00
-16,Trustwave,0.0012,US,ssl_certificate,top_10k,2021-01-01 00:06:00
-17,SwissSign,0.0009,CH,ssl_certificate,top_10k,2021-01-01 00:06:00
-18,Actalis,0.0008,IT,ssl_certificate,top_10k,2021-01-01 00:06:00
-19,Deutsche Telekom,0.0007000000000000001,DE,ssl_certificate,top_10k,2021-01-01 00:06:00
-20,Certigna,0.0007000000000000001,,ssl_certificate,top_10k,2021-01-01 00:06:00
-21,Chunghwa Telecom,0.0005,TW,ssl_certificate,top_10k,2021-01-01 00:06:00
-22,AffirmTrust,0.0005,,ssl_certificate,top_10k,2021-01-01 00:06:00
-23,Hongkong Post,0.0004,CN,ssl_certificate,top_10k,2021-01-01 00:06:00
-24,D-Trust,0.0004,,ssl_certificate,top_10k,2021-01-01 00:06:00
-25,E-Tugra,0.0001,TR,ssl_certificate,top_10k,2021-01-01 00:06:00
-26,Logius,0.0001,,ssl_certificate,top_10k,2021-01-01 00:06:00
-27,Buypass,0.0001,,ssl_certificate,top_10k,2021-01-01 00:06:00
-28,Harica,0.0001,,ssl_certificate,top_10k,2021-01-01 00:06:00
-0,Amazon,0.258,US,data_center,top_1k,2021-01-01 00:06:00
-1,Google,0.10400000000000001,US,data_center,top_1k,2021-01-01 00:06:00
-2,Alibaba,0.052000000000000005,CN,data_center,top_1k,2021-01-01 00:06:00
-3,China Telecom,0.037000000000000005,CN,data_center,top_1k,2021-01-01 00:06:00
-4,Microsoft,0.022000000000000002,US,data_center,top_1k,2021-01-01 00:06:00
-5,Tencent,0.022000000000000002,CN,data_center,top_1k,2021-01-01 00:06:00
-6,China Unicom,0.022000000000000002,CN,data_center,top_1k,2021-01-01 00:06:00
-7,Salesforce,0.022000000000000002,,data_center,top_1k,2021-01-01 00:06:00
-8,Verizon Group,0.019,US,data_center,top_1k,2021-01-01 00:06:00
-12,Automattic,0.013999999999999999,US,data_center,top_1k,2021-01-01 00:06:00
-13,OVH,0.013000000000000001,FR,data_center,top_1k,2021-01-01 00:06:00
-14,Hetzner,0.012,DE,data_center,top_1k,2021-01-01 00:06:00
-15,Asiatech,0.006999999999999999,IN,data_center,top_1k,2021-01-01 00:06:00
-16,Rackspace,0.005,US,data_center,top_1k,2021-01-01 00:06:00
-17,NTT Group,0.005,JP,data_center,top_1k,2021-01-01 00:06:00
-20,CenturyLink,0.005,US,data_center,top_1k,2021-01-01 00:06:00
-21,Squarespace,0.004,US,data_center,top_1k,2021-01-01 00:06:00
-22,LeaseWeb Group,0.004,NL,data_center,top_1k,2021-01-01 00:06:00
-24,Oracle,0.004,US,data_center,top_1k,2021-01-01 00:06:00
-25,Neustar,0.004,,data_center,top_1k,2021-01-01 00:06:00
-26,GoDaddy Group,0.003,US,data_center,top_1k,2021-01-01 00:06:00
-29,United Internet,0.003,DE,data_center,top_1k,2021-01-01 00:06:00
-31,IBM,0.003,US,data_center,top_1k,2021-01-01 00:06:00
-32,Chunghwa Telecom,0.003,TW,data_center,top_1k,2021-01-01 00:06:00
-33,XBT Holding,0.003,US,data_center,top_1k,2021-01-01 00:06:00
-36,Pars Online,0.003,MY,data_center,top_1k,2021-01-01 00:06:00
-37,IDC Frontier,0.003,JP,data_center,top_1k,2021-01-01 00:06:00
-38,Performive,0.003,,data_center,top_1k,2021-01-01 00:06:00
-39,Afranet,0.003,IR,data_center,top_1k,2021-01-01 00:06:00
-40,Baidu,0.003,,data_center,top_1k,2021-01-01 00:06:00
-41,China Mobile,0.003,,data_center,top_1k,2021-01-01 00:06:00
-42,Newfold Digital,0.002,US,data_center,top_1k,2021-01-01 00:06:00
-44,GitHub,0.002,US,data_center,top_1k,2021-01-01 00:06:00
-45,SK Group,0.002,KR,data_center,top_1k,2021-01-01 00:06:00
-48,AT&T,0.002,US,data_center,top_1k,2021-01-01 00:06:00
-49,Hurricane Electric,0.002,US,data_center,top_1k,2021-01-01 00:06:00
-50,SH.cz,0.002,,data_center,top_1k,2021-01-01 00:06:00
-51,Yandex,0.002,RU,data_center,top_1k,2021-01-01 00:06:00
-52,Cisco,0.002,,data_center,top_1k,2021-01-01 00:06:00
-53,Liquid Web,0.001,US,data_center,top_1k,2021-01-01 00:06:00
-54,Linode,0.001,US,data_center,top_1k,2021-01-01 00:06:00
-55,REG.RU,0.001,RU,data_center,top_1k,2021-01-01 00:06:00
-56,Internap Group,0.001,US,data_center,top_1k,2021-01-01 00:06:00
-58,RBC Group,0.001,RU,data_center,top_1k,2021-01-01 00:06:00
-60,Choopa,0.001,US,data_center,top_1k,2021-01-01 00:06:00
-61,GMO Internet Group,0.001,JP,data_center,top_1k,2021-01-01 00:06:00
-63,Radore,0.001,TR,data_center,top_1k,2021-01-01 00:06:00
-64,Selectel,0.001,RU,data_center,top_1k,2021-01-01 00:06:00
-65,Weebly,0.001,US,data_center,top_1k,2021-01-01 00:06:00
-66,Hivelocity,0.001,US,data_center,top_1k,2021-01-01 00:06:00
-67,Scaleway,0.001,FR,data_center,top_1k,2021-01-01 00:06:00
-68,Rostelecom Group,0.001,RU,data_center,top_1k,2021-01-01 00:06:00
-70,Aruba Group,0.001,IT,data_center,top_1k,2021-01-01 00:06:00
-72,KT Group,0.001,HK,data_center,top_1k,2021-01-01 00:06:00
-74,Viettel,0.001,VN,data_center,top_1k,2021-01-01 00:06:00
-75,Cogeco Group,0.001,CA,data_center,top_1k,2021-01-01 00:06:00
-77,QuadraNet,0.001,US,data_center,top_1k,2021-01-01 00:06:00
-78,Masterhost,0.001,RU,data_center,top_1k,2021-01-01 00:06:00
-79,Ntirety,0.001,US,data_center,top_1k,2021-01-01 00:06:00
-80,TierPoint,0.001,US,data_center,top_1k,2021-01-01 00:06:00
-81,Exabytes Group,0.001,MY,data_center,top_1k,2021-01-01 00:06:00
-83,Pair Networks,0.001,US,data_center,top_1k,2021-01-01 00:06:00
-84,PS Internet Company,0.001,KZ,data_center,top_1k,2021-01-01 00:06:00
-85,Advanced Hosting,0.001,NL,data_center,top_1k,2021-01-01 00:06:00
-86,Hostiserver,0.001,CY,data_center,top_1k,2021-01-01 00:06:00
-87,Hostiran,0.001,IR,data_center,top_1k,2021-01-01 00:06:00
-88,Comcast,0.001,,data_center,top_1k,2021-01-01 00:06:00
-89,Psychz,0.001,US,data_center,top_1k,2021-01-01 00:06:00
-90,Internet Initiative Japan,0.001,,data_center,top_1k,2021-01-01 00:06:00
-91,HKBN,0.001,,data_center,top_1k,2021-01-01 00:06:00
-92,Zoho,0.001,,data_center,top_1k,2021-01-01 00:06:00
-0,Amazon,0.268,US,dns_servers,top_1k,2021-01-01 00:06:00
-1,Cloudflare,0.145,US,dns_servers,top_1k,2021-01-01 00:06:00
-2,Akamai,0.09699999999999999,US,dns_servers,top_1k,2021-01-01 00:06:00
-3,NS1,0.073,US,dns_servers,top_1k,2021-01-01 00:06:00
-4,Google,0.066,US,dns_servers,top_1k,2021-01-01 00:06:00
-5,Neustar UltraDNS,0.048,US,dns_servers,top_1k,2021-01-01 00:06:00
-6,Oracle Dyn,0.039,US,dns_servers,top_1k,2021-01-01 00:06:00
-7,Alibaba Group,0.037000000000000005,CN,dns_servers,top_1k,2021-01-01 00:06:00
-10,Tencent,0.034,CN,dns_servers,top_1k,2021-01-01 00:06:00
-11,DNS Made Easy,0.013000000000000001,US,dns_servers,top_1k,2021-01-01 00:06:00
-12,RBC Group,0.009000000000000001,RU,dns_servers,top_1k,2021-01-01 00:06:00
-15,Microsoft,0.008,US,dns_servers,top_1k,2021-01-01 00:06:00
-16,ClouDNS,0.008,BG,dns_servers,top_1k,2021-01-01 00:06:00
-17,Verizon Group,0.008,US,dns_servers,top_1k,2021-01-01 00:06:00
-20,GoDaddy Group,0.006999999999999999,US,dns_servers,top_1k,2021-01-01 00:06:00
-22,CSC,0.006999999999999999,US,dns_servers,top_1k,2021-01-01 00:06:00
-23,Automattic,0.006,US,dns_servers,top_1k,2021-01-01 00:06:00
-24,United Internet,0.004,DE,dns_servers,top_1k,2021-01-01 00:06:00
-27,Internet Initiative Japan,0.004,,dns_servers,top_1k,2021-01-01 00:06:00
-28,ArvanCloud,0.003,DE,dns_servers,top_1k,2021-01-01 00:06:00
-29,Chunghwa Telecom,0.003,TW,dns_servers,top_1k,2021-01-01 00:06:00
-30,AT&T,0.003,US,dns_servers,top_1k,2021-01-01 00:06:00
-31,Newfold Digital,0.002,US,dns_servers,top_1k,2021-01-01 00:06:00
-34,Yandex,0.002,RU,dns_servers,top_1k,2021-01-01 00:06:00
-35,DNSimple,0.002,US,dns_servers,top_1k,2021-01-01 00:06:00
-36,Cisco,0.002,,dns_servers,top_1k,2021-01-01 00:06:00
-37,Tucows Group,0.001,US,dns_servers,top_1k,2021-01-01 00:06:00
-39,Squarespace,0.001,US,dns_servers,top_1k,2021-01-01 00:06:00
-40,Gandi,0.001,FR,dns_servers,top_1k,2021-01-01 00:06:00
-41,Aruba Group,0.001,IT,dns_servers,top_1k,2021-01-01 00:06:00
-43,Rackspace,0.001,US,dns_servers,top_1k,2021-01-01 00:06:00
-44,Choopa,0.001,US,dns_servers,top_1k,2021-01-01 00:06:00
-45,DNS.com,0.001,US,dns_servers,top_1k,2021-01-01 00:06:00
-46,Masterhost,0.001,RU,dns_servers,top_1k,2021-01-01 00:06:00
-47,IBM,0.001,US,dns_servers,top_1k,2021-01-01 00:06:00
-48,VNPT,0.001,VN,dns_servers,top_1k,2021-01-01 00:06:00
-49,Selectel,0.001,RU,dns_servers,top_1k,2021-01-01 00:06:00
-50,Gabia,0.001,KR,dns_servers,top_1k,2021-01-01 00:06:00
-51,Asiatech,0.001,IN,dns_servers,top_1k,2021-01-01 00:06:00
-52,StackPath,0.001,US,dns_servers,top_1k,2021-01-01 00:06:00
-53,Mail.Ru,0.001,RU,dns_servers,top_1k,2021-01-01 00:06:00
-54,Total Uptime,0.001,,dns_servers,top_1k,2021-01-01 00:06:00
-0,Amazon,0.2293,US,web_hosting,top_10k,2021-01-01 00:06:00
-1,Zendesk,0.0437,,web_hosting,top_10k,2021-01-01 00:06:00
-2,Google,0.0418,US,web_hosting,top_10k,2021-01-01 00:06:00
-3,Alibaba,0.0362,CN,web_hosting,top_10k,2021-01-01 00:06:00
-4,China Telecom,0.025,CN,web_hosting,top_10k,2021-01-01 00:06:00
-5,WP Engine Group,0.022099999999999998,,web_hosting,top_10k,2021-01-01 00:06:00
-8,OVH,0.019,FR,web_hosting,top_10k,2021-01-01 00:06:00
-9,Microsoft,0.018799999999999997,US,web_hosting,top_10k,2021-01-01 00:06:00
-10,Hetzner,0.016200000000000003,DE,web_hosting,top_10k,2021-01-01 00:06:00
-11,Salesforce,0.0137,,web_hosting,top_10k,2021-01-01 00:06:00
-12,Shopify,0.013600000000000001,CA,web_hosting,top_10k,2021-01-01 00:06:00
-13,China Unicom,0.0121,CN,web_hosting,top_10k,2021-01-01 00:06:00
-14,Automattic Group,0.0115,US,web_hosting,top_10k,2021-01-01 00:06:00
-17,Tencent,0.0105,CN,web_hosting,top_10k,2021-01-01 00:06:00
-18,DigitalOcean,0.0096,US,web_hosting,top_10k,2021-01-01 00:06:00
-19,Verizon Group,0.0084,US,web_hosting,top_10k,2021-01-01 00:06:00
-23,Acquia,0.0062,,web_hosting,top_10k,2021-01-01 00:06:00
-24,Netlify,0.0059,US,web_hosting,top_10k,2021-01-01 00:06:00
-25,Asiatech,0.0054,IN,web_hosting,top_10k,2021-01-01 00:06:00
-26,Pantheon,0.0054,US,web_hosting,top_10k,2021-01-01 00:06:00
-27,LeaseWeb Group,0.0053,NL,web_hosting,top_10k,2021-01-01 00:06:00
-29,Linode,0.0049,US,web_hosting,top_10k,2021-01-01 00:06:00
-30,HubSpot,0.0049,US,web_hosting,top_10k,2021-01-01 00:06:00
-31,Rackspace,0.0046,US,web_hosting,top_10k,2021-01-01 00:06:00
-32,Hurricane Electric,0.0046,US,web_hosting,top_10k,2021-01-01 00:06:00
-33,Webflow,0.0044,US,web_hosting,top_10k,2021-01-01 00:06:00
-34,CenturyLink,0.0044,US,web_hosting,top_10k,2021-01-01 00:06:00
-35,China Mobile,0.0042,,web_hosting,top_10k,2021-01-01 00:06:00
-36,GoDaddy Group,0.0040999999999999995,US,web_hosting,top_10k,2021-01-01 00:06:00
-43,NTT Group,0.0040999999999999995,JP,web_hosting,top_10k,2021-01-01 00:06:00
-49,KT Group,0.004,HK,web_hosting,top_10k,2021-01-01 00:06:00
-52,XBT Holding,0.0038,US,web_hosting,top_10k,2021-01-01 00:06:00
-58,Selectel,0.0034000000000000002,RU,web_hosting,top_10k,2021-01-01 00:06:00
-59,Medium,0.0034000000000000002,,web_hosting,top_10k,2021-01-01 00:06:00
-60,Kinsta,0.0033,US,web_hosting,top_10k,2021-01-01 00:06:00
-61,Advanced Hosting,0.0033,NL,web_hosting,top_10k,2021-01-01 00:06:00
-62,United Internet,0.0032,DE,web_hosting,top_10k,2021-01-01 00:06:00
-68,Internap Group,0.0029,US,web_hosting,top_10k,2021-01-01 00:06:00
-71,Sakura,0.0029,JP,web_hosting,top_10k,2021-01-01 00:06:00
-72,Newfold Digital,0.0028000000000000004,US,web_hosting,top_10k,2021-01-01 00:06:00
-80,IBM,0.0027,US,web_hosting,top_10k,2021-01-01 00:06:00
-81,GitHub,0.0027,US,web_hosting,top_10k,2021-01-01 00:06:00
-82,Vercel,0.0027,US,web_hosting,top_10k,2021-01-01 00:06:00
-83,Internet Initiative Japan,0.0027,,web_hosting,top_10k,2021-01-01 00:06:00
-84,Squarespace,0.0026,US,web_hosting,top_10k,2021-01-01 00:06:00
-85,LG Group,0.0026,KR,web_hosting,top_10k,2021-01-01 00:06:00
-87,Neustar,0.0026,,web_hosting,top_10k,2021-01-01 00:06:00
-88,Scaleway,0.0023,FR,web_hosting,top_10k,2021-01-01 00:06:00
-89,Oracle,0.0023,US,web_hosting,top_10k,2021-01-01 00:06:00
-90,Liquid Web,0.0022,US,web_hosting,top_10k,2021-01-01 00:06:00
-91,SH.cz,0.0022,,web_hosting,top_10k,2021-01-01 00:06:00
-92,Chunghwa Telecom,0.002,TW,web_hosting,top_10k,2021-01-01 00:06:00
-93,IDC Frontier,0.002,JP,web_hosting,top_10k,2021-01-01 00:06:00
-94,UCloud,0.002,,web_hosting,top_10k,2021-01-01 00:06:00
-95,Pagely,0.002,,web_hosting,top_10k,2021-01-01 00:06:00
-96,Telefónica Group,0.0018,ES,web_hosting,top_10k,2021-01-01 00:06:00
-103,VNPT,0.0017000000000000001,VN,web_hosting,top_10k,2021-01-01 00:06:00
-104,SK Group,0.0017000000000000001,KR,web_hosting,top_10k,2021-01-01 00:06:00
-108,Vodafone,0.0017000000000000001,GB,web_hosting,top_10k,2021-01-01 00:06:00
-109,CSC,0.0017000000000000001,US,web_hosting,top_10k,2021-01-01 00:06:00
-110,Yandex,0.0017000000000000001,RU,web_hosting,top_10k,2021-01-01 00:06:00
-111,Hivelocity,0.0016,US,web_hosting,top_10k,2021-01-01 00:06:00
-112,Deutsche Telekom Group,0.0015,DE,web_hosting,top_10k,2021-01-01 00:06:00
-118,Equinix,0.0015,,web_hosting,top_10k,2021-01-01 00:06:00
-119,SiteGround,0.0014000000000000002,BG,web_hosting,top_10k,2021-01-01 00:06:00
-120,Choopa,0.0014000000000000002,US,web_hosting,top_10k,2021-01-01 00:06:00
-121,GMO Internet Group,0.0014000000000000002,JP,web_hosting,top_10k,2021-01-01 00:06:00
-128,Heroku,0.0014000000000000002,US,web_hosting,top_10k,2021-01-01 00:06:00
-129,AT&T,0.0014000000000000002,US,web_hosting,top_10k,2021-01-01 00:06:00
-130,Performive,0.0014000000000000002,,web_hosting,top_10k,2021-01-01 00:06:00
-131,Afranet,0.0014000000000000002,IR,web_hosting,top_10k,2021-01-01 00:06:00
-132,REG.RU,0.0012,RU,web_hosting,top_10k,2021-01-01 00:06:00
-133,InMotion,0.0012,US,web_hosting,top_10k,2021-01-01 00:06:00
-134,Zoho,0.0012,,web_hosting,top_10k,2021-01-01 00:06:00
-135,XServer,0.0011,JP,web_hosting,top_10k,2021-01-01 00:06:00
-136,Pars Online,0.0011,MY,web_hosting,top_10k,2021-01-01 00:06:00
-137,Serverel,0.0011,US,web_hosting,top_10k,2021-01-01 00:06:00
-138,Delta Telecom,0.0011,,web_hosting,top_10k,2021-01-01 00:06:00
-139,Namecheap,0.001,US,web_hosting,top_10k,2021-01-01 00:06:00
-140,team.blue,0.001,DK,web_hosting,top_10k,2021-01-01 00:06:00
-145,DreamHost,0.001,US,web_hosting,top_10k,2021-01-01 00:06:00
-146,Contabo,0.001,DE,web_hosting,top_10k,2021-01-01 00:06:00
-147,Aruba Group,0.001,IT,web_hosting,top_10k,2021-01-01 00:06:00
-149,Cnservers,0.001,,web_hosting,top_10k,2021-01-01 00:06:00
-150,NFOrce Entertainment,0.001,,web_hosting,top_10k,2021-01-01 00:06:00
-151,KDDI Group,0.0009,US,web_hosting,top_10k,2021-01-01 00:06:00
-153,Wix,0.0008,IL,web_hosting,top_10k,2021-01-01 00:06:00
-154,Radore,0.0008,TR,web_hosting,top_10k,2021-01-01 00:06:00
-155,Pars Parva System,0.0008,IR,web_hosting,top_10k,2021-01-01 00:06:00
-156,PhoenixNAP,0.0008,US,web_hosting,top_10k,2021-01-01 00:06:00
-157,Rostelecom Group,0.0008,RU,web_hosting,top_10k,2021-01-01 00:06:00
-160,QuadraNet,0.0008,US,web_hosting,top_10k,2021-01-01 00:06:00
-161,Pair Networks,0.0008,US,web_hosting,top_10k,2021-01-01 00:06:00
-162,Baidu,0.0008,,web_hosting,top_10k,2021-01-01 00:06:00
-163,Presslabs,0.0008,,web_hosting,top_10k,2021-01-01 00:06:00
-164,A2 Hosting,0.0007000000000000001,US,web_hosting,top_10k,2021-01-01 00:06:00
-165,Bigcommerce,0.0007000000000000001,US,web_hosting,top_10k,2021-01-01 00:06:00
-166,THG Hosting,0.0007000000000000001,GB,web_hosting,top_10k,2021-01-01 00:06:00
-171,Cogent,0.0007000000000000001,US,web_hosting,top_10k,2021-01-01 00:06:00
-172,First Colo,0.0007000000000000001,US,web_hosting,top_10k,2021-01-01 00:06:00
-173,HKBN,0.0007000000000000001,,web_hosting,top_10k,2021-01-01 00:06:00
-174,Teléfonos de México,0.0007000000000000001,,web_hosting,top_10k,2021-01-01 00:06:00
-175,NetEase,0.0007000000000000001,,web_hosting,top_10k,2021-01-01 00:06:00
-176,Wikimedia,0.0007000000000000001,US,web_hosting,top_10k,2021-01-01 00:06:00
-177,Hostinger,0.0006,CY,web_hosting,top_10k,2021-01-01 00:06:00
-178,FirstVDS,0.0006,RU,web_hosting,top_10k,2021-01-01 00:06:00
-179,Tilda,0.0006,GB,web_hosting,top_10k,2021-01-01 00:06:00
-180,FPT,0.0006,VN,web_hosting,top_10k,2021-01-01 00:06:00
-181,Ntirety,0.0006,US,web_hosting,top_10k,2021-01-01 00:06:00
-182,Cogeco Group,0.0006,CA,web_hosting,top_10k,2021-01-01 00:06:00
-184,CtrlS,0.0006,IN,web_hosting,top_10k,2021-01-01 00:06:00
-185,Telia Company Group,0.0006,SE,web_hosting,top_10k,2021-01-01 00:06:00
-189,Codero,0.0006,,web_hosting,top_10k,2021-01-01 00:06:00
-190,Limestone Networks,0.0006,,web_hosting,top_10k,2021-01-01 00:06:00
-191,Claranet,0.0006,,web_hosting,top_10k,2021-01-01 00:06:00
-192,Platform.sh,0.0006,,web_hosting,top_10k,2021-01-01 00:06:00
-193,Gruppo TIM,0.0006,,web_hosting,top_10k,2021-01-01 00:06:00
-194,ServerStack,0.0006,,web_hosting,top_10k,2021-01-01 00:06:00
-195,PrivateSystems,0.0005,GB,web_hosting,top_10k,2021-01-01 00:06:00
-196,Viettel,0.0005,VN,web_hosting,top_10k,2021-01-01 00:06:00
-197,Tebyan,0.0005,IR,web_hosting,top_10k,2021-01-01 00:06:00
-198,MiroHost,0.0005,UA,web_hosting,top_10k,2021-01-01 00:06:00
-199,M247,0.0005,,web_hosting,top_10k,2021-01-01 00:06:00
-200,Gainet,0.0005,,web_hosting,top_10k,2021-01-01 00:06:00
-201,Swisscom Group,0.0005,,web_hosting,top_10k,2021-01-01 00:06:00
-204,Colt,0.0005,,web_hosting,top_10k,2021-01-01 00:06:00
-205,Voxility,0.0005,US,web_hosting,top_10k,2021-01-01 00:06:00
-206,Virtual Systems,0.0005,,web_hosting,top_10k,2021-01-01 00:06:00
-207,Mail.Ru,0.0005,RU,web_hosting,top_10k,2021-01-01 00:06:00
-208,Forthnet,0.0005,,web_hosting,top_10k,2021-01-01 00:06:00
-209,RBC Group,0.0003,RU,web_hosting,top_10k,2021-01-01 00:06:00
-212,Cloudways,0.0003,MT,web_hosting,top_10k,2021-01-01 00:06:00
-213,Steadfast,0.0003,US,web_hosting,top_10k,2021-01-01 00:06:00
-214,FastVPS,0.0003,EE,web_hosting,top_10k,2021-01-01 00:06:00
-215,uKit Group,0.0003,RU,web_hosting,top_10k,2021-01-01 00:06:00
-217,UpCloud,0.0003,FI,web_hosting,top_10k,2021-01-01 00:06:00
-218,PS Internet Company,0.0003,KZ,web_hosting,top_10k,2021-01-01 00:06:00
-219,Zomro,0.0003,UA,web_hosting,top_10k,2021-01-01 00:06:00
-220,Hostiran,0.0003,IR,web_hosting,top_10k,2021-01-01 00:06:00
-221,ServerCentral,0.0003,US,web_hosting,top_10k,2021-01-01 00:06:00
-222,Flexential,0.0003,US,web_hosting,top_10k,2021-01-01 00:06:00
-223,MojoHost,0.0003,,web_hosting,top_10k,2021-01-01 00:06:00
-224,GigeNET,0.0003,,web_hosting,top_10k,2021-01-01 00:06:00
-225,Kazakhtelecom Group,0.0003,,web_hosting,top_10k,2021-01-01 00:06:00
-227,Eurofiber Group,0.0003,,web_hosting,top_10k,2021-01-01 00:06:00
-229,Grupo GTD,0.0003,,web_hosting,top_10k,2021-01-01 00:06:00
-231,OTE,0.0003,,web_hosting,top_10k,2021-01-01 00:06:00
-232,Noris network,0.0003,,web_hosting,top_10k,2021-01-01 00:06:00
-233,DEAC,0.0003,,web_hosting,top_10k,2021-01-01 00:06:00
-234,Neterra,0.0003,,web_hosting,top_10k,2021-01-01 00:06:00
-235,Telecom Egypt,0.0003,,web_hosting,top_10k,2021-01-01 00:06:00
-236,Atos Group,0.0003,,web_hosting,top_10k,2021-01-01 00:06:00
-238,Cisco,0.0003,,web_hosting,top_10k,2021-01-01 00:06:00
-239,Apple,0.0003,US,web_hosting,top_10k,2021-01-01 00:06:00
-240,Weebly,0.0002,US,web_hosting,top_10k,2021-01-01 00:06:00
-241,Mihan,0.0002,IN,web_hosting,top_10k,2021-01-01 00:06:00
-242,Duda,0.0002,US,web_hosting,top_10k,2021-01-01 00:06:00
-243,Enartia Group,0.0002,CY,web_hosting,top_10k,2021-01-01 00:06:00
-246,iomart Group,0.0002,GB,web_hosting,top_10k,2021-01-01 00:06:00
-248,Nexcess,0.0002,US,web_hosting,top_10k,2021-01-01 00:06:00
-249,WPX Hosting,0.0002,BG,web_hosting,top_10k,2021-01-01 00:06:00
-250,Masterhost,0.0002,RU,web_hosting,top_10k,2021-01-01 00:06:00
-251,BanaHosting,0.0002,US,web_hosting,top_10k,2021-01-01 00:06:00
-252,Exabytes Group,0.0002,MY,web_hosting,top_10k,2021-01-01 00:06:00
-254,TierPoint,0.0002,US,web_hosting,top_10k,2021-01-01 00:06:00
-255,Faraso Samaneh Pasargad,0.0002,IR,web_hosting,top_10k,2021-01-01 00:06:00
-256,Confluence-Networks,0.0002,US,web_hosting,top_10k,2021-01-01 00:06:00
-257,EuroByte,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-258,Hostiserver,0.0002,CY,web_hosting,top_10k,2021-01-01 00:06:00
-259,Cafe24,0.0002,JP,web_hosting,top_10k,2021-01-01 00:06:00
-260,VSHosting,0.0002,CZ,web_hosting,top_10k,2021-01-01 00:06:00
-261,Dinahosting,0.0002,ES,web_hosting,top_10k,2021-01-01 00:06:00
-262,Comcast,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-263,Master Internet,0.0002,US,web_hosting,top_10k,2021-01-01 00:06:00
-264,Psychz,0.0002,US,web_hosting,top_10k,2021-01-01 00:06:00
-265,Atman,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-266,WorldStream,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-267,SiteSell,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-268,Tucows Group,0.0002,US,web_hosting,top_10k,2021-01-01 00:06:00
-271,Expedient,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-272,KPN Group,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-275,Casablanca,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-276,Internet Thailand,0.0002,TH,web_hosting,top_10k,2021-01-01 00:06:00
-277,GleSYS,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-278,Liberty Global Group,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-281,New World Telecom,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-282,Sharktech,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-283,GlobalConnect,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-284,NetSuite,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-285,Irideos,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-286,True,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-287,Telekomunikasi Indonesia,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-288,Ning,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-289,Biglobe,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-290,ETECSA,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-291,Turkmentelecom,0.0002,,web_hosting,top_10k,2021-01-01 00:06:00
-292,Hewlett-Packard,0.0002,US,web_hosting,top_10k,2021-01-01 00:06:00
-293,TimeWeb,0.0001,RU,web_hosting,top_10k,2021-01-01 00:06:00
-294,Aerotek,0.0001,US,web_hosting,top_10k,2021-01-01 00:06:00
-295,PA Vietnam,0.0001,VN,web_hosting,top_10k,2021-01-01 00:06:00
-296,Xneelo,0.0001,ZA,web_hosting,top_10k,2021-01-01 00:06:00
-297,Prom.ua,0.0001,UA,web_hosting,top_10k,2021-01-01 00:06:00
-298,Hoster.by,0.0001,BY,web_hosting,top_10k,2021-01-01 00:06:00
-299,CS LoxInfo,0.0001,TH,web_hosting,top_10k,2021-01-01 00:06:00
-300,InterServer,0.0001,US,web_hosting,top_10k,2021-01-01 00:06:00
-301,One.com,0.0001,DK,web_hosting,top_10k,2021-01-01 00:06:00
-302,Serverpars,0.0001,IR,web_hosting,top_10k,2021-01-01 00:06:00
-303,Veridyen,0.0001,TR,web_hosting,top_10k,2021-01-01 00:06:00
-304,Infomaniak,0.0001,CH,web_hosting,top_10k,2021-01-01 00:06:00
-305,UKFast,0.0001,GB,web_hosting,top_10k,2021-01-01 00:06:00
-306,Web Werks,0.0001,IN,web_hosting,top_10k,2021-01-01 00:06:00
-307,Gandi,0.0001,FR,web_hosting,top_10k,2021-01-01 00:06:00
-308,CAT Telecom,0.0001,TH,web_hosting,top_10k,2021-01-01 00:06:00
-309,Beltelecom,0.0001,BY,web_hosting,top_10k,2021-01-01 00:06:00
-310,Interneto Vizija,0.0001,LT,web_hosting,top_10k,2021-01-01 00:06:00
-311,Netdirekt,0.0001,US,web_hosting,top_10k,2021-01-01 00:06:00
-312,ColoCrossing,0.0001,US,web_hosting,top_10k,2021-01-01 00:06:00
-313,Locaweb,0.0001,BR,web_hosting,top_10k,2021-01-01 00:06:00
-314,Cybercon,0.0001,US,web_hosting,top_10k,2021-01-01 00:06:00
-315,Bezeq Group,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-317,CDmon,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-318,Cellcom,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-319,Hostpoint,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-320,Hostwinds,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-321,Digital Energy Technologies,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-322,Romarg,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-323,WebSupport,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-324,Lightspeed,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-325,Kagoya,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-326,Seeweb,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-327,EGIHosting,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-328,TheGigabit,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-329,Filanco,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-330,Beon Intermedia,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-331,PTisp,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-332,VTEX,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-333,Comvive,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-334,Sedmi Odjel,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-335,Serverius,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-336,Profihost,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-337,WhoGoHost,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-338,A1 Telekom Austria Group,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-340,Nessus,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-341,IQ PL,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-342,WebNX,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-343,Cincinnati Bell Group,0.0001,US,web_hosting,top_10k,2021-01-01 00:06:00
-345,Pressidium,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-346,Alwaysdata,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-347,Webnode,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-348,Webglobe-Yegon,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-349,Deninet,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-350,Lancom,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-351,CITIC Group,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-353,Swan,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-354,Universo Online,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-355,Kamatera,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-356,Atlantic Metro,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-357,Optimum,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-358,Telecom Algeria,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-359,GTT,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-360,Advania,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-361,Website Pro,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-362,National DC Mongolia,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-363,Datagroup,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-364,Prometey,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-365,NetCologne,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-366,Core-Backbone,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-367,RackSRV,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-368,ElCat,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-369,Eweka,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-370,SK Communications,0.0001,,web_hosting,top_10k,2021-01-01 00:06:00
-0,United States,0.524,US,server_locations,top_1k,2021-01-01 00:06:00
-2,Germany,0.263,DE,server_locations,top_1k,2021-01-01 00:06:00
-3,China,0.152,CN,server_locations,top_1k,2021-01-01 00:06:00
-6,France,0.133,FR,server_locations,top_1k,2021-01-01 00:06:00
-8,Russian Federation,0.10300000000000001,RU,server_locations,top_1k,2021-01-01 00:06:00
-9,United Kingdom,0.057999999999999996,GB,server_locations,top_1k,2021-01-01 00:06:00
-11,Japan,0.051,JP,server_locations,top_1k,2021-01-01 00:06:00
-12,Netherlands,0.049,NL,server_locations,top_1k,2021-01-01 00:06:00
-14,Singapore,0.049,SG,server_locations,top_1k,2021-01-01 00:06:00
-15,Italy,0.045,IT,server_locations,top_1k,2021-01-01 00:06:00
-16,Ireland,0.038,IE,server_locations,top_1k,2021-01-01 00:06:00
-17,Iran,0.025,IR,server_locations,top_1k,2021-01-01 00:06:00
-18,Austria,0.024,AT,server_locations,top_1k,2021-01-01 00:06:00
-19,India,0.021,IN,server_locations,top_1k,2021-01-01 00:06:00
-20,Sweden,0.021,SE,server_locations,top_1k,2021-01-01 00:06:00
-21,South Korea,0.02,KR,server_locations,top_1k,2021-01-01 00:06:00
-22,Taiwan,0.018000000000000002,TW,server_locations,top_1k,2021-01-01 00:06:00
-23,Canada,0.015,CA,server_locations,top_1k,2021-01-01 00:06:00
-24,Belgium,0.013000000000000001,BE,server_locations,top_1k,2021-01-01 00:06:00
-25,Turkey,0.011000000000000001,TR,server_locations,top_1k,2021-01-01 00:06:00
-26,Switzerland,0.011000000000000001,CH,server_locations,top_1k,2021-01-01 00:06:00
-27,Hungary,0.011000000000000001,HU,server_locations,top_1k,2021-01-01 00:06:00
-28,Indonesia,0.008,ID,server_locations,top_1k,2021-01-01 00:06:00
-29,Poland,0.008,PL,server_locations,top_1k,2021-01-01 00:06:00
-30,Czech Republic,0.008,CZ,server_locations,top_1k,2021-01-01 00:06:00
-31,Spain,0.006999999999999999,ES,server_locations,top_1k,2021-01-01 00:06:00
-32,United Arab Emirates,0.006,AE,server_locations,top_1k,2021-01-01 00:06:00
-33,Brazil,0.004,BR,server_locations,top_1k,2021-01-01 00:06:00
-34,Venezuela,0.004,VE,server_locations,top_1k,2021-01-01 00:06:00
-35,Viet Nam,0.003,VN,server_locations,top_1k,2021-01-01 00:06:00
-36,Finland,0.003,FI,server_locations,top_1k,2021-01-01 00:06:00
-38,Kazakhstan,0.003,KZ,server_locations,top_1k,2021-01-01 00:06:00
-39,Chile,0.003,CL,server_locations,top_1k,2021-01-01 00:06:00
-40,Luxembourg,0.003,LU,server_locations,top_1k,2021-01-01 00:06:00
-41,Australia,0.001,AU,server_locations,top_1k,2021-01-01 00:06:00
-42,Thailand,0.001,TH,server_locations,top_1k,2021-01-01 00:06:00
-43,Israel,0.001,IL,server_locations,top_1k,2021-01-01 00:06:00
-44,Denmark,0.001,DK,server_locations,top_1k,2021-01-01 00:06:00
-46,Greece,0.001,GR,server_locations,top_1k,2021-01-01 00:06:00
-47,Malaysia,0.001,MY,server_locations,top_1k,2021-01-01 00:06:00
-48,Argentina,0.001,AR,server_locations,top_1k,2021-01-01 00:06:00
-49,Slovakia,0.001,SK,server_locations,top_1k,2021-01-01 00:06:00
-50,Norway,0.001,NO,server_locations,top_1k,2021-01-01 00:06:00
-51,Iceland,0.001,IS,server_locations,top_1k,2021-01-01 00:06:00
-52,Bosnia and Herzegovina,0.001,BA,server_locations,top_1k,2021-01-01 00:06:00
-53,Seychelles,0.001,SC,server_locations,top_1k,2021-01-01 00:06:00
-54,Angola,0.001,AO,server_locations,top_1k,2021-01-01 00:06:00
-0,Amazon,0.24600000000000002,US,web_hosting,top_1k,2021-01-01 00:06:00
-1,Google,0.09300000000000001,US,web_hosting,top_1k,2021-01-01 00:06:00
-2,Zendesk,0.06,,web_hosting,top_1k,2021-01-01 00:06:00
-3,Alibaba,0.055,CN,web_hosting,top_1k,2021-01-01 00:06:00
-4,China Telecom,0.038,CN,web_hosting,top_1k,2021-01-01 00:06:00
-5,WP Engine Group,0.022000000000000002,,web_hosting,top_1k,2021-01-01 00:06:00
-8,Tencent,0.022000000000000002,CN,web_hosting,top_1k,2021-01-01 00:06:00
-9,China Unicom,0.022000000000000002,CN,web_hosting,top_1k,2021-01-01 00:06:00
-10,Microsoft,0.021,US,web_hosting,top_1k,2021-01-01 00:06:00
-11,Salesforce,0.021,,web_hosting,top_1k,2021-01-01 00:06:00
-12,Verizon Group,0.019,US,web_hosting,top_1k,2021-01-01 00:06:00
-16,Shopify,0.015,CA,web_hosting,top_1k,2021-01-01 00:06:00
-17,Automattic Group,0.013999999999999999,US,web_hosting,top_1k,2021-01-01 00:06:00
-20,OVH,0.013000000000000001,FR,web_hosting,top_1k,2021-01-01 00:06:00
-21,Hetzner,0.012,DE,web_hosting,top_1k,2021-01-01 00:06:00
-22,Acquia,0.011000000000000001,,web_hosting,top_1k,2021-01-01 00:06:00
-23,CenturyLink,0.01,US,web_hosting,top_1k,2021-01-01 00:06:00
-24,China Mobile,0.009000000000000001,,web_hosting,top_1k,2021-01-01 00:06:00
-25,Asiatech,0.006999999999999999,IN,web_hosting,top_1k,2021-01-01 00:06:00
-26,Pantheon,0.006999999999999999,US,web_hosting,top_1k,2021-01-01 00:06:00
-27,Medium,0.006999999999999999,,web_hosting,top_1k,2021-01-01 00:06:00
-28,NTT Group,0.005,JP,web_hosting,top_1k,2021-01-01 00:06:00
-31,HubSpot,0.005,US,web_hosting,top_1k,2021-01-01 00:06:00
-32,Squarespace,0.004,US,web_hosting,top_1k,2021-01-01 00:06:00
-33,Rackspace,0.004,US,web_hosting,top_1k,2021-01-01 00:06:00
-34,LeaseWeb Group,0.004,NL,web_hosting,top_1k,2021-01-01 00:06:00
-36,Oracle,0.004,US,web_hosting,top_1k,2021-01-01 00:06:00
-37,Newfold Digital,0.003,US,web_hosting,top_1k,2021-01-01 00:06:00
-41,GoDaddy Group,0.003,US,web_hosting,top_1k,2021-01-01 00:06:00
-44,United Internet,0.003,DE,web_hosting,top_1k,2021-01-01 00:06:00
-46,IBM,0.003,US,web_hosting,top_1k,2021-01-01 00:06:00
-47,GitHub,0.003,US,web_hosting,top_1k,2021-01-01 00:06:00
-48,Kinsta,0.003,US,web_hosting,top_1k,2021-01-01 00:06:00
-49,Chunghwa Telecom,0.003,TW,web_hosting,top_1k,2021-01-01 00:06:00
-50,KT Group,0.003,HK,web_hosting,top_1k,2021-01-01 00:06:00
-52,XBT Holding,0.003,US,web_hosting,top_1k,2021-01-01 00:06:00
-55,Pars Online,0.003,MY,web_hosting,top_1k,2021-01-01 00:06:00
-56,SK Group,0.003,KR,web_hosting,top_1k,2021-01-01 00:06:00
-59,IDC Frontier,0.003,JP,web_hosting,top_1k,2021-01-01 00:06:00
-60,Performive,0.003,,web_hosting,top_1k,2021-01-01 00:06:00
-61,Afranet,0.003,IR,web_hosting,top_1k,2021-01-01 00:06:00
-62,Baidu,0.003,,web_hosting,top_1k,2021-01-01 00:06:00
-63,Neustar,0.003,,web_hosting,top_1k,2021-01-01 00:06:00
-64,Wikimedia,0.003,US,web_hosting,top_1k,2021-01-01 00:06:00
-65,Wix,0.002,IL,web_hosting,top_1k,2021-01-01 00:06:00
-66,Netlify,0.002,US,web_hosting,top_1k,2021-01-01 00:06:00
-67,Webflow,0.002,US,web_hosting,top_1k,2021-01-01 00:06:00
-68,AT&T,0.002,US,web_hosting,top_1k,2021-01-01 00:06:00
-69,Hurricane Electric,0.002,US,web_hosting,top_1k,2021-01-01 00:06:00
-70,Comcast,0.002,,web_hosting,top_1k,2021-01-01 00:06:00
-71,SH.cz,0.002,,web_hosting,top_1k,2021-01-01 00:06:00
-72,Yandex,0.002,RU,web_hosting,top_1k,2021-01-01 00:06:00
-73,Grupo GTD,0.002,,web_hosting,top_1k,2021-01-01 00:06:00
-75,Mail.Ru,0.002,RU,web_hosting,top_1k,2021-01-01 00:06:00
-76,ServerStack,0.002,,web_hosting,top_1k,2021-01-01 00:06:00
-77,Cisco,0.002,,web_hosting,top_1k,2021-01-01 00:06:00
-78,Liquid Web,0.001,US,web_hosting,top_1k,2021-01-01 00:06:00
-79,REG.RU,0.001,RU,web_hosting,top_1k,2021-01-01 00:06:00
-80,RBC Group,0.001,RU,web_hosting,top_1k,2021-01-01 00:06:00
-82,Choopa,0.001,US,web_hosting,top_1k,2021-01-01 00:06:00
-83,GMO Internet Group,0.001,JP,web_hosting,top_1k,2021-01-01 00:06:00
-85,Internap Group,0.001,US,web_hosting,top_1k,2021-01-01 00:06:00
-87,Weebly,0.001,US,web_hosting,top_1k,2021-01-01 00:06:00
-88,Selectel,0.001,RU,web_hosting,top_1k,2021-01-01 00:06:00
-89,Scaleway,0.001,FR,web_hosting,top_1k,2021-01-01 00:06:00
-90,Hivelocity,0.001,US,web_hosting,top_1k,2021-01-01 00:06:00
-91,Aruba Group,0.001,IT,web_hosting,top_1k,2021-01-01 00:06:00
-93,Tilda,0.001,GB,web_hosting,top_1k,2021-01-01 00:06:00
-94,Radore,0.001,TR,web_hosting,top_1k,2021-01-01 00:06:00
-95,Viettel,0.001,VN,web_hosting,top_1k,2021-01-01 00:06:00
-96,Masterhost,0.001,RU,web_hosting,top_1k,2021-01-01 00:06:00
-97,Vercel,0.001,US,web_hosting,top_1k,2021-01-01 00:06:00
-98,Rostelecom Group,0.001,RU,web_hosting,top_1k,2021-01-01 00:06:00
-100,Heroku,0.001,US,web_hosting,top_1k,2021-01-01 00:06:00
-101,Cogeco Group,0.001,CA,web_hosting,top_1k,2021-01-01 00:06:00
-103,Exabytes Group,0.001,MY,web_hosting,top_1k,2021-01-01 00:06:00
-105,TierPoint,0.001,US,web_hosting,top_1k,2021-01-01 00:06:00
-106,QuadraNet,0.001,US,web_hosting,top_1k,2021-01-01 00:06:00
-107,LG Group,0.001,KR,web_hosting,top_1k,2021-01-01 00:06:00
-109,Pair Networks,0.001,US,web_hosting,top_1k,2021-01-01 00:06:00
-110,PS Internet Company,0.001,KZ,web_hosting,top_1k,2021-01-01 00:06:00
-111,KDDI Group,0.001,US,web_hosting,top_1k,2021-01-01 00:06:00
-113,Advanced Hosting,0.001,NL,web_hosting,top_1k,2021-01-01 00:06:00
-114,Hostiserver,0.001,CY,web_hosting,top_1k,2021-01-01 00:06:00
-115,Hostiran,0.001,IR,web_hosting,top_1k,2021-01-01 00:06:00
-116,Psychz,0.001,US,web_hosting,top_1k,2021-01-01 00:06:00
-117,UCloud,0.001,,web_hosting,top_1k,2021-01-01 00:06:00
-118,Internet Initiative Japan,0.001,,web_hosting,top_1k,2021-01-01 00:06:00
-119,Platform.sh,0.001,,web_hosting,top_1k,2021-01-01 00:06:00
-120,HKBN,0.001,,web_hosting,top_1k,2021-01-01 00:06:00
-121,NFOrce Entertainment,0.001,,web_hosting,top_1k,2021-01-01 00:06:00
-122,Zoho,0.001,,web_hosting,top_1k,2021-01-01 00:06:00
-123,Webglobe-Yegon,0.001,,web_hosting,top_1k,2021-01-01 00:06:00
-124,Universo Online,0.001,,web_hosting,top_1k,2021-01-01 00:06:00
-125,Advania,0.001,,web_hosting,top_1k,2021-01-01 00:06:00
-126,RackSRV,0.001,,web_hosting,top_1k,2021-01-01 00:06:00
-127,Hewlett-Packard,0.001,US,web_hosting,top_1k,2021-01-01 00:06:00
-128,Apple,0.001,US,web_hosting,top_1k,2021-01-01 00:06:00
-0,DigiCert Group,0.524,US,ssl_certificate,top_1k,2021-01-01 00:06:00
-3,IdenTrust,0.17300000000000001,US,ssl_certificate,top_1k,2021-01-01 00:06:00
-4,GlobalSign,0.163,JP,ssl_certificate,top_1k,2021-01-01 00:06:00
-5,GoDaddy Group,0.12,US,ssl_certificate,top_1k,2021-01-01 00:06:00
-8,Sectigo,0.114,US,ssl_certificate,top_1k,2021-01-01 00:06:00
-9,Entrust,0.025,US,ssl_certificate,top_1k,2021-01-01 00:06:00
-10,Certum,0.013000000000000001,GB,ssl_certificate,top_1k,2021-01-01 00:06:00
-11,Secom Trust,0.011000000000000001,RO,ssl_certificate,top_1k,2021-01-01 00:06:00
-12,Let’s Encrypt,0.004,US,ssl_certificate,top_1k,2021-01-01 00:06:00
-13,WISeKey Group,0.002,CH,ssl_certificate,top_1k,2021-01-01 00:06:00
-15,Deutsche Telekom,0.002,DE,ssl_certificate,top_1k,2021-01-01 00:06:00
-16,TWCA,0.002,,ssl_certificate,top_1k,2021-01-01 00:06:00
-17,Actalis,0.001,IT,ssl_certificate,top_1k,2021-01-01 00:06:00
-18,Trustwave,0.001,US,ssl_certificate,top_1k,2021-01-01 00:06:00
-0,Amazon,0.24539999999999998,US,data_center,top_10k,2021-01-01 00:06:00
-1,Google,0.0542,US,data_center,top_10k,2021-01-01 00:06:00
-2,Alibaba,0.0333,CN,data_center,top_10k,2021-01-01 00:06:00
-3,China Telecom,0.0231,CN,data_center,top_10k,2021-01-01 00:06:00
-4,Microsoft,0.019299999999999998,US,data_center,top_10k,2021-01-01 00:06:00
-5,OVH,0.019,FR,data_center,top_10k,2021-01-01 00:06:00
-6,Hetzner,0.0172,DE,data_center,top_10k,2021-01-01 00:06:00
-7,China Unicom,0.0127,CN,data_center,top_10k,2021-01-01 00:06:00
-8,Automattic,0.0115,US,data_center,top_10k,2021-01-01 00:06:00
-9,DigitalOcean,0.0113,US,data_center,top_10k,2021-01-01 00:06:00
-10,Tencent,0.0105,CN,data_center,top_10k,2021-01-01 00:06:00
-11,Salesforce,0.009300000000000001,,data_center,top_10k,2021-01-01 00:06:00
-12,Verizon Group,0.0083,US,data_center,top_10k,2021-01-01 00:06:00
-16,LeaseWeb Group,0.006,NL,data_center,top_10k,2021-01-01 00:06:00
-18,Asiatech,0.0054,IN,data_center,top_10k,2021-01-01 00:06:00
-19,Linode,0.0052,US,data_center,top_10k,2021-01-01 00:06:00
-20,Rackspace,0.0049,US,data_center,top_10k,2021-01-01 00:06:00
-21,Hurricane Electric,0.0046,US,data_center,top_10k,2021-01-01 00:06:00
-22,GoDaddy Group,0.0040999999999999995,US,data_center,top_10k,2021-01-01 00:06:00
-27,NTT Group,0.0040999999999999995,JP,data_center,top_10k,2021-01-01 00:06:00
-33,XBT Holding,0.004,US,data_center,top_10k,2021-01-01 00:06:00
-37,Selectel,0.0034000000000000002,RU,data_center,top_10k,2021-01-01 00:06:00
-38,Advanced Hosting,0.0033,NL,data_center,top_10k,2021-01-01 00:06:00
-39,United Internet,0.0032,DE,data_center,top_10k,2021-01-01 00:06:00
-43,Internap Group,0.0032,US,data_center,top_10k,2021-01-01 00:06:00
-46,KT Group,0.0032,HK,data_center,top_10k,2021-01-01 00:06:00
-49,Sakura,0.0029,JP,data_center,top_10k,2021-01-01 00:06:00
-50,Yandex,0.0029,RU,data_center,top_10k,2021-01-01 00:06:00
-51,Neustar,0.0028000000000000004,,data_center,top_10k,2021-01-01 00:06:00
-52,IBM,0.0027,US,data_center,top_10k,2021-01-01 00:06:00
-53,Internet Initiative Japan,0.0027,,data_center,top_10k,2021-01-01 00:06:00
-54,Squarespace,0.0024,US,data_center,top_10k,2021-01-01 00:06:00
-55,Liquid Web,0.0024,US,data_center,top_10k,2021-01-01 00:06:00
-56,GitHub,0.0024,US,data_center,top_10k,2021-01-01 00:06:00
-57,Oracle,0.0024,US,data_center,top_10k,2021-01-01 00:06:00
-58,Newfold Digital,0.0023,US,data_center,top_10k,2021-01-01 00:06:00
-62,Scaleway,0.0023,FR,data_center,top_10k,2021-01-01 00:06:00
-63,CenturyLink,0.0023,US,data_center,top_10k,2021-01-01 00:06:00
-64,SH.cz,0.0023,,data_center,top_10k,2021-01-01 00:06:00
-65,China Mobile,0.0021,,data_center,top_10k,2021-01-01 00:06:00
-66,Chunghwa Telecom,0.002,TW,data_center,top_10k,2021-01-01 00:06:00
-67,IDC Frontier,0.002,JP,data_center,top_10k,2021-01-01 00:06:00
-68,CSC,0.0019,US,data_center,top_10k,2021-01-01 00:06:00
-69,VNPT,0.0017000000000000001,VN,data_center,top_10k,2021-01-01 00:06:00
-70,Hivelocity,0.0017000000000000001,US,data_center,top_10k,2021-01-01 00:06:00
-71,Vodafone,0.0017000000000000001,GB,data_center,top_10k,2021-01-01 00:06:00
-72,Equinix,0.0016,,data_center,top_10k,2021-01-01 00:06:00
-73,Choopa,0.0015,US,data_center,top_10k,2021-01-01 00:06:00
-74,Deutsche Telekom Group,0.0015,DE,data_center,top_10k,2021-01-01 00:06:00
-80,AT&T,0.0015,US,data_center,top_10k,2021-01-01 00:06:00
-81,GMO Internet Group,0.0014000000000000002,JP,data_center,top_10k,2021-01-01 00:06:00
-84,Performive,0.0014000000000000002,,data_center,top_10k,2021-01-01 00:06:00
-85,Afranet,0.0014000000000000002,IR,data_center,top_10k,2021-01-01 00:06:00
-86,REG.RU,0.0012,RU,data_center,top_10k,2021-01-01 00:06:00
-87,InMotion,0.0012,US,data_center,top_10k,2021-01-01 00:06:00
-88,Zoho,0.0012,,data_center,top_10k,2021-01-01 00:06:00
-89,Pars Online,0.0011,MY,data_center,top_10k,2021-01-01 00:06:00
-90,Serverel,0.0011,US,data_center,top_10k,2021-01-01 00:06:00
-91,SK Group,0.0011,KR,data_center,top_10k,2021-01-01 00:06:00
-95,Delta Telecom,0.0011,,data_center,top_10k,2021-01-01 00:06:00
-96,Namecheap,0.001,US,data_center,top_10k,2021-01-01 00:06:00
-97,team.blue,0.001,DK,data_center,top_10k,2021-01-01 00:06:00
-102,DreamHost,0.001,US,data_center,top_10k,2021-01-01 00:06:00
-103,Contabo,0.001,DE,data_center,top_10k,2021-01-01 00:06:00
-104,XServer,0.001,JP,data_center,top_10k,2021-01-01 00:06:00
-105,Aruba Group,0.001,IT,data_center,top_10k,2021-01-01 00:06:00
-107,Cnservers,0.001,,data_center,top_10k,2021-01-01 00:06:00
-108,Radore,0.0008,TR,data_center,top_10k,2021-01-01 00:06:00
-109,Rostelecom Group,0.0008,RU,data_center,top_10k,2021-01-01 00:06:00
-112,Pars Parva System,0.0008,IR,data_center,top_10k,2021-01-01 00:06:00
-113,QuadraNet,0.0008,US,data_center,top_10k,2021-01-01 00:06:00
-114,PhoenixNAP,0.0008,US,data_center,top_10k,2021-01-01 00:06:00
-115,Pair Networks,0.0008,US,data_center,top_10k,2021-01-01 00:06:00
-116,A2 Hosting,0.0007000000000000001,US,data_center,top_10k,2021-01-01 00:06:00
-117,First Colo,0.0007000000000000001,US,data_center,top_10k,2021-01-01 00:06:00
-118,Cogent,0.0007000000000000001,US,data_center,top_10k,2021-01-01 00:06:00
-119,HKBN,0.0007000000000000001,,data_center,top_10k,2021-01-01 00:06:00
-120,Baidu,0.0007000000000000001,,data_center,top_10k,2021-01-01 00:06:00
-121,NetEase,0.0007000000000000001,,data_center,top_10k,2021-01-01 00:06:00
-122,Hostinger,0.0006,CY,data_center,top_10k,2021-01-01 00:06:00
-123,FirstVDS,0.0006,RU,data_center,top_10k,2021-01-01 00:06:00
-124,FPT,0.0006,VN,data_center,top_10k,2021-01-01 00:06:00
-125,Cogeco Group,0.0006,CA,data_center,top_10k,2021-01-01 00:06:00
-127,Steadfast,0.0006,US,data_center,top_10k,2021-01-01 00:06:00
-128,CtrlS,0.0006,IN,data_center,top_10k,2021-01-01 00:06:00
-129,Telia Company Group,0.0006,SE,data_center,top_10k,2021-01-01 00:06:00
-133,Codero,0.0006,,data_center,top_10k,2021-01-01 00:06:00
-134,UCloud,0.0006,,data_center,top_10k,2021-01-01 00:06:00
-135,Viettel,0.0005,VN,data_center,top_10k,2021-01-01 00:06:00
-136,Tebyan,0.0005,IR,data_center,top_10k,2021-01-01 00:06:00
-137,Ntirety,0.0005,US,data_center,top_10k,2021-01-01 00:06:00
-138,MiroHost,0.0005,UA,data_center,top_10k,2021-01-01 00:06:00
-139,Voxility,0.0005,US,data_center,top_10k,2021-01-01 00:06:00
-140,M247,0.0005,,data_center,top_10k,2021-01-01 00:06:00
-141,RBC Group,0.0003,RU,data_center,top_10k,2021-01-01 00:06:00
-144,PrivateSystems,0.0003,GB,data_center,top_10k,2021-01-01 00:06:00
-145,UpCloud,0.0003,FI,data_center,top_10k,2021-01-01 00:06:00
-146,PS Internet Company,0.0003,KZ,data_center,top_10k,2021-01-01 00:06:00
-147,Zomro,0.0003,UA,data_center,top_10k,2021-01-01 00:06:00
-148,Hostiran,0.0003,IR,data_center,top_10k,2021-01-01 00:06:00
-149,Flexential,0.0003,US,data_center,top_10k,2021-01-01 00:06:00
-150,DEAC,0.0003,,data_center,top_10k,2021-01-01 00:06:00
-151,Telecom Egypt,0.0003,,data_center,top_10k,2021-01-01 00:06:00
-152,Cisco,0.0003,,data_center,top_10k,2021-01-01 00:06:00
-153,Weebly,0.0002,US,data_center,top_10k,2021-01-01 00:06:00
-154,EuroByte,0.0002,,data_center,top_10k,2021-01-01 00:06:00
-155,Mihan,0.0002,IN,data_center,top_10k,2021-01-01 00:06:00
-156,Beltelecom,0.0002,BY,data_center,top_10k,2021-01-01 00:06:00
-157,iomart Group,0.0002,GB,data_center,top_10k,2021-01-01 00:06:00
-159,Masterhost,0.0002,RU,data_center,top_10k,2021-01-01 00:06:00
-160,TierPoint,0.0002,US,data_center,top_10k,2021-01-01 00:06:00
-161,Exabytes Group,0.0002,MY,data_center,top_10k,2021-01-01 00:06:00
-163,Faraso Samaneh Pasargad,0.0002,IR,data_center,top_10k,2021-01-01 00:06:00
-164,Confluence-Networks,0.0002,US,data_center,top_10k,2021-01-01 00:06:00
-165,Hostiserver,0.0002,CY,data_center,top_10k,2021-01-01 00:06:00
-166,VSHosting,0.0002,CZ,data_center,top_10k,2021-01-01 00:06:00
-167,Dinahosting,0.0002,ES,data_center,top_10k,2021-01-01 00:06:00
-168,Tucows Group,0.0002,US,data_center,top_10k,2021-01-01 00:06:00
-171,Master Internet,0.0002,US,data_center,top_10k,2021-01-01 00:06:00
-172,Psychz,0.0002,US,data_center,top_10k,2021-01-01 00:06:00
-173,Expedient,0.0002,,data_center,top_10k,2021-01-01 00:06:00
-174,Casablanca,0.0002,,data_center,top_10k,2021-01-01 00:06:00
-175,Internet Thailand,0.0002,TH,data_center,top_10k,2021-01-01 00:06:00
-176,Sharktech,0.0002,,data_center,top_10k,2021-01-01 00:06:00
-177,New World Telecom,0.0002,,data_center,top_10k,2021-01-01 00:06:00
-178,GlobalConnect,0.0002,,data_center,top_10k,2021-01-01 00:06:00
-179,ETECSA,0.0002,,data_center,top_10k,2021-01-01 00:06:00
-180,Turkmentelecom,0.0002,,data_center,top_10k,2021-01-01 00:06:00
-181,TimeWeb,0.0001,RU,data_center,top_10k,2021-01-01 00:06:00
-182,Aerotek,0.0001,US,data_center,top_10k,2021-01-01 00:06:00
-183,PA Vietnam,0.0001,VN,data_center,top_10k,2021-01-01 00:06:00
-184,ServerCentral,0.0001,US,data_center,top_10k,2021-01-01 00:06:00
-185,Xneelo,0.0001,ZA,data_center,top_10k,2021-01-01 00:06:00
-186,CS LoxInfo,0.0001,TH,data_center,top_10k,2021-01-01 00:06:00
-187,InterServer,0.0001,US,data_center,top_10k,2021-01-01 00:06:00
-188,One.com,0.0001,DK,data_center,top_10k,2021-01-01 00:06:00
-189,Serverpars,0.0001,IR,data_center,top_10k,2021-01-01 00:06:00
-190,Veridyen,0.0001,TR,data_center,top_10k,2021-01-01 00:06:00
-191,Infomaniak,0.0001,CH,data_center,top_10k,2021-01-01 00:06:00
-192,WPX Hosting,0.0001,BG,data_center,top_10k,2021-01-01 00:06:00
-193,Gandi,0.0001,FR,data_center,top_10k,2021-01-01 00:06:00
-194,UKFast,0.0001,GB,data_center,top_10k,2021-01-01 00:06:00
-195,FastVPS,0.0001,EE,data_center,top_10k,2021-01-01 00:06:00
-196,CAT Telecom,0.0001,TH,data_center,top_10k,2021-01-01 00:06:00
-197,Enartia Group,0.0001,CY,data_center,top_10k,2021-01-01 00:06:00
-199,Interneto Vizija,0.0001,LT,data_center,top_10k,2021-01-01 00:06:00
-200,ColoCrossing,0.0001,US,data_center,top_10k,2021-01-01 00:06:00
-201,Locaweb,0.0001,BR,data_center,top_10k,2021-01-01 00:06:00
-202,Cellcom,0.0001,,data_center,top_10k,2021-01-01 00:06:00
-203,Comcast,0.0001,,data_center,top_10k,2021-01-01 00:06:00
-204,Hostwinds,0.0001,,data_center,top_10k,2021-01-01 00:06:00
-205,Romarg,0.0001,,data_center,top_10k,2021-01-01 00:06:00
-206,WebSupport,0.0001,,data_center,top_10k,2021-01-01 00:06:00
-207,Seeweb,0.0001,,data_center,top_10k,2021-01-01 00:06:00
-208,EGIHosting,0.0001,,data_center,top_10k,2021-01-01 00:06:00
-209,TheGigabit,0.0001,,data_center,top_10k,2021-01-01 00:06:00
-210,Serverius,0.0001,,data_center,top_10k,2021-01-01 00:06:00
-211,PTisp,0.0001,,data_center,top_10k,2021-01-01 00:06:00
-212,Sedmi Odjel,0.0001,,data_center,top_10k,2021-01-01 00:06:00
-213,Alwaysdata,0.0001,,data_center,top_10k,2021-01-01 00:06:00
-214,Kamatera,0.0001,,data_center,top_10k,2021-01-01 00:06:00
-215,Telecom Algeria,0.0001,,data_center,top_10k,2021-01-01 00:06:00
-216,National DC Mongolia,0.0001,,data_center,top_10k,2021-01-01 00:06:00
+,name,marketshare,jurisdiction_alpha2,measurement_scope,market,date
+0,Cloudflare,0.25730000000000003,US,top_10k,dns_servers,2021-01-01 00:06:00
+1,Amazon,0.24050000000000002,US,top_10k,dns_servers,2021-01-01 00:06:00
+2,Akamai,0.0548,US,top_10k,dns_servers,2021-01-01 00:06:00
+3,Google,0.028300000000000002,US,top_10k,dns_servers,2021-01-01 00:06:00
+4,NS1,0.0275,US,top_10k,dns_servers,2021-01-01 00:06:00
+5,Alibaba Group,0.0255,CN,top_10k,dns_servers,2021-01-01 00:06:00
+8,Tencent,0.0252,CN,top_10k,dns_servers,2021-01-01 00:06:00
+9,Neustar UltraDNS,0.0208,US,top_10k,dns_servers,2021-01-01 00:06:00
+10,DNS Made Easy,0.0151,US,top_10k,dns_servers,2021-01-01 00:06:00
+11,Oracle Dyn,0.015,US,top_10k,dns_servers,2021-01-01 00:06:00
+12,GoDaddy Group,0.0147,US,top_10k,dns_servers,2021-01-01 00:06:00
+16,RBC Group,0.0095,RU,top_10k,dns_servers,2021-01-01 00:06:00
+20,Microsoft,0.006999999999999999,US,top_10k,dns_servers,2021-01-01 00:06:00
+21,CSC,0.0060999999999999995,US,top_10k,dns_servers,2021-01-01 00:06:00
+22,ClouDNS,0.0054,BG,top_10k,dns_servers,2021-01-01 00:06:00
+23,Namecheap,0.005,US,top_10k,dns_servers,2021-01-01 00:06:00
+24,ArvanCloud,0.0045000000000000005,DE,top_10k,dns_servers,2021-01-01 00:06:00
+25,OVH,0.0037,FR,top_10k,dns_servers,2021-01-01 00:06:00
+26,Automattic,0.0037,US,top_10k,dns_servers,2021-01-01 00:06:00
+27,Newfold Digital,0.0034999999999999996,US,top_10k,dns_servers,2021-01-01 00:06:00
+36,United Internet,0.0034999999999999996,DE,top_10k,dns_servers,2021-01-01 00:06:00
+44,DigitalOcean,0.0032,US,top_10k,dns_servers,2021-01-01 00:06:00
+45,Verizon Group,0.0031,US,top_10k,dns_servers,2021-01-01 00:06:00
+48,DNSimple,0.0029,US,top_10k,dns_servers,2021-01-01 00:06:00
+49,Internet Initiative Japan,0.0029,,top_10k,dns_servers,2021-01-01 00:06:00
+50,Hetzner,0.0028000000000000004,DE,top_10k,dns_servers,2021-01-01 00:06:00
+51,Linode,0.0025,US,top_10k,dns_servers,2021-01-01 00:06:00
+52,Asiatech,0.0024,IN,top_10k,dns_servers,2021-01-01 00:06:00
+53,Gandi,0.0023,FR,top_10k,dns_servers,2021-01-01 00:06:00
+54,Rackspace,0.0023,US,top_10k,dns_servers,2021-01-01 00:06:00
+55,team.blue,0.0022,DK,top_10k,dns_servers,2021-01-01 00:06:00
+61,GMO Internet Group,0.0021,JP,top_10k,dns_servers,2021-01-01 00:06:00
+67,Yandex,0.0021,RU,top_10k,dns_servers,2021-01-01 00:06:00
+68,easyDNS Group,0.0018,CA,top_10k,dns_servers,2021-01-01 00:06:00
+71,REG.RU,0.0017000000000000001,RU,top_10k,dns_servers,2021-01-01 00:06:00
+72,Sakura,0.0017000000000000001,JP,top_10k,dns_servers,2021-01-01 00:06:00
+73,DNS.com,0.0016,US,top_10k,dns_servers,2021-01-01 00:06:00
+74,IBM,0.0016,US,top_10k,dns_servers,2021-01-01 00:06:00
+75,Aruba Group,0.0015,IT,top_10k,dns_servers,2021-01-01 00:06:00
+77,AT&T,0.0015,US,top_10k,dns_servers,2021-01-01 00:06:00
+78,Chunghwa Telecom,0.0014000000000000002,TW,top_10k,dns_servers,2021-01-01 00:06:00
+79,Tucows Group,0.0013,US,top_10k,dns_servers,2021-01-01 00:06:00
+82,XServer,0.0012,JP,top_10k,dns_servers,2021-01-01 00:06:00
+83,Name.com,0.0012,US,top_10k,dns_servers,2021-01-01 00:06:00
+84,XinNet,0.001,CN,top_10k,dns_servers,2021-01-01 00:06:00
+85,MarkMonitor,0.001,US,top_10k,dns_servers,2021-01-01 00:06:00
+86,Ezoic,0.0009,US,top_10k,dns_servers,2021-01-01 00:06:00
+87,VNPT,0.0009,VN,top_10k,dns_servers,2021-01-01 00:06:00
+88,SiteGround,0.0008,BG,top_10k,dns_servers,2021-01-01 00:06:00
+89,DreamHost,0.0008,US,top_10k,dns_servers,2021-01-01 00:06:00
+90,PA Vietnam,0.0008,VN,top_10k,dns_servers,2021-01-01 00:06:00
+91,Internet.BS,0.0008,BS,top_10k,dns_servers,2021-01-01 00:06:00
+92,InMotion,0.0007000000000000001,US,top_10k,dns_servers,2021-01-01 00:06:00
+93,Selectel,0.0007000000000000001,RU,top_10k,dns_servers,2021-01-01 00:06:00
+94,Choopa,0.0006,US,top_10k,dns_servers,2021-01-01 00:06:00
+95,Enartia Group,0.0006,CY,top_10k,dns_servers,2021-01-01 00:06:00
+98,FastVPS,0.0006,EE,top_10k,dns_servers,2021-01-01 00:06:00
+99,Total Uptime,0.0006,,top_10k,dns_servers,2021-01-01 00:06:00
+100,Hostinger,0.0005,CY,top_10k,dns_servers,2021-01-01 00:06:00
+101,A2 Hosting,0.0005,US,top_10k,dns_servers,2021-01-01 00:06:00
+102,MiroHost,0.0005,UA,top_10k,dns_servers,2021-01-01 00:06:00
+103,Liquid Web,0.0005,US,top_10k,dns_servers,2021-01-01 00:06:00
+104,Hivelocity,0.0005,US,top_10k,dns_servers,2021-01-01 00:06:00
+105,Gabia,0.0005,KR,top_10k,dns_servers,2021-01-01 00:06:00
+106,DDoS-Guard,0.0005,RU,top_10k,dns_servers,2021-01-01 00:06:00
+107,Netafraz,0.0003,IR,top_10k,dns_servers,2021-01-01 00:06:00
+108,Prom.ua,0.0003,UA,top_10k,dns_servers,2021-01-01 00:06:00
+109,Contabo,0.0003,DE,top_10k,dns_servers,2021-01-01 00:06:00
+110,NameSilo,0.0003,US,top_10k,dns_servers,2021-01-01 00:06:00
+111,XBT Holding,0.0003,US,top_10k,dns_servers,2021-01-01 00:06:00
+113,Sucuri,0.0003,US,top_10k,dns_servers,2021-01-01 00:06:00
+114,Cisco,0.0003,,top_10k,dns_servers,2021-01-01 00:06:00
+115,Mihan,0.0002,IN,top_10k,dns_servers,2021-01-01 00:06:00
+116,Hoster.by,0.0002,BY,top_10k,dns_servers,2021-01-01 00:06:00
+117,Cafe24,0.0002,JP,top_10k,dns_servers,2021-01-01 00:06:00
+118,Visma Group,0.0002,NO,top_10k,dns_servers,2021-01-01 00:06:00
+120,Scaleway,0.0002,FR,top_10k,dns_servers,2021-01-01 00:06:00
+121,Infomaniak,0.0002,CH,top_10k,dns_servers,2021-01-01 00:06:00
+122,WPX Hosting,0.0002,BG,top_10k,dns_servers,2021-01-01 00:06:00
+123,Pair Networks,0.0002,US,top_10k,dns_servers,2021-01-01 00:06:00
+124,cdmon,0.0002,ES,top_10k,dns_servers,2021-01-01 00:06:00
+125,SiteSell,0.0002,,top_10k,dns_servers,2021-01-01 00:06:00
+126,StackPath,0.0002,US,top_10k,dns_servers,2021-01-01 00:06:00
+127,Mail.Ru,0.0002,RU,top_10k,dns_servers,2021-01-01 00:06:00
+128,Liberty Global Group,0.0002,,top_10k,dns_servers,2021-01-01 00:06:00
+131,ironDNS,0.0002,,top_10k,dns_servers,2021-01-01 00:06:00
+132,NetEase,0.0002,,top_10k,dns_servers,2021-01-01 00:06:00
+133,TimeWeb,0.0001,RU,top_10k,dns_servers,2021-01-01 00:06:00
+134,Hosting Ukraine,0.0001,UA,top_10k,dns_servers,2021-01-01 00:06:00
+135,Squarespace,0.0001,US,top_10k,dns_servers,2021-01-01 00:06:00
+136,One.com,0.0001,DK,top_10k,dns_servers,2021-01-01 00:06:00
+137,Masterhost,0.0001,RU,top_10k,dns_servers,2021-01-01 00:06:00
+138,FirstVDS,0.0001,RU,top_10k,dns_servers,2021-01-01 00:06:00
+139,Mizbanfa,0.0001,IR,top_10k,dns_servers,2021-01-01 00:06:00
+140,Internet Hosting Center,0.0001,RU,top_10k,dns_servers,2021-01-01 00:06:00
+141,BanaHosting,0.0001,US,top_10k,dns_servers,2021-01-01 00:06:00
+142,Webempresa,0.0001,ES,top_10k,dns_servers,2021-01-01 00:06:00
+143,Dinahosting,0.0001,ES,top_10k,dns_servers,2021-01-01 00:06:00
+144,Hostiran,0.0001,IR,top_10k,dns_servers,2021-01-01 00:06:00
+145,Locaweb,0.0001,BR,top_10k,dns_servers,2021-01-01 00:06:00
+146,Hostpoint,0.0001,,top_10k,dns_servers,2021-01-01 00:06:00
+147,Interneto Vizija,0.0001,LT,top_10k,dns_servers,2021-01-01 00:06:00
+148,Registro.br,0.0001,BR,top_10k,dns_servers,2021-01-01 00:06:00
+149,Zone Media,0.0001,,top_10k,dns_servers,2021-01-01 00:06:00
+150,CSL,0.0001,,top_10k,dns_servers,2021-01-01 00:06:00
+151,No-IP,0.0001,US,top_10k,dns_servers,2021-01-01 00:06:00
+152,Internet Thailand,0.0001,TH,top_10k,dns_servers,2021-01-01 00:06:00
+153,Comodo,0.0001,,top_10k,dns_servers,2021-01-01 00:06:00
+154,VSHosting,0.0001,CZ,top_10k,dns_servers,2021-01-01 00:06:00
+155,CtrlS,0.0001,IN,top_10k,dns_servers,2021-01-01 00:06:00
+156,1984 Hosting,0.0001,IS,top_10k,dns_servers,2021-01-01 00:06:00
+157,Deninet,0.0001,,top_10k,dns_servers,2021-01-01 00:06:00
+0,United States,0.43229999999999996,US,top_10k,server_locations,2021-01-01 00:06:00
+2,Germany,0.18989999999999999,DE,top_10k,server_locations,2021-01-01 00:06:00
+3,France,0.1329,FR,top_10k,server_locations,2021-01-01 00:06:00
+5,China,0.11470000000000001,CN,top_10k,server_locations,2021-01-01 00:06:00
+9,Japan,0.0576,JP,top_10k,server_locations,2021-01-01 00:06:00
+10,Russian Federation,0.054900000000000004,RU,top_10k,server_locations,2021-01-01 00:06:00
+11,Netherlands,0.0481,NL,top_10k,server_locations,2021-01-01 00:06:00
+13,Italy,0.0436,IT,top_10k,server_locations,2021-01-01 00:06:00
+14,United Kingdom,0.0417,GB,top_10k,server_locations,2021-01-01 00:06:00
+17,India,0.030600000000000002,IN,top_10k,server_locations,2021-01-01 00:06:00
+18,South Korea,0.030600000000000002,KR,top_10k,server_locations,2021-01-01 00:06:00
+19,Ireland,0.0297,IE,top_10k,server_locations,2021-01-01 00:06:00
+20,Singapore,0.0286,SG,top_10k,server_locations,2021-01-01 00:06:00
+21,Iran,0.024900000000000002,IR,top_10k,server_locations,2021-01-01 00:06:00
+22,Austria,0.018799999999999997,AT,top_10k,server_locations,2021-01-01 00:06:00
+23,Canada,0.0175,CA,top_10k,server_locations,2021-01-01 00:06:00
+24,Spain,0.015300000000000001,ES,top_10k,server_locations,2021-01-01 00:06:00
+25,Turkey,0.0129,TR,top_10k,server_locations,2021-01-01 00:06:00
+26,Sweden,0.0106,SE,top_10k,server_locations,2021-01-01 00:06:00
+27,Switzerland,0.0101,CH,top_10k,server_locations,2021-01-01 00:06:00
+28,Hungary,0.0096,HU,top_10k,server_locations,2021-01-01 00:06:00
+29,Taiwan,0.0084,TW,top_10k,server_locations,2021-01-01 00:06:00
+30,Poland,0.0070999999999999995,PL,top_10k,server_locations,2021-01-01 00:06:00
+31,Brazil,0.0068000000000000005,BR,top_10k,server_locations,2021-01-01 00:06:00
+32,Czech Republic,0.0066,CZ,top_10k,server_locations,2021-01-01 00:06:00
+33,Finland,0.0058,FI,top_10k,server_locations,2021-01-01 00:06:00
+35,Viet Nam,0.0055000000000000005,VN,top_10k,server_locations,2021-01-01 00:06:00
+36,Indonesia,0.0055000000000000005,ID,top_10k,server_locations,2021-01-01 00:06:00
+37,Australia,0.0052,AU,top_10k,server_locations,2021-01-01 00:06:00
+38,Belgium,0.0051,BE,top_10k,server_locations,2021-01-01 00:06:00
+39,United Arab Emirates,0.0044,AE,top_10k,server_locations,2021-01-01 00:06:00
+40,Ukraine,0.0034999999999999996,UA,top_10k,server_locations,2021-01-01 00:06:00
+41,Saudi Arabia,0.0028000000000000004,SA,top_10k,server_locations,2021-01-01 00:06:00
+42,Mexico,0.0027,MX,top_10k,server_locations,2021-01-01 00:06:00
+43,Greece,0.0025,GR,top_10k,server_locations,2021-01-01 00:06:00
+44,Azerbaijan,0.0025,AZ,top_10k,server_locations,2021-01-01 00:06:00
+45,Argentina,0.0022,AR,top_10k,server_locations,2021-01-01 00:06:00
+46,South Africa,0.0021,ZA,top_10k,server_locations,2021-01-01 00:06:00
+47,Romania,0.0019,RO,top_10k,server_locations,2021-01-01 00:06:00
+48,Kazakhstan,0.0016,KZ,top_10k,server_locations,2021-01-01 00:06:00
+49,Slovakia,0.0016,SK,top_10k,server_locations,2021-01-01 00:06:00
+50,Norway,0.0016,NO,top_10k,server_locations,2021-01-01 00:06:00
+51,Luxembourg,0.0016,LU,top_10k,server_locations,2021-01-01 00:06:00
+52,Thailand,0.0014000000000000002,TH,top_10k,server_locations,2021-01-01 00:06:00
+53,Israel,0.0014000000000000002,IL,top_10k,server_locations,2021-01-01 00:06:00
+54,Bulgaria,0.0014000000000000002,BG,top_10k,server_locations,2021-01-01 00:06:00
+55,Latvia,0.0014000000000000002,LV,top_10k,server_locations,2021-01-01 00:06:00
+56,Malaysia,0.0011,MY,top_10k,server_locations,2021-01-01 00:06:00
+57,Chile,0.0011,CL,top_10k,server_locations,2021-01-01 00:06:00
+58,Estonia,0.0009,EE,top_10k,server_locations,2021-01-01 00:06:00
+59,Portugal,0.0009,PT,top_10k,server_locations,2021-01-01 00:06:00
+60,Pakistan,0.0009,PK,top_10k,server_locations,2021-01-01 00:06:00
+61,Venezuela,0.0009,VE,top_10k,server_locations,2021-01-01 00:06:00
+62,Croatia,0.0008,HR,top_10k,server_locations,2021-01-01 00:06:00
+63,Moldova,0.0008,,top_10k,server_locations,2021-01-01 00:06:00
+64,Egypt,0.0008,EG,top_10k,server_locations,2021-01-01 00:06:00
+65,Qatar,0.0008,QA,top_10k,server_locations,2021-01-01 00:06:00
+66,Angola,0.0008,AO,top_10k,server_locations,2021-01-01 00:06:00
+67,Belarus,0.0006,BY,top_10k,server_locations,2021-01-01 00:06:00
+68,Uzbekistan,0.0006,UZ,top_10k,server_locations,2021-01-01 00:06:00
+69,Denmark,0.0005,DK,top_10k,server_locations,2021-01-01 00:06:00
+71,Lithuania,0.0005,LT,top_10k,server_locations,2021-01-01 00:06:00
+72,Serbia,0.0005,RS,top_10k,server_locations,2021-01-01 00:06:00
+73,Seychelles,0.0005,SC,top_10k,server_locations,2021-01-01 00:06:00
+74,Bangladesh,0.0003,BD,top_10k,server_locations,2021-01-01 00:06:00
+75,Mongolia,0.0003,MN,top_10k,server_locations,2021-01-01 00:06:00
+76,Bosnia and Herzegovina,0.0003,BA,top_10k,server_locations,2021-01-01 00:06:00
+77,North Macedonia,0.0003,,top_10k,server_locations,2021-01-01 00:06:00
+78,Ecuador,0.0003,EC,top_10k,server_locations,2021-01-01 00:06:00
+79,Cuba,0.0003,CU,top_10k,server_locations,2021-01-01 00:06:00
+80,Turkmenistan,0.0003,TM,top_10k,server_locations,2021-01-01 00:06:00
+81,Slovenia,0.0002,SI,top_10k,server_locations,2021-01-01 00:06:00
+82,Nepal,0.0002,NP,top_10k,server_locations,2021-01-01 00:06:00
+83,Colombia,0.0002,CO,top_10k,server_locations,2021-01-01 00:06:00
+84,Peru,0.0002,PE,top_10k,server_locations,2021-01-01 00:06:00
+85,Iceland,0.0002,IS,top_10k,server_locations,2021-01-01 00:06:00
+86,Kyrgyzstan,0.0002,KG,top_10k,server_locations,2021-01-01 00:06:00
+87,Algeria,0.0002,DZ,top_10k,server_locations,2021-01-01 00:06:00
+88,Armenia,0.0002,AM,top_10k,server_locations,2021-01-01 00:06:00
+89,Panama,0.0002,PA,top_10k,server_locations,2021-01-01 00:06:00
+90,Kuwait,0.0002,KW,top_10k,server_locations,2021-01-01 00:06:00
+91,Cambodia,0.0002,KH,top_10k,server_locations,2021-01-01 00:06:00
+92,Cote d'Ivoire,0.0002,,top_10k,server_locations,2021-01-01 00:06:00
+0,DigiCert Group,0.47740000000000005,US,top_10k,ssl_certificate,2021-01-01 00:06:00
+3,IdenTrust,0.22760000000000002,US,top_10k,ssl_certificate,2021-01-01 00:06:00
+4,GoDaddy Group,0.1452,US,top_10k,ssl_certificate,2021-01-01 00:06:00
+7,Sectigo,0.1341,US,top_10k,ssl_certificate,2021-01-01 00:06:00
+8,GlobalSign,0.092,JP,top_10k,ssl_certificate,2021-01-01 00:06:00
+9,Entrust,0.0183,US,top_10k,ssl_certificate,2021-01-01 00:06:00
+10,Certum,0.0154,GB,top_10k,ssl_certificate,2021-01-01 00:06:00
+11,Secom Trust,0.0098,RO,top_10k,ssl_certificate,2021-01-01 00:06:00
+12,Let’s Encrypt,0.0051,US,top_10k,ssl_certificate,2021-01-01 00:06:00
+13,WISeKey Group,0.0032,CH,top_10k,ssl_certificate,2021-01-01 00:06:00
+15,TWCA,0.0016,,top_10k,ssl_certificate,2021-01-01 00:06:00
+16,Trustwave,0.0012,US,top_10k,ssl_certificate,2021-01-01 00:06:00
+17,SwissSign,0.0009,CH,top_10k,ssl_certificate,2021-01-01 00:06:00
+18,Actalis,0.0008,IT,top_10k,ssl_certificate,2021-01-01 00:06:00
+19,Deutsche Telekom,0.0007000000000000001,DE,top_10k,ssl_certificate,2021-01-01 00:06:00
+20,Certigna,0.0007000000000000001,,top_10k,ssl_certificate,2021-01-01 00:06:00
+21,Chunghwa Telecom,0.0005,TW,top_10k,ssl_certificate,2021-01-01 00:06:00
+22,AffirmTrust,0.0005,,top_10k,ssl_certificate,2021-01-01 00:06:00
+23,Hongkong Post,0.0004,CN,top_10k,ssl_certificate,2021-01-01 00:06:00
+24,D-Trust,0.0004,,top_10k,ssl_certificate,2021-01-01 00:06:00
+25,E-Tugra,0.0001,TR,top_10k,ssl_certificate,2021-01-01 00:06:00
+26,Logius,0.0001,,top_10k,ssl_certificate,2021-01-01 00:06:00
+27,Buypass,0.0001,,top_10k,ssl_certificate,2021-01-01 00:06:00
+28,Harica,0.0001,,top_10k,ssl_certificate,2021-01-01 00:06:00
+0,Amazon,0.258,US,top_1k,data_center,2021-01-01 00:06:00
+1,Google,0.10400000000000001,US,top_1k,data_center,2021-01-01 00:06:00
+2,Alibaba,0.052000000000000005,CN,top_1k,data_center,2021-01-01 00:06:00
+3,China Telecom,0.037000000000000005,CN,top_1k,data_center,2021-01-01 00:06:00
+4,Microsoft,0.022000000000000002,US,top_1k,data_center,2021-01-01 00:06:00
+5,Tencent,0.022000000000000002,CN,top_1k,data_center,2021-01-01 00:06:00
+6,China Unicom,0.022000000000000002,CN,top_1k,data_center,2021-01-01 00:06:00
+7,Salesforce,0.022000000000000002,,top_1k,data_center,2021-01-01 00:06:00
+8,Verizon Group,0.019,US,top_1k,data_center,2021-01-01 00:06:00
+12,Automattic,0.013999999999999999,US,top_1k,data_center,2021-01-01 00:06:00
+13,OVH,0.013000000000000001,FR,top_1k,data_center,2021-01-01 00:06:00
+14,Hetzner,0.012,DE,top_1k,data_center,2021-01-01 00:06:00
+15,Asiatech,0.006999999999999999,IN,top_1k,data_center,2021-01-01 00:06:00
+16,Rackspace,0.005,US,top_1k,data_center,2021-01-01 00:06:00
+17,NTT Group,0.005,JP,top_1k,data_center,2021-01-01 00:06:00
+20,CenturyLink,0.005,US,top_1k,data_center,2021-01-01 00:06:00
+21,Squarespace,0.004,US,top_1k,data_center,2021-01-01 00:06:00
+22,LeaseWeb Group,0.004,NL,top_1k,data_center,2021-01-01 00:06:00
+24,Oracle,0.004,US,top_1k,data_center,2021-01-01 00:06:00
+25,Neustar,0.004,,top_1k,data_center,2021-01-01 00:06:00
+26,GoDaddy Group,0.003,US,top_1k,data_center,2021-01-01 00:06:00
+29,United Internet,0.003,DE,top_1k,data_center,2021-01-01 00:06:00
+31,IBM,0.003,US,top_1k,data_center,2021-01-01 00:06:00
+32,Chunghwa Telecom,0.003,TW,top_1k,data_center,2021-01-01 00:06:00
+33,XBT Holding,0.003,US,top_1k,data_center,2021-01-01 00:06:00
+36,Pars Online,0.003,MY,top_1k,data_center,2021-01-01 00:06:00
+37,IDC Frontier,0.003,JP,top_1k,data_center,2021-01-01 00:06:00
+38,Performive,0.003,,top_1k,data_center,2021-01-01 00:06:00
+39,Afranet,0.003,IR,top_1k,data_center,2021-01-01 00:06:00
+40,Baidu,0.003,,top_1k,data_center,2021-01-01 00:06:00
+41,China Mobile,0.003,,top_1k,data_center,2021-01-01 00:06:00
+42,Newfold Digital,0.002,US,top_1k,data_center,2021-01-01 00:06:00
+44,GitHub,0.002,US,top_1k,data_center,2021-01-01 00:06:00
+45,SK Group,0.002,KR,top_1k,data_center,2021-01-01 00:06:00
+48,AT&T,0.002,US,top_1k,data_center,2021-01-01 00:06:00
+49,Hurricane Electric,0.002,US,top_1k,data_center,2021-01-01 00:06:00
+50,SH.cz,0.002,,top_1k,data_center,2021-01-01 00:06:00
+51,Yandex,0.002,RU,top_1k,data_center,2021-01-01 00:06:00
+52,Cisco,0.002,,top_1k,data_center,2021-01-01 00:06:00
+53,Liquid Web,0.001,US,top_1k,data_center,2021-01-01 00:06:00
+54,Linode,0.001,US,top_1k,data_center,2021-01-01 00:06:00
+55,REG.RU,0.001,RU,top_1k,data_center,2021-01-01 00:06:00
+56,Internap Group,0.001,US,top_1k,data_center,2021-01-01 00:06:00
+58,RBC Group,0.001,RU,top_1k,data_center,2021-01-01 00:06:00
+60,Choopa,0.001,US,top_1k,data_center,2021-01-01 00:06:00
+61,GMO Internet Group,0.001,JP,top_1k,data_center,2021-01-01 00:06:00
+63,Radore,0.001,TR,top_1k,data_center,2021-01-01 00:06:00
+64,Selectel,0.001,RU,top_1k,data_center,2021-01-01 00:06:00
+65,Weebly,0.001,US,top_1k,data_center,2021-01-01 00:06:00
+66,Hivelocity,0.001,US,top_1k,data_center,2021-01-01 00:06:00
+67,Scaleway,0.001,FR,top_1k,data_center,2021-01-01 00:06:00
+68,Rostelecom Group,0.001,RU,top_1k,data_center,2021-01-01 00:06:00
+70,Aruba Group,0.001,IT,top_1k,data_center,2021-01-01 00:06:00
+72,KT Group,0.001,HK,top_1k,data_center,2021-01-01 00:06:00
+74,Viettel,0.001,VN,top_1k,data_center,2021-01-01 00:06:00
+75,Cogeco Group,0.001,CA,top_1k,data_center,2021-01-01 00:06:00
+77,QuadraNet,0.001,US,top_1k,data_center,2021-01-01 00:06:00
+78,Masterhost,0.001,RU,top_1k,data_center,2021-01-01 00:06:00
+79,Ntirety,0.001,US,top_1k,data_center,2021-01-01 00:06:00
+80,TierPoint,0.001,US,top_1k,data_center,2021-01-01 00:06:00
+81,Exabytes Group,0.001,MY,top_1k,data_center,2021-01-01 00:06:00
+83,Pair Networks,0.001,US,top_1k,data_center,2021-01-01 00:06:00
+84,PS Internet Company,0.001,KZ,top_1k,data_center,2021-01-01 00:06:00
+85,Advanced Hosting,0.001,NL,top_1k,data_center,2021-01-01 00:06:00
+86,Hostiserver,0.001,CY,top_1k,data_center,2021-01-01 00:06:00
+87,Hostiran,0.001,IR,top_1k,data_center,2021-01-01 00:06:00
+88,Comcast,0.001,,top_1k,data_center,2021-01-01 00:06:00
+89,Psychz,0.001,US,top_1k,data_center,2021-01-01 00:06:00
+90,Internet Initiative Japan,0.001,,top_1k,data_center,2021-01-01 00:06:00
+91,HKBN,0.001,,top_1k,data_center,2021-01-01 00:06:00
+92,Zoho,0.001,,top_1k,data_center,2021-01-01 00:06:00
+0,Amazon,0.268,US,top_1k,dns_servers,2021-01-01 00:06:00
+1,Cloudflare,0.145,US,top_1k,dns_servers,2021-01-01 00:06:00
+2,Akamai,0.09699999999999999,US,top_1k,dns_servers,2021-01-01 00:06:00
+3,NS1,0.073,US,top_1k,dns_servers,2021-01-01 00:06:00
+4,Google,0.066,US,top_1k,dns_servers,2021-01-01 00:06:00
+5,Neustar UltraDNS,0.048,US,top_1k,dns_servers,2021-01-01 00:06:00
+6,Oracle Dyn,0.039,US,top_1k,dns_servers,2021-01-01 00:06:00
+7,Alibaba Group,0.037000000000000005,CN,top_1k,dns_servers,2021-01-01 00:06:00
+10,Tencent,0.034,CN,top_1k,dns_servers,2021-01-01 00:06:00
+11,DNS Made Easy,0.013000000000000001,US,top_1k,dns_servers,2021-01-01 00:06:00
+12,RBC Group,0.009000000000000001,RU,top_1k,dns_servers,2021-01-01 00:06:00
+15,Microsoft,0.008,US,top_1k,dns_servers,2021-01-01 00:06:00
+16,ClouDNS,0.008,BG,top_1k,dns_servers,2021-01-01 00:06:00
+17,Verizon Group,0.008,US,top_1k,dns_servers,2021-01-01 00:06:00
+20,GoDaddy Group,0.006999999999999999,US,top_1k,dns_servers,2021-01-01 00:06:00
+22,CSC,0.006999999999999999,US,top_1k,dns_servers,2021-01-01 00:06:00
+23,Automattic,0.006,US,top_1k,dns_servers,2021-01-01 00:06:00
+24,United Internet,0.004,DE,top_1k,dns_servers,2021-01-01 00:06:00
+27,Internet Initiative Japan,0.004,,top_1k,dns_servers,2021-01-01 00:06:00
+28,ArvanCloud,0.003,DE,top_1k,dns_servers,2021-01-01 00:06:00
+29,Chunghwa Telecom,0.003,TW,top_1k,dns_servers,2021-01-01 00:06:00
+30,AT&T,0.003,US,top_1k,dns_servers,2021-01-01 00:06:00
+31,Newfold Digital,0.002,US,top_1k,dns_servers,2021-01-01 00:06:00
+34,Yandex,0.002,RU,top_1k,dns_servers,2021-01-01 00:06:00
+35,DNSimple,0.002,US,top_1k,dns_servers,2021-01-01 00:06:00
+36,Cisco,0.002,,top_1k,dns_servers,2021-01-01 00:06:00
+37,Tucows Group,0.001,US,top_1k,dns_servers,2021-01-01 00:06:00
+39,Squarespace,0.001,US,top_1k,dns_servers,2021-01-01 00:06:00
+40,Gandi,0.001,FR,top_1k,dns_servers,2021-01-01 00:06:00
+41,Aruba Group,0.001,IT,top_1k,dns_servers,2021-01-01 00:06:00
+43,Rackspace,0.001,US,top_1k,dns_servers,2021-01-01 00:06:00
+44,Choopa,0.001,US,top_1k,dns_servers,2021-01-01 00:06:00
+45,DNS.com,0.001,US,top_1k,dns_servers,2021-01-01 00:06:00
+46,Masterhost,0.001,RU,top_1k,dns_servers,2021-01-01 00:06:00
+47,IBM,0.001,US,top_1k,dns_servers,2021-01-01 00:06:00
+48,VNPT,0.001,VN,top_1k,dns_servers,2021-01-01 00:06:00
+49,Selectel,0.001,RU,top_1k,dns_servers,2021-01-01 00:06:00
+50,Gabia,0.001,KR,top_1k,dns_servers,2021-01-01 00:06:00
+51,Asiatech,0.001,IN,top_1k,dns_servers,2021-01-01 00:06:00
+52,StackPath,0.001,US,top_1k,dns_servers,2021-01-01 00:06:00
+53,Mail.Ru,0.001,RU,top_1k,dns_servers,2021-01-01 00:06:00
+54,Total Uptime,0.001,,top_1k,dns_servers,2021-01-01 00:06:00
+0,Amazon,0.2293,US,top_10k,web_hosting,2021-01-01 00:06:00
+1,Zendesk,0.0437,,top_10k,web_hosting,2021-01-01 00:06:00
+2,Google,0.0418,US,top_10k,web_hosting,2021-01-01 00:06:00
+3,Alibaba,0.0362,CN,top_10k,web_hosting,2021-01-01 00:06:00
+4,China Telecom,0.025,CN,top_10k,web_hosting,2021-01-01 00:06:00
+5,WP Engine Group,0.022099999999999998,,top_10k,web_hosting,2021-01-01 00:06:00
+8,OVH,0.019,FR,top_10k,web_hosting,2021-01-01 00:06:00
+9,Microsoft,0.018799999999999997,US,top_10k,web_hosting,2021-01-01 00:06:00
+10,Hetzner,0.016200000000000003,DE,top_10k,web_hosting,2021-01-01 00:06:00
+11,Salesforce,0.0137,,top_10k,web_hosting,2021-01-01 00:06:00
+12,Shopify,0.013600000000000001,CA,top_10k,web_hosting,2021-01-01 00:06:00
+13,China Unicom,0.0121,CN,top_10k,web_hosting,2021-01-01 00:06:00
+14,Automattic Group,0.0115,US,top_10k,web_hosting,2021-01-01 00:06:00
+17,Tencent,0.0105,CN,top_10k,web_hosting,2021-01-01 00:06:00
+18,DigitalOcean,0.0096,US,top_10k,web_hosting,2021-01-01 00:06:00
+19,Verizon Group,0.0084,US,top_10k,web_hosting,2021-01-01 00:06:00
+23,Acquia,0.0062,,top_10k,web_hosting,2021-01-01 00:06:00
+24,Netlify,0.0059,US,top_10k,web_hosting,2021-01-01 00:06:00
+25,Asiatech,0.0054,IN,top_10k,web_hosting,2021-01-01 00:06:00
+26,Pantheon,0.0054,US,top_10k,web_hosting,2021-01-01 00:06:00
+27,LeaseWeb Group,0.0053,NL,top_10k,web_hosting,2021-01-01 00:06:00
+29,Linode,0.0049,US,top_10k,web_hosting,2021-01-01 00:06:00
+30,HubSpot,0.0049,US,top_10k,web_hosting,2021-01-01 00:06:00
+31,Rackspace,0.0046,US,top_10k,web_hosting,2021-01-01 00:06:00
+32,Hurricane Electric,0.0046,US,top_10k,web_hosting,2021-01-01 00:06:00
+33,Webflow,0.0044,US,top_10k,web_hosting,2021-01-01 00:06:00
+34,CenturyLink,0.0044,US,top_10k,web_hosting,2021-01-01 00:06:00
+35,China Mobile,0.0042,,top_10k,web_hosting,2021-01-01 00:06:00
+36,GoDaddy Group,0.0040999999999999995,US,top_10k,web_hosting,2021-01-01 00:06:00
+43,NTT Group,0.0040999999999999995,JP,top_10k,web_hosting,2021-01-01 00:06:00
+49,KT Group,0.004,HK,top_10k,web_hosting,2021-01-01 00:06:00
+52,XBT Holding,0.0038,US,top_10k,web_hosting,2021-01-01 00:06:00
+58,Selectel,0.0034000000000000002,RU,top_10k,web_hosting,2021-01-01 00:06:00
+59,Medium,0.0034000000000000002,,top_10k,web_hosting,2021-01-01 00:06:00
+60,Kinsta,0.0033,US,top_10k,web_hosting,2021-01-01 00:06:00
+61,Advanced Hosting,0.0033,NL,top_10k,web_hosting,2021-01-01 00:06:00
+62,United Internet,0.0032,DE,top_10k,web_hosting,2021-01-01 00:06:00
+68,Internap Group,0.0029,US,top_10k,web_hosting,2021-01-01 00:06:00
+71,Sakura,0.0029,JP,top_10k,web_hosting,2021-01-01 00:06:00
+72,Newfold Digital,0.0028000000000000004,US,top_10k,web_hosting,2021-01-01 00:06:00
+80,IBM,0.0027,US,top_10k,web_hosting,2021-01-01 00:06:00
+81,GitHub,0.0027,US,top_10k,web_hosting,2021-01-01 00:06:00
+82,Vercel,0.0027,US,top_10k,web_hosting,2021-01-01 00:06:00
+83,Internet Initiative Japan,0.0027,,top_10k,web_hosting,2021-01-01 00:06:00
+84,Squarespace,0.0026,US,top_10k,web_hosting,2021-01-01 00:06:00
+85,LG Group,0.0026,KR,top_10k,web_hosting,2021-01-01 00:06:00
+87,Neustar,0.0026,,top_10k,web_hosting,2021-01-01 00:06:00
+88,Scaleway,0.0023,FR,top_10k,web_hosting,2021-01-01 00:06:00
+89,Oracle,0.0023,US,top_10k,web_hosting,2021-01-01 00:06:00
+90,Liquid Web,0.0022,US,top_10k,web_hosting,2021-01-01 00:06:00
+91,SH.cz,0.0022,,top_10k,web_hosting,2021-01-01 00:06:00
+92,Chunghwa Telecom,0.002,TW,top_10k,web_hosting,2021-01-01 00:06:00
+93,IDC Frontier,0.002,JP,top_10k,web_hosting,2021-01-01 00:06:00
+94,UCloud,0.002,,top_10k,web_hosting,2021-01-01 00:06:00
+95,Pagely,0.002,,top_10k,web_hosting,2021-01-01 00:06:00
+96,Telefónica Group,0.0018,ES,top_10k,web_hosting,2021-01-01 00:06:00
+103,VNPT,0.0017000000000000001,VN,top_10k,web_hosting,2021-01-01 00:06:00
+104,SK Group,0.0017000000000000001,KR,top_10k,web_hosting,2021-01-01 00:06:00
+108,Vodafone,0.0017000000000000001,GB,top_10k,web_hosting,2021-01-01 00:06:00
+109,CSC,0.0017000000000000001,US,top_10k,web_hosting,2021-01-01 00:06:00
+110,Yandex,0.0017000000000000001,RU,top_10k,web_hosting,2021-01-01 00:06:00
+111,Hivelocity,0.0016,US,top_10k,web_hosting,2021-01-01 00:06:00
+112,Deutsche Telekom Group,0.0015,DE,top_10k,web_hosting,2021-01-01 00:06:00
+118,Equinix,0.0015,,top_10k,web_hosting,2021-01-01 00:06:00
+119,SiteGround,0.0014000000000000002,BG,top_10k,web_hosting,2021-01-01 00:06:00
+120,Choopa,0.0014000000000000002,US,top_10k,web_hosting,2021-01-01 00:06:00
+121,GMO Internet Group,0.0014000000000000002,JP,top_10k,web_hosting,2021-01-01 00:06:00
+128,Heroku,0.0014000000000000002,US,top_10k,web_hosting,2021-01-01 00:06:00
+129,AT&T,0.0014000000000000002,US,top_10k,web_hosting,2021-01-01 00:06:00
+130,Performive,0.0014000000000000002,,top_10k,web_hosting,2021-01-01 00:06:00
+131,Afranet,0.0014000000000000002,IR,top_10k,web_hosting,2021-01-01 00:06:00
+132,REG.RU,0.0012,RU,top_10k,web_hosting,2021-01-01 00:06:00
+133,InMotion,0.0012,US,top_10k,web_hosting,2021-01-01 00:06:00
+134,Zoho,0.0012,,top_10k,web_hosting,2021-01-01 00:06:00
+135,XServer,0.0011,JP,top_10k,web_hosting,2021-01-01 00:06:00
+136,Pars Online,0.0011,MY,top_10k,web_hosting,2021-01-01 00:06:00
+137,Serverel,0.0011,US,top_10k,web_hosting,2021-01-01 00:06:00
+138,Delta Telecom,0.0011,,top_10k,web_hosting,2021-01-01 00:06:00
+139,Namecheap,0.001,US,top_10k,web_hosting,2021-01-01 00:06:00
+140,team.blue,0.001,DK,top_10k,web_hosting,2021-01-01 00:06:00
+145,DreamHost,0.001,US,top_10k,web_hosting,2021-01-01 00:06:00
+146,Contabo,0.001,DE,top_10k,web_hosting,2021-01-01 00:06:00
+147,Aruba Group,0.001,IT,top_10k,web_hosting,2021-01-01 00:06:00
+149,Cnservers,0.001,,top_10k,web_hosting,2021-01-01 00:06:00
+150,NFOrce Entertainment,0.001,,top_10k,web_hosting,2021-01-01 00:06:00
+151,KDDI Group,0.0009,US,top_10k,web_hosting,2021-01-01 00:06:00
+153,Wix,0.0008,IL,top_10k,web_hosting,2021-01-01 00:06:00
+154,Radore,0.0008,TR,top_10k,web_hosting,2021-01-01 00:06:00
+155,Pars Parva System,0.0008,IR,top_10k,web_hosting,2021-01-01 00:06:00
+156,PhoenixNAP,0.0008,US,top_10k,web_hosting,2021-01-01 00:06:00
+157,Rostelecom Group,0.0008,RU,top_10k,web_hosting,2021-01-01 00:06:00
+160,QuadraNet,0.0008,US,top_10k,web_hosting,2021-01-01 00:06:00
+161,Pair Networks,0.0008,US,top_10k,web_hosting,2021-01-01 00:06:00
+162,Baidu,0.0008,,top_10k,web_hosting,2021-01-01 00:06:00
+163,Presslabs,0.0008,,top_10k,web_hosting,2021-01-01 00:06:00
+164,A2 Hosting,0.0007000000000000001,US,top_10k,web_hosting,2021-01-01 00:06:00
+165,Bigcommerce,0.0007000000000000001,US,top_10k,web_hosting,2021-01-01 00:06:00
+166,THG Hosting,0.0007000000000000001,GB,top_10k,web_hosting,2021-01-01 00:06:00
+171,Cogent,0.0007000000000000001,US,top_10k,web_hosting,2021-01-01 00:06:00
+172,First Colo,0.0007000000000000001,US,top_10k,web_hosting,2021-01-01 00:06:00
+173,HKBN,0.0007000000000000001,,top_10k,web_hosting,2021-01-01 00:06:00
+174,Teléfonos de México,0.0007000000000000001,,top_10k,web_hosting,2021-01-01 00:06:00
+175,NetEase,0.0007000000000000001,,top_10k,web_hosting,2021-01-01 00:06:00
+176,Wikimedia,0.0007000000000000001,US,top_10k,web_hosting,2021-01-01 00:06:00
+177,Hostinger,0.0006,CY,top_10k,web_hosting,2021-01-01 00:06:00
+178,FirstVDS,0.0006,RU,top_10k,web_hosting,2021-01-01 00:06:00
+179,Tilda,0.0006,GB,top_10k,web_hosting,2021-01-01 00:06:00
+180,FPT,0.0006,VN,top_10k,web_hosting,2021-01-01 00:06:00
+181,Ntirety,0.0006,US,top_10k,web_hosting,2021-01-01 00:06:00
+182,Cogeco Group,0.0006,CA,top_10k,web_hosting,2021-01-01 00:06:00
+184,CtrlS,0.0006,IN,top_10k,web_hosting,2021-01-01 00:06:00
+185,Telia Company Group,0.0006,SE,top_10k,web_hosting,2021-01-01 00:06:00
+189,Codero,0.0006,,top_10k,web_hosting,2021-01-01 00:06:00
+190,Limestone Networks,0.0006,,top_10k,web_hosting,2021-01-01 00:06:00
+191,Claranet,0.0006,,top_10k,web_hosting,2021-01-01 00:06:00
+192,Platform.sh,0.0006,,top_10k,web_hosting,2021-01-01 00:06:00
+193,Gruppo TIM,0.0006,,top_10k,web_hosting,2021-01-01 00:06:00
+194,ServerStack,0.0006,,top_10k,web_hosting,2021-01-01 00:06:00
+195,PrivateSystems,0.0005,GB,top_10k,web_hosting,2021-01-01 00:06:00
+196,Viettel,0.0005,VN,top_10k,web_hosting,2021-01-01 00:06:00
+197,Tebyan,0.0005,IR,top_10k,web_hosting,2021-01-01 00:06:00
+198,MiroHost,0.0005,UA,top_10k,web_hosting,2021-01-01 00:06:00
+199,M247,0.0005,,top_10k,web_hosting,2021-01-01 00:06:00
+200,Gainet,0.0005,,top_10k,web_hosting,2021-01-01 00:06:00
+201,Swisscom Group,0.0005,,top_10k,web_hosting,2021-01-01 00:06:00
+204,Colt,0.0005,,top_10k,web_hosting,2021-01-01 00:06:00
+205,Voxility,0.0005,US,top_10k,web_hosting,2021-01-01 00:06:00
+206,Virtual Systems,0.0005,,top_10k,web_hosting,2021-01-01 00:06:00
+207,Mail.Ru,0.0005,RU,top_10k,web_hosting,2021-01-01 00:06:00
+208,Forthnet,0.0005,,top_10k,web_hosting,2021-01-01 00:06:00
+209,RBC Group,0.0003,RU,top_10k,web_hosting,2021-01-01 00:06:00
+212,Cloudways,0.0003,MT,top_10k,web_hosting,2021-01-01 00:06:00
+213,Steadfast,0.0003,US,top_10k,web_hosting,2021-01-01 00:06:00
+214,FastVPS,0.0003,EE,top_10k,web_hosting,2021-01-01 00:06:00
+215,uKit Group,0.0003,RU,top_10k,web_hosting,2021-01-01 00:06:00
+217,UpCloud,0.0003,FI,top_10k,web_hosting,2021-01-01 00:06:00
+218,PS Internet Company,0.0003,KZ,top_10k,web_hosting,2021-01-01 00:06:00
+219,Zomro,0.0003,UA,top_10k,web_hosting,2021-01-01 00:06:00
+220,Hostiran,0.0003,IR,top_10k,web_hosting,2021-01-01 00:06:00
+221,ServerCentral,0.0003,US,top_10k,web_hosting,2021-01-01 00:06:00
+222,Flexential,0.0003,US,top_10k,web_hosting,2021-01-01 00:06:00
+223,MojoHost,0.0003,,top_10k,web_hosting,2021-01-01 00:06:00
+224,GigeNET,0.0003,,top_10k,web_hosting,2021-01-01 00:06:00
+225,Kazakhtelecom Group,0.0003,,top_10k,web_hosting,2021-01-01 00:06:00
+227,Eurofiber Group,0.0003,,top_10k,web_hosting,2021-01-01 00:06:00
+229,Grupo GTD,0.0003,,top_10k,web_hosting,2021-01-01 00:06:00
+231,OTE,0.0003,,top_10k,web_hosting,2021-01-01 00:06:00
+232,Noris network,0.0003,,top_10k,web_hosting,2021-01-01 00:06:00
+233,DEAC,0.0003,,top_10k,web_hosting,2021-01-01 00:06:00
+234,Neterra,0.0003,,top_10k,web_hosting,2021-01-01 00:06:00
+235,Telecom Egypt,0.0003,,top_10k,web_hosting,2021-01-01 00:06:00
+236,Atos Group,0.0003,,top_10k,web_hosting,2021-01-01 00:06:00
+238,Cisco,0.0003,,top_10k,web_hosting,2021-01-01 00:06:00
+239,Apple,0.0003,US,top_10k,web_hosting,2021-01-01 00:06:00
+240,Weebly,0.0002,US,top_10k,web_hosting,2021-01-01 00:06:00
+241,Mihan,0.0002,IN,top_10k,web_hosting,2021-01-01 00:06:00
+242,Duda,0.0002,US,top_10k,web_hosting,2021-01-01 00:06:00
+243,Enartia Group,0.0002,CY,top_10k,web_hosting,2021-01-01 00:06:00
+246,iomart Group,0.0002,GB,top_10k,web_hosting,2021-01-01 00:06:00
+248,Nexcess,0.0002,US,top_10k,web_hosting,2021-01-01 00:06:00
+249,WPX Hosting,0.0002,BG,top_10k,web_hosting,2021-01-01 00:06:00
+250,Masterhost,0.0002,RU,top_10k,web_hosting,2021-01-01 00:06:00
+251,BanaHosting,0.0002,US,top_10k,web_hosting,2021-01-01 00:06:00
+252,Exabytes Group,0.0002,MY,top_10k,web_hosting,2021-01-01 00:06:00
+254,TierPoint,0.0002,US,top_10k,web_hosting,2021-01-01 00:06:00
+255,Faraso Samaneh Pasargad,0.0002,IR,top_10k,web_hosting,2021-01-01 00:06:00
+256,Confluence-Networks,0.0002,US,top_10k,web_hosting,2021-01-01 00:06:00
+257,EuroByte,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+258,Hostiserver,0.0002,CY,top_10k,web_hosting,2021-01-01 00:06:00
+259,Cafe24,0.0002,JP,top_10k,web_hosting,2021-01-01 00:06:00
+260,VSHosting,0.0002,CZ,top_10k,web_hosting,2021-01-01 00:06:00
+261,Dinahosting,0.0002,ES,top_10k,web_hosting,2021-01-01 00:06:00
+262,Comcast,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+263,Master Internet,0.0002,US,top_10k,web_hosting,2021-01-01 00:06:00
+264,Psychz,0.0002,US,top_10k,web_hosting,2021-01-01 00:06:00
+265,Atman,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+266,WorldStream,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+267,SiteSell,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+268,Tucows Group,0.0002,US,top_10k,web_hosting,2021-01-01 00:06:00
+271,Expedient,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+272,KPN Group,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+275,Casablanca,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+276,Internet Thailand,0.0002,TH,top_10k,web_hosting,2021-01-01 00:06:00
+277,GleSYS,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+278,Liberty Global Group,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+281,New World Telecom,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+282,Sharktech,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+283,GlobalConnect,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+284,NetSuite,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+285,Irideos,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+286,True,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+287,Telekomunikasi Indonesia,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+288,Ning,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+289,Biglobe,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+290,ETECSA,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+291,Turkmentelecom,0.0002,,top_10k,web_hosting,2021-01-01 00:06:00
+292,Hewlett-Packard,0.0002,US,top_10k,web_hosting,2021-01-01 00:06:00
+293,TimeWeb,0.0001,RU,top_10k,web_hosting,2021-01-01 00:06:00
+294,Aerotek,0.0001,US,top_10k,web_hosting,2021-01-01 00:06:00
+295,PA Vietnam,0.0001,VN,top_10k,web_hosting,2021-01-01 00:06:00
+296,Xneelo,0.0001,ZA,top_10k,web_hosting,2021-01-01 00:06:00
+297,Prom.ua,0.0001,UA,top_10k,web_hosting,2021-01-01 00:06:00
+298,Hoster.by,0.0001,BY,top_10k,web_hosting,2021-01-01 00:06:00
+299,CS LoxInfo,0.0001,TH,top_10k,web_hosting,2021-01-01 00:06:00
+300,InterServer,0.0001,US,top_10k,web_hosting,2021-01-01 00:06:00
+301,One.com,0.0001,DK,top_10k,web_hosting,2021-01-01 00:06:00
+302,Serverpars,0.0001,IR,top_10k,web_hosting,2021-01-01 00:06:00
+303,Veridyen,0.0001,TR,top_10k,web_hosting,2021-01-01 00:06:00
+304,Infomaniak,0.0001,CH,top_10k,web_hosting,2021-01-01 00:06:00
+305,UKFast,0.0001,GB,top_10k,web_hosting,2021-01-01 00:06:00
+306,Web Werks,0.0001,IN,top_10k,web_hosting,2021-01-01 00:06:00
+307,Gandi,0.0001,FR,top_10k,web_hosting,2021-01-01 00:06:00
+308,CAT Telecom,0.0001,TH,top_10k,web_hosting,2021-01-01 00:06:00
+309,Beltelecom,0.0001,BY,top_10k,web_hosting,2021-01-01 00:06:00
+310,Interneto Vizija,0.0001,LT,top_10k,web_hosting,2021-01-01 00:06:00
+311,Netdirekt,0.0001,US,top_10k,web_hosting,2021-01-01 00:06:00
+312,ColoCrossing,0.0001,US,top_10k,web_hosting,2021-01-01 00:06:00
+313,Locaweb,0.0001,BR,top_10k,web_hosting,2021-01-01 00:06:00
+314,Cybercon,0.0001,US,top_10k,web_hosting,2021-01-01 00:06:00
+315,Bezeq Group,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+317,CDmon,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+318,Cellcom,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+319,Hostpoint,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+320,Hostwinds,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+321,Digital Energy Technologies,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+322,Romarg,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+323,WebSupport,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+324,Lightspeed,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+325,Kagoya,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+326,Seeweb,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+327,EGIHosting,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+328,TheGigabit,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+329,Filanco,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+330,Beon Intermedia,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+331,PTisp,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+332,VTEX,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+333,Comvive,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+334,Sedmi Odjel,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+335,Serverius,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+336,Profihost,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+337,WhoGoHost,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+338,A1 Telekom Austria Group,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+340,Nessus,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+341,IQ PL,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+342,WebNX,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+343,Cincinnati Bell Group,0.0001,US,top_10k,web_hosting,2021-01-01 00:06:00
+345,Pressidium,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+346,Alwaysdata,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+347,Webnode,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+348,Webglobe-Yegon,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+349,Deninet,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+350,Lancom,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+351,CITIC Group,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+353,Swan,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+354,Universo Online,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+355,Kamatera,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+356,Atlantic Metro,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+357,Optimum,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+358,Telecom Algeria,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+359,GTT,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+360,Advania,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+361,Website Pro,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+362,National DC Mongolia,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+363,Datagroup,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+364,Prometey,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+365,NetCologne,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+366,Core-Backbone,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+367,RackSRV,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+368,ElCat,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+369,Eweka,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+370,SK Communications,0.0001,,top_10k,web_hosting,2021-01-01 00:06:00
+0,United States,0.524,US,top_1k,server_locations,2021-01-01 00:06:00
+2,Germany,0.263,DE,top_1k,server_locations,2021-01-01 00:06:00
+3,China,0.152,CN,top_1k,server_locations,2021-01-01 00:06:00
+6,France,0.133,FR,top_1k,server_locations,2021-01-01 00:06:00
+8,Russian Federation,0.10300000000000001,RU,top_1k,server_locations,2021-01-01 00:06:00
+9,United Kingdom,0.057999999999999996,GB,top_1k,server_locations,2021-01-01 00:06:00
+11,Japan,0.051,JP,top_1k,server_locations,2021-01-01 00:06:00
+12,Netherlands,0.049,NL,top_1k,server_locations,2021-01-01 00:06:00
+14,Singapore,0.049,SG,top_1k,server_locations,2021-01-01 00:06:00
+15,Italy,0.045,IT,top_1k,server_locations,2021-01-01 00:06:00
+16,Ireland,0.038,IE,top_1k,server_locations,2021-01-01 00:06:00
+17,Iran,0.025,IR,top_1k,server_locations,2021-01-01 00:06:00
+18,Austria,0.024,AT,top_1k,server_locations,2021-01-01 00:06:00
+19,India,0.021,IN,top_1k,server_locations,2021-01-01 00:06:00
+20,Sweden,0.021,SE,top_1k,server_locations,2021-01-01 00:06:00
+21,South Korea,0.02,KR,top_1k,server_locations,2021-01-01 00:06:00
+22,Taiwan,0.018000000000000002,TW,top_1k,server_locations,2021-01-01 00:06:00
+23,Canada,0.015,CA,top_1k,server_locations,2021-01-01 00:06:00
+24,Belgium,0.013000000000000001,BE,top_1k,server_locations,2021-01-01 00:06:00
+25,Turkey,0.011000000000000001,TR,top_1k,server_locations,2021-01-01 00:06:00
+26,Switzerland,0.011000000000000001,CH,top_1k,server_locations,2021-01-01 00:06:00
+27,Hungary,0.011000000000000001,HU,top_1k,server_locations,2021-01-01 00:06:00
+28,Indonesia,0.008,ID,top_1k,server_locations,2021-01-01 00:06:00
+29,Poland,0.008,PL,top_1k,server_locations,2021-01-01 00:06:00
+30,Czech Republic,0.008,CZ,top_1k,server_locations,2021-01-01 00:06:00
+31,Spain,0.006999999999999999,ES,top_1k,server_locations,2021-01-01 00:06:00
+32,United Arab Emirates,0.006,AE,top_1k,server_locations,2021-01-01 00:06:00
+33,Brazil,0.004,BR,top_1k,server_locations,2021-01-01 00:06:00
+34,Venezuela,0.004,VE,top_1k,server_locations,2021-01-01 00:06:00
+35,Viet Nam,0.003,VN,top_1k,server_locations,2021-01-01 00:06:00
+36,Finland,0.003,FI,top_1k,server_locations,2021-01-01 00:06:00
+38,Kazakhstan,0.003,KZ,top_1k,server_locations,2021-01-01 00:06:00
+39,Chile,0.003,CL,top_1k,server_locations,2021-01-01 00:06:00
+40,Luxembourg,0.003,LU,top_1k,server_locations,2021-01-01 00:06:00
+41,Australia,0.001,AU,top_1k,server_locations,2021-01-01 00:06:00
+42,Thailand,0.001,TH,top_1k,server_locations,2021-01-01 00:06:00
+43,Israel,0.001,IL,top_1k,server_locations,2021-01-01 00:06:00
+44,Denmark,0.001,DK,top_1k,server_locations,2021-01-01 00:06:00
+46,Greece,0.001,GR,top_1k,server_locations,2021-01-01 00:06:00
+47,Malaysia,0.001,MY,top_1k,server_locations,2021-01-01 00:06:00
+48,Argentina,0.001,AR,top_1k,server_locations,2021-01-01 00:06:00
+49,Slovakia,0.001,SK,top_1k,server_locations,2021-01-01 00:06:00
+50,Norway,0.001,NO,top_1k,server_locations,2021-01-01 00:06:00
+51,Iceland,0.001,IS,top_1k,server_locations,2021-01-01 00:06:00
+52,Bosnia and Herzegovina,0.001,BA,top_1k,server_locations,2021-01-01 00:06:00
+53,Seychelles,0.001,SC,top_1k,server_locations,2021-01-01 00:06:00
+54,Angola,0.001,AO,top_1k,server_locations,2021-01-01 00:06:00
+0,Amazon,0.24600000000000002,US,top_1k,web_hosting,2021-01-01 00:06:00
+1,Google,0.09300000000000001,US,top_1k,web_hosting,2021-01-01 00:06:00
+2,Zendesk,0.06,,top_1k,web_hosting,2021-01-01 00:06:00
+3,Alibaba,0.055,CN,top_1k,web_hosting,2021-01-01 00:06:00
+4,China Telecom,0.038,CN,top_1k,web_hosting,2021-01-01 00:06:00
+5,WP Engine Group,0.022000000000000002,,top_1k,web_hosting,2021-01-01 00:06:00
+8,Tencent,0.022000000000000002,CN,top_1k,web_hosting,2021-01-01 00:06:00
+9,China Unicom,0.022000000000000002,CN,top_1k,web_hosting,2021-01-01 00:06:00
+10,Microsoft,0.021,US,top_1k,web_hosting,2021-01-01 00:06:00
+11,Salesforce,0.021,,top_1k,web_hosting,2021-01-01 00:06:00
+12,Verizon Group,0.019,US,top_1k,web_hosting,2021-01-01 00:06:00
+16,Shopify,0.015,CA,top_1k,web_hosting,2021-01-01 00:06:00
+17,Automattic Group,0.013999999999999999,US,top_1k,web_hosting,2021-01-01 00:06:00
+20,OVH,0.013000000000000001,FR,top_1k,web_hosting,2021-01-01 00:06:00
+21,Hetzner,0.012,DE,top_1k,web_hosting,2021-01-01 00:06:00
+22,Acquia,0.011000000000000001,,top_1k,web_hosting,2021-01-01 00:06:00
+23,CenturyLink,0.01,US,top_1k,web_hosting,2021-01-01 00:06:00
+24,China Mobile,0.009000000000000001,,top_1k,web_hosting,2021-01-01 00:06:00
+25,Asiatech,0.006999999999999999,IN,top_1k,web_hosting,2021-01-01 00:06:00
+26,Pantheon,0.006999999999999999,US,top_1k,web_hosting,2021-01-01 00:06:00
+27,Medium,0.006999999999999999,,top_1k,web_hosting,2021-01-01 00:06:00
+28,NTT Group,0.005,JP,top_1k,web_hosting,2021-01-01 00:06:00
+31,HubSpot,0.005,US,top_1k,web_hosting,2021-01-01 00:06:00
+32,Squarespace,0.004,US,top_1k,web_hosting,2021-01-01 00:06:00
+33,Rackspace,0.004,US,top_1k,web_hosting,2021-01-01 00:06:00
+34,LeaseWeb Group,0.004,NL,top_1k,web_hosting,2021-01-01 00:06:00
+36,Oracle,0.004,US,top_1k,web_hosting,2021-01-01 00:06:00
+37,Newfold Digital,0.003,US,top_1k,web_hosting,2021-01-01 00:06:00
+41,GoDaddy Group,0.003,US,top_1k,web_hosting,2021-01-01 00:06:00
+44,United Internet,0.003,DE,top_1k,web_hosting,2021-01-01 00:06:00
+46,IBM,0.003,US,top_1k,web_hosting,2021-01-01 00:06:00
+47,GitHub,0.003,US,top_1k,web_hosting,2021-01-01 00:06:00
+48,Kinsta,0.003,US,top_1k,web_hosting,2021-01-01 00:06:00
+49,Chunghwa Telecom,0.003,TW,top_1k,web_hosting,2021-01-01 00:06:00
+50,KT Group,0.003,HK,top_1k,web_hosting,2021-01-01 00:06:00
+52,XBT Holding,0.003,US,top_1k,web_hosting,2021-01-01 00:06:00
+55,Pars Online,0.003,MY,top_1k,web_hosting,2021-01-01 00:06:00
+56,SK Group,0.003,KR,top_1k,web_hosting,2021-01-01 00:06:00
+59,IDC Frontier,0.003,JP,top_1k,web_hosting,2021-01-01 00:06:00
+60,Performive,0.003,,top_1k,web_hosting,2021-01-01 00:06:00
+61,Afranet,0.003,IR,top_1k,web_hosting,2021-01-01 00:06:00
+62,Baidu,0.003,,top_1k,web_hosting,2021-01-01 00:06:00
+63,Neustar,0.003,,top_1k,web_hosting,2021-01-01 00:06:00
+64,Wikimedia,0.003,US,top_1k,web_hosting,2021-01-01 00:06:00
+65,Wix,0.002,IL,top_1k,web_hosting,2021-01-01 00:06:00
+66,Netlify,0.002,US,top_1k,web_hosting,2021-01-01 00:06:00
+67,Webflow,0.002,US,top_1k,web_hosting,2021-01-01 00:06:00
+68,AT&T,0.002,US,top_1k,web_hosting,2021-01-01 00:06:00
+69,Hurricane Electric,0.002,US,top_1k,web_hosting,2021-01-01 00:06:00
+70,Comcast,0.002,,top_1k,web_hosting,2021-01-01 00:06:00
+71,SH.cz,0.002,,top_1k,web_hosting,2021-01-01 00:06:00
+72,Yandex,0.002,RU,top_1k,web_hosting,2021-01-01 00:06:00
+73,Grupo GTD,0.002,,top_1k,web_hosting,2021-01-01 00:06:00
+75,Mail.Ru,0.002,RU,top_1k,web_hosting,2021-01-01 00:06:00
+76,ServerStack,0.002,,top_1k,web_hosting,2021-01-01 00:06:00
+77,Cisco,0.002,,top_1k,web_hosting,2021-01-01 00:06:00
+78,Liquid Web,0.001,US,top_1k,web_hosting,2021-01-01 00:06:00
+79,REG.RU,0.001,RU,top_1k,web_hosting,2021-01-01 00:06:00
+80,RBC Group,0.001,RU,top_1k,web_hosting,2021-01-01 00:06:00
+82,Choopa,0.001,US,top_1k,web_hosting,2021-01-01 00:06:00
+83,GMO Internet Group,0.001,JP,top_1k,web_hosting,2021-01-01 00:06:00
+85,Internap Group,0.001,US,top_1k,web_hosting,2021-01-01 00:06:00
+87,Weebly,0.001,US,top_1k,web_hosting,2021-01-01 00:06:00
+88,Selectel,0.001,RU,top_1k,web_hosting,2021-01-01 00:06:00
+89,Scaleway,0.001,FR,top_1k,web_hosting,2021-01-01 00:06:00
+90,Hivelocity,0.001,US,top_1k,web_hosting,2021-01-01 00:06:00
+91,Aruba Group,0.001,IT,top_1k,web_hosting,2021-01-01 00:06:00
+93,Tilda,0.001,GB,top_1k,web_hosting,2021-01-01 00:06:00
+94,Radore,0.001,TR,top_1k,web_hosting,2021-01-01 00:06:00
+95,Viettel,0.001,VN,top_1k,web_hosting,2021-01-01 00:06:00
+96,Masterhost,0.001,RU,top_1k,web_hosting,2021-01-01 00:06:00
+97,Vercel,0.001,US,top_1k,web_hosting,2021-01-01 00:06:00
+98,Rostelecom Group,0.001,RU,top_1k,web_hosting,2021-01-01 00:06:00
+100,Heroku,0.001,US,top_1k,web_hosting,2021-01-01 00:06:00
+101,Cogeco Group,0.001,CA,top_1k,web_hosting,2021-01-01 00:06:00
+103,Exabytes Group,0.001,MY,top_1k,web_hosting,2021-01-01 00:06:00
+105,TierPoint,0.001,US,top_1k,web_hosting,2021-01-01 00:06:00
+106,QuadraNet,0.001,US,top_1k,web_hosting,2021-01-01 00:06:00
+107,LG Group,0.001,KR,top_1k,web_hosting,2021-01-01 00:06:00
+109,Pair Networks,0.001,US,top_1k,web_hosting,2021-01-01 00:06:00
+110,PS Internet Company,0.001,KZ,top_1k,web_hosting,2021-01-01 00:06:00
+111,KDDI Group,0.001,US,top_1k,web_hosting,2021-01-01 00:06:00
+113,Advanced Hosting,0.001,NL,top_1k,web_hosting,2021-01-01 00:06:00
+114,Hostiserver,0.001,CY,top_1k,web_hosting,2021-01-01 00:06:00
+115,Hostiran,0.001,IR,top_1k,web_hosting,2021-01-01 00:06:00
+116,Psychz,0.001,US,top_1k,web_hosting,2021-01-01 00:06:00
+117,UCloud,0.001,,top_1k,web_hosting,2021-01-01 00:06:00
+118,Internet Initiative Japan,0.001,,top_1k,web_hosting,2021-01-01 00:06:00
+119,Platform.sh,0.001,,top_1k,web_hosting,2021-01-01 00:06:00
+120,HKBN,0.001,,top_1k,web_hosting,2021-01-01 00:06:00
+121,NFOrce Entertainment,0.001,,top_1k,web_hosting,2021-01-01 00:06:00
+122,Zoho,0.001,,top_1k,web_hosting,2021-01-01 00:06:00
+123,Webglobe-Yegon,0.001,,top_1k,web_hosting,2021-01-01 00:06:00
+124,Universo Online,0.001,,top_1k,web_hosting,2021-01-01 00:06:00
+125,Advania,0.001,,top_1k,web_hosting,2021-01-01 00:06:00
+126,RackSRV,0.001,,top_1k,web_hosting,2021-01-01 00:06:00
+127,Hewlett-Packard,0.001,US,top_1k,web_hosting,2021-01-01 00:06:00
+128,Apple,0.001,US,top_1k,web_hosting,2021-01-01 00:06:00
+0,DigiCert Group,0.524,US,top_1k,ssl_certificate,2021-01-01 00:06:00
+3,IdenTrust,0.17300000000000001,US,top_1k,ssl_certificate,2021-01-01 00:06:00
+4,GlobalSign,0.163,JP,top_1k,ssl_certificate,2021-01-01 00:06:00
+5,GoDaddy Group,0.12,US,top_1k,ssl_certificate,2021-01-01 00:06:00
+8,Sectigo,0.114,US,top_1k,ssl_certificate,2021-01-01 00:06:00
+9,Entrust,0.025,US,top_1k,ssl_certificate,2021-01-01 00:06:00
+10,Certum,0.013000000000000001,GB,top_1k,ssl_certificate,2021-01-01 00:06:00
+11,Secom Trust,0.011000000000000001,RO,top_1k,ssl_certificate,2021-01-01 00:06:00
+12,Let’s Encrypt,0.004,US,top_1k,ssl_certificate,2021-01-01 00:06:00
+13,WISeKey Group,0.002,CH,top_1k,ssl_certificate,2021-01-01 00:06:00
+15,Deutsche Telekom,0.002,DE,top_1k,ssl_certificate,2021-01-01 00:06:00
+16,TWCA,0.002,,top_1k,ssl_certificate,2021-01-01 00:06:00
+17,Actalis,0.001,IT,top_1k,ssl_certificate,2021-01-01 00:06:00
+18,Trustwave,0.001,US,top_1k,ssl_certificate,2021-01-01 00:06:00
+0,Amazon,0.24539999999999998,US,top_10k,data_center,2021-01-01 00:06:00
+1,Google,0.0542,US,top_10k,data_center,2021-01-01 00:06:00
+2,Alibaba,0.0333,CN,top_10k,data_center,2021-01-01 00:06:00
+3,China Telecom,0.0231,CN,top_10k,data_center,2021-01-01 00:06:00
+4,Microsoft,0.019299999999999998,US,top_10k,data_center,2021-01-01 00:06:00
+5,OVH,0.019,FR,top_10k,data_center,2021-01-01 00:06:00
+6,Hetzner,0.0172,DE,top_10k,data_center,2021-01-01 00:06:00
+7,China Unicom,0.0127,CN,top_10k,data_center,2021-01-01 00:06:00
+8,Automattic,0.0115,US,top_10k,data_center,2021-01-01 00:06:00
+9,DigitalOcean,0.0113,US,top_10k,data_center,2021-01-01 00:06:00
+10,Tencent,0.0105,CN,top_10k,data_center,2021-01-01 00:06:00
+11,Salesforce,0.009300000000000001,,top_10k,data_center,2021-01-01 00:06:00
+12,Verizon Group,0.0083,US,top_10k,data_center,2021-01-01 00:06:00
+16,LeaseWeb Group,0.006,NL,top_10k,data_center,2021-01-01 00:06:00
+18,Asiatech,0.0054,IN,top_10k,data_center,2021-01-01 00:06:00
+19,Linode,0.0052,US,top_10k,data_center,2021-01-01 00:06:00
+20,Rackspace,0.0049,US,top_10k,data_center,2021-01-01 00:06:00
+21,Hurricane Electric,0.0046,US,top_10k,data_center,2021-01-01 00:06:00
+22,GoDaddy Group,0.0040999999999999995,US,top_10k,data_center,2021-01-01 00:06:00
+27,NTT Group,0.0040999999999999995,JP,top_10k,data_center,2021-01-01 00:06:00
+33,XBT Holding,0.004,US,top_10k,data_center,2021-01-01 00:06:00
+37,Selectel,0.0034000000000000002,RU,top_10k,data_center,2021-01-01 00:06:00
+38,Advanced Hosting,0.0033,NL,top_10k,data_center,2021-01-01 00:06:00
+39,United Internet,0.0032,DE,top_10k,data_center,2021-01-01 00:06:00
+43,Internap Group,0.0032,US,top_10k,data_center,2021-01-01 00:06:00
+46,KT Group,0.0032,HK,top_10k,data_center,2021-01-01 00:06:00
+49,Sakura,0.0029,JP,top_10k,data_center,2021-01-01 00:06:00
+50,Yandex,0.0029,RU,top_10k,data_center,2021-01-01 00:06:00
+51,Neustar,0.0028000000000000004,,top_10k,data_center,2021-01-01 00:06:00
+52,IBM,0.0027,US,top_10k,data_center,2021-01-01 00:06:00
+53,Internet Initiative Japan,0.0027,,top_10k,data_center,2021-01-01 00:06:00
+54,Squarespace,0.0024,US,top_10k,data_center,2021-01-01 00:06:00
+55,Liquid Web,0.0024,US,top_10k,data_center,2021-01-01 00:06:00
+56,GitHub,0.0024,US,top_10k,data_center,2021-01-01 00:06:00
+57,Oracle,0.0024,US,top_10k,data_center,2021-01-01 00:06:00
+58,Newfold Digital,0.0023,US,top_10k,data_center,2021-01-01 00:06:00
+62,Scaleway,0.0023,FR,top_10k,data_center,2021-01-01 00:06:00
+63,CenturyLink,0.0023,US,top_10k,data_center,2021-01-01 00:06:00
+64,SH.cz,0.0023,,top_10k,data_center,2021-01-01 00:06:00
+65,China Mobile,0.0021,,top_10k,data_center,2021-01-01 00:06:00
+66,Chunghwa Telecom,0.002,TW,top_10k,data_center,2021-01-01 00:06:00
+67,IDC Frontier,0.002,JP,top_10k,data_center,2021-01-01 00:06:00
+68,CSC,0.0019,US,top_10k,data_center,2021-01-01 00:06:00
+69,VNPT,0.0017000000000000001,VN,top_10k,data_center,2021-01-01 00:06:00
+70,Hivelocity,0.0017000000000000001,US,top_10k,data_center,2021-01-01 00:06:00
+71,Vodafone,0.0017000000000000001,GB,top_10k,data_center,2021-01-01 00:06:00
+72,Equinix,0.0016,,top_10k,data_center,2021-01-01 00:06:00
+73,Choopa,0.0015,US,top_10k,data_center,2021-01-01 00:06:00
+74,Deutsche Telekom Group,0.0015,DE,top_10k,data_center,2021-01-01 00:06:00
+80,AT&T,0.0015,US,top_10k,data_center,2021-01-01 00:06:00
+81,GMO Internet Group,0.0014000000000000002,JP,top_10k,data_center,2021-01-01 00:06:00
+84,Performive,0.0014000000000000002,,top_10k,data_center,2021-01-01 00:06:00
+85,Afranet,0.0014000000000000002,IR,top_10k,data_center,2021-01-01 00:06:00
+86,REG.RU,0.0012,RU,top_10k,data_center,2021-01-01 00:06:00
+87,InMotion,0.0012,US,top_10k,data_center,2021-01-01 00:06:00
+88,Zoho,0.0012,,top_10k,data_center,2021-01-01 00:06:00
+89,Pars Online,0.0011,MY,top_10k,data_center,2021-01-01 00:06:00
+90,Serverel,0.0011,US,top_10k,data_center,2021-01-01 00:06:00
+91,SK Group,0.0011,KR,top_10k,data_center,2021-01-01 00:06:00
+95,Delta Telecom,0.0011,,top_10k,data_center,2021-01-01 00:06:00
+96,Namecheap,0.001,US,top_10k,data_center,2021-01-01 00:06:00
+97,team.blue,0.001,DK,top_10k,data_center,2021-01-01 00:06:00
+102,DreamHost,0.001,US,top_10k,data_center,2021-01-01 00:06:00
+103,Contabo,0.001,DE,top_10k,data_center,2021-01-01 00:06:00
+104,XServer,0.001,JP,top_10k,data_center,2021-01-01 00:06:00
+105,Aruba Group,0.001,IT,top_10k,data_center,2021-01-01 00:06:00
+107,Cnservers,0.001,,top_10k,data_center,2021-01-01 00:06:00
+108,Radore,0.0008,TR,top_10k,data_center,2021-01-01 00:06:00
+109,Rostelecom Group,0.0008,RU,top_10k,data_center,2021-01-01 00:06:00
+112,Pars Parva System,0.0008,IR,top_10k,data_center,2021-01-01 00:06:00
+113,QuadraNet,0.0008,US,top_10k,data_center,2021-01-01 00:06:00
+114,PhoenixNAP,0.0008,US,top_10k,data_center,2021-01-01 00:06:00
+115,Pair Networks,0.0008,US,top_10k,data_center,2021-01-01 00:06:00
+116,A2 Hosting,0.0007000000000000001,US,top_10k,data_center,2021-01-01 00:06:00
+117,First Colo,0.0007000000000000001,US,top_10k,data_center,2021-01-01 00:06:00
+118,Cogent,0.0007000000000000001,US,top_10k,data_center,2021-01-01 00:06:00
+119,HKBN,0.0007000000000000001,,top_10k,data_center,2021-01-01 00:06:00
+120,Baidu,0.0007000000000000001,,top_10k,data_center,2021-01-01 00:06:00
+121,NetEase,0.0007000000000000001,,top_10k,data_center,2021-01-01 00:06:00
+122,Hostinger,0.0006,CY,top_10k,data_center,2021-01-01 00:06:00
+123,FirstVDS,0.0006,RU,top_10k,data_center,2021-01-01 00:06:00
+124,FPT,0.0006,VN,top_10k,data_center,2021-01-01 00:06:00
+125,Cogeco Group,0.0006,CA,top_10k,data_center,2021-01-01 00:06:00
+127,Steadfast,0.0006,US,top_10k,data_center,2021-01-01 00:06:00
+128,CtrlS,0.0006,IN,top_10k,data_center,2021-01-01 00:06:00
+129,Telia Company Group,0.0006,SE,top_10k,data_center,2021-01-01 00:06:00
+133,Codero,0.0006,,top_10k,data_center,2021-01-01 00:06:00
+134,UCloud,0.0006,,top_10k,data_center,2021-01-01 00:06:00
+135,Viettel,0.0005,VN,top_10k,data_center,2021-01-01 00:06:00
+136,Tebyan,0.0005,IR,top_10k,data_center,2021-01-01 00:06:00
+137,Ntirety,0.0005,US,top_10k,data_center,2021-01-01 00:06:00
+138,MiroHost,0.0005,UA,top_10k,data_center,2021-01-01 00:06:00
+139,Voxility,0.0005,US,top_10k,data_center,2021-01-01 00:06:00
+140,M247,0.0005,,top_10k,data_center,2021-01-01 00:06:00
+141,RBC Group,0.0003,RU,top_10k,data_center,2021-01-01 00:06:00
+144,PrivateSystems,0.0003,GB,top_10k,data_center,2021-01-01 00:06:00
+145,UpCloud,0.0003,FI,top_10k,data_center,2021-01-01 00:06:00
+146,PS Internet Company,0.0003,KZ,top_10k,data_center,2021-01-01 00:06:00
+147,Zomro,0.0003,UA,top_10k,data_center,2021-01-01 00:06:00
+148,Hostiran,0.0003,IR,top_10k,data_center,2021-01-01 00:06:00
+149,Flexential,0.0003,US,top_10k,data_center,2021-01-01 00:06:00
+150,DEAC,0.0003,,top_10k,data_center,2021-01-01 00:06:00
+151,Telecom Egypt,0.0003,,top_10k,data_center,2021-01-01 00:06:00
+152,Cisco,0.0003,,top_10k,data_center,2021-01-01 00:06:00
+153,Weebly,0.0002,US,top_10k,data_center,2021-01-01 00:06:00
+154,EuroByte,0.0002,,top_10k,data_center,2021-01-01 00:06:00
+155,Mihan,0.0002,IN,top_10k,data_center,2021-01-01 00:06:00
+156,Beltelecom,0.0002,BY,top_10k,data_center,2021-01-01 00:06:00
+157,iomart Group,0.0002,GB,top_10k,data_center,2021-01-01 00:06:00
+159,Masterhost,0.0002,RU,top_10k,data_center,2021-01-01 00:06:00
+160,TierPoint,0.0002,US,top_10k,data_center,2021-01-01 00:06:00
+161,Exabytes Group,0.0002,MY,top_10k,data_center,2021-01-01 00:06:00
+163,Faraso Samaneh Pasargad,0.0002,IR,top_10k,data_center,2021-01-01 00:06:00
+164,Confluence-Networks,0.0002,US,top_10k,data_center,2021-01-01 00:06:00
+165,Hostiserver,0.0002,CY,top_10k,data_center,2021-01-01 00:06:00
+166,VSHosting,0.0002,CZ,top_10k,data_center,2021-01-01 00:06:00
+167,Dinahosting,0.0002,ES,top_10k,data_center,2021-01-01 00:06:00
+168,Tucows Group,0.0002,US,top_10k,data_center,2021-01-01 00:06:00
+171,Master Internet,0.0002,US,top_10k,data_center,2021-01-01 00:06:00
+172,Psychz,0.0002,US,top_10k,data_center,2021-01-01 00:06:00
+173,Expedient,0.0002,,top_10k,data_center,2021-01-01 00:06:00
+174,Casablanca,0.0002,,top_10k,data_center,2021-01-01 00:06:00
+175,Internet Thailand,0.0002,TH,top_10k,data_center,2021-01-01 00:06:00
+176,Sharktech,0.0002,,top_10k,data_center,2021-01-01 00:06:00
+177,New World Telecom,0.0002,,top_10k,data_center,2021-01-01 00:06:00
+178,GlobalConnect,0.0002,,top_10k,data_center,2021-01-01 00:06:00
+179,ETECSA,0.0002,,top_10k,data_center,2021-01-01 00:06:00
+180,Turkmentelecom,0.0002,,top_10k,data_center,2021-01-01 00:06:00
+181,TimeWeb,0.0001,RU,top_10k,data_center,2021-01-01 00:06:00
+182,Aerotek,0.0001,US,top_10k,data_center,2021-01-01 00:06:00
+183,PA Vietnam,0.0001,VN,top_10k,data_center,2021-01-01 00:06:00
+184,ServerCentral,0.0001,US,top_10k,data_center,2021-01-01 00:06:00
+185,Xneelo,0.0001,ZA,top_10k,data_center,2021-01-01 00:06:00
+186,CS LoxInfo,0.0001,TH,top_10k,data_center,2021-01-01 00:06:00
+187,InterServer,0.0001,US,top_10k,data_center,2021-01-01 00:06:00
+188,One.com,0.0001,DK,top_10k,data_center,2021-01-01 00:06:00
+189,Serverpars,0.0001,IR,top_10k,data_center,2021-01-01 00:06:00
+190,Veridyen,0.0001,TR,top_10k,data_center,2021-01-01 00:06:00
+191,Infomaniak,0.0001,CH,top_10k,data_center,2021-01-01 00:06:00
+192,WPX Hosting,0.0001,BG,top_10k,data_center,2021-01-01 00:06:00
+193,Gandi,0.0001,FR,top_10k,data_center,2021-01-01 00:06:00
+194,UKFast,0.0001,GB,top_10k,data_center,2021-01-01 00:06:00
+195,FastVPS,0.0001,EE,top_10k,data_center,2021-01-01 00:06:00
+196,CAT Telecom,0.0001,TH,top_10k,data_center,2021-01-01 00:06:00
+197,Enartia Group,0.0001,CY,top_10k,data_center,2021-01-01 00:06:00
+199,Interneto Vizija,0.0001,LT,top_10k,data_center,2021-01-01 00:06:00
+200,ColoCrossing,0.0001,US,top_10k,data_center,2021-01-01 00:06:00
+201,Locaweb,0.0001,BR,top_10k,data_center,2021-01-01 00:06:00
+202,Cellcom,0.0001,,top_10k,data_center,2021-01-01 00:06:00
+203,Comcast,0.0001,,top_10k,data_center,2021-01-01 00:06:00
+204,Hostwinds,0.0001,,top_10k,data_center,2021-01-01 00:06:00
+205,Romarg,0.0001,,top_10k,data_center,2021-01-01 00:06:00
+206,WebSupport,0.0001,,top_10k,data_center,2021-01-01 00:06:00
+207,Seeweb,0.0001,,top_10k,data_center,2021-01-01 00:06:00
+208,EGIHosting,0.0001,,top_10k,data_center,2021-01-01 00:06:00
+209,TheGigabit,0.0001,,top_10k,data_center,2021-01-01 00:06:00
+210,Serverius,0.0001,,top_10k,data_center,2021-01-01 00:06:00
+211,PTisp,0.0001,,top_10k,data_center,2021-01-01 00:06:00
+212,Sedmi Odjel,0.0001,,top_10k,data_center,2021-01-01 00:06:00
+213,Alwaysdata,0.0001,,top_10k,data_center,2021-01-01 00:06:00
+214,Kamatera,0.0001,,top_10k,data_center,2021-01-01 00:06:00
+215,Telecom Algeria,0.0001,,top_10k,data_center,2021-01-01 00:06:00
+216,National DC Mongolia,0.0001,,top_10k,data_center,2021-01-01 00:06:00
