@@ -51,6 +51,11 @@ pip3 install -r requirements.txt
 
 Now you can run `python3 collect.py` to start collecting data.
 
+You can also run the data collection as separate one-time jobs:
+- `python3 run.py w3techs`
+- `python3 run.py ooni`
+
+This makes it suitable to be run from a system cron, rather than as a standalone continuous process.
 
 ### Config
 
