@@ -132,7 +132,7 @@ def collect(postgres_config: dict):
     # Compute gini coefficients
     for market in included_markets:
         logging.info(f'Computing gini for {market}')
-        pop_weighted_gini = utils.population_weighted_gini(cur, market, pd.Timestamp(datetime.now()))
+        pop_weighted_gini = utils.population_weighted_gini(cur, 'all', market, pd.Timestamp(datetime.now()))
         pop_weighted_gini.write_to_db(cur, conn)
 
     logging.debug('W3Techs complete.')

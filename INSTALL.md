@@ -31,6 +31,7 @@ Then, if you want to restore from a database backup:
 psql -U scraper -d taaraxtak -h localhost < [your-database-dump].sql 
 ```
 
+Alternatively, you can initiate a fresh database.  See Python setup, below.
 
 ### Python
 
@@ -48,7 +49,7 @@ pip3 install -e .
 
 3. Copy `config.example.py` to `config.py` and enter your Postgres credentials. See Config section below for info on
    logging options.
-4. Run `python3 create_tables.py` to set up the database. (Alternatively, restore the database from a recent DB dump).
+4. Run `python3 create_tables.py` to set up the database. (Alternatively, restore the database from a recent DB dump. See above.)
 
 Now you can run `python3 collect.py` to start collecting data.
 

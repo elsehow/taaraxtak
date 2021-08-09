@@ -68,7 +68,7 @@ def test_provider_marketshare_type(postgresdb):
     cur, conn = postgresdb
 
     ex_ms = types.ProviderMarketshare(
-        'Foo', None, shared_types.Alpha2('NL'), 'ssl-certificate', 0.5, pd.Timestamp('2021-04-20')
+        'Foo', None, shared_types.Alpha2('NL'), 'all', 'ssl-certificate', 0.5, pd.Timestamp('2021-04-20')
     )
     ex_ms.write_to_db(cur, conn)
 
@@ -81,14 +81,14 @@ def test_pop_weighted_gini_type(postgresdb):
     cur, conn = postgresdb
 
     ex_g = types.PopWeightedGini(
-        'ssl-certificate', 0.9, pd.Timestamp('2021-04-20')
+        'all', 'ssl-certificate', 0.9, pd.Timestamp('2021-04-20')
     )
 
     ex_g.write_to_db(cur, conn)
 
     cur.execute('SELECT * FROM pop_weighted_gini')
     item = cur.fetchone()
-    assert(item[0] == 'ssl-certificate')
+    assert(item[1] == 'ssl-certificate')
 
 #
 #  utils tests
@@ -128,6 +128,7 @@ def test_compute_pop_weighted_gini(postgresdb):
     cur, conn = postgresdb
     res = utils.population_weighted_gini(
         cur,
+        'all',
         'fake-market',
         pd.Timestamp('2021-01-20'),
     )
@@ -136,17 +137,17 @@ def test_compute_pop_weighted_gini(postgresdb):
     # add a provider marketshare
     # tiny netherlands has 50% of the world's market
     types.ProviderMarketshare(
-        'Foo', None, shared_types.Alpha2('NL'), 'ssl-certificate',
+        'Foo', None, shared_types.Alpha2('NL'), 'all', 'ssl-certificate',
         0.5, pd.Timestamp('2021-04-20')
     ).write_to_db(cur, conn)
     # US has the rest
     types.ProviderMarketshare(
-        'Foo', None, shared_types.Alpha2('US'), 'ssl-certificate',
+        'Foo', None, shared_types.Alpha2('US'), 'all', 'ssl-certificate',
         0.5, pd.Timestamp('2021-04-20')
     ).write_to_db(cur, conn)
 
     res = utils.population_weighted_gini(
-        cur, 'ssl-certificate', pd.Timestamp('2021-04-20')
+        cur, 'all', 'ssl-certificate', pd.Timestamp('2021-04-20')
     )
     # should result in a gini of 0.99
     assert(round(res.gini, 2) == 0.99)

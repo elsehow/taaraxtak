@@ -22,6 +22,13 @@ For local development, start the collection server with
 python3 collect.py
 ```
 
+You can also run the data collection as separate one-time jobs:
+
+- `python3 run.py w3techs`
+- `python3 run.py ooni`
+
+This makes it suitable to be run from a system cron, rather than as a standalone continuous process.
+
 Then check out your Grafana instance (by default, https://localhost:3000).
 
 To deploy a production environment, see [DEPLOY.md](DEPLOY.md)

@@ -31,5 +31,5 @@ ooni = partial(ooni_create, cursor, connection)
 #
 # run
 #
-# w3techs()
-# ooni()
+w3techs()
+ooni()

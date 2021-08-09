@@ -130,7 +130,7 @@ def extract_from_row(market: str, time: pd.Timestamp, df_row: pd.Series) -> Prov
     # Once data is in this type, it *should* be trustworthy.
     # See /design-notes.md for more detail on this pattern.
     return ProviderMarketshare(
-        str(name), str(url), juris, market, float(marketshare), time
+        str(name), str(url), juris, 'all', market, float(marketshare), time
     )
 
 
@@ -144,25 +144,26 @@ prop_net_users = pd.read_csv(pth).set_index('alpha2')
 
 def to_df(db_rows) -> pd.DataFrame:
     # TODO put this in TYPES somehow?
-    db_rows = pd.DataFrame(db_rows, columns=['name', 'url', 'jurisdiction_alpha2', 'market', 'marketshare', 'time'])
+    db_rows = pd.DataFrame(db_rows, columns=['name', 'url', 'jurisdiction_alpha2', 'measurement_scope', 'market', 'marketshare', 'time'])
     return db_rows
 
 
-def fetch_rows(cur: cursor, market: str, date: pd.Timestamp) -> pd.DataFrame:
+def fetch_rows(cur: cursor, measurement_scope: str, market: str,  date: pd.Timestamp) -> pd.DataFrame:
     # TODO why this window? a magic number.
     cur.execute(f'''
         SELECT * from provider_marketshare
-        WHERE market = '{market}'
+        WHERE measurement_scope = '{measurement_scope}'
+        AND market = '{market}'
         AND time BETWEEN timestamp '{date}' - interval '24 hour' AND  '{date}'
     ''')
     return to_df(cur.fetchall())
 
 
-def fetch_by_jurisdiction(cur: cursor, market: str, date: pd.Timestamp) -> pd.DataFrame:
+def fetch_by_jurisdiction(cur: cursor, measurement_scope: str, market: str,  date: pd.Timestamp) -> pd.DataFrame:
     '''
     Get a DataFrame mapping alpha2 codes to (mean) marketshares on a given date.
     '''
-    rows = fetch_rows(cur, market, date)
+    rows = fetch_rows(cur, measurement_scope, market, date)
     rows['marketshare'] = rows['marketshare'].astype(float)
     # in case we have the same name and jurisidiction repeated, we take the median marketshare
     rows = rows.groupby(['name', 'jurisdiction_alpha2']).median()
@@ -206,8 +207,8 @@ def weighted_gini(marketshares: pd.Series, population_shares: pd.Series) -> floa
     return gini(vs)
 
 
-def population_weighted_gini(cur: cursor, market: str, time: pd.Timestamp) -> Optional[PopWeightedGini]:
-    by_juris = fetch_by_jurisdiction(cur, market, time)
+def population_weighted_gini(cur: cursor, measurement_scope: str, market: str, time: pd.Timestamp) -> Optional[PopWeightedGini]:
+    by_juris = fetch_by_jurisdiction(cur, measurement_scope, market, time)
     # if there are no values, None
     if len(by_juris) == 0:
         return None
@@ -228,4 +229,4 @@ def population_weighted_gini(cur: cursor, market: str, time: pd.Timestamp) -> Op
         merged['marketshare'],
         merged[relevant_year],
     )
-    return PopWeightedGini(market, g, time)
+    return PopWeightedGini(measurement_scope, market, g, time)
