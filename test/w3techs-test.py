@@ -1,6 +1,7 @@
 import src.w3techs.utils as utils
 import src.w3techs.types as types
 import src.shared.types as shared_types
+import src.w3techs.collect as collect
 
 import pandas as pd
 import numpy as np
@@ -151,3 +152,12 @@ def test_compute_pop_weighted_gini(postgresdb):
     )
     # should result in a gini of 0.99
     assert(round(res.gini, 2) == 0.99)
+
+# NOTE: This test scrapes actual data from the web. Run with care.
+def test_collect():
+    postgresql = testing.postgresql.Postgresql()
+    test_db_config = postgresql.dsn()
+    conn = psycopg2.connect(**postgresql.dsn())
+    cur = conn.cursor()
+    types.create_tables(cur, conn)
+    collect.collect(test_db_config)
