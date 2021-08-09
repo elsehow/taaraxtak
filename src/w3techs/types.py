@@ -31,6 +31,7 @@ class ProviderMarketshare():
                  name: str,
                  url: Optional[str],
                  jurisdiction_alpha2: Optional[shared_types.Alpha2],
+                 measurement_scope: str,
                  market: str,
                  marketshare: float,
                  time: pd.Timestamp):
@@ -50,6 +51,13 @@ class ProviderMarketshare():
             # we'll just store the str version
             self.jurisdiction_alpha2 = str(jurisdiction_alpha2)
 
+        assert(
+            (measurement_scope == 'all') or
+            (measurement_scope == '10k') or
+            (measurement_scope == '1k')
+        )
+        self.measurement_scope = measurement_scope
+
         assert(shared_utils.is_nonempty_str(market))
         self.market = market
 
@@ -68,6 +76,7 @@ class ProviderMarketshare():
         name                VARCHAR NOT NULL,
         url                 VARCHAR,
         jurisdiction_alpha2 CHAR(2),
+        measurement_scope   VARCHAR NOT NULL,
         market              VARCHAR NOT NULL,
         marketshare         NUMERIC NOT NULL,
         time                TIMESTAMPTZ NOT NULL DEFAULT now()
@@ -85,12 +94,13 @@ class ProviderMarketshare():
         cur.execute(
             """
             INSERT INTO provider_marketshare
-            (name, url, jurisdiction_alpha2, market, marketshare, time)
+            (name, url, jurisdiction_alpha2, measurement_scope, market, marketshare, time)
             VALUES
-            (%s, %s, %s, %s, %s, %s)
+            (%s, %s, %s, %s, %s, %s, %s)
             """, (self.name,
                   self.url,
                   self.jurisdiction_alpha2,
+                  self.measurement_scope,
                   self.market,
                   self.marketshare,
                   self.time))
@@ -99,7 +109,7 @@ class ProviderMarketshare():
         return
 
     def __str__(self):
-        return f'{self.name} {self.url} {self.jurisdiction_alpha2}  {self.market} {self.marketshare} {self.time}'
+        return f'{self.name} {self.url} {self.jurisdiction_alpha2} {self.measurement_scope}   {self.market} {self.marketshare} {self.time}'
 
     def __repr__(self):
         return self.__str__()
@@ -114,11 +124,19 @@ class PopWeightedGini ():
     TODO - Check for SQL injection attacks.
     '''
     def __init__(self,
+                 measurement_scope: str,
                  market: str,
                  gini: float,
                  time: pd.Timestamp):
         assert(shared_utils.is_nonempty_str(market))
         self.market = market
+
+        assert(
+            (measurement_scope == 'all') or
+            (measurement_scope == '10k') or
+            (measurement_scope == '1k')
+        )
+        self.measurement_scope = measurement_scope
 
         assert(is_float_0_1(float(gini)))
         self.gini = gini
@@ -132,6 +150,7 @@ class PopWeightedGini ():
             conn: connection):
         cmd = '''
         CREATE TABLE pop_weighted_gini (
+        measurement_scope   VARCHAR NOT NULL,
         market              VARCHAR NOT NULL,
         gini                NUMERIC NOT NULL,
         time                TIMESTAMPTZ NOT NULL DEFAULT now()
@@ -149,16 +168,16 @@ class PopWeightedGini ():
         cur.execute(
             """
             INSERT INTO pop_weighted_gini
-            (market, gini, time)
+            (measurement_scope, market, gini, time)
             VALUES
-            (%s, %s, %s)
-            """, (self.market, self.gini, self.time))
+            (%s, %s, %s, %s)
+            """, (self.measurement_scope, self.market, self.gini, self.time))
         if commit:
             return conn.commit()
         return
 
     def __str__(self):
-        return f'{self.market} {self.gini} {self.time}'
+        return f'{self.measurement_scope} {self.market} {self.gini} {self.time}'
 
     def __repr__(self):
         return self.__str__()
@@ -171,10 +190,10 @@ def create_tables(cur: cursor, conn: connection):
 
     # dummy data - just a demo
     ProviderMarketshare(
-        'name', None, shared_types.Alpha2('CA'), 'ssl-certificate', 0.5, pd.Timestamp('2021-04-20')
+        'name', None, shared_types.Alpha2('CA'), 'all', 'ssl-certificate', 0.5, pd.Timestamp('2021-04-20')
     ).create_table(cur, conn)
 
     # dummy data - just a demo
     PopWeightedGini(
-        'ssl-certificate', 0.9, pd.Timestamp('2021-04-20')
+        'all', 'ssl-certificate', 0.9, pd.Timestamp('2021-04-20')
     ).create_table(cur, conn)
