@@ -15,6 +15,12 @@ These data are typically updated daily. We label the jurisdiction for each
 service provider using `analysis/providers_labeled.csv`. `types.py` defines the
 Postgres tables for these data.
 
+# Measurement scope
+
+The `measurement_scope` of each marketshare represents which URLs were surveyed
+in order to arrive at this marketshare number. Options are the `'top_1k'`,
+`'top_10k'`, or `all` pages, by  Alexa ranking.
+
 # Computing gini coefficients
 
 ## Included markets
