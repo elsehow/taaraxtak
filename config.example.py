@@ -1,3 +1,5 @@
+import logging
+
 config = {
     "postgres": {
         "user": "scraper",
@@ -6,5 +8,9 @@ config = {
         "port": "5432",
         "database": "my-database",
     },
-    "tld_cache_dir": "/home/my-user/"
+    "tld_cache_dir": "/home/my-user/",
+    "logging": {
+        "level": logging.DEBUG,
+        "handler": "terminal"
+    }
 }

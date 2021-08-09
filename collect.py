@@ -7,13 +7,9 @@
 
 import time
 import schedule
-import threading
-import psycopg2
 import logging
-import coloredlogs
 from funcy import partial
-
-
+from src.shared.utils import configure_logging, run_threaded
 
 from src.w3techs.collect import collect as w3techs_collect
 from src.ooni.collect import collect as ooni_collect
@@ -21,20 +17,13 @@ from src.ooni.collect import collect as ooni_collect
 from config import config
 
 
-def run_threaded(job_func):
-    job_thread = threading.Thread(target=job_func)
-    job_thread.start()
 
 
 #
 # setup
 #
-logging.basicConfig()
+configure_logging()
 logger = logging.getLogger("taaraxtak:collect")
-# logger.setLevel(logging.DEBUG)
-coloredlogs.install()
-coloredlogs.install(level='INFO')
-# coloredlogs.install(level='DEBUG')
 
 # connect to the db
 postgres_config = config['postgres']

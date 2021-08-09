@@ -26,6 +26,29 @@ Then check out your Grafana instance (by default, https://localhost:3000).
 
 To deploy a production environment, see [DEPLOY.md](DEPLOY.md)
 
+# Testing
+
+Tests will require `pytest`:
+
+```
+pip install pytest
+```
+
+Run tests with 
+
+```
+pytest test/*
+```
+
+Optionally, you can run tests with code coverage:
+
+```
+pip install pytest
+pip install pytest-cov
+pytest test/* --cov=src
+
+```
+
 # Contributing
 
 See [CONTRIBUTING.MD](CONTRIBUTING.md).

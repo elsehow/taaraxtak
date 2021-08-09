@@ -4,9 +4,12 @@ import logging
 from os.path import join
 import pytz
 from datetime import datetime
+import threading
 
 from typing import Optional
 
+from config import config
+import coloredlogs
 
 #
 # Time
@@ -57,3 +60,23 @@ def get_country(provider_name: str) -> Optional[str]:
     except (KeyError):
         logging.info(f'Cannot find country for {provider_name}')
         return None
+
+
+def configure_logging():
+    logging_config = config['logging']
+    log_level = logging_config['level']
+    if logging_config['handler'] == 'file':
+        logging.basicConfig(level=log_level, filename=logging_config['file'], format=logging_config['format'])
+    else:
+        logging.basicConfig(level=log_level)
+        coloredlogs.install()
+        coloredlogs.install(level=log_level)
+    # Schedule lib logs out params (including db creds) by default so set this to WARNING and above
+    logging.getLogger("schedule").setLevel(logging.WARNING)
+    # disable noisy logging by filelock (called by TLDExtract to deal with its cache)
+    logging.getLogger("filelock").setLevel(logging.ERROR)
+
+
+def run_threaded(job_func):
+    job_thread = threading.Thread(target=job_func)
+    job_thread.start()
