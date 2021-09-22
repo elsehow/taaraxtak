@@ -13,6 +13,9 @@ from funcy import partial
 from datetime import datetime
 
 
+logger = logging.getLogger("src.w3techs.collect")
+
+
 import src.w3techs.utils as utils
 
 # sources we're scraping from
@@ -108,31 +111,34 @@ def collect(postgres_config: dict):
     Collect W3Techs data and write them to the database.
     '''
 
-    logging.debug('Beginning W3Techs.')
+    logger.info('Beginning W3Techs.')
 
-    conn = psycopg2.connect(**postgres_config)
-    cur = conn.cursor()
-    logging.debug('Connected to database.')
+    try:
+        conn = psycopg2.connect(**postgres_config)
+        cur = conn.cursor()
+        logger.debug('Connected to database.')
 
-    # Scrape W3Techs data
-    for market_name, dic in w3techs_sources.items():
-        logging.info(f'Scraping {market_name}')
-        # scrape table from W3techs
-        df = utils.scrape_w3techs_table(dic)
-        # extract Marketshare types from datable
-        extract = partial(utils.extract_from_row,
-                          market_name, pd.Timestamp(datetime.now()))
-        marketshares = df.apply(extract, axis=1)
-        # write all Marketshares to the cursor
-        for marketshare in marketshares:
-            marketshare.write_to_db(cur, conn, commit=False)
-        # commit all writes to db
-        conn.commit()
+        # Scrape W3Techs data
+        for market_name, dic in w3techs_sources.items():
+            logger.info(f'Scraping {market_name}')
+            # scrape table from W3techs
+            df = utils.scrape_w3techs_table(dic)
+            # extract Marketshare types from datable
+            extract = partial(utils.extract_from_row,
+                              market_name, pd.Timestamp(datetime.now()))
+            marketshares = df.apply(extract, axis=1)
+            # write all Marketshares to the cursor
+            for marketshare in marketshares:
+                marketshare.write_to_db(cur, conn, commit=False)
+            # commit all writes to db
+            conn.commit()
 
-    # Compute gini coefficients
-    for market in included_markets:
-        logging.info(f'Computing gini for {market}')
-        pop_weighted_gini = utils.population_weighted_gini(cur, 'all', market, pd.Timestamp(datetime.now()))
-        pop_weighted_gini.write_to_db(cur, conn)
+        # Compute gini coefficients
+        for market in included_markets:
+            logger.info(f'Computing gini for {market}')
+            pop_weighted_gini = utils.population_weighted_gini(cur, 'all', market, pd.Timestamp(datetime.now()))
+            pop_weighted_gini.write_to_db(cur, conn)
 
-    logging.debug('W3Techs complete.')
+        logger.info('W3Techs complete.')
+    except Exception as e:
+        logger.error(f'Error collecting W3Techs data {e}')
