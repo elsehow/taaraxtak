@@ -182,6 +182,70 @@ class PopWeightedGini ():
         return self.__str__()
 
 
+class UnweightedGini ():
+    '''
+    Class for the table `unweighted_gini`.
+
+    This is where validation happens.
+
+    TODO - Check for SQL injection attacks.
+    '''
+    def __init__(self,
+                 measurement_scope: str,
+                 market: str,
+                 gini: float,
+                 time: pd.Timestamp):
+        assert(shared_utils.is_nonempty_str(market))
+        self.market = market
+
+        assert(validate_measurement_scope(measurement_scope))
+        self.measurement_scope = measurement_scope
+
+        assert(is_float_0_1(float(gini)))
+        self.gini = gini
+
+        assert(type(time) == pd.Timestamp)
+        self.time = time
+
+    def create_table(
+            self,
+            cur: cursor,
+            conn: connection):
+        cmd = '''
+        CREATE TABLE unweighted_gini (
+        measurement_scope   VARCHAR NOT NULL,
+        market              VARCHAR NOT NULL,
+        gini                NUMERIC NOT NULL,
+        time                TIMESTAMPTZ NOT NULL DEFAULT now()
+        )
+        '''
+        cur.execute(cmd)
+        conn.commit()
+
+    def write_to_db(
+            self,
+            cur: cursor,
+            conn: connection,
+            commit=True,
+    ):
+        cur.execute(
+            """
+            INSERT INTO unweighted_gini
+            (measurement_scope, market, gini, time)
+            VALUES
+            (%s, %s, %s, %s)
+            """, (self.measurement_scope, self.market, self.gini, self.time))
+        if commit:
+            return conn.commit()
+        return
+
+    def __str__(self):
+        return f'{self.measurement_scope} {self.market} {self.gini} {self.time}'
+
+    def __repr__(self):
+        return self.__str__()
+
+
 def create_tables(cur: cursor, conn: connection):
     '''
     Create database tables for W3Techs data.
@@ -194,5 +258,10 @@ def create_tables(cur: cursor, conn: connection):
 
     # dummy data - just a demo
     PopWeightedGini(
+        'all', 'ssl-certificate', 0.9, pd.Timestamp('2021-04-20')
+    ).create_table(cur, conn)
+
+    # dummy data - just a demo
+    UnweightedGini(
         'all', 'ssl-certificate', 0.9, pd.Timestamp('2021-04-20')
     ).create_table(cur, conn)

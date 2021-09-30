@@ -16,6 +16,7 @@ from bs4.element import ResultSet
 
 from src.w3techs.types import ProviderMarketshare
 from src.w3techs.types import PopWeightedGini
+from src.w3techs.types import UnweightedGini
 
 #
 # Scrape utilities
@@ -172,6 +173,19 @@ def fetch_by_jurisdiction(cur: cursor, measurement_scope: str, market: str,  dat
     return rows
 
 
+def fetch_by_market(cur: cursor, measurement_scope: str, market: str,  date: pd.Timestamp) -> pd.DataFrame:
+    '''
+    Get a DataFrame mapping markets to (mean) marketshares on a given date.
+    '''
+    rows = fetch_rows(cur, measurement_scope, market, date)
+    rows['marketshare'] = rows['marketshare'].astype(float)
+    # in case we have the same name repeated, we take the median marketshare
+    rows = rows.groupby('name').median()
+    # then group by provider name and take the sum of its marketshare
+    rows = rows.groupby('name').sum()
+    return rows
+
+
 def gini(array: np.array) -> float:
     """
     Calculate the Gini coefficient of a numpy array.
@@ -230,3 +244,27 @@ def population_weighted_gini(cur: cursor, measurement_scope: str, market: str, t
         merged[relevant_year],
     )
     return PopWeightedGini(measurement_scope, market, g, time)
+
+
+def unweighted_gini(cur: cursor, measurement_scope: str, market: str, time: pd.Timestamp) -> Optional[UnweightedGini]:
+    by_market = fetch_by_market(cur, measurement_scope, market, time)
+    # if there are no values, None
+    if len(by_market) == 0:
+        return None
+
+    # TODO break out JUST this and test it with some mock data?
+    # get current % of Internet using population
+#    relevant_year = str(time.year)
+#    pop_share_df = prop_net_users[relevant_year]
+    # weight marketshare
+#    merged = pd.DataFrame(pop_share_df).merge(by_juris,
+ #                                             left_index=True,
+ #                                             right_on='jurisdiction_alpha2',
+ #                                             how='left')
+    # we include countries that do  NOT appear in our scraped data.
+    # the intention here is to get the gini among ALL countries,
+    # including those that provide no internet services.
+    g = gini(
+        pd.Series(by_market['marketshare']).fillna(0).values
+    )
+    return UnweightedGini(measurement_scope, market, g, time)
