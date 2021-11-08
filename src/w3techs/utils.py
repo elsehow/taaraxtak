@@ -15,8 +15,8 @@ from bs4.element import Tag
 from bs4.element import ResultSet
 
 from src.w3techs.types import ProviderMarketshare
-from src.w3techs.types import PopWeightedGini
-from src.w3techs.types import UnweightedGini
+from src.w3techs.types import CountryGini
+from src.w3techs.types import ProviderGini
 
 #
 # Scrape utilities
@@ -221,7 +221,7 @@ def weighted_gini(marketshares: pd.Series, population_shares: pd.Series) -> floa
     return gini(vs)
 
 
-def population_weighted_gini(cur: cursor, measurement_scope: str, market: str, time: pd.Timestamp) -> Optional[PopWeightedGini]:
+def country_gini(cur: cursor, measurement_scope: str, market: str, time: pd.Timestamp) -> Optional[CountryGini]:
     by_juris = fetch_by_jurisdiction(cur, measurement_scope, market, time)
     # if there are no values, None
     if len(by_juris) == 0:
@@ -243,10 +243,13 @@ def population_weighted_gini(cur: cursor, measurement_scope: str, market: str, t
         merged['marketshare'],
         merged[relevant_year],
     )
-    return PopWeightedGini(measurement_scope, market, g, time)
+    u = gini(
+        pd.Series(by_juris['marketshare']).fillna(0).values
+    )
+    return CountryGini(measurement_scope, market, u, g, time)
 
 
-def unweighted_gini(cur: cursor, measurement_scope: str, market: str, time: pd.Timestamp) -> Optional[UnweightedGini]:
+def provider_gini(cur: cursor, measurement_scope: str, market: str, time: pd.Timestamp) -> Optional[ProviderGini]:
     by_market = fetch_by_market(cur, measurement_scope, market, time)
     # if there are no values, None
     if len(by_market) == 0:
@@ -267,4 +270,4 @@ def unweighted_gini(cur: cursor, measurement_scope: str, market: str, time: pd.T
     g = gini(
         pd.Series(by_market['marketshare']).fillna(0).values
     )
-    return UnweightedGini(measurement_scope, market, g, time)
+    return ProviderGini(measurement_scope, market, g, time)
