@@ -135,12 +135,12 @@ def collect(postgres_config: dict):
 
         # Compute gini coefficients
         for market in included_markets:
-            logging.info(f'Computing unweighted gini for {market}')
-            unweighted_gini = utils.unweighted_gini(cur, 'all', market, pd.Timestamp(datetime.now()))
-            unweighted_gini.write_to_db(cur, conn)
-            logger.info(f'Computing weighted gini for {market}')
-            pop_weighted_gini = utils.population_weighted_gini(cur, 'all', market, pd.Timestamp(datetime.now()))
-            pop_weighted_gini.write_to_db(cur, conn)
+            logging.info(f'Computing provider-based gini for {market}')
+            provider_gini = utils.provider_gini(cur, 'all', market, pd.Timestamp(datetime.now()))
+            provider_gini.write_to_db(cur, conn)
+            logger.info(f'Computing country-based ginis for {market}')
+            country_gini = utils.country_gini(cur, 'all', market, pd.Timestamp(datetime.now()))
+            country_gini.write_to_db(cur, conn)
 
         logger.info('W3Techs complete.')
     except Exception as e:
