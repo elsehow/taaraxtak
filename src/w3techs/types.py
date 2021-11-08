@@ -117,9 +117,9 @@ class ProviderMarketshare():
         return self.__str__()
 
 
-class PopWeightedGini ():
+class CountryGini ():
     '''
-    Class for the table `pop_weighted_gini`.
+    Class for the table `country_gini`.
 
     This is where validation happens.
 
@@ -128,15 +128,18 @@ class PopWeightedGini ():
     def __init__(self,
                  measurement_scope: str,
                  market: str,
+                 unweighted_gini: float,
                  gini: float,
                  time: pd.Timestamp):
         assert(shared_utils.is_nonempty_str(market))
         self.market = market
 
-
         assert(validate_measurement_scope(measurement_scope))
         self.measurement_scope = measurement_scope
 
+        assert(is_float_0_1(float(unweighted_gini)))
+        self.unweighted_gini = unweighted_gini
+        
         assert(is_float_0_1(float(gini)))
         self.gini = gini
 
@@ -151,6 +154,7 @@ class PopWeightedGini ():
         CREATE TABLE pop_weighted_gini (
         measurement_scope   VARCHAR NOT NULL,
         market              VARCHAR NOT NULL,
+        unweighted_gini     NUMERIC NOT NULL,
         gini                NUMERIC NOT NULL,
         time                TIMESTAMPTZ NOT NULL DEFAULT now()
         )
@@ -167,24 +171,24 @@ class PopWeightedGini ():
         cur.execute(
             """
             INSERT INTO pop_weighted_gini
-            (measurement_scope, market, gini, time)
+            (measurement_scope, market, unweighted_gini, gini, time)
             VALUES
-            (%s, %s, %s, %s)
-            """, (self.measurement_scope, self.market, self.gini, self.time))
+            (%s, %s, %s, %s, %s)
+            """, (self.measurement_scope, self.market, self.unweighted_gini, self.gini, self.time))
         if commit:
             return conn.commit()
         return
 
     def __str__(self):
-        return f'{self.measurement_scope} {self.market} {self.gini} {self.time}'
+        return f'{self.measurement_scope} {self.market} {self.unweighted_gini} {self.gini} {self.time}'
 
     def __repr__(self):
         return self.__str__()
 
 
-class UnweightedGini ():
+class ProviderGini ():
     '''
-    Class for the table `unweighted_gini`.
+    Class for the table `provider_gini`.
 
     This is where validation happens.
 
@@ -212,7 +216,7 @@ class UnweightedGini ():
             cur: cursor,
             conn: connection):
         cmd = '''
-        CREATE TABLE unweighted_gini (
+        CREATE TABLE provider_gini (
         measurement_scope   VARCHAR NOT NULL,
         market              VARCHAR NOT NULL,
         gini                NUMERIC NOT NULL,
@@ -230,7 +234,7 @@ class UnweightedGini ():
     ):
         cur.execute(
             """
-            INSERT INTO unweighted_gini
+            INSERT INTO provider_gini
             (measurement_scope, market, gini, time)
             VALUES
             (%s, %s, %s, %s)
@@ -257,11 +261,11 @@ def create_tables(cur: cursor, conn: connection):
     ).create_table(cur, conn)
 
     # dummy data - just a demo
-    PopWeightedGini(
-        'all', 'ssl-certificate', 0.9, pd.Timestamp('2021-04-20')
+    CountryGini(
+        'all', 'ssl-certificate', 0.8, 0.9, pd.Timestamp('2021-04-20')
     ).create_table(cur, conn)
 
     # dummy data - just a demo
-    UnweightedGini(
+    ProviderGini(
         'all', 'ssl-certificate', 0.9, pd.Timestamp('2021-04-20')
     ).create_table(cur, conn)
