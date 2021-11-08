@@ -151,7 +151,7 @@ class CountryGini ():
             cur: cursor,
             conn: connection):
         cmd = '''
-        CREATE TABLE pop_weighted_gini (
+        CREATE TABLE country_gini (
         measurement_scope   VARCHAR NOT NULL,
         market              VARCHAR NOT NULL,
         unweighted_gini     NUMERIC NOT NULL,
@@ -170,7 +170,7 @@ class CountryGini ():
     ):
         cur.execute(
             """
-            INSERT INTO pop_weighted_gini
+            INSERT INTO country_gini
             (measurement_scope, market, unweighted_gini, gini, time)
             VALUES
             (%s, %s, %s, %s, %s)
