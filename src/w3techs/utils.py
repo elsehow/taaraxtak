@@ -255,18 +255,6 @@ def provider_gini(cur: cursor, measurement_scope: str, market: str, time: pd.Tim
     if len(by_market) == 0:
         return None
 
-    # TODO break out JUST this and test it with some mock data?
-    # get current % of Internet using population
-#    relevant_year = str(time.year)
-#    pop_share_df = prop_net_users[relevant_year]
-    # weight marketshare
-#    merged = pd.DataFrame(pop_share_df).merge(by_juris,
- #                                             left_index=True,
- #                                             right_on='jurisdiction_alpha2',
- #                                             how='left')
-    # we include countries that do  NOT appear in our scraped data.
-    # the intention here is to get the gini among ALL countries,
-    # including those that provide no internet services.
     g = gini(
         pd.Series(by_market['marketshare']).fillna(0).values
     )
