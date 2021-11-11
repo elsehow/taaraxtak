@@ -1,0 +1,376 @@
+1.,Amazon,23.33%
+2.,Zendesk,4.71%
+3.,Google,4.37%
+4.,Alibaba,3.49%
+5.,China Telecom,2.40%
+6.,WP Engine Group,2.17%
+6.1.,    WP Engine,2.05%
+6.2.,    Flywheel,0.11%
+7.,OVH,1.92%
+8.,Microsoft,1.92%
+9.,Hetzner,1.71%
+10.,Salesforce,1.40%
+11.,Shopify,1.38%
+12.,China Unicom,1.34%
+13.,Automattic Group,1.31%
+13.1.,    Automattic,1.23%
+13.2.,    Tumblr,0.09%
+14.,Tencent,1.15%
+15.,DigitalOcean,0.85%
+16.,Verizon Group,0.83%
+16.1.,    Verizon,0.78%
+16.2.,    Yahoo,0.08%
+16.3.,    Verizon Media,0.07%
+17.,Netlify,0.64%
+18.,LeaseWeb Group,0.56%
+18.1.,    LeaseWeb,0.56%
+19.,Webflow,0.55%
+20.,Acquia,0.54%
+21.,HubSpot,0.53%
+22.,Pantheon,0.52%
+23.,Asiatech,0.47%
+24.,CenturyLink,0.47%
+25.,China Mobile,0.47%
+26.,Rackspace,0.45%
+27.,GoDaddy Group,0.44%
+27.1.,    GoDaddy,0.17%
+27.2.,    Host Europe,0.11%
+27.3.,    PlusServer,0.09%
+27.4.,    Media Temple,0.03%
+27.5.,    Domainfactory,0.01%
+27.6.,    velia.net,0.01%
+28.,XBT Holding,0.42%
+28.1.,    Servers.com,0.22%
+28.2.,    Webzilla,0.17%
+28.3.,    Exepto,0.02%
+28.4.,    Fozzy,0.01%
+29.,Hurricane Electric,0.42%
+30.,Linode,0.41%
+31.,NTT Group,0.40%
+31.1.,    NTT Communications,0.18%
+31.2.,    Netmagic,0.15%
+31.3.,    NTT PC Communications,0.07%
+31.4.,    NTT SmartConnect,0.01%
+32.,Vercel,0.39%
+33.,KT Group,0.37%
+33.1.,    KT Corporation,0.37%
+34.,Selectel,0.36%
+35.,Newfold Digital,0.34%
+35.1.,    Endurance,0.09%
+35.2.,    HostGator,0.07%
+35.3.,    Bluehost,0.07%
+35.4.,    Network Solutions,0.06%
+35.5.,    PublicDomainRegistry,0.05%
+35.6.,    PowWeb,0.01%
+35.7.,    TypePad,0.01%
+36.,Medium,0.34%
+37.,Kinsta,0.33%
+38.,Advanced Hosting,0.31%
+39.,IBM,0.30%
+40.,LG Group,0.26%
+40.1.,    LG U+,0.26%
+41.,United Internet,0.25%
+41.1.,    1&1 IONOS,0.19%
+41.2.,    Strato,0.02%
+41.3.,    Fasthosts,0.02%
+41.4.,    Arsys,0.01%
+41.5.,    InterNetX,0.01%
+42.,GitHub,0.25%
+43.,Yandex,0.25%
+44.,Chunghwa Telecom,0.24%
+45.,Telefónica Group,0.24%
+45.1.,    Telefónica de España,0.07%
+45.2.,    Telefónica de Argentina,0.05%
+45.3.,    acens,0.03%
+45.4.,    Telefónica Brazil,0.03%
+45.5.,    Telefónica Chile,0.02%
+45.6.,    Telefonica USA,0.01%
+45.7.,    Telefónica Deutschland,0.01%
+45.8.,    Telefónica Venezolana,0.01%
+46.,IDC Frontier,0.24%
+47.,Oracle,0.24%
+48.,Internet Initiative Japan,0.24%
+49.,Squarespace,0.22%
+50.,Internap Group,0.22%
+50.1.,    Internap,0.18%
+50.2.,    iWeb,0.03%
+51.,VNPT,0.22%
+52.,Sakura,0.21%
+53.,Neustar,0.21%
+54.,SK Group,0.19%
+54.1.,    SK Broadband,0.17%
+54.2.,    SK Holdings C&C,0.01%
+54.3.,    SK Telecom,0.01%
+55.,UCloud,0.19%
+56.,Pagely,0.19%
+57.,Delta Telecom,0.18%
+58.,Liquid Web,0.17%
+59.,CSC,0.17%
+60.,SiteGround,0.16%
+61.,Contabo,0.16%
+62.,Scaleway,0.16%
+63.,Heroku,0.16%
+64.,XServer,0.15%
+65.,Hivelocity,0.15%
+66.,Deutsche Telekom Group,0.14%
+66.1.,    T-Systems,0.05%
+66.2.,    Magyar Telekom,0.03%
+66.3.,    Slovak Telecom,0.03%
+66.4.,    Deutsche Telekom,0.01%
+66.5.,    T-Mobile,0.01%
+67.,Vodafone,0.14%
+68.,Afranet,0.14%
+69.,Zoho,0.14%
+70.,Choopa,0.13%
+71.,InMotion,0.11%
+72.,Aruba Group,0.11%
+72.1.,    Aruba,0.11%
+73.,Pars Online,0.11%
+74.,Serverel,0.11%
+75.,Zenlayer,0.11%
+76.,team.blue,0.10%
+76.1.,    Natro,0.06%
+76.2.,    TransIP,0.02%
+76.3.,    Simply Transit,0.01%
+76.4.,    Signet,0.01%
+77.,First Colo,0.10%
+78.,Wix,0.09%
+79.,Namecheap,0.09%
+80.,DreamHost,0.09%
+81.,GMO Internet Group,0.09%
+81.1.,    GMO Internet,0.05%
+81.2.,    GMO Pepabo,0.02%
+81.3.,    GMO GlobalSign,0.01%
+81.4.,    GMO DigiRock,0.01%
+82.,Pars Parva System,0.09%
+83.,KDDI Group,0.09%
+83.1.,    KDDI Corporation,0.09%
+84.,Equinix,0.09%
+85.,NetEase,0.09%
+86.,REG.RU,0.08%
+87.,FPT,0.08%
+88.,Pair Networks,0.08%
+89.,AT&T,0.08%
+90.,HKBN,0.08%
+91.,Codero,0.08%
+92.,Presslabs,0.08%
+93.,Hostinger,0.07%
+94.,A2 Hosting,0.07%
+95.,Rostelecom Group,0.07%
+95.1.,    Rostelecom,0.06%
+95.2.,    RTComm.RU,0.01%
+96.,Cogent,0.07%
+97.,Limestone Networks,0.07%
+98.,Cnservers,0.07%
+99.,Baidu,0.07%
+100.,Turkmentelecom,0.07%
+101.,Wikimedia,0.07%
+102.,Radore,0.06%
+103.,PhoenixNAP,0.06%
+104.,Cogeco Group,0.06%
+104.1.,    Aptum,0.06%
+105.,THG Hosting,0.06%
+105.1.,    UK-2,0.03%
+105.2.,    WestHost,0.01%
+105.3.,    Midphase,0.01%
+105.4.,    Virtual Internet,0.01%
+106.,Telia Company Group,0.06%
+106.1.,    Telia Company,0.02%
+106.2.,    Telia Latvija,0.02%
+106.3.,    Telia Lietuva,0.01%
+107.,Platform.sh,0.06%
+108.,Claranet,0.06%
+109.,NFOrce Entertainment,0.06%
+110.,RBC Group,0.05%
+110.1.,    RU-Center,0.02%
+110.2.,    RosBusinessConsulting,0.02%
+111.,Cloudways,0.05%
+112.,Bigcommerce,0.05%
+113.,Tilda,0.05%
+114.,InterServer,0.05%
+115.,Ntirety,0.05%
+116.,TierPoint,0.05%
+117.,MiroHost,0.05%
+118.,Premier DC,0.05%
+119.,QuadraNet,0.05%
+120.,UpCloud,0.05%
+121.,CtrlS,0.05%
+122.,MojoHost,0.05%
+123.,Swisscom Group,0.05%
+123.1.,    Fastweb,0.03%
+123.2.,    Swisscom,0.01%
+124.,Voxility,0.05%
+125.,Accretive,0.05%
+126.,Virtual Systems,0.05%
+127.,ServerStack,0.05%
+128.,Cisco,0.05%
+129.,PrivateSystems,0.03%
+130.,Viettel,0.03%
+131.,Steadfast,0.03%
+132.,Gandi,0.03%
+133.,Hostiran,0.03%
+134.,Flexential,0.03%
+135.,ServerCentral,0.03%
+136.,Psychz,0.03%
+137.,Hostwinds,0.03%
+138.,Sharktech,0.03%
+139.,Internet Thailand,0.03%
+140.,Gainet,0.03%
+141.,Colt,0.03%
+142.,Kazakhtelecom Group,0.03%
+142.1.,    Kazakhtelecom,0.03%
+143.,Eurofiber Group,0.03%
+143.1.,    Avenir Télématique,0.03%
+144.,Grupo GTD,0.03%
+144.1.,    Gtd Teleductos,0.03%
+145.,Teléfonos de México,0.03%
+146.,Gruppo TIM,0.03%
+147.,WebNX,0.03%
+148.,Noris network,0.03%
+149.,Mail.Ru,0.03%
+150.,Ning,0.03%
+151.,Servebolt,0.03%
+152.,Telecom Egypt,0.03%
+153.,Atos Group,0.03%
+153.1.,    Atos,0.03%
+154.,RebelMouse,0.03%
+155.,Maxihost,0.03%
+156.,Apple,0.03%
+157.,Mihan,0.02%
+158.,Xneelo,0.02%
+159.,Duda,0.02%
+160.,Tebyan,0.02%
+161.,WPX Hosting,0.02%
+162.,One.com,0.02%
+163.,20i,0.02%
+164.,Masterhost,0.02%
+165.,Enartia Group,0.02%
+165.1.,    Top.Host,0.02%
+166.,Exabytes Group,0.02%
+166.1.,    Exabytes,0.02%
+167.,DGN Teknoloji,0.02%
+168.,FastVPS,0.02%
+169.,DHH,0.02%
+169.1.,    Seeweb,0.01%
+169.2.,    DHH Croatia,0.01%
+170.,uKit Group,0.02%
+170.1.,    uCoz,0.02%
+171.,Hostiserver,0.02%
+172.,Confluence-Networks,0.02%
+173.,Cafe24,0.02%
+174.,Netdirekt,0.02%
+175.,GloboTech,0.02%
+176.,Dinahosting,0.02%
+177.,VSHosting,0.02%
+178.,Bezeq Group,0.02%
+178.1.,    Bezeq,0.02%
+179.,M247,0.02%
+180.,Comcast,0.02%
+181.,Master Internet,0.02%
+182.,Atman,0.02%
+183.,Romarg,0.02%
+184.,Tucows Group,0.02%
+184.1.,    Tucows,0.01%
+184.2.,    eNom,0.01%
+185.,Expedient,0.02%
+186.,GigeNET,0.02%
+187.,Casablanca,0.02%
+188.,KPN Group,0.02%
+188.1.,    XS4ALL,0.01%
+188.2.,    KPN Internedservices,0.01%
+189.,GleSYS,0.02%
+190.,SH.cz,0.02%
+191.,Liberty Global Group,0.02%
+191.1.,    Virgin Media,0.01%
+191.2.,    Telenet,0.01%
+192.,NetSuite,0.02%
+193.,True,0.02%
+194.,Irideos,0.02%
+195.,Telekomunikasi Indonesia,0.02%
+196.,Webglobe-Yegon,0.02%
+197.,Swan,0.02%
+198.,Neterra,0.02%
+199.,DEAC,0.02%
+200.,Telecom Algeria,0.02%
+201.,Forthnet,0.02%
+202.,Biglobe,0.02%
+203.,Hewlett-Packard,0.02%
+204.,Weebly,0.01%
+205.,Aerotek,0.01%
+206.,АО IoT,0.01%
+207.,Prom.ua,0.01%
+208.,CS LoxInfo,0.01%
+209.,Hoster.by,0.01%
+210.,iomart Group,0.01%
+210.1.,    iomart,0.01%
+211.,Nexcess,0.01%
+212.,Serverpars,0.01%
+213.,Infomaniak,0.01%
+214.,BanaHosting,0.01%
+215.,NetAngels,0.01%
+216.,Isimtescil,0.01%
+217.,Faraso Samaneh Pasargad,0.01%
+218.,CAT Telecom,0.01%
+219.,Web Werks,0.01%
+220.,Beltelecom,0.01%
+221.,PS Internet Company,0.01%
+222.,EuroByte,0.01%
+223.,GreenGeeks,0.01%
+224.,ColoCrossing,0.01%
+225.,Rusonyx,0.01%
+226.,FirstVDS,0.01%
+227.,Jimdo,0.01%
+228.,Cellcom,0.01%
+229.,Hostpoint,0.01%
+230.,Performive,0.01%
+231.,Lightspeed,0.01%
+232.,Kagoya,0.01%
+233.,WebSupport,0.01%
+234.,WorldStream,0.01%
+235.,SiteSell,0.01%
+236.,EGIHosting,0.01%
+237.,Tiggee,0.01%
+238.,Filanco,0.01%
+239.,GlobalConnect,0.01%
+240.,WPMU Dev,0.01%
+241.,VTEX,0.01%
+242.,PTisp,0.01%
+243.,Serverius,0.01%
+244.,Comvive,0.01%
+245.,Profihost,0.01%
+246.,A1 Telekom Austria Group,0.01%
+246.1.,    A1 Bulgaria,0.01%
+247.,Nessus,0.01%
+248.,Cincinnati Bell Group,0.01%
+248.1.,    CyrusOne,0.01%
+249.,Pressidium,0.01%
+250.,HopOne,0.01%
+251.,Alwaysdata,0.01%
+252.,GTT,0.01%
+253.,NYI,0.01%
+254.,LightEdge,0.01%
+255.,GorillaServers,0.01%
+256.,OverBlog,0.01%
+257.,CITIC Group,0.01%
+257.1.,    CITIC Telecom,0.01%
+258.,New World Telecom,0.01%
+259.,Deninet,0.01%
+260.,Kamatera,0.01%
+261.,Atlantic Metro,0.01%
+262.,Lancom,0.01%
+263.,Universo Online,0.01%
+264.,Optimum,0.01%
+265.,Website Pro,0.01%
+266.,Fly,0.01%
+267.,Advania,0.01%
+268.,National DC Mongolia,0.01%
+269.,Prometey,0.01%
+270.,Datagroup,0.01%
+271.,i3D.net,0.01%
+272.,NetCologne,0.01%
+273.,Core-Backbone,0.01%
+274.,AS33891 Netzbetrieb,0.01%
+275.,RackSRV,0.01%
+276.,ElCat,0.01%
+277.,XinNet,0.01%
+278.,SK Communications,0.01%
