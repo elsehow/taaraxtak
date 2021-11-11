@@ -1,0 +1,219 @@
+Rank,Data Center Providers,Percentage Top 10,000 Sites
+1,Amazon,24.59%
+2,Google,5.40%
+3,Alibaba,3.28%
+4,China Telecom,2.20%
+5,Microsoft,1.95%
+6,OVH,1.90%
+7,Hetzner,1.78%
+8,China Unicom,1.31%
+9,Automattic,1.18%
+10,DigitalOcean,1.15%
+11,Tencent,1.08%
+12,Salesforce,0.93%
+13,Verizon Group,0.81%
+13.1,    Verizon,0.73%
+13.2,    Yahoo,0.09%
+13.3,    Verizon Media,0.08%
+14,LeaseWeb Group,0.60%
+14.1,    LeaseWeb,0.60%
+15,Asiatech,0.51%
+16,Linode,0.48%
+17,Rackspace,0.48%
+18,Hurricane Electric,0.45%
+19,GoDaddy Group,0.43%
+19.1,    GoDaddy,0.25%
+19.2,    PlusServer,0.09%
+19.3,    Host Europe,0.07%
+19.4,    Media Temple,0.02%
+20,NTT Group,0.41%
+20.1,    Netmagic,0.18%
+20.2,    NTT Communications,0.16%
+20.3,    NTT PC Communications,0.06%
+20.4,    NTT SmartConnect,0.01%
+20.5,    NTT Docomo,0.01%
+21,XBT Holding,0.40%
+21.1,    Servers.com,0.19%
+21.2,    Webzilla,0.17%
+21.3,    Exepto,0.03%
+22,Selectel,0.36%
+23,Yandex,0.35%
+24,Advanced Hosting,0.33%
+25,KT Group,0.32%
+25.1,    KT Corporation,0.31%
+25.2,    East Telecom,0.01%
+26,United Internet,0.31%
+26.1,    1&1 IONOS,0.23%
+26.2,    Strato,0.07%
+26.3,    InterNetX,0.01%
+27,Internap Group,0.30%
+27.1,    Internap,0.26%
+27.2,    iWeb,0.05%
+28,IBM,0.30%
+29,Sakura,0.30%
+30,GitHub,0.26%
+31,Internet Initiative Japan,0.26%
+32,Neustar,0.26%
+33,CenturyLink,0.25%
+34,Squarespace,0.24%
+35,Oracle,0.24%
+36,Newfold Digital,0.23%
+36.1,    Endurance,0.14%
+36.2,    PublicDomainRegistry,0.06%
+36.3,    Network Solutions,0.03%
+37,Liquid Web,0.23%
+38,Scaleway,0.23%
+39,IDC Frontier,0.23%
+40,China Mobile,0.23%
+41,Chunghwa Telecom,0.22%
+42,CSC,0.20%
+43,VNPT,0.18%
+44,Hivelocity,0.16%
+45,Vodafone,0.16%
+46,Deutsche Telekom Group,0.15%
+46.1,    T-Systems,0.06%
+46.2,    Magyar Telekom,0.03%
+46.3,    Slovak Telecom,0.03%
+46.4,    Deutsche Telekom,0.01%
+46.5,    T-Mobile,0.01%
+47,AT&T,0.15%
+48,REG.RU,0.14%
+49,Choopa,0.14%
+50,GMO Internet Group,0.14%
+50.1,    GMO Internet,0.11%
+50.2,    GMO GlobalSign,0.02%
+51,Performive,0.14%
+52,Equinix,0.14%
+53,SH.cz,0.14%
+54,Namecheap,0.12%
+55,InMotion,0.12%
+56,Contabo,0.12%
+57,Afranet,0.12%
+58,Zoho,0.12%
+59,Delta Telecom,0.12%
+60,Pars Online,0.11%
+61,Serverel,0.11%
+62,SK Group,0.11%
+62.1,    SK Broadband,0.09%
+62.2,    SK Telecom,0.01%
+62.3,    SK Holdings C&C,0.01%
+63,DreamHost,0.10%
+64,XServer,0.10%
+65,Aruba Group,0.10%
+65.1,    Aruba,0.10%
+66,Cnservers,0.10%
+67,team.blue,0.09%
+67.1,    Natro,0.07%
+67.2,    TransIP,0.01%
+67.3,    Signet,0.01%
+68,Rostelecom Group,0.09%
+68.1,    Rostelecom,0.08%
+68.2,    RTComm.RU,0.01%
+69,Pair Networks,0.09%
+70,NetEase,0.08%
+71,A2 Hosting,0.07%
+72,Radore,0.07%
+73,Pars Parva System,0.07%
+74,QuadraNet,0.07%
+75,PhoenixNAP,0.07%
+76,First Colo,0.07%
+77,HKBN,0.07%
+78,Baidu,0.07%
+79,Hostinger,0.06%
+80,Viettel,0.06%
+81,FPT,0.06%
+82,Steadfast,0.06%
+83,CtrlS,0.06%
+84,Cogent,0.06%
+85,Telia Company Group,0.06%
+85.1,    Telia Company,0.02%
+85.2,    Telia Latvija,0.02%
+85.3,    Telia Lietuva,0.01%
+86,Codero,0.06%
+87,UCloud,0.06%
+88,FirstVDS,0.05%
+89,Cogeco Group,0.05%
+89.1,    Aptum,0.05%
+90,Ntirety,0.05%
+91,MiroHost,0.05%
+92,UpCloud,0.05%
+93,Voxility,0.05%
+94,Turkmentelecom,0.05%
+95,RBC Group,0.03%
+95.1,    RosBusinessConsulting,0.02%
+95.2,    RU-Center,0.01%
+96,Zomro,0.03%
+97,Hostiran,0.03%
+98,M247,0.03%
+99,MojoHost,0.03%
+100,DEAC,0.03%
+101,Telecom Egypt,0.03%
+102,Cisco,0.03%
+103,Weebly,0.02%
+104,Mihan,0.02%
+105,EuroByte,0.02%
+106,Beltelecom,0.02%
+107,PrivateSystems,0.02%
+108,iomart Group,0.02%
+108.1,    iomart,0.02%
+109,Tebyan,0.02%
+110,Masterhost,0.02%
+111,TierPoint,0.02%
+112,Exabytes Group,0.02%
+112.1,    Exabytes,0.02%
+113,Faraso Samaneh Pasargad,0.02%
+114,Confluence-Networks,0.02%
+115,PS Internet Company,0.02%
+116,Hostiserver,0.02%
+117,VSHosting,0.02%
+118,Dinahosting,0.02%
+119,Flexential,0.02%
+120,Tucows Group,0.02%
+120.1,    Tucows,0.01%
+120.2,    Ting,0.01%
+121,Master Internet,0.02%
+122,Cellcom,0.02%
+123,Psychz,0.02%
+124,Expedient,0.02%
+125,Casablanca,0.02%
+126,Internet Thailand,0.02%
+127,Sharktech,0.02%
+128,TimeWeb,0.01%
+129,Aerotek,0.01%
+130,PA Vietnam,0.01%
+131,Xneelo,0.01%
+132,ServerCentral,0.01%
+133,CS LoxInfo,0.01%
+134,InterServer,0.01%
+135,One.com,0.01%
+136,Serverpars,0.01%
+137,Veridyen,0.01%
+138,Infomaniak,0.01%
+139,Güzel Hosting,0.01%
+140,WPX Hosting,0.01%
+141,Gandi,0.01%
+142,GreenWeb,0.01%
+143,CAT Telecom,0.01%
+144,Enartia Group,0.01%
+144.1,    Enartia,0.01%
+145,Interneto Vizija,0.01%
+146,ColoCrossing,0.01%
+147,Hostland,0.01%
+148,Locaweb,0.01%
+149,Comcast,0.01%
+150,Hostwinds,0.01%
+151,Romarg,0.01%
+152,WebSupport,0.01%
+153,Kagoya,0.01%
+154,Seeweb,0.01%
+155,TheGigabit,0.01%
+156,EGIHosting,0.01%
+157,Serverius,0.01%
+158,PTisp,0.01%
+159,New World Telecom,0.01%
+160,GlobalConnect,0.01%
+161,Alwaysdata,0.01%
+162,Kamatera,0.01%
+163,Telecom Algeria,0.01%
+164,National DC Mongolia,0.01%
+165,ETECSA,0.01%
