@@ -230,6 +230,9 @@ def country_gini(cur: cursor, measurement_scope: str, market: str, time: pd.Time
     # TODO break out JUST this and test it with some mock data?
     # get current % of Internet using population
     relevant_year = str(time.year)
+    # this is a hack until we have data for 2022
+    if int(relevant_year) > 2021:
+        relevant_year='2021'
     pop_share_df = prop_net_users[relevant_year]
     # weight marketshare
     merged = pd.DataFrame(pop_share_df).merge(by_juris,
