@@ -24,6 +24,9 @@ else:
         from src.w3techs.collect import collect
     elif command == 'ooni':
         from src.ooni.collect import collect
+    elif command == 'backfill_country_marketshares':
+        from src.w3techs.backfill_country_marketshares import collect
+
 
     if collect is not None:
         do_command = partial(collect, postgres_config)
