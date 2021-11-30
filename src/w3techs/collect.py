@@ -135,12 +135,19 @@ def collect(postgres_config: dict):
 
         # Compute gini coefficients
         for market in included_markets:
-            logging.info(f'Computing provider-based gini for {market}')
+            logger.info(f'Computing provider-based gini for {market}')
             provider_gini = utils.provider_gini(cur, 'all', market, pd.Timestamp(datetime.now()))
             provider_gini.write_to_db(cur, conn)
             logger.info(f'Computing country-based ginis for {market}')
             country_gini = utils.country_gini(cur, 'all', market, pd.Timestamp(datetime.now()))
             country_gini.write_to_db(cur, conn)
+            # Compute country marketshares
+            logger.info(f'Computing country marketshares for {market}')
+            country_marketshares = utils.country_marketshare(cur, 'all', market, pd.Timestamp(datetime.now()))
+            extract = partial(utils.extract_from_row_country, market, pd.Timestamp(datetime.now()))
+            countries = country_marketshares.apply(extract, axis=1)
+            for country in countries:
+                country.write_to_db(cur, conn)
 
         logger.info('W3Techs complete.')
     except Exception as e:
