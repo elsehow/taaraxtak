@@ -17,6 +17,7 @@ from bs4.element import ResultSet
 from src.w3techs.types import ProviderMarketshare
 from src.w3techs.types import CountryGini
 from src.w3techs.types import ProviderGini
+from src.w3techs.types import CountryMarketshare
 
 #
 # Scrape utilities
@@ -134,6 +135,18 @@ def extract_from_row(market: str, time: pd.Timestamp, df_row: pd.Series) -> Prov
         str(name), str(url), juris, 'all', market, float(marketshare), time
     )
 
+def extract_from_row_country(market: str, date: pd.Timestamp, df_row: pd.Series) -> CountryMarketshare:
+    '''
+    Takes a row of a country marketshare dataframe and returns CountryMarketshare.
+    `market` and `time` are the first parameters because we partially apply them.
+    '''
+    juris, weight, cc_marketshare, cc_weighted_marketshare, total_marketshare, date = df_row.values
+    # NOTE - This type does ALL the validation.
+    # Once data is in this type, it *should* be trustworthy.
+    # See /design-notes.md for more detail on this pattern.
+    return CountryMarketshare(
+        date, shared_types.Alpha2(juris), 'all', market, float(cc_marketshare), float(cc_weighted_marketshare), float(total_marketshare)
+    )
 
 #
 # Population-weighted gini tools
@@ -262,3 +275,32 @@ def provider_gini(cur: cursor, measurement_scope: str, market: str, time: pd.Tim
         pd.Series(by_market['marketshare']).fillna(0).values
     )
     return ProviderGini(measurement_scope, market, g, time)
+
+def country_marketshare(cur: cursor, measurement_scope: str, market: str, time: pd.Timestamp) -> Optional[pd.DataFrame]:
+    by_juris = fetch_by_jurisdiction(cur, measurement_scope, market, time)
+    # if there are no values, None
+    if len(by_juris) == 0:
+        return None
+
+    # TODO break out JUST this and test it with some mock data?
+    # get current % of Internet using population
+    relevant_year = str(time.year)
+    # this is a hack until we have data for 2022
+    if int(relevant_year) > 2021:
+        relevant_year='2021'
+    pop_share_df = prop_net_users[relevant_year]
+    # weight marketshare
+    merged = pd.DataFrame(pop_share_df).merge(by_juris,
+                                              left_index=True,
+                                              right_on='jurisdiction_alpha2',
+                                              how='inner')
+    # we do not include countries that do NOT appear in our scraped data.
+    # the intention here is to get the gini among ALL countries,
+    # including those that provide no internet services.
+    merged.rename(columns = {'marketshare':'cc_marketshare'}, inplace = True)
+    merged["cc_weighted_marketshare"] = merged.cc_marketshare * merged.loc[:, relevant_year]
+    merged["total_marketshare"] = merged.cc_marketshare.sum()
+    merged["date"] = pd.to_datetime(time)
+    merged.reset_index(inplace=True)
+
+    return merged
