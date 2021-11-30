@@ -126,7 +126,7 @@ for weighting is `analysis/prop_net_users.csv`.
 
 # Backfilling historical data
 
-W3Techs provides monthly data paying subscribers. Relative to the data we scrape
+W3Techs provides monthly data to paying subscribers. Relative to the data we scrape
 from the webpage, that data lists slightly more providers, but does not change
 at the day-to-day level (it only shows data for the first of each month). And,
 relative to the monthly data, the data we scrape does not describe specific
